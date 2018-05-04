@@ -12,7 +12,7 @@
 #include <vector>
 #include <iterator>
 
-#define Editor 0
+#define Editor 1
 
 const int WIDTH  = 1024;
 const int HEIGHT = 768;
@@ -75,11 +75,8 @@ int main(void)
 {
 	double lastTime = glfwGetTime();
 	double deltaTime = 1.0 / 30;
-	bool created = false;
 
-	bool Start = false;
-	bool show_demo_window = false;
-	bool show_another_window = false;
+	bool spriteEditor = false;
 	ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
 
 	//create a window
@@ -109,26 +106,34 @@ int main(void)
 	//test code for rendering a lot sprites
 	for (int i = 0; i < 20024; i++)
 	{
-		Sprite m_sprite(32, 32, 32 * xX, 32 * yY);
-		m_sprite.setIndex(16, 8);
-		m_sprite.setTextureUV(4, 1);
+		Sprite *m_sprite = new Sprite(32, 32, 32 * xX, 32 * yY);
+		m_sprite->setIndex(16, 8);
+		m_sprite->setTextureUV(4, 1);
 		if (xX == 0 || yY == 0 || yY == 141)
 		{
-			m_sprite.setTextureUV(6, 1);
+			m_sprite->setTextureUV(6, 1);
 		}
 		xX++;
 		if (xX == 141)
 		{
-			m_sprite.setTextureUV(6, 1);
+			m_sprite->setTextureUV(6, 1);
 			yY++;
 			xX = 0;
 		}
-		background.submitSprite(m_sprite);
+		background.submitSprite(*m_sprite);
 	}
-	Sprite m_player(32, 32, 400, 300);
-	m_player.setIndex(16, 8);
-	m_player.setTextureUV(0, 0);
-	background.submitSprite(m_player);
+	Sprite *m_player = new Sprite(32, 32, 400, 300);
+	m_player->setIndex(16, 8);
+	m_player->setTextureUV(0, 0);
+	background.submitSprite(*m_player);
+
+	float position[2];
+	position[0] = m_player->getPosition().x;
+	position[1] = m_player->getPosition().y;
+
+	float scale[2];
+	scale[0] = m_player->getScale().x;
+	scale[1] = m_player->getScale().y;
 
 	//Create a audioengine object
 	//AudioEngine engine;
@@ -144,7 +149,7 @@ int main(void)
 	{
 		ImGui::CreateContext();
 		ImGui_ImplGlfwGL3_Init(window.getWindow(), true);
-		ImGui::StyleColorsDark();
+		ImGui::StyleColorsLight();
 	}
 	//Gameloop 
 	while (!window.closed())
@@ -154,27 +159,23 @@ int main(void)
 
 			if (window.isKeyPressed(GLFW_KEY_A))
 			{
-				m_player.TransLate(-playerspeed_x * 9.81f * deltaTime, 0, 0);
-				created = false;
+				m_player->TransLate(-playerspeed_x * 9.81f * deltaTime, 0, 0);
 			}
 			if (window.isKeyPressed(GLFW_KEY_D))
 			{
-				m_player.TransLate(playerspeed_x* 9.81f * deltaTime, 0, 0);
-				created = false;
+				m_player->TransLate(playerspeed_x* 9.81f * deltaTime, 0, 0);
 			}
 			if (window.isKeyPressed(GLFW_KEY_W))
 			{
-				m_player.TransLate(0, playerspeed_y * 9.81f * deltaTime, 0);
-				created = false;
+				m_player->TransLate(0, playerspeed_y * 9.81f * deltaTime, 0);
 			}
 			if (window.isKeyPressed(GLFW_KEY_S))
 			{
-				m_player.TransLate(0, -playerspeed_y * 9.81f * deltaTime, 0);
-				created = false;
+				m_player->TransLate(0, -playerspeed_y * 9.81f * deltaTime, 0);
 				printf("Pressed S key");
 			}
 
-			camera2d->centerCamera(m_player.getPosition().x, m_player.getPosition().y);
+			camera2d->centerCamera(m_player->getPosition().x, m_player->getPosition().y);
 			shader.SetMatrix4("orthographicModel", camera2d->returnOrthographicCamera());
 			lastTime = currentTime;
 
@@ -185,26 +186,34 @@ int main(void)
 		background.drawBatch();
 		texture.unBind();
 
-		if(Editor == 1 && Start == false)
-		{
-			ImGui_ImplGlfwGL3_NewFrame();
-			static float f = 0.0f;
-			static int counter = 0;
+			if (Editor == 1)
+			{
+				ImGui_ImplGlfwGL3_NewFrame();
 
-			ImGui::Text("Test UI");                           
-			ImGui::ColorEdit3("clear color", (float*)&clear_color);
-		
-			ImGui::Text("counter = %d", counter);
-		
-			if (ImGui::Button("Button"))
-			{
-				Start = true;
-			}
-			if (Editor == 1 && Start == false)
-			{
+				ImGui::BeginMainMenuBar();
+				ImGui::MenuItem("SpriteEditor", NULL, &spriteEditor);
+				ImGui::EndMainMenuBar();
+				
+				if (spriteEditor == true)
+				{
+					ImGui::Begin("SpriteEditor");
+
+					ImGuiIO& io = ImGui::GetIO();
+
+					ImGui::Text("SpritePosition");
+					ImGui::InputFloat2("", position);
+
+					ImGui::Text("SpriteSize");
+					ImGui::InputFloat2(" ", scale);
+					if (ImGui::Button("Submit", ImVec2(50, 50)))
+					{
+						m_player->setPosition(position[0], position[1]);
+						m_player->Scale(scale[0], scale[1], 0);
+					}
+					ImGui::End();
+				}
 				ImGui::Render();
 				ImGui_ImplGlfwGL3_RenderDrawData(ImGui::GetDrawData());
-			}
 		}
 		// Swap front and back buffers 
 		window.update();

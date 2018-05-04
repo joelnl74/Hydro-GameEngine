@@ -14,14 +14,14 @@ Layer::~Layer()
 }
 void Layer::submitSprite(Sprite &sprite)
 {
-	sprites.push_back(sprite);
+	sprites.push_back(&sprite);
 }
 void Layer::drawBatch()
 {
 	batch->begin();
 	for (auto x : sprites)
 	{
-		batch->submit(&x);
+		batch->submit(x);
 	}
 	batch->end();
 	batch->flush();

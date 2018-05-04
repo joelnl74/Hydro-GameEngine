@@ -11,6 +11,6 @@ public:
 	void drawBatch();
 private:
 	spriteBatch * batch;
-	std::vector<Sprite> sprites;
+	std::vector<Sprite*> sprites;
 };
 

@@ -427,7 +427,18 @@ void ImGui_ImplGlfwGL3_Shutdown()
     // Destroy OpenGL objects
     ImGui_ImplGlfwGL3_InvalidateDeviceObjects();
 }
-
+void ImGui_HandleKeyboardInput(bool HandleKeyboard)
+{
+	ImGuiIO& io = ImGui::GetIO();
+	if (HandleKeyboard == false)
+	{
+		io.WantCaptureKeyboard = false;
+	}
+	else
+	{
+		io.WantCaptureKeyboard = true;
+	}
+}
 void ImGui_ImplGlfwGL3_NewFrame()
 {
     if (!g_FontTexture)
