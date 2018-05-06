@@ -125,42 +125,42 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\HydroEngine.cpp" />
+    <ClCompile Include="src\EngineUI\EditorUI.cpp" />
     <ClCompile Include="src\Graphics\Layer.cpp" />
     <ClCompile Include="src\Rescourcemanager.cpp" />
     <ClCompile Include="src\Graphics\Camera2D.cpp" />
     <ClCompile Include="src\Graphics\Sprite.cpp" />
     <ClCompile Include="src\Graphics\spriteBatch.cpp" />
-    <ClCompile Include="src\Graphics\Camera.cpp" />
     <ClCompile Include="src\Graphics\OpenGLDebugger\OpenglErrorHandler.cpp" />
     <ClCompile Include="src\audio\AudioEngine.cpp" />
     <ClCompile Include="src\Graphics\Shader.cpp" />
-    <ClCompile Include="src\Graphics\IndexBuffer.cpp" />
-    <ClCompile Include="src\Graphics\Renderer.cpp" />
+    <ClCompile Include="src\Graphics\buffer\IndexBuffer.cpp" />
     <ClCompile Include="src\Application.cpp" />
     <ClCompile Include="src\vendor\imgui\imgui.cpp" />
     <ClCompile Include="src\vendor\imgui\imgui_demo.cpp" />
     <ClCompile Include="src\vendor\imgui\imgui_draw.cpp" />
     <ClCompile Include="src\vendor\imgui\imgui_impl_glfw_gl3.cpp" />
     <ClCompile Include="src\vendor\stbImage\stb_image.cpp" />
-    <ClCompile Include="src\Graphics\VertexArray.cpp" />
-    <ClCompile Include="src\Graphics\VertexBuffer.cpp" />
+    <ClCompile Include="src\Graphics\buffer\VertexArray.cpp" />
+    <ClCompile Include="src\Graphics\buffer\VertexBuffer.cpp" />
     <ClCompile Include="src\Graphics\Texture.cpp" />
     <ClCompile Include="src\Graphics\Window.cpp" />
     <ClCompile Include="src\Graphics\Text.cpp" />
     <ClCompile Include="Win32Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\HydroEngine.h" />
+    <ClInclude Include="src\EngineUI\EditorUI.h" />
     <ClInclude Include="src\Graphics\Layer.h" />
     <ClInclude Include="src\Rescourcemanager.h" />
     <ClInclude Include="src\Graphics\Camera2D.h" />
     <ClInclude Include="src\Graphics\Sprite.h" />
     <ClInclude Include="src\Graphics\spriteBatch.h" />
-    <ClInclude Include="src\Graphics\Camera.h" />
     <ClInclude Include="src\Graphics\OpenGLDebugger\OpenglErrorHandler.h" />
     <ClInclude Include="src\audio\AudioEngine.h" />
     <ClInclude Include="src\Graphics\Shader.h" />
-    <ClInclude Include="src\Graphics\IndexBuffer.h" />
-    <ClInclude Include="src\Graphics\Renderer.h" />
+    <ClInclude Include="src\Graphics\buffer\IndexBuffer.h" />
     <ClInclude Include="src\vendor\imgui\imconfig.h" />
     <ClInclude Include="src\vendor\imgui\imgui.h" />
     <ClInclude Include="src\vendor\imgui\imgui_impl_glfw_gl3.h" />
@@ -169,9 +169,9 @@
     <ClInclude Include="src\vendor\imgui\stb_textedit.h" />
     <ClInclude Include="src\vendor\imgui\stb_truetype.h" />
     <ClInclude Include="src\vendor\stbImage\stb_image.h" />
-    <ClInclude Include="src\Graphics\VertexArray.h" />
-    <ClInclude Include="src\Graphics\VertexBuffer.h" />
-    <ClInclude Include="src\Graphics\VertexBufferLayout.h" />
+    <ClInclude Include="src\Graphics\buffer\VertexArray.h" />
+    <ClInclude Include="src\Graphics\buffer\VertexBuffer.h" />
+    <ClInclude Include="src\Graphics\buffer\VertexBufferLayout.h" />
     <ClInclude Include="src\Graphics\Texture.h" />
     <ClInclude Include="src\Graphics\Window.h" />
     <ClInclude Include="src\Graphics\Text.h" />

@@ -39,6 +39,7 @@
 
 #include "imgui.h"
 #include "imgui_impl_glfw_gl3.h"
+#include <stdio.h>
 
 // GLEW/GLFW
 #include <GL/glew.h>    // This example is using glew to access OpenGL functions (because it is small). You may use glew/glad/glLoadGen/etc. whatever already works for you.
@@ -211,8 +212,12 @@ void ImGui_ImplGlfw_ScrollCallback(GLFWwindow*, double xoffset, double yoffset)
 void ImGui_ImplGlfw_KeyCallback(GLFWwindow*, int key, int, int action, int mods)
 {
     ImGuiIO& io = ImGui::GetIO();
-    if (action == GLFW_PRESS)
-        io.KeysDown[key] = true;
+	if (action == GLFW_PRESS)
+	{
+		io.KeysDown[key] = true;
+		if (!io.WantCaptureKeyboard)
+			printf("Keypress for app: %d\n", key);
+	}
     if (action == GLFW_RELEASE)
         io.KeysDown[key] = false;
 

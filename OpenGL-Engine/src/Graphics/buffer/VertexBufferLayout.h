@@ -1,7 +1,7 @@
 #pragma once
 #include<vector>
 
-#include "OpenGLDebugger\OpenglErrorHandler.h"
+#include "../OpenGLDebugger\OpenglErrorHandler.h"
 
 struct VertexBufferElement
 {

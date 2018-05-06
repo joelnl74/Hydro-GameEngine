@@ -1,18 +1,16 @@
 ﻿//#include "../Win32Window.h"
-#include "Graphics\Window.h"
-#include "Graphics/Renderer.h"
+#include "Graphics/Window.h"
 #include "Graphics/Layer.h"
 #include "Graphics/Camera2D.h"
-#include "Graphics/Text.h"
 
 #include "audio/AudioEngine.h"
+#include "EngineUI/EditorUI.h"
+enum State
+{
+	Editor,
+	Play
 
-#include "vendor/imgui/imgui.h"
-#include "vendor/imgui/imgui_impl_glfw_gl3.h"
-#include <vector>
-#include <iterator>
-
-#define Editor 1
+};
 
 const int WIDTH  = 1024;
 const int HEIGHT = 768;
@@ -76,11 +74,13 @@ int main(void)
 	double lastTime = glfwGetTime();
 	double deltaTime = 1.0 / 30;
 
-	bool spriteEditor = false;
+	State engineMode = State::Editor;
+
 	ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
 
 	//create a window
 	Window window(WIDTH, HEIGHT, "Hydro Engine");
+	EditorUI UI(window.getWindow());
 
 	GLCall(glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA));
 	GLCall(glEnable(GL_BLEND));
@@ -95,11 +95,10 @@ int main(void)
 	shader.setVec3("ambientLight", glm::vec3(0.85f, 0.85f, 0.85f));
 
 	//create a rederer object from which you can call draw calls
-	Renderer renderer;
 	Layer background;
 
 	//create a texture
-	Texture texture = Texture("res/textures/Tilesheet.png");
+	Texture texture = Texture("res/textures/Tiles.png");
 
 	int xX = 0;
 	int yY = 0;
@@ -107,33 +106,25 @@ int main(void)
 	for (int i = 0; i < 20024; i++)
 	{
 		Sprite *m_sprite = new Sprite(32, 32, 32 * xX, 32 * yY);
-		m_sprite->setIndex(16, 8);
-		m_sprite->setTextureUV(4, 1);
+		m_sprite->setIndex(4, 4);
+		m_sprite->setTextureUV(0, 0);
 		if (xX == 0 || yY == 0 || yY == 141)
 		{
-			m_sprite->setTextureUV(6, 1);
+			m_sprite->setTextureUV(1, 0);
 		}
 		xX++;
 		if (xX == 141)
 		{
-			m_sprite->setTextureUV(6, 1);
+			m_sprite->setTextureUV(1, 0);
 			yY++;
 			xX = 0;
 		}
 		background.submitSprite(*m_sprite);
 	}
 	Sprite *m_player = new Sprite(32, 32, 400, 300);
-	m_player->setIndex(16, 8);
-	m_player->setTextureUV(0, 0);
+	m_player->setIndex(4, 4);
+	m_player->setTextureUV(1, 1);
 	background.submitSprite(*m_player);
-
-	float position[2];
-	position[0] = m_player->getPosition().x;
-	position[1] = m_player->getPosition().y;
-
-	float scale[2];
-	scale[0] = m_player->getScale().x;
-	scale[1] = m_player->getScale().y;
 
 	//Create a audioengine object
 	//AudioEngine engine;
@@ -145,31 +136,26 @@ int main(void)
 	int playerspeed_x = 32;
 	int playerspeed_y = 32;
 
-	if (Editor == 1)
-	{
-		ImGui::CreateContext();
-		ImGui_ImplGlfwGL3_Init(window.getWindow(), true);
-		ImGui::StyleColorsLight();
-	}
 	//Gameloop 
 	while (!window.closed())
 	{
+		ImGuiIO& io = ImGui::GetIO();
 		double currentTime = glfwGetTime();
 		if (currentTime - lastTime >= deltaTime) {
 
-			if (window.isKeyPressed(GLFW_KEY_A))
+			if (ImGui::IsKeyDown(GLFW_KEY_A) && UI.returnPlay())
 			{
 				m_player->TransLate(-playerspeed_x * 9.81f * deltaTime, 0, 0);
 			}
-			if (window.isKeyPressed(GLFW_KEY_D))
+			if (ImGui::IsKeyDown(GLFW_KEY_D) && UI.returnPlay())
 			{
 				m_player->TransLate(playerspeed_x* 9.81f * deltaTime, 0, 0);
 			}
-			if (window.isKeyPressed(GLFW_KEY_W))
+			if (ImGui::IsKeyDown(GLFW_KEY_W) && UI.returnPlay())
 			{
 				m_player->TransLate(0, playerspeed_y * 9.81f * deltaTime, 0);
 			}
-			if (window.isKeyPressed(GLFW_KEY_S))
+			if (ImGui::IsKeyDown(GLFW_KEY_S) && UI.returnPlay())
 			{
 				m_player->TransLate(0, -playerspeed_y * 9.81f * deltaTime, 0);
 				printf("Pressed S key");
@@ -180,41 +166,14 @@ int main(void)
 			lastTime = currentTime;
 
 		// Render here 
-		renderer.Clear();
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		texture.bind();
 		background.drawBatch();
 		texture.unBind();
 
-			if (Editor == 1)
-			{
-				ImGui_ImplGlfwGL3_NewFrame();
+		UI.DrawUI(*m_player);
 
-				ImGui::BeginMainMenuBar();
-				ImGui::MenuItem("SpriteEditor", NULL, &spriteEditor);
-				ImGui::EndMainMenuBar();
-				
-				if (spriteEditor == true)
-				{
-					ImGui::Begin("SpriteEditor");
-
-					ImGuiIO& io = ImGui::GetIO();
-
-					ImGui::Text("SpritePosition");
-					ImGui::InputFloat2("", position);
-
-					ImGui::Text("SpriteSize");
-					ImGui::InputFloat2(" ", scale);
-					if (ImGui::Button("Submit", ImVec2(50, 50)))
-					{
-						m_player->setPosition(position[0], position[1]);
-						m_player->Scale(scale[0], scale[1], 0);
-					}
-					ImGui::End();
-				}
-				ImGui::Render();
-				ImGui_ImplGlfwGL3_RenderDrawData(ImGui::GetDrawData());
-		}
 		// Swap front and back buffers 
 		window.update();
 	}

@@ -1,7 +1,7 @@
 #include "VertexBuffer.h"
 
 
-#include "OpenGLDebugger\OpenglErrorHandler.h"
+#include "../OpenGLDebugger\OpenglErrorHandler.h"
 
 VertexBuffer::VertexBuffer(const void * data, unsigned int size)
 {
