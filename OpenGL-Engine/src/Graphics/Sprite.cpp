@@ -46,7 +46,7 @@ void Sprite::setTextureUV(float PosX, float PosY)
 	indexX = z;
 	indexY = w;
 }
-bool Sprite::Sprite_Overlap(Sprite &sprite1, Sprite &sprite2)
+const bool Sprite::Sprite_Overlap(Sprite &sprite1, Sprite &sprite2)
 {
 	// Collision x-axis?
 	bool collisionX = sprite1.getPosition().x + sprite1.getScale().x >= sprite2.getPosition().x &&

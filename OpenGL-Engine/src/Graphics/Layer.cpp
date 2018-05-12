@@ -11,6 +11,11 @@ Layer::Layer()
 
 Layer::~Layer()
 {
+	for (std::vector<Sprite*>::iterator it = sprites.begin(); it != sprites.end(); ++it)
+	{
+		delete(*it);
+	}
+	sprites.clear();
 }
 void Layer::submitSprite(Sprite &sprite)
 {
@@ -25,4 +30,15 @@ void Layer::drawBatch()
 	}
 	batch->end();
 	batch->flush();
+}
+Sprite& Layer::returnSprite(float mouseX, float mouseY)
+{
+	for (auto x : sprites)
+	{
+		if (mouseX < x->getPosition().x + x->getScale().x && mouseX >= x->getPosition().x
+			&& mouseY < x->getPosition().y + x->getScale().y && mouseY >= x->getPosition().y)
+		{
+			return *x;
+		}
+	}
 }

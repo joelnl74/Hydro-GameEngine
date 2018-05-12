@@ -24,7 +24,7 @@ public:
 	void setTextureUV(float PosX, float PosY);
 	void setIndex(float x, float y);
 
-	bool Sprite_Overlap(Sprite &sprite1, Sprite &sprite2);
+	const bool Sprite_Overlap(Sprite &sprite1, Sprite &sprite2);
 
 	inline const void setPosition(float x, float y) { position.x = x, position.y = y; }
 	inline const glm::vec2 getPosition() { return  position; }

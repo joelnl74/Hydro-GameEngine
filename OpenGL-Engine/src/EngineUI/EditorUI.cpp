@@ -9,11 +9,24 @@ EditorUI::EditorUI(GLFWwindow *win)
 	ImGui::StyleColorsLight();
 }
 
-
 EditorUI::~EditorUI()
 {
+	delete selectedSprite;
 }
-void EditorUI::DrawUI(Sprite &sprite)
+void EditorUI::setSelectedSprite(Sprite *sprite)
+{
+	selectedSprite = sprite;
+
+	position[0] = selectedSprite->getPosition().x;
+	position[1] = selectedSprite->getPosition().y;
+
+	uv[0] = selectedSprite->getUV().x;
+	uv[1] = selectedSprite->getUV().y;
+
+	scale[0] = selectedSprite->getScale().x;
+	scale[1] = selectedSprite->getScale().y;
+}
+void EditorUI::DrawUI()
 {
 
 	ImGui_ImplGlfwGL3_NewFrame();
@@ -41,7 +54,7 @@ void EditorUI::DrawUI(Sprite &sprite)
 			//GetSelected sprite if none return a nullptr and disable sprite editor again
 			printf("Opened Sprite editor");
 		}
-		if (ImGui::MenuItem("CreateSprite"))
+		if (ImGui::MenuItem("CreateSprite", NULL, &spriteCreator))
 		{
 			//Opend sprite creator, Create a new sprite and add it to a layer to draw
 		}
@@ -65,18 +78,25 @@ void EditorUI::DrawUI(Sprite &sprite)
 
 		if (ImGui::Button("Submit", ImVec2(50, 50)))
 		{
-			sprite.setPosition(position[0], position[1]);
-			sprite.Scale(scale[0], scale[1], 0);
-			sprite.setTextureUV(uv[0], uv[1]);
+			selectedSprite->setPosition(position[0], position[1]);
+			selectedSprite->Scale(scale[0], scale[1], 0);
+			selectedSprite->setTextureUV(uv[0], uv[1]);
+		}
+		ImGui::End();
+	}
+	if (spriteCreator && !play)
+	{
+		ImGui::Begin("SpriteCreator");
+		if (ImGui::Button("Create", ImVec2(50, 50)))
+		{
+			ImGui::Text("SpritePosition");
+			ImGui::InputFloat2("   ", position);
 
-			position[0] = sprite.getPosition().x;
-			position[1] = sprite.getPosition().y;
+			ImGui::Text("SpriteSize");
+			ImGui::InputFloat2("    ", scale);
 
-			uv[0] = sprite.getUV().x;
-			uv[1] = sprite.getUV().y;
-			
-			scale[0] = sprite.getScale().x;
-			scale[1] = sprite.getScale().y;
+			ImGui::Text("UV");
+			ImGui::InputFloat2("     ", uv);
 		}
 		ImGui::End();
 	}

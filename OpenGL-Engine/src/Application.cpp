@@ -5,82 +5,19 @@
 
 #include "audio/AudioEngine.h"
 #include "EngineUI/EditorUI.h"
-enum State
-{
-	Editor,
-	Play
-
-};
 
 const int WIDTH  = 1024;
 const int HEIGHT = 768;
 
-//class TestApp : public Win32Window
-//{
-//public:
-//	TestApp(HINSTANCE hIstance);
-//	~TestApp();
-//	bool Init() override;
-//	void Update(float dt) override;
-//	void Render() override;
-//	LRESULT MsgProc(HWND hwndm, UINT msg, WPARAM wParam, LPARAM lParam) override;
-//};
-//TestApp::TestApp(HINSTANCE hIstance) : Win32Window(hIstance)
-//{
-//
-//}
-//
-//TestApp::~TestApp()
-//{
-//
-//}
-//bool TestApp::Init()
-//{
-//	if (!Win32Window::Init())
-//		return false;
-//
-//	return true;
-//}
-//void TestApp::Update(float dt)
-//{
-//
-//}
-//void TestApp::Render()
-//{
-//
-//}
-//LRESULT TestApp::MsgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
-//{
-//	switch (msg)
-//	{
-//		default:
-//		{
-//			return Win32Window::MsgProc(hwnd, msg, wParam, lParam);
-//			break;
-//		}			
-//	}
-//}
-//
-//int WINAPI WinMain(HINSTANCE hinstance, HINSTANCE hPrevIstance, LPSTR lpCmdLine, int nCmdShow)
-//{
-//	TestApp app(hinstance);
-//	if (!app.Init())
-//		return 1;
-//
-//	return app.Run();
-//}
 int main(void)
 {
 	double lastTime = glfwGetTime();
 	double deltaTime = 1.0 / 30;
 
-	State engineMode = State::Editor;
-
-	ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
-
 	//create a window
 	Window window(WIDTH, HEIGHT, "Hydro Engine");
 	EditorUI UI(window.getWindow());
+	ImGuiIO& io = ImGui::GetIO();
 
 	GLCall(glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA));
 	GLCall(glEnable(GL_BLEND));
@@ -95,7 +32,7 @@ int main(void)
 	shader.setVec3("ambientLight", glm::vec3(0.85f, 0.85f, 0.85f));
 
 	//create a rederer object from which you can call draw calls
-	Layer background;
+	Layer *background = new Layer();
 
 	//create a texture
 	Texture texture = Texture("res/textures/Tiles.png");
@@ -105,7 +42,7 @@ int main(void)
 	//test code for rendering a lot sprites
 	for (int i = 0; i < 20024; i++)
 	{
-		Sprite *m_sprite = new Sprite(32, 32, 32 * xX, 32 * yY);
+		Sprite *m_sprite = new Sprite(32, 32, 32 * xX, 32 * yY );
 		m_sprite->setIndex(4, 4);
 		m_sprite->setTextureUV(0, 0);
 		if (xX == 0 || yY == 0 || yY == 141)
@@ -119,13 +56,12 @@ int main(void)
 			yY++;
 			xX = 0;
 		}
-		background.submitSprite(*m_sprite);
+		background->submitSprite(*m_sprite);
 	}
-	Sprite *m_player = new Sprite(32, 32, 400, 300);
+	Sprite *m_player = new Sprite(32, 32, 0, 0);
 	m_player->setIndex(4, 4);
 	m_player->setTextureUV(1, 1);
-	background.submitSprite(*m_player);
-
+	background->submitSprite(*m_player);
 	//Create a audioengine object
 	//AudioEngine engine;
 	//Load a audio file
@@ -136,10 +72,10 @@ int main(void)
 	int playerspeed_x = 32;
 	int playerspeed_y = 32;
 
+	texture.bind();
 	//Gameloop 
 	while (!window.closed())
 	{
-		ImGuiIO& io = ImGui::GetIO();
 		double currentTime = glfwGetTime();
 		if (currentTime - lastTime >= deltaTime) {
 
@@ -158,9 +94,14 @@ int main(void)
 			if (ImGui::IsKeyDown(GLFW_KEY_S) && UI.returnPlay())
 			{
 				m_player->TransLate(0, -playerspeed_y * 9.81f * deltaTime, 0);
-				printf("Pressed S key");
 			}
-
+			if (io.MouseClicked[1] == true)
+			{
+				float xPosition = 720.0f / 1024.0f;
+				float yPosition = 480.0f / 768.0f;
+				printf("PosX %f and PosY %f ", xPosition * ImGui::GetMousePos().x, 480 - yPosition * ImGui::GetMousePos().y);
+				UI.setSelectedSprite(&background->returnSprite(xPosition * ImGui::GetMousePos().x - (720  / 2) + camera2d->returnCameraPosition().x,480 - yPosition * ImGui::GetMousePos().y - (480 / 2) + camera2d->returnCameraPosition().y));
+			}
 			camera2d->centerCamera(m_player->getPosition().x, m_player->getPosition().y);
 			shader.SetMatrix4("orthographicModel", camera2d->returnOrthographicCamera());
 			lastTime = currentTime;
@@ -168,16 +109,14 @@ int main(void)
 		// Render here 
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		texture.bind();
-		background.drawBatch();
-		texture.unBind();
-
-		UI.DrawUI(*m_player);
+		background->drawBatch();
+		//UI.DrawUI();
 
 		// Swap front and back buffers 
 		window.update();
 	}
 }
+	texture.unBind();
 	ImGui_ImplGlfwGL3_Shutdown();
 	ImGui::DestroyContext();
 	window.closed();

@@ -184,3 +184,58 @@ LRESULT Win32Window::MsgProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lPar
 	}
 	}
 }
+
+//class TestApp : public Win32Window
+//{
+//public:
+//	TestApp(HINSTANCE hIstance);
+//	~TestApp();
+//	bool Init() override;
+//	void Update(float dt) override;
+//	void Render() override;
+//	LRESULT MsgProc(HWND hwndm, UINT msg, WPARAM wParam, LPARAM lParam) override;
+//};
+//TestApp::TestApp(HINSTANCE hIstance) : Win32Window(hIstance)
+//{
+//
+//}
+//
+//TestApp::~TestApp()
+//{
+//
+//}
+//bool TestApp::Init()
+//{
+//	if (!Win32Window::Init())
+//		return false;
+//
+//	return true;
+//}
+//void TestApp::Update(float dt)
+//{
+//
+//}
+//void TestApp::Render()
+//{
+//
+//}
+//LRESULT TestApp::MsgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
+//{
+//	switch (msg)
+//	{
+//		default:
+//		{
+//			return Win32Window::MsgProc(hwnd, msg, wParam, lParam);
+//			break;
+//		}			
+//	}
+//}
+//
+//int WINAPI WinMain(HINSTANCE hinstance, HINSTANCE hPrevIstance, LPSTR lpCmdLine, int nCmdShow)
+//{
+//	TestApp app(hinstance);
+//	if (!app.Init())
+//		return 1;
+//
+//	return app.Run();
+//}
