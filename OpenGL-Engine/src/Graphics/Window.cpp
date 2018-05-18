@@ -5,7 +5,7 @@
  double Window::mx;
  double Window::my;
 //TODO CHANGE WINDOW TO WINDOWS API WINDOW!
-Window::Window(int WINDOW_WIDTH, int WINDOW_HEIGHT, const char *WINDOW_TITLE)
+Window::Window(int &WINDOW_WIDTH, int &WINDOW_HEIGHT, const char *WINDOW_TITLE)
 {
 	m_Title = WINDOW_TITLE;
 	m_Width = WINDOW_WIDTH;

@@ -10,6 +10,7 @@ Camera2D::Camera2D(float width, float height)
 }
 void Camera2D::centerCamera(float x, float y)
 {
+	//center the camera on a position
 	cameraPosition.x = x;
 	cameraPosition.y = y;
 	orthographicCamera = glm::ortho(x - (m_width / 2), x + (m_width / 2), y - (m_height / 2), y + (m_height / 2), 0.0f, 100.0f);

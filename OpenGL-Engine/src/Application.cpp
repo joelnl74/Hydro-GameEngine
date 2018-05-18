@@ -6,8 +6,28 @@
 #include "audio/AudioEngine.h"
 #include "EngineUI/EditorUI.h"
 
-const int WIDTH  = 1024;
-const int HEIGHT = 768;
+/*
+All the code in Application is dummy code just to test some parts of the engine
+With right mouse click you can select sprites
+Within the spriteEditor you can change properties of the selected sprite
+Play makes it possible to move your character sprite around the screen
+
+Notes
+------------------------------------------------------------------------
+Audio: update to play multiple sound files and also play sounds from streaming instead of loading in to memory
+UI:Create sprite
+UI:Create layer
+Graphics: Create diffrent shader for point light 
+Camera: movement when in editor mode
+resource management: rescource management texture/audio/font and so on, at the moment a pointless class
+FileManager:load scene into engine
+FileManager:save scene to xml/json file
+Optimize: don't create every sprite dynamically every frame
+Optimize: algorithm for what the camera cant see wont render
+Win32Window: Integrate win32 window into project and remove glfw
+*/
+ int WIDTH  = 1024;
+ int HEIGHT = 768;
 
 int main(void)
 {
@@ -63,11 +83,11 @@ int main(void)
 	m_player->setTextureUV(1, 1);
 	background->submitSprite(*m_player);
 	//Create a audioengine object
-	//AudioEngine engine;
+	AudioEngine audio;
 	//Load a audio file
-	//engine.LoadAudioFileFromSystem("res\sounds\sound1.wav");
+	audio.LoadAudioFileFromSystem("res/sounds/sound1.wav");
 	//play the loaded audio file
-	//engine.PlaySound();
+	audio.PlaySound();
 
 	int playerspeed_x = 32;
 	int playerspeed_y = 32;
@@ -81,25 +101,24 @@ int main(void)
 
 			if (ImGui::IsKeyDown(GLFW_KEY_A) && UI.returnPlay())
 			{
-				m_player->TransLate(-playerspeed_x * 9.81f * deltaTime, 0, 0);
+				m_player->TransLate(-playerspeed_x * 9.81f * deltaTime, 0);
 			}
 			if (ImGui::IsKeyDown(GLFW_KEY_D) && UI.returnPlay())
 			{
-				m_player->TransLate(playerspeed_x* 9.81f * deltaTime, 0, 0);
+				m_player->TransLate(playerspeed_x* 9.81f * deltaTime, 0);
 			}
 			if (ImGui::IsKeyDown(GLFW_KEY_W) && UI.returnPlay())
 			{
-				m_player->TransLate(0, playerspeed_y * 9.81f * deltaTime, 0);
+				m_player->TransLate(0, playerspeed_y * 9.81f * deltaTime);
 			}
 			if (ImGui::IsKeyDown(GLFW_KEY_S) && UI.returnPlay())
 			{
-				m_player->TransLate(0, -playerspeed_y * 9.81f * deltaTime, 0);
+				m_player->TransLate(0, -playerspeed_y * 9.81f * deltaTime);
 			}
 			if (io.MouseClicked[1] == true)
 			{
 				float xPosition = 720.0f / 1024.0f;
 				float yPosition = 480.0f / 768.0f;
-				printf("PosX %f and PosY %f ", xPosition * ImGui::GetMousePos().x, 480 - yPosition * ImGui::GetMousePos().y);
 				UI.setSelectedSprite(&background->returnSprite(xPosition * ImGui::GetMousePos().x - (720  / 2) + camera2d->returnCameraPosition().x,480 - yPosition * ImGui::GetMousePos().y - (480 / 2) + camera2d->returnCameraPosition().y));
 			}
 			camera2d->centerCamera(m_player->getPosition().x, m_player->getPosition().y);
@@ -110,7 +129,7 @@ int main(void)
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		background->drawBatch();
-		//UI.DrawUI();
+		UI.DrawUI();
 
 		// Swap front and back buffers 
 		window.update();

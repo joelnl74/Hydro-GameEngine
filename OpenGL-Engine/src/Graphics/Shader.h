@@ -27,10 +27,10 @@ public:
 	void setUniform1f(const std::string& name, float value);                          //vec1 float
 	void setUniform1i(const std::string& name, int value);                            //vec1 int
     void SetMatrix4(const std::string& name, glm::mat4 &matrix);                      //matrix4f view * model
-	void UniformMatrix4fv(const std::string& name, glm::mat4 &matrix);
-	void setVec2(const std::string& name, glm::fvec2 vector2);
-	void setVec3(const std::string& name, glm::fvec3 vector3);
-	int GetUniforLocation(const std::string& name);
+	void UniformMatrix4fv(const std::string& name, glm::mat4 &matrix);                //set mat4 
+	void setVec2(const std::string& name, glm::fvec2 vector2);                        //set vec2 of floats
+	void setVec3(const std::string& name, glm::fvec3 vector3);                        //set vec3 of floats
+	int GetUniforLocation(const std::string& name);                                   //Gets the location of the uniform
 
 private:
 	unsigned int CompileShader(unsigned int type, const std::string &source);

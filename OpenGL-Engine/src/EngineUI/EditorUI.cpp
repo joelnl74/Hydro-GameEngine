@@ -79,7 +79,7 @@ void EditorUI::DrawUI()
 		if (ImGui::Button("Submit", ImVec2(50, 50)))
 		{
 			selectedSprite->setPosition(position[0], position[1]);
-			selectedSprite->Scale(scale[0], scale[1], 0);
+			selectedSprite->Scale(scale[0], scale[1]);
 			selectedSprite->setTextureUV(uv[0], uv[1]);
 		}
 		ImGui::End();

@@ -6,6 +6,7 @@
 #include "OpenGLDebugger\OpenglErrorHandler.h"
 
 
+//reading the shader and create a shader program
 Shader::Shader(const std::string& filepath)
 	: m_FilePath(filepath), m_rendererID(0)
 {
@@ -13,10 +14,12 @@ Shader::Shader(const std::string& filepath)
 	ShaderProgramSource source = ParseShader(filepath);
 	m_rendererID = CreateShader(source.VertexSource, source.FragmentSource);
 }
+//delete the shader program
 Shader::~Shader()
 {
 	GLCall(glDeleteProgram(m_rendererID));
 }
+//parse the shader 
 ShaderProgramSource Shader::ParseShader(const std::string& filePath)
 {
 	std::ifstream stream(filePath);
@@ -64,7 +67,7 @@ unsigned int Shader::CompileShader(unsigned int type, const std::string &source)
 	{
 		int length;
 		GLCall(glGetShaderiv(id, GL_INFO_LOG_LENGTH, &length));
-		char* message = (char*)alloca(length * sizeof(char));
+		char* message = (char*)malloc(length * sizeof(char));
 		GLCall(glGetShaderInfoLog(id, length, &length, message));
 		std::cout << "Failed to compile" << (type == GL_VERTEX_SHADER ? "vertext" : "fragment") << " shader!" << std::endl;
 		std::cout << message << std::endl;
@@ -74,7 +77,7 @@ unsigned int Shader::CompileShader(unsigned int type, const std::string &source)
 
 	return id;
 }
-
+//creating the shader program
 unsigned int Shader::CreateShader(const std::string &vertexShader, const std::string &fragmentShader)
 {
 	unsigned int program = glCreateProgram();
@@ -93,10 +96,12 @@ unsigned int Shader::CreateShader(const std::string &vertexShader, const std::st
 	return program;
 
 }
+//bind the shader program
 void Shader::Bind() const
 {
 	GLCall(glUseProgram(m_rendererID));
 }
+//unbind the shader program
 void Shader::UnBind() const
 {
 	GLCall(glUseProgram(0));
@@ -129,6 +134,7 @@ void Shader::setVec3(const std::string& name, glm::fvec3 vector3)
 {
 	GLCall(glUniform3f(GetUniforLocation(name), vector3.x, vector3.y, vector3.z));
 }
+//get or create a Uniform location
 int Shader::GetUniforLocation(const std::string& name)
 {
 	if (m_UniformLocationCache.find(name) != m_UniformLocationCache.end())

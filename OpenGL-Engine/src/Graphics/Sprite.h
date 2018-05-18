@@ -19,8 +19,8 @@ public:
 	~Sprite();
 public:
 	void Rotate(float degrees);
-	void Scale(float x, float y, float z);
-	void TransLate(float x, float y, float z);
+	void Scale(float x, float y);
+	void TransLate(float x, float y);
 	void setTextureUV(float PosX, float PosY);
 	void setIndex(float x, float y);
 

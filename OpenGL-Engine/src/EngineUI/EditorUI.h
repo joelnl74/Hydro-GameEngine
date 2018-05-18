@@ -18,7 +18,6 @@ private:
 	bool spriteEditor = false;
 	bool spriteCreator = false;
 	Sprite *selectedSprite = nullptr;
-	ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
 	float position[2];
 	float scale[2];
 	float uv[2];

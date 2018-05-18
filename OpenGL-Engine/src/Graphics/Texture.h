@@ -15,7 +15,8 @@ private:
 	int m_Height;
 	int m_BPP;
 
-	bool flipped;
+	float offsetX;
+	float offsetY;
 public:
 	Texture(const std::string& path);
 	~Texture();

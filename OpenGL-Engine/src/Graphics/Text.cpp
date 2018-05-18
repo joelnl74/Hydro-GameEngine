@@ -22,7 +22,6 @@ void Text::rendererText()
 void Text::setChar(char &x)
 {
 	Sprite sprite(24, 24, position_X + offset, position_y);
-	sprite.setIndex(16,6);
 	sprite.setTextureUV(_rescourcemanager.returnCharacter(x).x, _rescourcemanager.returnCharacter(x).y);
 	charlist.push_back(sprite);
 }

@@ -16,14 +16,14 @@ void Sprite::Rotate(float degrees)
 {
 	//ToDo Rotate objects
 }
-void Sprite::Scale(float x, float y, float z)
+void Sprite::Scale(float x, float y)
 {
 	scale.x = x;
 	scale.y = y;
 }
-void Sprite::TransLate(float x, float y, float z)
+//moves object from current position to a new position by adding a value with the objects position
+void Sprite::TransLate(float x, float y)
 {
-	//moves object from current position to a new position
 	position.x = position.x + x;
 	position.y = position.y + y;
 }

@@ -1,18 +1,15 @@
 #include "spriteBatch.h"
 
-
-
 spriteBatch::spriteBatch()
 {
 	init();
 }
-
-
 spriteBatch::~spriteBatch()
 {
 	delete indexbuffer;
 	glDeleteBuffers(1, &vbo);
 }
+//Create Buffers
 void spriteBatch::init()
 {
 	glGenVertexArrays(1, &vao);
@@ -52,7 +49,7 @@ void spriteBatch::init()
 
 	glBindVertexArray(0);
 }
-
+//Creating a mapbuffer to store all vbo data
 void spriteBatch::begin()
 {
 	indexcount = 0;
@@ -60,13 +57,13 @@ void spriteBatch::begin()
 	glBindBuffer(GL_ARRAY_BUFFER, vbo);
 	buffer = (VertexData*)glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
 }
+//unmap the buffer
 void spriteBatch::end()
 {
 	glUnmapBuffer(GL_ARRAY_BUFFER);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 }
-
-
+//Settingup sprite data for the buffers
 void spriteBatch::submit(Sprite *sprite)
 {
 	//TODO set uv offset based on image width height
@@ -76,7 +73,7 @@ void spriteBatch::submit(Sprite *sprite)
 
 	//TODO set texture offset based on object object size
 	buffer->position = spritePosition;
-	buffer->uv = glm::vec2(uv.x + 0.00125f, uv.y + sprite->offsetY - 0.00125f);
+	buffer->uv =	   glm::vec2(uv.x + 0.00125f, uv.y + 0.25f - 0.00125f);
 	buffer++;
 
 	buffer->position = glm::vec2(spritePosition.x, spritePosition.y + spriteScale.y);
@@ -84,15 +81,16 @@ void spriteBatch::submit(Sprite *sprite)
 	buffer++;
 
 	buffer->position = glm::vec2(spritePosition.x + spriteScale.x, spritePosition.y + spriteScale.y);
-	buffer->uv =	   glm::vec2(uv.x + sprite->offsetX - 0.00125f, uv.y + 0.00125f);
+	buffer->uv =	   glm::vec2(uv.x + 0.25f - 0.00125f, uv.y + 0.00125f);
 	buffer++;
 
 	buffer->position = glm::vec2(spritePosition.x + spriteScale.x, spritePosition.y);
-	buffer->uv =       glm::vec2(uv.x + sprite->offsetX - 0.00125f, uv.y + sprite->offsetY - 0.00125f);
+	buffer->uv =       glm::vec2(uv.x + 0.25f - 0.00125f, uv.y + 0.25f - 0.00125f);
 	buffer++;
 
 	indexcount += 6;
 }
+//bind draw unbind
 void spriteBatch::flush()
 {
 	//only flush if something has changed in the buffer
