@@ -5,8 +5,6 @@
 HydroEngine::HydroEngine(int height, int width)
 {
 }
-
-
 HydroEngine::~HydroEngine()
 {
 }

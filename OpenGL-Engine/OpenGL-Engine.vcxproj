@@ -125,6 +125,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Physics\Collision_detection.cpp" />
     <ClCompile Include="src\HydroEngine.cpp" />
     <ClCompile Include="src\EngineUI\EditorUI.cpp" />
     <ClCompile Include="src\Graphics\Layer.cpp" />
@@ -150,6 +151,7 @@
     <ClCompile Include="Win32Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Physics\Collision_detection.h" />
     <ClInclude Include="src\HydroEngine.h" />
     <ClInclude Include="src\EngineUI\EditorUI.h" />
     <ClInclude Include="src\Graphics\Layer.h" />
