@@ -29,7 +29,7 @@ Optimize: algorithm for what the camera cant see wont render[]
 Physics: Basic AABB collision detectection []
 Physics: See if partioning is of world is needed[]
 Physics: make the input for adding to the collision map a generic type(sprite rectangle and so on)[]
-Abstract: CameratoScreen function to camera instead of application[]
+Abstract: CameratoScreen function to camera instead of application[x]
 Win32Window: Integrate win32 window into project and remove glfw[] 
 */
  int WIDTH  = 1024;
@@ -86,10 +86,16 @@ int main(void)
 		}
 		background->submitSprite(*m_sprite);
 	}
+
 	Sprite *m_player = new Sprite(32, 32, 64, 64);
 	m_player->setIndex(4, 4);
 	m_player->setTextureUV(1, 1);
 	background->submitSprite(*m_player);
+
+	//center camera
+	camera2d->centerCamera(m_player->getPosition().x, m_player->getPosition().y);
+	shader.SetMatrix4("orthographicModel", camera2d->returnOrthographicCamera());
+	
 	//Create a audioengine object
 	//AudioEngine audio;
 	//Load a audio file
@@ -136,7 +142,7 @@ int main(void)
 			{
 				float xPosition = 720.0f / 1024.0f;
 				float yPosition = 480.0f / 768.0f;
-				UI.setSelectedSprite(&background->returnSprite(xPosition * ImGui::GetMousePos().x - (720  / 2) + camera2d->returnCameraPosition().x,480 - yPosition * ImGui::GetMousePos().y - (480 / 2) + camera2d->returnCameraPosition().y));
+				UI.setSelectedSprite(&background->returnSprite(camera2d->returnWorldToCameraPosition().x, camera2d->returnWorldToCameraPosition().y));
 			}
 			lastTime = currentTime;
 
