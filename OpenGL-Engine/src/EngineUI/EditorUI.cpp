@@ -20,8 +20,8 @@ void EditorUI::setSelectedSprite(Sprite *sprite)
 	position[0] = selectedSprite->getPosition().x;
 	position[1] = selectedSprite->getPosition().y;
 
-	uv[0] = selectedSprite->getUV().x;
-	uv[1] = selectedSprite->getUV().y;
+	uv[0] = selectedSprite->getUV().x * 4;
+	uv[1] = selectedSprite->getUV().y * 4;
 
 	scale[0] = selectedSprite->getScale().x;
 	scale[1] = selectedSprite->getScale().y;
@@ -33,6 +33,10 @@ void EditorUI::DrawUI()
 	ImGui::BeginMainMenuBar();
 	if (ImGui::BeginMenu("File"))
 	{
+		if (ImGui::MenuItem("New"))
+		{
+			//clear scene
+		}
 		if (ImGui::MenuItem("Save")) 
 		{
 			//Save current level to a xml file or something like that
@@ -63,7 +67,7 @@ void EditorUI::DrawUI()
 	ImGui::MenuItem("Play", NULL, &play);
 	ImGui::EndMainMenuBar();
 
-	if (spriteEditor == true && !play)
+	if (spriteEditor == true && !play || spriteCreator == true && !play)
 	{
 		ImGui::Begin("SpriteEditor");
 
@@ -76,27 +80,18 @@ void EditorUI::DrawUI()
 		ImGui::Text("UV");
 		ImGui::InputFloat2("  ", uv);
 
-		if (ImGui::Button("Submit", ImVec2(50, 50)))
+		if (ImGui::Button("Submit", ImVec2(50, 50)) && spriteEditor == true)
 		{
 			selectedSprite->setPosition(position[0], position[1]);
 			selectedSprite->Scale(scale[0], scale[1]);
 			selectedSprite->setTextureUV(uv[0], uv[1]);
 		}
-		ImGui::End();
-	}
-	if (spriteCreator && !play)
-	{
-		ImGui::Begin("SpriteCreator");
-		if (ImGui::Button("Create", ImVec2(50, 50)))
+		else
 		{
-			ImGui::Text("SpritePosition");
-			ImGui::InputFloat2("   ", position);
-
-			ImGui::Text("SpriteSize");
-			ImGui::InputFloat2("    ", scale);
-
-			ImGui::Text("UV");
-			ImGui::InputFloat2("     ", uv);
+			Sprite * sprite = new Sprite(position[0], position[1], scale[0], scale[1]);
+			//set uv
+			//set texture
+			//add to selected layer
 		}
 		ImGui::End();
 	}
