@@ -1,16 +1,26 @@
 #include "HydroEngine.h"
 
+int WIDTH = 1024;
+int HEIGHT = 768;
 
-
-HydroEngine::HydroEngine(int height, int width)
+HydroEngine::HydroEngine()
 {
+	//create objects needed for the engine and there references
+	_window = new Window(WIDTH, HEIGHT, "Hydro-Engine");
+	_layerManager = new LayerManager();
+	_editorUI = new EditorUI(_window->getWindow(),_layerManager);
 }
 HydroEngine::~HydroEngine()
 {
+	//clear memory
+	delete _editorUI;
+	delete _layerManager;
+	delete _window;
 }
 void HydroEngine::StartUp()
 {
 	//startup all diffrent parts of the engine
+	
 }
 void HydroEngine::ShutDown()
 {

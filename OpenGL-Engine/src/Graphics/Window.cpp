@@ -12,8 +12,6 @@ Window::Window(int &WINDOW_WIDTH, int &WINDOW_HEIGHT, const char *WINDOW_TITLE)
 	m_Height = WINDOW_HEIGHT;
 	if (!Init())
 		glfwTerminate();
-
-
 	glViewport(0, 0, m_Width, m_Height);
 
 	for (int i = 0; i < MAX_KEYS; i++)
@@ -30,7 +28,6 @@ Window::~Window()
 {
 	glfwTerminate();
 }
-
 bool Window::Init()
 {
 	if (!glfwInit())
@@ -88,7 +85,6 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 {
 	Window* win = (Window*)glfwGetWindowUserPointer(window);
 		
-	
 	win->m_keys[key] = action != GLFW_RELEASE;
 }
 void mouse_callback(GLFWwindow* window, int button, int action, int mods)

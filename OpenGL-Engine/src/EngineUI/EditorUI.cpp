@@ -1,12 +1,12 @@
 #include "EditorUI.h"
 
-
-
-EditorUI::EditorUI(GLFWwindow *win)
+EditorUI::EditorUI(GLFWwindow *win, LayerManager* _manager)
 {
 	ImGui::CreateContext();
 	ImGui_ImplGlfwGL3_Init(win, true);
 	ImGui::StyleColorsLight();
+
+	m_layerManager = _manager;
 }
 
 EditorUI::~EditorUI()
@@ -80,18 +80,24 @@ void EditorUI::DrawUI()
 		ImGui::Text("UV");
 		ImGui::InputFloat2("  ", uv);
 
-		if (ImGui::Button("Submit", ImVec2(50, 50)) && spriteEditor == true)
+		if (ImGui::Button("Submit", ImVec2(50, 50)))
 		{
-			selectedSprite->setPosition(position[0], position[1]);
-			selectedSprite->Scale(scale[0], scale[1]);
-			selectedSprite->setTextureUV(uv[0], uv[1]);
-		}
-		else
-		{
-			Sprite * sprite = new Sprite(position[0], position[1], scale[0], scale[1]);
-			//set uv
-			//set texture
-			//add to selected layer
+			if (spriteEditor)
+			{
+				selectedSprite->setPosition(position[0], position[1]);
+				selectedSprite->Scale(scale[0], scale[1]);
+				selectedSprite->setTextureUV(uv[0], uv[1]);
+			}
+			else if (spriteCreator)
+			{
+				Sprite * sprite = new Sprite(scale[0], scale[1], position[0], position[1]);
+				//set uv
+				sprite->setIndex(4, 4);
+				//set texture
+				sprite->setTextureUV(uv[0], uv[1]);
+				//add to selected layer
+				m_layerManager->getLayer(0)->submitSprite(*sprite);
+			}
 		}
 		ImGui::End();
 	}

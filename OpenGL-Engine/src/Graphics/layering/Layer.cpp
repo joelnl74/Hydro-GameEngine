@@ -1,21 +1,20 @@
 #include "Layer.h"
 
-
-
 Layer::Layer()
 {
+	//Max size of a sprite batch
 	sprites.reserve(20024);
+	//Batch for this layer
 	batch = new spriteBatch();
 }
-
-
 Layer::~Layer()
 {
-	//clearing the memory if a layer gets destoryed or out of scope
+	//clearing the memory
 	for (std::vector<Sprite*>::iterator it = sprites.begin(); it != sprites.end(); ++it)
 	{
 		delete(*it);
 	}
+	//clear the list
 	sprites.clear();
 }
 void Layer::submitSprite(Sprite &sprite)
