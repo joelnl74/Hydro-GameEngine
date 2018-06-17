@@ -3,7 +3,7 @@
 
 #include "Graphics/Window.h"
 #include "Graphics/layering/LayerManager.h"
-#include "EngineUI/EditorUI.h"
+#include "Editor/EditorUI.h"
 //https://github.com/joelnl74/Hydro-GameEngine 
 class HydroEngine
 {

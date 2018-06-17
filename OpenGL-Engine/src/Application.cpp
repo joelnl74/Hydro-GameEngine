@@ -32,9 +32,6 @@ Win32Window: Integrate win32 window into project and remove glfw[]
 
 int main(void)
 {
-	double lastTime = glfwGetTime();
-	double deltaTime = 1.0 / 30;
-
 	//create a window
 	HydroEngine* m_engine = new HydroEngine();
 	ImGuiIO& io = ImGui::GetIO();
@@ -81,31 +78,28 @@ int main(void)
 	//Gameloop 
 	while (!m_engine->_window->closed())
 	{
-		double currentTime = glfwGetTime();
-		if (currentTime - lastTime >= deltaTime) {
-
 			detection->checkCollision(m_player->getPosition(), m_player->getScale());
 			if (ImGui::IsKeyDown(GLFW_KEY_A) &&  m_engine->_editorUI->returnPlay())
 			{
-				m_player->TransLate(-playerspeed_x * 9.81f * deltaTime, 0);
+				m_player->TransLate(-playerspeed_x, 0);
 				camera2d->centerCamera(m_player->getPosition().x, m_player->getPosition().y);
 				shader.SetMatrix4("orthographicModel", camera2d->returnOrthographicCamera());
 			}
 			if (ImGui::IsKeyDown(GLFW_KEY_D) && m_engine->_editorUI->returnPlay())
 			{
-				m_player->TransLate(playerspeed_x* 9.81f * deltaTime, 0);
+				m_player->TransLate(playerspeed_x, 0);
 				camera2d->centerCamera(m_player->getPosition().x, m_player->getPosition().y);
 				shader.SetMatrix4("orthographicModel", camera2d->returnOrthographicCamera());
 			}
 			if (ImGui::IsKeyDown(GLFW_KEY_W) && m_engine->_editorUI->returnPlay())
 			{
-				m_player->TransLate(0, playerspeed_y * 9.81f * deltaTime);
+				m_player->TransLate(0, playerspeed_y);
 				camera2d->centerCamera(m_player->getPosition().x, m_player->getPosition().y);
 				shader.SetMatrix4("orthographicModel", camera2d->returnOrthographicCamera());
 			}
 			if (ImGui::IsKeyDown(GLFW_KEY_S) && m_engine->_editorUI->returnPlay())
 			{
-				m_player->TransLate(0, -playerspeed_y * 9.81f * deltaTime);
+				m_player->TransLate(0, -playerspeed_y);
 				camera2d->centerCamera(m_player->getPosition().x, m_player->getPosition().y);
 				shader.SetMatrix4("orthographicModel", camera2d->returnOrthographicCamera());
 			}
@@ -115,8 +109,6 @@ int main(void)
 				float yPosition = 480.0f / 768.0f;
 				//m_engine->_editorUI->setSelectedSprite(&background.returnSprite(camera2d->returnWorldToCameraPosition().x, camera2d->returnWorldToCameraPosition().y));
 			}
-			lastTime = currentTime;
-
 		// Render here 
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -126,7 +118,6 @@ int main(void)
 
 		// Swap front and back buffers 
 		m_engine->_window->update();
-	}
 }
 	texture.unBind();
 	delete detection;

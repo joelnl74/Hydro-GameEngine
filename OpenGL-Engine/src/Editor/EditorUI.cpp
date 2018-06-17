@@ -12,6 +12,7 @@ EditorUI::EditorUI(GLFWwindow *win, LayerManager* _manager)
 EditorUI::~EditorUI()
 {
 	delete selectedSprite;
+	delete m_layerManager;
 }
 void EditorUI::setSelectedSprite(Sprite *sprite)
 {
@@ -53,21 +54,25 @@ void EditorUI::DrawUI()
 	}
 	if (ImGui::BeginMenu("Sprite"))
 	{
-		if (ImGui::MenuItem("EditSprite", NULL, &spriteEditor))
+		if (ImGui::MenuItem("SpriteEditor", NULL, &spriteEditor))
 		{
 			//GetSelected sprite if none return a nullptr and disable sprite editor again
 			printf("Opened Sprite editor");
-		}
-		if (ImGui::MenuItem("CreateSprite", NULL, &spriteCreator))
-		{
-			//Opend sprite creator, Create a new sprite and add it to a layer to draw
 		}
 		ImGui::EndMenu();
 	}
 	ImGui::MenuItem("Play", NULL, &play);
 	ImGui::EndMainMenuBar();
 
-	if (spriteEditor == true && !play || spriteCreator == true && !play)
+	//check if sprite editor needs to be active
+	SpriteEditor();
+	
+	ImGui::Render();
+	ImGui_ImplGlfwGL3_RenderDrawData(ImGui::GetDrawData());
+}
+void EditorUI::SpriteEditor()
+{
+	if (spriteEditor == true && !play)
 	{
 		ImGui::Begin("SpriteEditor");
 
@@ -80,27 +85,25 @@ void EditorUI::DrawUI()
 		ImGui::Text("UV");
 		ImGui::InputFloat2("  ", uv);
 
-		if (ImGui::Button("Submit", ImVec2(50, 50)))
+		if (ImGui::Button("Change", ImVec2(50, 50)) && selectedSprite != nullptr)
 		{
-			if (spriteEditor)
-			{
-				selectedSprite->setPosition(position[0], position[1]);
-				selectedSprite->Scale(scale[0], scale[1]);
-				selectedSprite->setTextureUV(uv[0], uv[1]);
-			}
-			else if (spriteCreator)
-			{
-				Sprite * sprite = new Sprite(scale[0], scale[1], position[0], position[1]);
-				//set uv
-				sprite->setIndex(4, 4);
-				//set texture
-				sprite->setTextureUV(uv[0], uv[1]);
-				//add to selected layer
-				m_layerManager->getLayer(0)->submitSprite(*sprite);
-			}
+			selectedSprite->setPosition(position[0], position[1]);
+			selectedSprite->Scale(scale[0], scale[1]);
+			selectedSprite->setTextureUV(uv[0], uv[1]);
+		}
+		ImGui::SameLine();
+		if (ImGui::Button("Create", ImVec2(50, 50)))
+		{
+			Sprite * sprite = new Sprite(scale[0], scale[1], position[0], position[1]);
+			//set uv
+			sprite->setIndex(4, 4);
+			//set texture
+			sprite->setTextureUV(uv[0], uv[1]);
+			//add to selected layer
+			m_layerManager->getLayer(0)->submitSprite(*sprite);
+			//selectedSprite = new created sprite
+			setSelectedSprite(sprite);
 		}
 		ImGui::End();
 	}
-	ImGui::Render();
-	ImGui_ImplGlfwGL3_RenderDrawData(ImGui::GetDrawData());
 }

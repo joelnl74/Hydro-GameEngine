@@ -129,7 +129,7 @@
     <ClCompile Include="src\Scene.cpp" />
     <ClCompile Include="src\Physics\Collision_detection.cpp" />
     <ClCompile Include="src\HydroEngine.cpp" />
-    <ClCompile Include="src\EngineUI\EditorUI.cpp" />
+    <ClCompile Include="src\Editor\EditorUI.cpp" />
     <ClCompile Include="src\Graphics\layering\Layer.cpp" />
     <ClCompile Include="src\Rescourcemanager.cpp" />
     <ClCompile Include="src\Graphics\Camera2D.cpp" />
@@ -157,7 +157,7 @@
     <ClInclude Include="src\Scene.h" />
     <ClInclude Include="src\Physics\Collision_detection.h" />
     <ClInclude Include="src\HydroEngine.h" />
-    <ClInclude Include="src\EngineUI\EditorUI.h" />
+    <ClInclude Include="src\Editor\EditorUI.h" />
     <ClInclude Include="src\Graphics\layering\Layer.h" />
     <ClInclude Include="src\Rescourcemanager.h" />
     <ClInclude Include="src\Graphics\Camera2D.h" />
