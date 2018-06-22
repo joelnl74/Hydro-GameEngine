@@ -48,7 +48,7 @@ int main(void)
 	shader.SetMatrix4("orthographicModel", camera2d->returnOrthographicCamera());
 	shader.setVec3("ambientLight", glm::vec3(0.85f, 0.85f, 0.85f));
 
-	m_engine->_layerManager->addLayer(0);
+	m_engine->_layerManager->addLayer();
 	//create a rederer object from which you can call draw calls
 	Collision_detection *detection = new Collision_detection();
 	//create a texture

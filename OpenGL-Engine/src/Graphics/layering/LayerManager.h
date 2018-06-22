@@ -10,7 +10,8 @@ public:
 	~LayerManager();
 	void drawLayers();
 
-	void addLayer(int id);
+	void addLayer();
+	//TODO log error that this layer doesnt exsist, and handle the error in some way
 	inline Layer* getLayer(int id) { return m_layerManager.at(id); }
 private:
 	std::map<int, Layer*> m_layerManager;

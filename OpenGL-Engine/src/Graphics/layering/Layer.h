@@ -10,6 +10,7 @@ public:
 	void submitSprite(Sprite &sprite);
 	void drawBatch();
 	inline const std::vector<Sprite*> &returnSprites() { return sprites; }
+	void removeSprite(Sprite *sprite);
 	Sprite &returnSprite(float mouseX, float mouseY);
 private:
 	spriteBatch* batch;

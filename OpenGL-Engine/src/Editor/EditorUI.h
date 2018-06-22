@@ -21,9 +21,11 @@ private:
 	bool play = false;
 	bool spriteEditor = false;
 	bool spriteCreator = false;
+
 	float position[2];
 	float scale[2];
 	float uv[2];
+	int layerID;
 
 };
 

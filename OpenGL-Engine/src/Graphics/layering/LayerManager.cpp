@@ -8,10 +8,16 @@ LayerManager::LayerManager()
 LayerManager::~LayerManager()
 {
 }
-void LayerManager::addLayer(int id)
+void LayerManager::addLayer()
 {
 	Layer* _layer = new Layer();
-	m_layerManager.emplace(0, _layer);
+
+	if(m_layerManager.begin() != m_layerManager.end())
+	m_layerManager.emplace(m_layerManager.size() , _layer);
+	else
+	{
+		m_layerManager.emplace(0, _layer);
+	}
 }
 void LayerManager::drawLayers()
 {

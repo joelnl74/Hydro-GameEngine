@@ -1,5 +1,5 @@
 #include "EditorUI.h"
-
+#include <stdio.h>
 EditorUI::EditorUI(GLFWwindow *win, LayerManager* _manager)
 {
 	ImGui::CreateContext();
@@ -59,6 +59,10 @@ void EditorUI::DrawUI()
 			//GetSelected sprite if none return a nullptr and disable sprite editor again
 			printf("Opened Sprite editor");
 		}
+		if (ImGui::MenuItem("Add Layer"))
+		{
+			m_layerManager->addLayer();
+		}
 		ImGui::EndMenu();
 	}
 	ImGui::MenuItem("Play", NULL, &play);
@@ -85,6 +89,9 @@ void EditorUI::SpriteEditor()
 		ImGui::Text("UV");
 		ImGui::InputFloat2("  ", uv);
 
+		ImGui::Text("Layer");
+		ImGui::InputInt("    ", &layerID);
+
 		if (ImGui::Button("Change", ImVec2(50, 50)) && selectedSprite != nullptr)
 		{
 			selectedSprite->setPosition(position[0], position[1]);
@@ -94,15 +101,28 @@ void EditorUI::SpriteEditor()
 		ImGui::SameLine();
 		if (ImGui::Button("Create", ImVec2(50, 50)))
 		{
-			Sprite * sprite = new Sprite(scale[0], scale[1], position[0], position[1]);
-			//set uv
-			sprite->setIndex(4, 4);
-			//set texture
-			sprite->setTextureUV(uv[0], uv[1]);
-			//add to selected layer
-			m_layerManager->getLayer(0)->submitSprite(*sprite);
-			//selectedSprite = new created sprite
-			setSelectedSprite(sprite);
+			if (m_layerManager->getLayer(layerID))
+			{
+				//create sprite object with filled in variabels
+				Sprite * sprite = new Sprite(scale[0], scale[1], position[0], position[1]);
+				//set uv
+				sprite->setIndex(4, 4);
+				//set texture
+				sprite->setTextureUV(uv[0], uv[1]);
+				//add to selected layer
+				m_layerManager->getLayer(layerID)->submitSprite(*sprite);
+				//selectedSprite = new created sprite
+				setSelectedSprite(sprite);
+			}
+			else
+				//TODO FIX WHEN I HAVE A LOGGING SYSTEM
+				printf("This layer does not exsist! ");
+		}
+		ImGui::SameLine();
+		if (ImGui::Button("Layer", ImVec2(50, 50)))
+		{
+			m_layerManager->getLayer(0)->removeSprite(selectedSprite);
+			m_layerManager->getLayer(layerID)->submitSprite(*selectedSprite);
 		}
 		ImGui::End();
 	}

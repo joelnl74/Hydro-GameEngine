@@ -22,6 +22,18 @@ void Layer::submitSprite(Sprite &sprite)
 	//submit a sprite to renderer to draw
 	sprites.push_back(&sprite);
 }
+void Layer::removeSprite(Sprite* sprite)
+{
+	int index = 0;
+	for (auto x : sprites)
+	{
+		if (x == sprite)
+		{
+			sprites.erase(sprites.begin() + index);
+		}
+		index++;
+	}
+}
 void Layer::drawBatch()
 {
 	//draw the layer onto the screen
