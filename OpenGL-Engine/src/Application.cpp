@@ -48,6 +48,9 @@ int main(void)
 	shader.SetMatrix4("orthographicModel", camera2d->returnOrthographicCamera());
 	shader.setVec3("ambientLight", glm::vec3(0.85f, 0.85f, 0.85f));
 
+	//add layer with index 0
+	m_engine->_layerManager->addLayer();
+	//add layer with index 1
 	m_engine->_layerManager->addLayer();
 	//create a rederer object from which you can call draw calls
 	Collision_detection *detection = new Collision_detection();
@@ -58,7 +61,7 @@ int main(void)
 	Sprite *m_player = new Sprite(32, 32, 64, 64);
 	m_player->setIndex(4, 4);
 	m_player->setTextureUV(1, 1);
-	m_engine->_layerManager->getLayer(0)->submitSprite(*m_player);
+	m_engine->_layerManager->getLayer(1)->submitSprite(*m_player);
 
 	//center camera
 	camera2d->centerCamera(m_player->getPosition().x, m_player->getPosition().y);
@@ -70,6 +73,11 @@ int main(void)
 	//audio.LoadAudioFileFromSystem("res/sounds/sound1.wav");
 	//play the loaded audio file
 	//audio.PlaySound();
+
+	//TEST BLOCK
+
+	//END
+
 
 	int playerspeed_x = 32;
 	int playerspeed_y = 32;

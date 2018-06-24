@@ -40,6 +40,6 @@ void Rescourcemanager::createFontSheet()
 	charLocations.emplace('W', glm::vec2(7, 3));
 	charLocations.emplace('X', glm::vec2(8, 3));
 	charLocations.emplace('Y', glm::vec2(9, 3));
-	charLocations.emplace('Z', glm::vec2(9, 3));
+	charLocations.emplace('Z', glm::vec2(10, 3));
 
 }

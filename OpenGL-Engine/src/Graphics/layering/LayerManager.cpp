@@ -7,6 +7,11 @@ LayerManager::LayerManager()
 }
 LayerManager::~LayerManager()
 {
+	for (std::map<int, Layer*>::iterator it = m_layerManager.begin(); it != m_layerManager.end(); it++)
+	{
+		delete it->second;
+	}
+	m_layerManager.clear();
 }
 void LayerManager::addLayer()
 {

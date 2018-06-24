@@ -125,8 +125,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\SceneManager\SceneManager.cpp" />
     <ClCompile Include="src\Graphics\layering\LayerManager.cpp" />
-    <ClCompile Include="src\Scene.cpp" />
+    <ClCompile Include="src\SceneManager\Scene.cpp" />
     <ClCompile Include="src\Physics\Collision_detection.cpp" />
     <ClCompile Include="src\HydroEngine.cpp" />
     <ClCompile Include="src\Editor\EditorUI.cpp" />
@@ -153,8 +154,9 @@
     <ClCompile Include="Win32Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\SceneManager\SceneManager.h" />
     <ClInclude Include="src\Graphics\layering\LayerManager.h" />
-    <ClInclude Include="src\Scene.h" />
+    <ClInclude Include="src\SceneManager\Scene.h" />
     <ClInclude Include="src\Physics\Collision_detection.h" />
     <ClInclude Include="src\HydroEngine.h" />
     <ClInclude Include="src\Editor\EditorUI.h" />
@@ -174,6 +176,7 @@
     <ClInclude Include="src\vendor\imgui\stb_rect_pack.h" />
     <ClInclude Include="src\vendor\imgui\stb_textedit.h" />
     <ClInclude Include="src\vendor\imgui\stb_truetype.h" />
+    <ClInclude Include="src\vendor\json\json.hpp" />
     <ClInclude Include="src\vendor\stbImage\stb_image.h" />
     <ClInclude Include="src\Graphics\buffer\VertexArray.h" />
     <ClInclude Include="src\Graphics\buffer\VertexBuffer.h" />
@@ -184,6 +187,7 @@
     <ClInclude Include="Win32Window.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="res\scene\Testlevel.json" />
     <None Include="res\shaders\Basic.shader" />
     <None Include="res\shaders\PointLight.shader" />
   </ItemGroup>

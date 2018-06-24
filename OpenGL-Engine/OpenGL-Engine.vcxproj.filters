@@ -81,9 +81,6 @@
     <ClCompile Include="src\Physics\Collision_detection.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Scene.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\Graphics\layering\LayerManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -91,6 +88,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Editor\EditorUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SceneManager\Scene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SceneManager\SceneManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -170,9 +173,6 @@
     <ClInclude Include="src\Physics\Collision_detection.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Scene.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\Graphics\layering\LayerManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -182,9 +182,19 @@
     <ClInclude Include="src\Editor\EditorUI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\SceneManager\Scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SceneManager\SceneManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\json\json.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\Basic.shader" />
     <None Include="res\shaders\PointLight.shader" />
+    <None Include="res\scene\Testlevel.json" />
   </ItemGroup>
 </Project>

@@ -1,5 +1,6 @@
 #include "EditorUI.h"
 #include <stdio.h>
+#include "../SceneManager/SceneManager.h"
 EditorUI::EditorUI(GLFWwindow *win, LayerManager* _manager)
 {
 	ImGui::CreateContext();
@@ -44,6 +45,8 @@ void EditorUI::DrawUI()
 		}
 		if (ImGui::MenuItem("Load")) 
 		{
+			SceneManager manager;
+			manager.loadScene("res/scene/Testlevel.json", m_layerManager);
 			//load a level from a xml file or something like that
 		} 
 		if (ImGui::MenuItem("Exit")) 
