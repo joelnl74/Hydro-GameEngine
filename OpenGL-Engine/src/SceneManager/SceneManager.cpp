@@ -4,7 +4,6 @@
 #include <iostream>
 #include <sstream>  
 #include <vector>
-#include "../Graphics/Sprite.h"
 #include "../vendor/json/json.hpp"
 
 using json = nlohmann::json;
@@ -15,6 +14,7 @@ SceneManager::SceneManager()
 
 SceneManager::~SceneManager()
 {
+	
 }
 //Loading a level file into the engine
 bool SceneManager::loadScene(const std::string& inputFileName, LayerManager* l_manager)
@@ -45,31 +45,53 @@ bool SceneManager::loadScene(const std::string& inputFileName, LayerManager* l_m
 //Save a level to a json file
 bool SceneManager::saveScene(const std::string& inputFileName, LayerManager* l_manager)
 {
-	//foreach object i have to set the values
-
-
+	//check if we are at the last layer
+	bool lastLayer = false;
+	int couter = 0;
+	//open stream to a file
 	std::ofstream ofs;
 	ofs.open(inputFileName);
+	if (!ofs)
+	{
+		printf("ERROR OPENING FILE FROM DRIVE! FILE: %s", inputFileName);
+		return false;
+	}
 	ofs.clear();
 
+	//to create a array of spriteobjects
 	ofs << "[";
-	for (int x = 0; x < 5; x++)
+	for (std::map<int, Layer*>::iterator it = l_manager->getManager()->begin(); it != l_manager->getManager()->end(); it++)
 	{
-		Sprite *sprite = new Sprite(32, 32, 32, 32, true);
-		sprite->setTextureUV(1, 1);
+		if (couter == l_manager->getManager()->size() - 1)
+		{
+			lastLayer = true;
+		}
+		for (auto x : it->second->returnSprites())
+		{
+			//create json object to write to json file
+			json object = {
+			{ "position",{ x->getPosition().x, x->getPosition().y} },
+			{ "scale",{ x->getScale().x, x->getScale().y } },
+			{ "uv",{ x->getUV().x * 4, x->getUV().y * 4 } },
+			{ "solid", true }
+			};
 
-		json object = {
-		{ "position",{ sprite->getPosition().x + (x * 32), sprite->getPosition().y  } },
-		{ "scale",{ sprite->getScale().x, sprite->getScale().y } },
-		{ "uv",{0, 0 } },
-		{ "solid", true },
-		};
-		ofs << object;
-		if(x != 4)
-		ofs << ",";
+			ofs << object;
+
+			if (it->second->returnSprites().back() == x && lastLayer)
+			{
+				printf("...");
+			}
+			else
+			{
+				ofs << ",";
+			}
+		}
+		couter++;
 	}
+	//to close of the array of sprite objects
 	ofs << "]";
+	//close the stream
 	ofs.close();
-	
 	return true;
 }

@@ -12,8 +12,6 @@ EditorUI::EditorUI(GLFWwindow *win, LayerManager* _manager)
 
 EditorUI::~EditorUI()
 {
-	delete selectedSprite;
-	delete m_layerManager;
 }
 void EditorUI::setSelectedSprite(Sprite *sprite)
 {
@@ -30,7 +28,6 @@ void EditorUI::setSelectedSprite(Sprite *sprite)
 }
 void EditorUI::DrawUI()
 {
-
 	ImGui_ImplGlfwGL3_NewFrame();
 	ImGui::BeginMainMenuBar();
 	if (ImGui::BeginMenu("File"))
@@ -39,17 +36,17 @@ void EditorUI::DrawUI()
 		{
 			//clear scene
 		}
+		//Save current scene to a json file 
 		if (ImGui::MenuItem("Save")) 
 		{
 			SceneManager manager;
-			manager.saveScene("res/scene/Testlevel2.json", m_layerManager);
-			//Save current level to a xml file or something like that
+			manager.saveScene("res/scene/Testlevel.json", m_layerManager);
 		}
+		//load a scene from a json file
 		if (ImGui::MenuItem("Load")) 
 		{
 			SceneManager manager;
-			manager.loadScene("res/scene/Testlevel2.json", m_layerManager);
-			//load a level from a xml file or something like that
+			manager.loadScene("res/scene/Testlevel.json", m_layerManager);
 		} 
 		if (ImGui::MenuItem("Exit")) 
 		{
@@ -61,8 +58,6 @@ void EditorUI::DrawUI()
 	{
 		if (ImGui::MenuItem("SpriteEditor", NULL, &spriteEditor))
 		{
-			//GetSelected sprite if none return a nullptr and disable sprite editor again
-			printf("Opened Sprite editor");
 		}
 		if (ImGui::MenuItem("Add Layer"))
 		{

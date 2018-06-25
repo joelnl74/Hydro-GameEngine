@@ -57,14 +57,8 @@ int main(void)
 	//create a texture
 	Texture texture = Texture("res/textures/Tiles.png");
 
-	//create test player sprite
-	Sprite *m_player = new Sprite(32, 32, 64, 64);
-	m_player->setIndex(4, 4);
-	m_player->setTextureUV(1, 1);
-	m_engine->_layerManager->getLayer(1)->submitSprite(*m_player);
-
 	//center camera
-	camera2d->centerCamera(m_player->getPosition().x, m_player->getPosition().y);
+	camera2d->centerCamera(64,64);
 	shader.SetMatrix4("orthographicModel", camera2d->returnOrthographicCamera());
 	
 	//Create a audioengine object
@@ -77,8 +71,6 @@ int main(void)
 	//TEST BLOCK
 
 	//END
-
-
 	int playerspeed_x = 32;
 	int playerspeed_y = 32;
 
@@ -86,37 +78,12 @@ int main(void)
 	//Gameloop 
 	while (!m_engine->_window->closed())
 	{
-			detection->checkCollision(m_player->getPosition(), m_player->getScale());
-			if (ImGui::IsKeyDown(GLFW_KEY_A) &&  m_engine->_editorUI->returnPlay())
-			{
-				m_player->TransLate(-playerspeed_x, 0);
-				camera2d->centerCamera(m_player->getPosition().x, m_player->getPosition().y);
-				shader.SetMatrix4("orthographicModel", camera2d->returnOrthographicCamera());
-			}
-			if (ImGui::IsKeyDown(GLFW_KEY_D) && m_engine->_editorUI->returnPlay())
-			{
-				m_player->TransLate(playerspeed_x, 0);
-				camera2d->centerCamera(m_player->getPosition().x, m_player->getPosition().y);
-				shader.SetMatrix4("orthographicModel", camera2d->returnOrthographicCamera());
-			}
-			if (ImGui::IsKeyDown(GLFW_KEY_W) && m_engine->_editorUI->returnPlay())
-			{
-				m_player->TransLate(0, playerspeed_y);
-				camera2d->centerCamera(m_player->getPosition().x, m_player->getPosition().y);
-				shader.SetMatrix4("orthographicModel", camera2d->returnOrthographicCamera());
-			}
-			if (ImGui::IsKeyDown(GLFW_KEY_S) && m_engine->_editorUI->returnPlay())
-			{
-				m_player->TransLate(0, -playerspeed_y);
-				camera2d->centerCamera(m_player->getPosition().x, m_player->getPosition().y);
-				shader.SetMatrix4("orthographicModel", camera2d->returnOrthographicCamera());
-			}
-			if (io.MouseClicked[1] == true)
-			{
-				float xPosition = 720.0f / 1024.0f;
-				float yPosition = 480.0f / 768.0f;
-				//m_engine->_editorUI->setSelectedSprite(&background.returnSprite(camera2d->returnWorldToCameraPosition().x, camera2d->returnWorldToCameraPosition().y));
-			}
+		if (io.MouseClicked[1] == true)
+		{
+			float xPosition = 720.0f / 1024.0f;
+			float yPosition = 480.0f / 768.0f;
+			//m_engine->_editorUI->setSelectedSprite(&background.returnSprite(camera2d->returnWorldToCameraPosition().x, camera2d->returnWorldToCameraPosition().y));
+		}
 		// Render here 
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 

@@ -12,7 +12,7 @@ Layer::~Layer()
 	//clearing the memory
 	for (std::vector<Sprite*>::iterator it = sprites.begin(); it != sprites.end(); ++it)
 	{
-		delete(*it);
+		delete *it;
 	}
 	//clear the list
 	sprites.clear();
