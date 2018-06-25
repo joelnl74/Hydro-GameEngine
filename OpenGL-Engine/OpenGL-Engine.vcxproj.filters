@@ -196,5 +196,6 @@
     <None Include="res\shaders\Basic.shader" />
     <None Include="res\shaders\PointLight.shader" />
     <None Include="res\scene\Testlevel.json" />
+    <None Include="res\scene\Testlevel2.json" />
   </ItemGroup>
 </Project>

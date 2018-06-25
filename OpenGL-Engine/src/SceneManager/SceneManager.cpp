@@ -43,13 +43,33 @@ bool SceneManager::loadScene(const std::string& inputFileName, LayerManager* l_m
 	return true;
 }
 //Save a level to a json file
-void SceneManager::saveScene(const std::string& inputFileName)
+bool SceneManager::saveScene(const std::string& inputFileName, LayerManager* l_manager)
 {
-	//each object in levelmanager create a json object
-	json object;
 	//foreach object i have to set the values
 
-	//push them on a vector of jsonobjects
 
-	//write everything to a json file
+	std::ofstream ofs;
+	ofs.open(inputFileName);
+	ofs.clear();
+
+	ofs << "[";
+	for (int x = 0; x < 5; x++)
+	{
+		Sprite *sprite = new Sprite(32, 32, 32, 32, true);
+		sprite->setTextureUV(1, 1);
+
+		json object = {
+		{ "position",{ sprite->getPosition().x + (x * 32), sprite->getPosition().y  } },
+		{ "scale",{ sprite->getScale().x, sprite->getScale().y } },
+		{ "uv",{0, 0 } },
+		{ "solid", true },
+		};
+		ofs << object;
+		if(x != 4)
+		ofs << ",";
+	}
+	ofs << "]";
+	ofs.close();
+	
+	return true;
 }

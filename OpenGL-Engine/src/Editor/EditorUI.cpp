@@ -41,12 +41,14 @@ void EditorUI::DrawUI()
 		}
 		if (ImGui::MenuItem("Save")) 
 		{
+			SceneManager manager;
+			manager.saveScene("res/scene/Testlevel2.json", m_layerManager);
 			//Save current level to a xml file or something like that
 		}
 		if (ImGui::MenuItem("Load")) 
 		{
 			SceneManager manager;
-			manager.loadScene("res/scene/Testlevel.json", m_layerManager);
+			manager.loadScene("res/scene/Testlevel2.json", m_layerManager);
 			//load a level from a xml file or something like that
 		} 
 		if (ImGui::MenuItem("Exit")) 
