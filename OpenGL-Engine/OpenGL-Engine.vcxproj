@@ -132,7 +132,7 @@
     <ClCompile Include="src\HydroEngine.cpp" />
     <ClCompile Include="src\Editor\EditorUI.cpp" />
     <ClCompile Include="src\Graphics\layering\Layer.cpp" />
-    <ClCompile Include="src\Rescourcemanager.cpp" />
+    <ClCompile Include="src\RescourceManagement\FontManager.cpp" />
     <ClCompile Include="src\Graphics\Camera2D.cpp" />
     <ClCompile Include="src\Graphics\Sprite.cpp" />
     <ClCompile Include="src\Graphics\spriteBatch.cpp" />
@@ -161,7 +161,7 @@
     <ClInclude Include="src\HydroEngine.h" />
     <ClInclude Include="src\Editor\EditorUI.h" />
     <ClInclude Include="src\Graphics\layering\Layer.h" />
-    <ClInclude Include="src\Rescourcemanager.h" />
+    <ClInclude Include="src\RescourceManagement\FontManager.h" />
     <ClInclude Include="src\Graphics\Camera2D.h" />
     <ClInclude Include="src\Graphics\Sprite.h" />
     <ClInclude Include="src\Graphics\spriteBatch.h" />
@@ -190,7 +190,6 @@
     <None Include="res\scene\Testlevel.json" />
     <None Include="res\scene\Testlevel2.json" />
     <None Include="res\shaders\Basic.shader" />
-    <None Include="res\shaders\PointLight.shader" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

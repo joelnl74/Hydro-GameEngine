@@ -9,7 +9,6 @@ EditorUI::EditorUI(GLFWwindow *win, LayerManager* _manager)
 
 	m_layerManager = _manager;
 }
-
 EditorUI::~EditorUI()
 {
 }
@@ -89,6 +88,10 @@ void EditorUI::SpriteEditor()
 		ImGui::Text("UV");
 		ImGui::InputFloat2("  ", uv);
 
+		ImGui::Text("Solid");
+		ImGui::SameLine();
+		ImGui::Checkbox("     ", &solid);
+
 		ImGui::Text("Layer");
 		ImGui::InputInt("    ", &layerID);
 
@@ -97,6 +100,8 @@ void EditorUI::SpriteEditor()
 			selectedSprite->setPosition(position[0], position[1]);
 			selectedSprite->Scale(scale[0], scale[1]);
 			selectedSprite->setTextureUV(uv[0], uv[1]);
+			selectedSprite->setSolid(&solid);
+			m_layerManager->getLayer(layerID)->submitLayer();
 		}
 		ImGui::SameLine();
 		if (ImGui::Button("Create", ImVec2(50, 50)))
@@ -104,7 +109,7 @@ void EditorUI::SpriteEditor()
 			if (m_layerManager->getLayer(layerID))
 			{
 				//create sprite object with filled in variabels
-				Sprite * sprite = new Sprite(scale[0], scale[1], position[0], position[1]);
+				Sprite * sprite = new Sprite(scale[0], scale[1], position[0], position[1], &solid);
 				//set uv
 				sprite->setIndex(4, 4);
 				//set texture

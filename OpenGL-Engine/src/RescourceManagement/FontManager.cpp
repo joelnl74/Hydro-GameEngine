@@ -1,17 +1,17 @@
-#include "Rescourcemanager.h"
+#include "FontManager.h"
 
 
 //TODO make class singleton
-Rescourcemanager::Rescourcemanager()
+FontManager::FontManager()
 {
 	createFontSheet();
 }
 
 
-Rescourcemanager::~Rescourcemanager()
+FontManager::~FontManager()
 {
 }
-void Rescourcemanager::createFontSheet()
+void FontManager::createFontSheet()
 {
 	charLocations.emplace(' ', glm::vec2(0, 0));
 	charLocations.emplace('@', glm::vec2(0, 2));

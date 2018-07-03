@@ -35,6 +35,10 @@ void Sprite::setIndex(float x, float y)
 	offsetX = 1 / x;
 	offsetY = 1 / y;
 }
+void Sprite::setSolid(bool x)
+{
+	solid = x;
+}
 void Sprite::setTextureUV(float PosX, float PosY)
 {
 	indexX = 0;

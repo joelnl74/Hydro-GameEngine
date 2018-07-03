@@ -8,7 +8,7 @@ HydroEngine::HydroEngine()
 	//create objects needed for the engine and there references
 	_window = new Window(WIDTH, HEIGHT, "Hydro-Engine");
 	_layerManager = new LayerManager();
-	_editorUI = new EditorUI(_window->getWindow(),_layerManager);
+	_editorUI = new EditorUI(_window->getWindow(), _layerManager);
 }
 HydroEngine::~HydroEngine()
 {

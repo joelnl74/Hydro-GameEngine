@@ -19,6 +19,7 @@ private:
 	Sprite *selectedSprite = nullptr;
 
 	bool play = false;
+	bool solid = false;
 	bool spriteEditor = false;
 	bool spriteCreator = false;
 

@@ -1,11 +1,13 @@
 #include "Layer.h"
 
-Layer::Layer()
+Layer::Layer(bool static_Layer)
 {
 	//Max size of a sprite batch
 	sprites.reserve(20024);
 	//Batch for this layer
 	batch = new spriteBatch();
+	//set static or not
+	staticLayer = static_Layer;
 }
 Layer::~Layer()
 {
@@ -21,6 +23,10 @@ void Layer::submitSprite(Sprite &sprite)
 {
 	//submit a sprite to renderer to draw
 	sprites.push_back(&sprite);
+	if (staticLayer)
+	{
+		submitLayer();
+	}
 }
 void Layer::removeSprite(Sprite* sprite)
 {
@@ -34,16 +40,24 @@ void Layer::removeSprite(Sprite* sprite)
 		index++;
 	}
 }
-void Layer::drawBatch()
+void Layer::submitLayer()
 {
-	//draw the layer onto the screen
 	batch->begin();
 	for (auto x : sprites)
 	{
 		batch->submit(x);
 	}
 	batch->end();
+}
+void Layer::drawBatch()
+{
+	//draw the layer onto the screen
+	if (!staticLayer)
+	{
+		submitLayer();
+	}
 	batch->flush();
+
 }
 Sprite& Layer::returnSprite(float mouseX, float mouseY)
 {

@@ -23,6 +23,7 @@ public:
 	void TransLate(float x, float y);
 	void setTextureUV(float PosX, float PosY);
 	void setIndex(float x, float y);
+	void setSolid(bool x);
 
 	const bool Sprite_Overlap(Sprite &sprite1, Sprite &sprite2);
 

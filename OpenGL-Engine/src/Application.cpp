@@ -36,9 +36,6 @@ int main(void)
 	HydroEngine* m_engine = new HydroEngine();
 	ImGuiIO& io = ImGui::GetIO();
 
-	GLCall(glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA));
-	GLCall(glEnable(GL_BLEND));
-
 	//Simple 2dcamera class
 	Camera2D *camera2d = new Camera2D(720, 480);
 
@@ -48,10 +45,6 @@ int main(void)
 	shader.SetMatrix4("orthographicModel", camera2d->returnOrthographicCamera());
 	shader.setVec3("ambientLight", glm::vec3(0.85f, 0.85f, 0.85f));
 
-	//add layer with index 0
-	m_engine->_layerManager->addLayer();
-	//add layer with index 1
-	m_engine->_layerManager->addLayer();
 	//create a rederer object from which you can call draw calls
 	Collision_detection *detection = new Collision_detection();
 	//create a texture
@@ -71,8 +64,6 @@ int main(void)
 	//TEST BLOCK
 
 	//END
-	int playerspeed_x = 32;
-	int playerspeed_y = 32;
 
 	texture.bind();
 	//Gameloop 

@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 
-#include "../Rescourcemanager.h"
+#include "../RescourceManagement/FontManager.h"
 #include "Sprite.h"
 class Text
 {
@@ -16,7 +16,7 @@ private:
 	int offset = 0;
 	int position_X, position_y;
 	std::vector<Sprite> charlist;
-	Rescourcemanager _rescourcemanager;
+	FontManager _rescourcemanager;
 	void setChar(char &x);
 };
 
