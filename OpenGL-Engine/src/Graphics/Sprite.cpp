@@ -12,10 +12,6 @@ Sprite::Sprite(float sizeX, float sizeY, float posX, float posY, bool solidSprit
 	scale.x = sizeX;
 	scale.y = sizeY;
 }
-void Sprite::Rotate(float degrees)
-{
-	//ToDo Rotate objects
-}
 void Sprite::Scale(float x, float y)
 {
 	scale.x = x;

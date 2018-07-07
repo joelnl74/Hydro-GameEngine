@@ -18,7 +18,6 @@ public:
 	Sprite(float sizeX, float sizeY, float posX, float posY, bool solidSprite = false);
 	~Sprite();
 public:
-	void Rotate(float degrees);
 	void Scale(float x, float y);
 	void TransLate(float x, float y);
 	void setTextureUV(float PosX, float PosY);

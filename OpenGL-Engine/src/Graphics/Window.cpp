@@ -2,8 +2,6 @@
 
  bool Window::m_keys[MAX_KEYS];
  bool Window::m_MouseButtons[MAX_BUTTONS];
- double Window::mx;
- double Window::my;
 //TODO CHANGE WINDOW TO WINDOWS API WINDOW!
 Window::Window(int &WINDOW_WIDTH, int &WINDOW_HEIGHT, const char *WINDOW_TITLE)
 {

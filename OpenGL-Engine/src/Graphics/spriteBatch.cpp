@@ -6,8 +6,9 @@ spriteBatch::spriteBatch()
 }
 spriteBatch::~spriteBatch()
 {
-	delete indexbuffer;
 	glDeleteBuffers(1, &vbo);
+	delete indexbuffer;
+	delete buffer;
 }
 //Create Buffers
 void spriteBatch::init()

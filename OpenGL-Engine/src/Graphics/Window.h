@@ -16,7 +16,6 @@ public:
 	void update();
 	void clear() const;
 	bool closed() const;
-	static double mx, my;
 
 	inline GLFWwindow* getWindow() const { return m_Window; }
 	static bool isKeyPressed(int keycode);

@@ -2,8 +2,6 @@
 
 Layer::Layer(bool static_Layer)
 {
-	//Max size of a sprite batch
-	sprites.reserve(20024);
 	//Batch for this layer
 	batch = new spriteBatch();
 	//set static or not
