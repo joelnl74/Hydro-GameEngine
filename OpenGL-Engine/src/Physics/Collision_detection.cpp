@@ -10,13 +10,9 @@ Collision_detection::Collision_detection()
 Collision_detection::~Collision_detection()
 {
 }
-void Collision_detection::addBoundingBox(glm::vec2 position, glm::vec2 scale)
+void Collision_detection::addCollision(collision col)
 {
-	rect _rec;
-	_rec.position = position;
-	_rec.scale = scale;
-
-	collisionContainer.push_back(_rec);
+	collisionContainer.push_back(col);
 }
 bool Collision_detection::checkCollision(glm::vec2 position, glm::vec2 scale)
 {

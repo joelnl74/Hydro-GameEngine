@@ -1,5 +1,5 @@
 #include "AudioEngine.h"
-
+#include <cstdio>
 AudioEngine::AudioEngine()
 {
 	FMOD::System_Create(&system);
@@ -7,16 +7,36 @@ AudioEngine::AudioEngine()
 }
 AudioEngine::~AudioEngine()
 {
-	delete audioClip;
+	for (auto x : audioClips)
+	{
+		delete x.second;
+	}
+	audioClips.clear();
 	delete system;
-	delete channel1;
+	delete channel;
 }
-void AudioEngine::LoadAudioFileFromSystem(const std::string filepath)
+bool AudioEngine::LoadAudioFileFromSystem(const std::string filepath,std::string name, bool looped)
 {
+	FMOD::Sound *audioClip;
 	system->createSound(filepath.c_str(), FMOD_DEFAULT, 0, &audioClip);
-	audioClip->setMode(FMOD_LOOP_NORMAL);
+	if (looped)
+	{
+		audioClip->setMode(FMOD_LOOP_NORMAL);
+	}
+	audioClips.emplace(name, audioClip);
+	return true;
 }
-void AudioEngine::PlaySound()
+bool AudioEngine::PlaySound(std::string name)
 {
-	system->playSound(audioClip, 0, false, &channel1);
+	for (auto x : audioClips)
+	{
+		if (x.first == name)
+		{
+			system->playSound(audioClips.at(name), 0, false, &channel);
+			system->update();
+			return true;
+		}
+	}
+	printf("ERROR:AUDIOCLIP NOT FOUND, CHECK IF YOU HAVE ADDED THE AUDIO CLIP FIRST");
+	return false;
 }

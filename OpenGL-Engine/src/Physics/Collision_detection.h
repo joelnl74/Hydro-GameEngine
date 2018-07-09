@@ -1,9 +1,17 @@
 #pragma once
 #include <vector>
 #include "../vendor/glm/vec2.hpp"
-struct rect {
+enum collisionType
+{
+	normal,
+	trigger,
+	event
+};
+
+struct collision {
 	glm::vec2 position;
 	glm::vec2 scale;
+	collisionType type;
 };
 //TODO
 //------------------------------------------------------------------------------------------------
@@ -15,9 +23,9 @@ class Collision_detection
 public:
 	Collision_detection();
 	~Collision_detection();
-	void addBoundingBox(glm::vec2 position, glm::vec2 scale);
+	void addCollision(collision col);
 	bool checkCollision(glm::vec2 position, glm::vec2 scale);
 private: 
-	std::vector<rect> collisionContainer;
+	std::vector<collision> collisionContainer;
 };
 

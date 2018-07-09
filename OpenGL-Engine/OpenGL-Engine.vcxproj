@@ -125,9 +125,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\SceneManager\SceneManager.cpp" />
+    <ClCompile Include="src\GameObject\GameObject.cpp" />
+    <ClCompile Include="src\RescourceManagement\SceneManager\SceneManager.cpp" />
     <ClCompile Include="src\Graphics\layering\LayerManager.cpp" />
-    <ClCompile Include="src\SceneManager\Scene.cpp" />
+    <ClCompile Include="src\RescourceManagement\SceneManager\Scene.cpp" />
     <ClCompile Include="src\Physics\Collision_detection.cpp" />
     <ClCompile Include="src\HydroEngine.cpp" />
     <ClCompile Include="src\Editor\EditorUI.cpp" />
@@ -151,12 +152,14 @@
     <ClCompile Include="src\Graphics\Texture.cpp" />
     <ClCompile Include="src\Graphics\Window.cpp" />
     <ClCompile Include="src\Graphics\Text.cpp" />
+    <ClCompile Include="src\RescourceManagement\TextureManager.cpp" />
     <ClCompile Include="Win32Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\SceneManager\SceneManager.h" />
+    <ClInclude Include="src\GameObject\GameObject.h" />
+    <ClInclude Include="src\RescourceManagement\SceneManager\SceneManager.h" />
     <ClInclude Include="src\Graphics\layering\LayerManager.h" />
-    <ClInclude Include="src\SceneManager\Scene.h" />
+    <ClInclude Include="src\RescourceManagement\SceneManager\Scene.h" />
     <ClInclude Include="src\Physics\Collision_detection.h" />
     <ClInclude Include="src\HydroEngine.h" />
     <ClInclude Include="src\Editor\EditorUI.h" />
@@ -184,6 +187,7 @@
     <ClInclude Include="src\Graphics\Texture.h" />
     <ClInclude Include="src\Graphics\Window.h" />
     <ClInclude Include="src\Graphics\Text.h" />
+    <ClInclude Include="src\RescourceManagement\TextureManager.h" />
     <ClInclude Include="Win32Window.h" />
   </ItemGroup>
   <ItemGroup>

@@ -10,11 +10,12 @@ class AudioEngine
 public:
 	AudioEngine();
 	~AudioEngine();
-	void LoadAudioFileFromSystem(const std::string filepath);
-	void PlaySound();
+	bool LoadAudioFileFromSystem(const std::string filepath, std::string name, bool looped);
+	bool PlaySound(std::string name);
 private:
-	FMOD::System     *system;
-	FMOD::Sound     *audioClip;
-	FMOD::Channel    *channel1 = 0;
+	FMOD::System    *system;
+	FMOD::Channel   *channel = 0;
+	
+	std::map < std::string, FMOD::Sound *> audioClips;
 };
 

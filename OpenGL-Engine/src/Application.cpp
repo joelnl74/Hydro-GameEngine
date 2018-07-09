@@ -19,8 +19,8 @@ Graphics: Create diffrent shader for point light[]
 Graphics/UI: make visible which sprite is selected[]
 Camera: movement when in editor mode[]
 resource management: rescource management texture/audio/font and so on, at the moment a pointless class[]
-FileManager:load scene into engine[]
-FileManager:save scene to xml/json file[]
+FileManager:load scene into engine[x]
+FileManager:save scene to xml/json file[x]
 Optimize: Drawbatch CPU heavy because we are flushing and building the batch each frame we should only do this if the sprite(gameObject) information has changed[] 
 Optimize: algorithm for what the camera cant see wont render[]
 Physics: Basic AABB collision detectection [x]
@@ -48,24 +48,23 @@ int main(void)
 	//create a rederer object from which you can call draw calls
 	Collision_detection *detection = new Collision_detection();
 	//create a texture
-	Texture texture = Texture("res/textures/Tiles.png");
+	Texture *texture = new Texture("res/textures/Tiles.png");
 
 	//center camera
 	camera2d->centerCamera(64,64);
 	shader.SetMatrix4("orthographicModel", camera2d->returnOrthographicCamera());
 	
 	//Create a audioengine object
-	//AudioEngine audio;
+	AudioEngine audio;
 	//Load a audio file
-	//audio.LoadAudioFileFromSystem("res/sounds/sound1.wav");
-	//play the loaded audio file
-	//audio.PlaySound();
-
+	//audio.LoadAudioFileFromSystem("res/sounds/sound1.wav","2", false);
+	audio.LoadAudioFileFromSystem("res/sounds/349179__sirkoto51__rpg-town-loop-2 (1).wav", "RPG", true);
 	//TEST BLOCK
-
+	//play the loaded audio file
+	audio.PlaySound("RPG");
 	//END
 
-	texture.bind();
+	texture->bind();
 	//Gameloop 
 	while (!m_engine->_window->closed())
 	{
@@ -85,10 +84,11 @@ int main(void)
 		// Swap front and back buffers 
 		m_engine->_window->update();
 }
-	texture.unBind();
+	texture->unBind();
 	delete detection;
 	delete camera2d;
 	delete m_engine;
+	delete texture;
 	ImGui_ImplGlfwGL3_Shutdown();
 	ImGui::DestroyContext();
 		return 0;

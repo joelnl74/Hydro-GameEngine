@@ -1,6 +1,6 @@
 #include "EditorUI.h"
 #include <stdio.h>
-#include "../SceneManager/SceneManager.h"
+#include "../RescourceManagement/SceneManager/SceneManager.h"
 EditorUI::EditorUI(GLFWwindow *win, LayerManager* _manager)
 {
 	ImGui::CreateContext();
