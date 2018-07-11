@@ -12,9 +12,9 @@ Play makes it possible to move your character sprite around the screen
 
 Notes
 ------------------------------------------------------------------------
-Audio: update to play multiple sound files and also play sounds from streaming instead of loading in to memory
+Audio: update to play multiple sound files and also play sounds from streaming instead of loading in to memory[x]
 UI:Create sprite[x]
-UI:Create layer[]
+UI:Create layer[x]
 Graphics: Create diffrent shader for point light[] 
 Graphics/UI: make visible which sprite is selected[]
 Camera: movement when in editor mode[]
@@ -39,56 +39,56 @@ int main(void)
 	//Simple 2dcamera class
 	Camera2D *camera2d = new Camera2D(720, 480);
 
-	Shader shader = Shader("res/shaders/Basic.shader");
-	shader.Bind();
+	Shader *shader = new Shader("res/shaders/Basic.shader");
+	shader->Bind();
 
-	shader.SetMatrix4("orthographicModel", camera2d->returnOrthographicCamera());
-	shader.setVec3("ambientLight", glm::vec3(0.85f, 0.85f, 0.85f));
+	shader->SetMatrix4("orthographicModel", camera2d->returnOrthographicCamera());
+	shader->setVec3("ambientLight", glm::vec3(0.85f, 0.85f, 0.85f));
 
 	//create a rederer object from which you can call draw calls
 	Collision_detection *detection = new Collision_detection();
-	//create a texture
-	Texture *texture = new Texture("res/textures/Tiles.png");
 
 	//center camera
 	camera2d->centerCamera(64,64);
-	shader.SetMatrix4("orthographicModel", camera2d->returnOrthographicCamera());
+	shader->SetMatrix4("orthographicModel", camera2d->returnOrthographicCamera());
 	
 	//Create a audioengine object
-	AudioEngine audio;
+	//AudioEngine audio;
 	//Load a audio file
 	//audio.LoadAudioFileFromSystem("res/sounds/sound1.wav","2", false);
-	audio.LoadAudioFileFromSystem("res/sounds/349179__sirkoto51__rpg-town-loop-2 (1).wav", "RPG", true);
+	//audio.LoadAudioFileFromSystem("res/sounds/349179__sirkoto51__rpg-town-loop-2 (1).wav", "RPG", true);
 	//TEST BLOCK
 	//play the loaded audio file
-	audio.PlaySound("RPG");
+	//audio.PlaySound("RPG");
+	Texture *pointlightTexture = new Texture("res/lighting/pointlight.png");
+	Sprite *pointlight = new Sprite(512, 512, 0, 0, false);
 	//END
-
-	texture->bind();
 	//Gameloop 
 	while (!m_engine->_window->closed())
 	{
-		if (io.MouseClicked[1] == true)
+		//create own Interaction class for UI and Gameplay
+		if (io.MouseClicked[0] == true && ImGui::IsAnyItemHovered() == false)
 		{
 			float xPosition = 720.0f / 1024.0f;
 			float yPosition = 480.0f / 768.0f;
-			//m_engine->_editorUI->setSelectedSprite(&background.returnSprite(camera2d->returnWorldToCameraPosition().x, camera2d->returnWorldToCameraPosition().y));
+			m_engine->_editorUI->setSelectedSprite(m_engine->_layerManager->getLayer(m_engine->_editorUI->returnSelectedLayer())->returnSprite(camera2d->returnWorldToCameraPosition().x,camera2d->returnWorldToCameraPosition().y));
 		}
 		// Render here 
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		//CPU heavy because we are flushing and building the batch each frame we should only do this if the sprite(gameObject) information has changed
+		shader->Bind();
 		m_engine->_layerManager->drawLayers();
+		shader->UnBind();
 		m_engine->_editorUI->DrawUI();
 
 		// Swap front and back buffers 
 		m_engine->_window->update();
 }
-	texture->unBind();
 	delete detection;
 	delete camera2d;
 	delete m_engine;
-	delete texture;
+	delete shader;
 	ImGui_ImplGlfwGL3_Shutdown();
 	ImGui::DestroyContext();
 		return 0;

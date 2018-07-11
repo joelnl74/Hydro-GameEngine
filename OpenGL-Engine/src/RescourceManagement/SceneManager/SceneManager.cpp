@@ -15,7 +15,7 @@ SceneManager::~SceneManager()
 {
 	
 }
-//Loading a level file into the engine
+//Loading a level from a json file into the engine/game
 bool SceneManager::loadScene(const std::string& inputFileName, LayerManager* l_manager)
 {
 	//open a file from hard drive
@@ -28,16 +28,28 @@ bool SceneManager::loadScene(const std::string& inputFileName, LayerManager* l_m
 	json doc = doc.parse(ifs);
 	ifs.close();
 	for (json::iterator it = doc.begin(); it != doc.end(); ++it) {
+		//find attributes key and value that are stored in the json file
 		std::vector<int> pos = it->find("position").value().get<std::vector<int>>();
 		std::vector<int> scale = it->find("scale").value().get<std::vector<int>>();
 		std::vector<int> uv = it->find("uv").value().get<std::vector<int>>();
 		bool solid = it->find("solid").value();
+		int layer = it->find("layer").value();
 
+		//Create a sprite with the information gained from the json file
 		Sprite* sprite = new Sprite(scale[0], scale[1], pos[0], pos[1], solid);
 		sprite->setIndex(4, 4);
 		sprite->setTextureUV(uv[0], uv[1]);
+		
+		if (l_manager->getManager()->count(layer) == true)
+		{
+			l_manager->getLayer(layer)->submitSprite(*sprite);
+		}
+		else
+		{
+			l_manager->addLayer(layer);
+			l_manager->getLayer(layer)->submitSprite(*sprite);
+		}
 
-		l_manager->getLayer(0)->submitSprite(*sprite);
 	}
 	return true;
 }
@@ -72,7 +84,8 @@ bool SceneManager::saveScene(const std::string& inputFileName, LayerManager* l_m
 			{ "position",{ x->getPosition().x, x->getPosition().y} },
 			{ "scale",{ x->getScale().x, x->getScale().y } },
 			{ "uv",{ x->getUV().x * 4, x->getUV().y * 4 } },
-			{ "solid", true }
+			{ "solid", true },
+			{ "layer", it->first}
 			};
 
 			ofs << object;

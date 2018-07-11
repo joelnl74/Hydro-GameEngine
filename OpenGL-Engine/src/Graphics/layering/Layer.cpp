@@ -1,5 +1,5 @@
 #include "Layer.h"
-
+#include <exception>
 Layer::Layer(bool static_Layer)
 {
 	//Batch for this layer
@@ -16,6 +16,7 @@ Layer::~Layer()
 	}
 	//clear the list
 	sprites.clear();
+	delete texture;
 }
 void Layer::submitSprite(Sprite &sprite)
 {
@@ -50,22 +51,28 @@ void Layer::submitLayer()
 void Layer::drawBatch()
 {
 	//draw the layer onto the screen
+	texture->bind();
 	if (!staticLayer)
 	{
 		submitLayer();
 	}
 	batch->flush();
+	texture->unBind();
 
 }
-Sprite& Layer::returnSprite(float mouseX, float mouseY)
+Sprite* Layer::returnSprite(float mouseX, float mouseY)
 {
 	//return a sprite based on position of the mouse
-	for (auto x : sprites)
-	{
-		if (mouseX < x->getPosition().x + x->getScale().x && mouseX >= x->getPosition().x
-			&& mouseY < x->getPosition().y + x->getScale().y && mouseY >= x->getPosition().y)
+		for (auto x : sprites)
 		{
-			return *x;
+			if (mouseX < x->getPosition().x + x->getScale().x && mouseX >= x->getPosition().x
+				&& mouseY < x->getPosition().y + x->getScale().y && mouseY >= x->getPosition().y)
+			{
+				return x;
+				break;
+			}
 		}
-	}
-}
+		printf("no sprite found\n");
+		return nullptr;
+}	
+

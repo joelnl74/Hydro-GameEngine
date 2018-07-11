@@ -13,10 +13,12 @@ public:
 	void setSelectedSprite(Sprite *sprite);
 	void SpriteEditor();
 	void DrawUI();
+	int returnSelectedLayer() {return layerID; }
 	bool returnPlay() { return play; }
 private:
 	LayerManager * m_layerManager = nullptr;
 	Sprite *selectedSprite = nullptr;
+	bool isHovered = false;
 
 	bool play = false;
 	bool solid = false;

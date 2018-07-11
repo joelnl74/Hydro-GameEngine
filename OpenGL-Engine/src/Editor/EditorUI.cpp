@@ -14,16 +14,19 @@ EditorUI::~EditorUI()
 }
 void EditorUI::setSelectedSprite(Sprite *sprite)
 {
-	selectedSprite = sprite;
+	if (sprite != nullptr)
+	{
+		selectedSprite = sprite;
 
-	position[0] = selectedSprite->getPosition().x;
-	position[1] = selectedSprite->getPosition().y;
+		position[0] = selectedSprite->getPosition().x;
+		position[1] = selectedSprite->getPosition().y;
 
-	uv[0] = selectedSprite->getUV().x * 4;
-	uv[1] = selectedSprite->getUV().y * 4;
+		uv[0] = selectedSprite->getUV().x * 4;
+		uv[1] = selectedSprite->getUV().y * 4;
 
-	scale[0] = selectedSprite->getScale().x;
-	scale[1] = selectedSprite->getScale().y;
+		scale[0] = selectedSprite->getScale().x;
+		scale[1] = selectedSprite->getScale().y;
+	}
 }
 void EditorUI::DrawUI()
 {
@@ -78,7 +81,6 @@ void EditorUI::SpriteEditor()
 	if (spriteEditor == true && !play)
 	{
 		ImGui::Begin("SpriteEditor");
-
 		ImGui::Text("SpritePosition");
 		ImGui::InputFloat2("", position);
 
