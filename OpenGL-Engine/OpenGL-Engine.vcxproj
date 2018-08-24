@@ -125,6 +125,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\2dAnimation\Animation.cpp" />
+    <ClCompile Include="src\2dAnimation\AnimationClip.cpp" />
+    <ClCompile Include="src\Graphics\pointlight.cpp" />
     <ClCompile Include="src\GameObject\GameObject.cpp" />
     <ClCompile Include="src\RescourceManagement\SceneManager\SceneManager.cpp" />
     <ClCompile Include="src\Graphics\layering\LayerManager.cpp" />
@@ -156,6 +159,9 @@
     <ClCompile Include="Win32Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\2dAnimation\Animation.h" />
+    <ClInclude Include="src\2dAnimation\AnimationClip.h" />
+    <ClInclude Include="src\Graphics\pointLight.h" />
     <ClInclude Include="src\GameObject\GameObject.h" />
     <ClInclude Include="src\RescourceManagement\SceneManager\SceneManager.h" />
     <ClInclude Include="src\Graphics\layering\LayerManager.h" />

@@ -13,7 +13,6 @@ LayerManager::~LayerManager()
 {
 	for (std::map<int, Layer*>::iterator it = m_layerManager.begin(); it != m_layerManager.end(); it++)
 	{
-	    it->second->~Layer();
 		delete it->second;
 	}
 	m_layerManager.clear();

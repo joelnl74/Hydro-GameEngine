@@ -87,8 +87,8 @@ int main(void)
 }
 	delete detection;
 	delete camera2d;
-	delete m_engine;
 	delete shader;
+	delete m_engine;
 	ImGui_ImplGlfwGL3_Shutdown();
 	ImGui::DestroyContext();
 		return 0;
