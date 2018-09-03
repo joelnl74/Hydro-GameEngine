@@ -7,6 +7,7 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 # Information
 
 Link to download a copy of the master branch of this project:
+
 Link to portfolio:
 
 ```
