@@ -1,5 +1,11 @@
 #pragma once
-#include "Sprite.h"
+#include "../Components/Sprite.h"
+#include "buffer/VertexBuffer.h"
+#include "./buffer/VertexBufferLayout.h"
+#include "./buffer/IndexBuffer.h"
+#include "./buffer/VertexArray.h"
+#include "Shader.h"
+#include "Texture.h"
 
 #define MAX_SPRITES			 20025
 #define VERTEX_SIZE			 sizeof(VertexData)

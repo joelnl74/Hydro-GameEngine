@@ -8,6 +8,7 @@ LayerManager::LayerManager()
 	//TODO (temp fix) needs to be set in a graphics engine class or so
 	GLCall(glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA));
 	GLCall(glEnable(GL_BLEND));
+	addLayer();
 }
 LayerManager::~LayerManager()
 {

@@ -10,7 +10,7 @@ Collision_detection::Collision_detection()
 Collision_detection::~Collision_detection()
 {
 }
-void Collision_detection::addCollision(collision col)
+void Collision_detection::addCollision(Collision col)
 {
 	collisionContainer.push_back(col);
 }

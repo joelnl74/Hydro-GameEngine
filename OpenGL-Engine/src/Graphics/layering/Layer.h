@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 #include "../spriteBatch.h"
-#include "../Sprite.h"
+#include "../../Components/Sprite.h"
 class Layer
 {
 public:

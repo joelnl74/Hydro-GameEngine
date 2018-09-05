@@ -130,6 +130,7 @@ void EditorUI::SpriteEditor()
 		ImGui::SameLine();
 		if (ImGui::Button("Layer", ImVec2(50, 50)))
 		{
+			//TODO get layer from sprite
 			m_layerManager->getLayer(0)->removeSprite(selectedSprite);
 			m_layerManager->getLayer(layerID)->submitSprite(*selectedSprite);
 		}

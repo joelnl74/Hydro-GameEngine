@@ -47,7 +47,7 @@ int main(void)
 	shader->setVec3("ambientLight", glm::vec3(0.85f, 0.85f, 0.85f));
 
 	//create a rederer object from which you can call draw calls
-	Collision_detection *detection = new Collision_detection();
+	//Collision_detection *detection = new Collision_detection();
 
 	//center camera
 	camera2d->centerCamera(64,64);
@@ -65,7 +65,6 @@ int main(void)
 	Sprite *pointlight = new Sprite(512, 512, 0, 0, false);
 	//END
 
-	Timer *x = Timer::getInstance();
 	//Gameloop 
 	while (!m_engine->_window->closed())
 	{
@@ -84,9 +83,8 @@ int main(void)
 
 		// Swap front and back buffers 
 		m_engine->_window->update();
-		x->getTime();
 }
-	delete detection;
+	//delete detection;
 	delete camera2d;
 	delete shader;
 	delete m_engine;
