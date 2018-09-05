@@ -4,6 +4,7 @@
 #include "audio/AudioEngine.h"
 
 #include "HydroEngine.h"
+#include "Utilities/Timer.h"
 /*
 All the code in Application is dummy code just to test some parts of the engine
 With right mouse click you can select sprites
@@ -63,6 +64,8 @@ int main(void)
 	Texture *pointlightTexture = new Texture("res/lighting/pointlight.png");
 	Sprite *pointlight = new Sprite(512, 512, 0, 0, false);
 	//END
+
+	Timer *x = Timer::getInstance();
 	//Gameloop 
 	while (!m_engine->_window->closed())
 	{
@@ -76,14 +79,12 @@ int main(void)
 		// Render here 
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		//CPU heavy because we are flushing and building the batch each frame we should only do this if the sprite(gameObject) information has changed
-		shader->Bind();
 		m_engine->_layerManager->drawLayers();
-		shader->UnBind();
 		m_engine->_editorUI->DrawUI();
 
 		// Swap front and back buffers 
 		m_engine->_window->update();
+		x->getTime();
 }
 	delete detection;
 	delete camera2d;

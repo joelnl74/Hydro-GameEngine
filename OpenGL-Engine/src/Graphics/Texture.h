@@ -11,6 +11,7 @@ private:
 	std::string m_FilePath;
 	unsigned char* m_LocalBuffer;
 
+	int id;
 	int m_Width;
 	int m_Height;
 	int m_BPP;

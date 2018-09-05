@@ -90,9 +90,6 @@
     <ClCompile Include="src\RescourceManagement\FontManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\GameObject\GameObject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\RescourceManagement\SceneManager\Scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -105,10 +102,13 @@
     <ClCompile Include="src\Graphics\pointlight.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\2dAnimation\Animation.cpp">
+    <ClCompile Include="src\Editor\Editor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\2dAnimation\AnimationClip.cpp">
+    <ClCompile Include="src\Animation\Animator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Component system\GameObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -200,9 +200,6 @@
     <ClInclude Include="src\RescourceManagement\FontManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\GameObject\GameObject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\RescourceManagement\SceneManager\Scene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -215,10 +212,22 @@
     <ClInclude Include="src\Graphics\pointLight.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\2dAnimation\Animation.h">
+    <ClInclude Include="src\Editor\Editor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\2dAnimation\AnimationClip.h">
+    <ClInclude Include="src\Animation\AnimationClip.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Animation\Animator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utilities\Timer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Component system\GameObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Component system\Component.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

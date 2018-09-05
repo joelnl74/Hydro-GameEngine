@@ -49,6 +49,8 @@ void EditorUI::DrawUI()
 		{
 			SceneManager manager;
 			manager.loadScene("res/scene/Testlevel.json", m_layerManager);
+			
+
 		} 
 		if (ImGui::MenuItem("Exit")) 
 		{

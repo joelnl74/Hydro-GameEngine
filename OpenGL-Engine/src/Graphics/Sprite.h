@@ -3,6 +3,7 @@
 #include "./buffer/VertexBufferLayout.h"
 #include "./buffer/IndexBuffer.h"
 #include "./buffer/VertexArray.h"
+#include "../Component system/Component.h"
 #include "Shader.h"
 #include "Texture.h"
 
@@ -12,10 +13,14 @@ struct VertexData
 	glm::vec2 uv;
 };
 
-class Sprite
+class Sprite : Component
 {
 public:
 	Sprite(float sizeX, float sizeY, float posX, float posY, bool solidSprite = false);
+	virtual void Update()
+	{
+
+	}
 	~Sprite();
 public:
 	void Scale(float x, float y);
@@ -34,6 +39,8 @@ public:
 	//TODO change this and setTextureuv and setIndex partially to the texture class so we dont save it every sprite
 	float offsetX;
 	float offsetY;
+
+	int textureId = 0;
 
 private:
 

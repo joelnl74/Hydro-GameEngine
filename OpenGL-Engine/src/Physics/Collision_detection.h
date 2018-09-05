@@ -1,5 +1,7 @@
 #pragma once
 #include <vector>
+
+#include "../Component system/Component.h"
 #include "../vendor/glm/vec2.hpp"
 enum collisionType
 {
@@ -8,10 +10,14 @@ enum collisionType
 	event
 };
 
-struct collision {
+struct collision : Component {
 	glm::vec2 position;
 	glm::vec2 scale;
 	collisionType type;
+	virtual void Update()
+	{
+
+	}
 };
 //TODO
 //------------------------------------------------------------------------------------------------
