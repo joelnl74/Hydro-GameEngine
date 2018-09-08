@@ -1,5 +1,5 @@
 #pragma once
-#include "../Graphics/Sprite.h"
+#include "../Components/Sprite.h"
 class AnimationClip
 {
 public:
