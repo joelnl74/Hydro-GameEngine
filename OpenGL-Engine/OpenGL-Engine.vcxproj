@@ -159,6 +159,7 @@
     <ClCompile Include="Win32Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Components\Transform.h" />
     <ClInclude Include="src\ECS\Component.h" />
     <ClInclude Include="src\Editor\Editor.h" />
     <ClInclude Include="src\Animation\Animator.h" />

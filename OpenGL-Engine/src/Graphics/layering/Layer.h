@@ -7,12 +7,13 @@ class Layer
 public:
 	Layer(bool static_Layer);
 	~Layer();
-	void submitSprite(Sprite &sprite);
-	void drawBatch();
-	void submitLayer();
-	inline const std::vector<Sprite*> &returnSprites() { return sprites; }
-	void removeSprite(Sprite *sprite);
-	Sprite *returnSprite(float mouseX, float mouseY);
+	void SubmitSprite(Sprite &sprite);
+	void DrawBatch();
+	void SubmitLayer();
+	inline const std::vector<Sprite*> &ReturnSprites() { return sprites; }
+	void RemoveSprite(Sprite *sprite);
+	void DeleteLayer();
+	Sprite *ReturnSprite(float mouseX, float mouseY);
 private:
 	//create a texture tempfix need to create a rescourcemanager for this
 	Texture * texture = new Texture("res/textures/Tiles.png");

@@ -8,7 +8,7 @@ LayerManager::LayerManager()
 	//TODO (temp fix) needs to be set in a graphics engine class or so
 	GLCall(glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA));
 	GLCall(glEnable(GL_BLEND));
-	addLayer();
+	AddLayer();
 }
 LayerManager::~LayerManager()
 {
@@ -18,7 +18,7 @@ LayerManager::~LayerManager()
 	}
 	m_layerManager.clear();
 }
-void LayerManager::addLayer(bool static_layer)
+void LayerManager::AddLayer(bool static_layer)
 {
 	Layer* _layer = new Layer(static_layer);
 
@@ -29,10 +29,23 @@ void LayerManager::addLayer(bool static_layer)
 		m_layerManager.emplace(0, _layer);
 	}
 }
-void LayerManager::drawLayers()
+void LayerManager::DrawLayers()
 {
 	for (std::map<int, Layer*>::iterator it = m_layerManager.begin(); it != m_layerManager.end(); it++)
 	{
-		it->second->drawBatch();
+		it->second->DrawBatch();
+	}
+}
+void LayerManager::ClearLayers()
+{
+}
+void LayerManager::RemoveLayer(int id)
+{
+	for (std::map<int, Layer*>::iterator it = m_layerManager.begin(); it != m_layerManager.end(); it++)
+	{
+		if (it->first == id)
+		{
+			//clear all sprites on this layer
+		}
 	}
 }

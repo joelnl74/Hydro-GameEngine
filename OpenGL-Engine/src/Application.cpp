@@ -73,12 +73,12 @@ int main(void)
 		{
 			float xPosition = 720.0f / 1024.0f;
 			float yPosition = 480.0f / 768.0f;
-			m_engine->_editorUI->setSelectedSprite(m_engine->_layerManager->getLayer(m_engine->_editorUI->returnSelectedLayer())->returnSprite(camera2d->returnWorldToCameraPosition().x,camera2d->returnWorldToCameraPosition().y));
+			m_engine->_editorUI->setSelectedSprite(m_engine->_layerManager->getLayer(m_engine->_editorUI->returnSelectedLayer())->ReturnSprite(camera2d->returnWorldToCameraPosition().x,camera2d->returnWorldToCameraPosition().y));
 		}
 		// Render here 
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		m_engine->_layerManager->drawLayers();
+		m_engine->_layerManager->DrawLayers();
 		m_engine->_editorUI->DrawUI();
 
 		// Swap front and back buffers 

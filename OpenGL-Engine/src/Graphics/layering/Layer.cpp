@@ -18,16 +18,16 @@ Layer::~Layer()
 	sprites.clear();
 	delete texture;
 }
-void Layer::submitSprite(Sprite &sprite)
+void Layer::SubmitSprite(Sprite &sprite)
 {
 	//submit a sprite to renderer to draw
 	sprites.push_back(&sprite);
 	if (staticLayer)
 	{
-		submitLayer();
+		SubmitLayer();
 	}
 }
-void Layer::removeSprite(Sprite* sprite)
+void Layer::RemoveSprite(Sprite* sprite)
 {
 	int index = 0;
 	for (auto x : sprites)
@@ -39,7 +39,7 @@ void Layer::removeSprite(Sprite* sprite)
 		index++;
 	}
 }
-void Layer::submitLayer()
+void Layer::SubmitLayer()
 {
 	batch->begin();
 	for (auto x : sprites)
@@ -48,31 +48,38 @@ void Layer::submitLayer()
 	}
 	batch->end();
 }
-void Layer::drawBatch()
+void Layer::DrawBatch()
 {
 	//draw the layer onto the screen
 	texture->bind();
 	if (!staticLayer)
 	{
-		submitLayer();
+		SubmitLayer();
 	}
 	batch->flush();
 	texture->unBind();
 
 }
-Sprite* Layer::returnSprite(float mouseX, float mouseY)
+void Layer::DeleteLayer()
+{
+	for (auto x : sprites)
+	{
+		delete x;
+	}
+}
+Sprite* Layer::ReturnSprite(float mouseX, float mouseY)
 {
 	//return a sprite based on position of the mouse
-		for (auto x : sprites)
+	for (auto x : sprites)
+	{
+		if (mouseX < x->getPosition().x + x->getScale().x && mouseX >= x->getPosition().x
+			&& mouseY < x->getPosition().y + x->getScale().y && mouseY >= x->getPosition().y)
 		{
-			if (mouseX < x->getPosition().x + x->getScale().x && mouseX >= x->getPosition().x
-				&& mouseY < x->getPosition().y + x->getScale().y && mouseY >= x->getPosition().y)
-			{
-				return x;
-				break;
-			}
+			return x;
+			break;
 		}
-		printf("no sprite found\n");
-		return nullptr;
-}	
+	}
+	printf("no sprite found\n");
+	return nullptr;
+}
 

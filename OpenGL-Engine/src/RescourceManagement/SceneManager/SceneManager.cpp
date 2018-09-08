@@ -42,12 +42,12 @@ bool SceneManager::loadScene(const std::string& inputFileName, LayerManager* l_m
 		
 		if (l_manager->getManager()->count(layer) == true)
 		{
-			l_manager->getLayer(layer)->submitSprite(*sprite);
+			l_manager->getLayer(layer)->SubmitSprite(*sprite);
 		}
 		else
 		{
-			l_manager->addLayer(layer);
-			l_manager->getLayer(layer)->submitSprite(*sprite);
+			l_manager->AddLayer(layer);
+			l_manager->getLayer(layer)->SubmitSprite(*sprite);
 		}
 
 	}
@@ -77,7 +77,7 @@ bool SceneManager::saveScene(const std::string& inputFileName, LayerManager* l_m
 		{
 			lastLayer = true;
 		}
-		for (auto x : it->second->returnSprites())
+		for (auto x : it->second->ReturnSprites())
 		{
 			//create json object to write to json file
 			json object = {
@@ -90,7 +90,7 @@ bool SceneManager::saveScene(const std::string& inputFileName, LayerManager* l_m
 
 			ofs << object;
 
-			if (it->second->returnSprites().back() == x && lastLayer)
+			if (it->second->ReturnSprites().back() == x && lastLayer)
 			{
 				printf("reached last sprite in layer");
 			}

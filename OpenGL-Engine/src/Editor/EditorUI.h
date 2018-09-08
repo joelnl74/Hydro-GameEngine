@@ -1,7 +1,6 @@
 #pragma once
 #include "../vendor/imgui/imgui.h"
 #include "../vendor/imgui/imgui_impl_glfw_gl3.h"
-
 #include "../Graphics/Window.h"
 #include "../Graphics/layering/LayerManager.h"
 
@@ -13,6 +12,8 @@ public:
 	void setSelectedSprite(Sprite *sprite);
 	void SpriteEditor();
 	void DrawUI();
+	void MainBar();
+	void Inspector();
 	int returnSelectedLayer() {return layerID; }
 	bool returnPlay() { return play; }
 private:
@@ -22,8 +23,11 @@ private:
 
 	bool play = false;
 	bool solid = false;
+	bool inspector = true;
+	//temp
 	bool spriteEditor = false;
 	bool spriteCreator = false;
+
 
 	float position[2];
 	float scale[2];
