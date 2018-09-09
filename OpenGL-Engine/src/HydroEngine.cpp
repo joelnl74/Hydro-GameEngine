@@ -9,12 +9,14 @@ HydroEngine::HydroEngine()
 	_window = new Window(WIDTH, HEIGHT, "Hydro-Engine");
 	_layerManager = new LayerManager();
 	_editorUI = new EditorUI(_window->getWindow(), _layerManager);
+	_audioEngine = new AudioEngine();
 }
 HydroEngine::~HydroEngine()
 {
 	//clear memory
 	delete _editorUI;
 	delete _layerManager;
+	delete _audioEngine;
 	delete _window;
 }
 void HydroEngine::StartUp()

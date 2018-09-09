@@ -4,6 +4,7 @@
 #include "Graphics/Window.h"
 #include "Graphics/layering/LayerManager.h"
 #include "Editor/EditorUI.h"
+#include "audio/AudioEngine.h"
 //https://github.com/joelnl74/Hydro-GameEngine 
 class HydroEngine
 {
@@ -19,5 +20,6 @@ public:
 	Window* _window;
 	LayerManager* _layerManager;
 	EditorUI* _editorUI;
+	AudioEngine* _audioEngine;
 };
 

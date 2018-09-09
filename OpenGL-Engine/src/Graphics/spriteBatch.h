@@ -1,5 +1,5 @@
 #pragma once
-#include "../Components/Sprite.h"
+#include "../ECS/Components/Sprite.h"
 #include "buffer/VertexBuffer.h"
 #include "./buffer/VertexBufferLayout.h"
 #include "./buffer/IndexBuffer.h"

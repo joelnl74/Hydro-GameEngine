@@ -1,7 +1,6 @@
 ﻿//#include "../Win32Window.h"
 #include "Graphics/Camera2D.h"
 #include "Physics/Collision_detection.h"
-#include "audio/AudioEngine.h"
 
 #include "HydroEngine.h"
 #include "Utilities/Timer.h"
@@ -54,7 +53,6 @@ int main(void)
 	shader->SetMatrix4("orthographicModel", camera2d->returnOrthographicCamera());
 	
 	//Create a audioengine object
-	//AudioEngine audio;
 	//Load a audio file
 	//audio.LoadAudioFileFromSystem("res/sounds/sound1.wav","2", false);
 	//audio.LoadAudioFileFromSystem("res/sounds/349179__sirkoto51__rpg-town-loop-2 (1).wav", "RPG", true);

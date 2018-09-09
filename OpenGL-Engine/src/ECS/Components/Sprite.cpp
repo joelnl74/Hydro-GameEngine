@@ -1,6 +1,6 @@
 #include "Sprite.h"
-#include "../vendor/glm/glm.hpp"
-#include "../vendor/glm/gtc/matrix_transform.hpp"
+#include "../../vendor/glm/glm.hpp"
+#include "../../vendor/glm/gtc/matrix_transform.hpp"
 
 Sprite::Sprite(float sizeX, float sizeY, float posX, float posY, bool solidSprite)
 {
