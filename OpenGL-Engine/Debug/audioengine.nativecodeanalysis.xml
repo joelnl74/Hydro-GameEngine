@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\audio\</FILEPATH>
+      <FILENAME>audioengine.cpp</FILENAME>
+      <LINE>3</LINE>
+      <COLUMN>13</COLUMN>
+    </SFA>
+    <DEFECTCODE>26439</DEFECTCODE>
+    <DESCRIPTION>This kind of function may not throw. Declare it 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>AudioEngine::{ctor}</FUNCTION>
+    <DECORATED>??0AudioEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>3</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\audio\</FILEPATH>
+      <FILENAME>audioengine.cpp</FILENAME>
+      <LINE>29</LINE>
+      <COLUMN>11</COLUMN>
+    </SFA>
+    <DEFECTCODE>26444</DEFECTCODE>
+    <DESCRIPTION>Avoid unnamed objects with custom construction and destruction (es.84).</DESCRIPTION>
+    <FUNCTION>AudioEngine::LoadAudioFileFromSystem</FUNCTION>
+    <DECORATED>?LoadAudioFileFromSystem@AudioEngine@@QAE_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V23@_N@Z</DECORATED>
+    <FUNCLINE>21</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

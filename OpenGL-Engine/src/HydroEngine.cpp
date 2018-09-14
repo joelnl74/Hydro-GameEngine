@@ -7,24 +7,39 @@ HydroEngine::HydroEngine()
 {
 	//create objects needed for the engine and there references
 	_window = new Window(WIDTH, HEIGHT, "Hydro-Engine");
-	_layerManager = new LayerManager();
-	_editorUI = new EditorUI(_window->getWindow(), _layerManager);
+	_graphicsEngine = new GraphicsEngine();
+	_camera2d = new Camera2D(720, 480);
+	_editor = new Editor(_window->getWindow(), _graphicsEngine, _camera2d);
 	_audioEngine = new AudioEngine();
+
+	_graphicsEngine->StartUp();
 }
 HydroEngine::~HydroEngine()
 {
+	_graphicsEngine->ShutDown();
+
 	//clear memory
-	delete _editorUI;
-	delete _layerManager;
 	delete _audioEngine;
+	delete _editor;
+	delete _graphicsEngine;
+	delete _camera2d;
 	delete _window;
+
+	ImGui_ImplGlfwGL3_Shutdown();
+	ImGui::DestroyContext();
 }
-void HydroEngine::StartUp()
+void HydroEngine::CheckInput()
 {
-	//startup all diffrent parts of the engine
-	
+	_editor->UpdateInput();
 }
-void HydroEngine::ShutDown()
+void HydroEngine::Draw()
 {
-	//close all diffrent parts of the engine in reverse order of startup
+	//Clear Screen
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	//Draw Graphics
+	_graphicsEngine->Update();
+	//Draw UI
+	_editor->ui->DrawUI();
+	// Swap front and back buffers 
+	_window->update();
 }

@@ -1,10 +1,13 @@
 #pragma once
 #include "EditorUI.h"
+#include "../Graphics/Camera2D.h"
 class Editor
 {
 public:
-	Editor();
+	Editor(GLFWwindow *win, GraphicsEngine* _manager, Camera2D *camera);
 	~Editor();
-	void editorInput();
+	EditorUI *ui;
+	Camera2D *_camera;
+	void UpdateInput();
 };
 

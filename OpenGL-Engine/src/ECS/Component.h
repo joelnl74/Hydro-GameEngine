@@ -3,8 +3,7 @@
 class Component
 {
 	virtual void Update() = 0;
-public:
 private:
-	Entity * entity;
+	//Entity * entity;
 };
 

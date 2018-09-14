@@ -4,7 +4,7 @@
 #include <vector>
 
 #include "../RescourceManagement/FontManager.h"
-#include "Sprite.h"
+#include "../ECS/Components/Sprite.h"
 class Text
 {
 public:

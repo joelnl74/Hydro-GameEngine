@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\graphics\buffer\</FILEPATH>
+      <FILENAME>vertexbufferlayout.h</FILENAME>
+      <LINE>30</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26439</DEFECTCODE>
+    <DESCRIPTION>This kind of function may not throw. Declare it 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>VertexBufferLayout::{ctor}</FUNCTION>
+    <DECORATED>??0VertexBufferLayout@@QAE@XZ</DECORATED>
+    <FUNCLINE>30</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\vendor\glm\detail\</FILEPATH>
+      <FILENAME>type_half.inl</FILENAME>
+      <LINE>18</LINE>
+      <COLUMN>2</COLUMN>
+    </SFA>
+    <DEFECTCODE>26439</DEFECTCODE>
+    <DESCRIPTION>This kind of function may not throw. Declare it 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>glm::detail::uif32::{ctor}</FUNCTION>
+    <DECORATED>??0uif32@detail@glm@@QAE@XZ</DECORATED>
+    <FUNCLINE>18</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\vendor\json\</FILEPATH>
+      <FILENAME>json.hpp</FILENAME>
+      <LINE>570</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26434</DEFECTCODE>
+    <DESCRIPTION>Function 'nlohmann::detail::exception::exception' hides a non-virtual function 'std::exception::exception' (c.128).</DESCRIPTION>
+    <FUNCTION>nlohmann::detail::exception::{ctor}</FUNCTION>
+    <DECORATED>??0exception@detail@nlohmann@@IAE@HPBD@Z</DECORATED>
+    <FUNCLINE>570</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\rescourcemanagement\scenemanager\</FILEPATH>
+      <FILENAME>scenemanager.cpp</FILENAME>
+      <LINE>10</LINE>
+      <COLUMN>14</COLUMN>
+    </SFA>
+    <DEFECTCODE>26439</DEFECTCODE>
+    <DESCRIPTION>This kind of function may not throw. Declare it 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>SceneManager::{ctor}</FUNCTION>
+    <DECORATED>??0SceneManager@@QAE@XZ</DECORATED>
+    <FUNCLINE>10</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\rescourcemanagement\scenemanager\</FILEPATH>
+      <FILENAME>scenemanager.cpp</FILENAME>
+      <LINE>25</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>6284</DEFECTCODE>
+    <DESCRIPTION>Object passed as _Param_(2) when a string is required in call to 'printf' Actual type: 'const class std::basic_string&lt;char,struct std::char_traits&lt;char&gt;,class std::allocator&lt;char&gt; &gt;'.</DESCRIPTION>
+    <FUNCTION>SceneManager::loadScene</FUNCTION>
+    <DECORATED>?loadScene@SceneManager@@QAE_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVLayerManager@@@Z</DECORATED>
+    <FUNCLINE>19</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\rescourcemanagement\scenemanager\</FILEPATH>
+      <FILENAME>scenemanager.cpp</FILENAME>
+      <LINE>67</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>6284</DEFECTCODE>
+    <DESCRIPTION>Object passed as _Param_(2) when a string is required in call to 'printf' Actual type: 'const class std::basic_string&lt;char,struct std::char_traits&lt;char&gt;,class std::allocator&lt;char&gt; &gt;'.</DESCRIPTION>
+    <FUNCTION>SceneManager::saveScene</FUNCTION>
+    <DECORATED>?saveScene@SceneManager@@QAE_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVLayerManager@@@Z</DECORATED>
+    <FUNCLINE>57</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\vendor\json\</FILEPATH>
+      <FILENAME>json.hpp</FILENAME>
+      <LINE>10173</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26439</DEFECTCODE>
+    <DESCRIPTION>This kind of function may not throw. Declare it 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>nlohmann::json_pointer&lt;nlohmann::basic_json&lt;std::map,std::vector,std::basic_string&lt;char,std::char_traits&lt;char&gt;,std::allocator&lt;char&gt; &gt;,bool,__int64,unsigned __int64,double,std::allocator,nlohmann::adl_serializer&gt; &gt;::{ctor}</FUNCTION>
+    <DECORATED>??0?$json_pointer@V?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@nlohmann@@@nlohmann@@@nlohmann@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z</DECORATED>
+    <FUNCLINE>10173</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\vendor\json\</FILEPATH>
+      <FILENAME>json.hpp</FILENAME>
+      <LINE>3540</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26434</DEFECTCODE>
+    <DESCRIPTION>Function 'nlohmann::detail::json_sax_dom_parser&lt;nlohmann::basic_json&lt;std::map,std::vector,std::basic_string&lt;char,std::char_traits&lt;char&gt;,std::allocator&lt;char&gt; &gt;,bool,__int64,unsigned __int64,double,std::allocator,nlohmann::adl_serializer&gt; &gt;::json_sax_dom_parser&lt;nlohmann::basic_json&lt;std::map,std::vector,std::basic_string&lt;char,std::char_traits&lt;char&gt;,std::allocator&lt;char&gt; &gt;,bool,__int64,unsigned __int64,double,std::allocator,nlohmann::adl_serializer&gt; &gt;' hides a non-virtual function 'nlohmann::json_sax&lt;nlohmann::basic_json&lt;std::map,std::vector,std::basic_string&lt;char,std::char_traits&lt;char&gt;,std::allocator&lt;char&gt; &gt;,bool,__int64,unsigned __int64,double,std::allocator,nlohmann::adl_serializer&gt; &gt;::json_sax&lt;nlohmann::basic_json&lt;std::map,std::vector,std::basic_string&lt;char,std::char_traits&lt;char&gt;,std::allocator&lt;char&gt; &gt;,bool,__int64,unsigned __int64,double,std::allocator,nlohmann::adl_serializer&gt; &gt;' (c.128).</DESCRIPTION>
+    <FUNCTION>nlohmann::detail::json_sax_dom_parser&lt;nlohmann::basic_json&lt;std::map,std::vector,std::basic_string&lt;char,std::char_traits&lt;char&gt;,std::allocator&lt;char&gt; &gt;,bool,__int64,unsigned __int64,double,std::allocator,nlohmann::adl_serializer&gt; &gt;::{ctor}</FUNCTION>
+    <DECORATED>??0?$json_sax_dom_parser@V?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@nlohmann@@@nlohmann@@@detail@nlohmann@@QAE@AAV?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@nlohmann@@@2@_N@Z</DECORATED>
+    <FUNCLINE>3540</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\vendor\json\</FILEPATH>
+      <FILENAME>json.hpp</FILENAME>
+      <LINE>3711</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26434</DEFECTCODE>
+    <DESCRIPTION>Function 'nlohmann::detail::json_sax_dom_callback_parser&lt;nlohmann::basic_json&lt;std::map,std::vector,std::basic_string&lt;char,std::char_traits&lt;char&gt;,std::allocator&lt;char&gt; &gt;,bool,__int64,unsigned __int64,double,std::allocator,nlohmann::adl_serializer&gt; &gt;::json_sax_dom_callback_parser&lt;nlohmann::basic_json&lt;std::map,std::vector,std::basic_string&lt;char,std::char_traits&lt;char&gt;,std::allocator&lt;char&gt; &gt;,bool,__int64,unsigned __int64,double,std::allocator,nlohmann::adl_serializer&gt; &gt;' hides a non-virtual function 'nlohmann::json_sax&lt;nlohmann::basic_json&lt;std::map,std::vector,std::basic_string&lt;char,std::char_traits&lt;char&gt;,std::allocator&lt;char&gt; &gt;,bool,__int64,unsigned __int64,double,std::allocator,nlohmann::adl_serializer&gt; &gt;::json_sax&lt;nlohmann::basic_json&lt;std::map,std::vector,std::basic_string&lt;char,std::char_traits&lt;char&gt;,std::allocator&lt;char&gt; &gt;,bool,__int64,unsigned __int64,double,std::allocator,nlohmann::adl_serializer&gt; &gt;' (c.128).</DESCRIPTION>
+    <FUNCTION>nlohmann::detail::json_sax_dom_callback_parser&lt;nlohmann::basic_json&lt;std::map,std::vector,std::basic_string&lt;char,std::char_traits&lt;char&gt;,std::allocator&lt;char&gt; &gt;,bool,__int64,unsigned __int64,double,std::allocator,nlohmann::adl_serializer&gt; &gt;::{ctor}</FUNCTION>
+    <DECORATED>??0?$json_sax_dom_callback_parser@V?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@nlohmann@@@nlohmann@@@detail@nlohmann@@QAE@AAV?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@nlohmann@@@2@V?$function@$$A6A_NHW4parse_event_t@?$parser@V?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@nlohmann@@@nlohmann@@@detail@nlohmann@@AAV?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@nlohmann@@@4@@Z@std@@_N@Z</DECORATED>
+    <FUNCLINE>3711</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\vendor\json\</FILEPATH>
+      <FILENAME>json.hpp</FILENAME>
+      <LINE>10027</LINE>
+      <COLUMN>22</COLUMN>
+    </SFA>
+    <DEFECTCODE>28020</DEFECTCODE>
+    <DESCRIPTION>The expression '0&lt;=_Param_(1)&amp;&amp;_Param_(1)&lt;=400-1' is not true at this call.</DESCRIPTION>
+    <FUNCTION>nlohmann::detail::serializer&lt;nlohmann::basic_json&lt;std::map,std::vector,std::basic_string&lt;char,std::char_traits&lt;char&gt;,std::allocator&lt;char&gt; &gt;,bool,__int64,unsigned __int64,double,std::allocator,nlohmann::adl_serializer&gt; &gt;::decode</FUNCTION>
+    <DECORATED>?decode@?$serializer@V?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@nlohmann@@@nlohmann@@@detail@nlohmann@@CAEAAEAAIE@Z</DECORATED>
+    <FUNCLINE>10005</FUNCLINE>
+    <PATH>
+      <SFA>
+        <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\vendor\json\</FILEPATH>
+        <FILENAME>json.hpp</FILENAME>
+        <LINE>10007</LINE>
+        <COLUMN>2</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\vendor\json\</FILEPATH>
+        <FILENAME>json.hpp</FILENAME>
+        <LINE>10027</LINE>
+        <COLUMN>22</COLUMN>
+      </SFA>
+    </PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\vendor\glm\detail\</FILEPATH>
+      <FILENAME>type_vec4.inl</FILENAME>
+      <LINE>182</LINE>
+      <COLUMN>52</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'glm::tvec4&lt;float,5&gt;::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>glm::tvec4&lt;float,5&gt;::{ctor}</FUNCTION>
+    <DECORATED>??0?$tvec4@M$04@glm@@QAE@W4ctor@1@@Z</DECORATED>
+    <FUNCLINE>182</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\vendor\glm\detail\</FILEPATH>
+      <FILENAME>type_vec4.inl</FILENAME>
+      <LINE>182</LINE>
+      <COLUMN>52</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'glm::tvec4&lt;float,5&gt;::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>glm::tvec4&lt;float,5&gt;::{ctor}</FUNCTION>
+    <DECORATED>??0?$tvec4@M$04@glm@@QAE@W4ctor@1@@Z</DECORATED>
+    <FUNCLINE>182</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\vendor\glm\detail\</FILEPATH>
+      <FILENAME>type_vec4.inl</FILENAME>
+      <LINE>182</LINE>
+      <COLUMN>52</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'glm::tvec4&lt;float,5&gt;::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>glm::tvec4&lt;float,5&gt;::{ctor}</FUNCTION>
+    <DECORATED>??0?$tvec4@M$04@glm@@QAE@W4ctor@1@@Z</DECORATED>
+    <FUNCLINE>182</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\vendor\glm\detail\</FILEPATH>
+      <FILENAME>type_vec4.inl</FILENAME>
+      <LINE>182</LINE>
+      <COLUMN>52</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'glm::tvec4&lt;float,5&gt;::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>glm::tvec4&lt;float,5&gt;::{ctor}</FUNCTION>
+    <DECORATED>??0?$tvec4@M$04@glm@@QAE@W4ctor@1@@Z</DECORATED>
+    <FUNCLINE>182</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\vendor\glm\detail\</FILEPATH>
+      <FILENAME>type_vec4.inl</FILENAME>
+      <LINE>182</LINE>
+      <COLUMN>52</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'glm::tvec4&lt;float,5&gt;::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::r' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>glm::tvec4&lt;float,5&gt;::{ctor}</FUNCTION>
+    <DECORATED>??0?$tvec4@M$04@glm@@QAE@W4ctor@1@@Z</DECORATED>
+    <FUNCLINE>182</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\vendor\glm\detail\</FILEPATH>
+      <FILENAME>type_vec4.inl</FILENAME>
+      <LINE>182</LINE>
+      <COLUMN>52</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'glm::tvec4&lt;float,5&gt;::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::g' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>glm::tvec4&lt;float,5&gt;::{ctor}</FUNCTION>
+    <DECORATED>??0?$tvec4@M$04@glm@@QAE@W4ctor@1@@Z</DECORATED>
+    <FUNCLINE>182</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\vendor\glm\detail\</FILEPATH>
+      <FILENAME>type_vec4.inl</FILENAME>
+      <LINE>182</LINE>
+      <COLUMN>52</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'glm::tvec4&lt;float,5&gt;::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::b' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>glm::tvec4&lt;float,5&gt;::{ctor}</FUNCTION>
+    <DECORATED>??0?$tvec4@M$04@glm@@QAE@W4ctor@1@@Z</DECORATED>
+    <FUNCLINE>182</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\vendor\glm\detail\</FILEPATH>
+      <FILENAME>type_vec4.inl</FILENAME>
+      <LINE>182</LINE>
+      <COLUMN>52</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'glm::tvec4&lt;float,5&gt;::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::a' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>glm::tvec4&lt;float,5&gt;::{ctor}</FUNCTION>
+    <DECORATED>??0?$tvec4@M$04@glm@@QAE@W4ctor@1@@Z</DECORATED>
+    <FUNCLINE>182</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\vendor\glm\detail\</FILEPATH>
+      <FILENAME>type_vec4.inl</FILENAME>
+      <LINE>182</LINE>
+      <COLUMN>52</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'glm::tvec4&lt;float,5&gt;::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::s' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>glm::tvec4&lt;float,5&gt;::{ctor}</FUNCTION>
+    <DECORATED>??0?$tvec4@M$04@glm@@QAE@W4ctor@1@@Z</DECORATED>
+    <FUNCLINE>182</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\vendor\glm\detail\</FILEPATH>
+      <FILENAME>type_vec4.inl</FILENAME>
+      <LINE>182</LINE>
+      <COLUMN>52</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'glm::tvec4&lt;float,5&gt;::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::t' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>glm::tvec4&lt;float,5&gt;::{ctor}</FUNCTION>
+    <DECORATED>??0?$tvec4@M$04@glm@@QAE@W4ctor@1@@Z</DECORATED>
+    <FUNCLINE>182</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\vendor\glm\detail\</FILEPATH>
+      <FILENAME>type_vec4.inl</FILENAME>
+      <LINE>182</LINE>
+      <COLUMN>52</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'glm::tvec4&lt;float,5&gt;::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::p' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>glm::tvec4&lt;float,5&gt;::{ctor}</FUNCTION>
+    <DECORATED>??0?$tvec4@M$04@glm@@QAE@W4ctor@1@@Z</DECORATED>
+    <FUNCLINE>182</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\vendor\glm\detail\</FILEPATH>
+      <FILENAME>type_vec4.inl</FILENAME>
+      <LINE>182</LINE>
+      <COLUMN>52</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'glm::tvec4&lt;float,5&gt;::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::q' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>glm::tvec4&lt;float,5&gt;::{ctor}</FUNCTION>
+    <DECORATED>??0?$tvec4@M$04@glm@@QAE@W4ctor@1@@Z</DECORATED>
+    <FUNCLINE>182</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\vendor\glm\detail\</FILEPATH>
+      <FILENAME>type_vec4.inl</FILENAME>
+      <LINE>182</LINE>
+      <COLUMN>52</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'glm::tvec4&lt;float,5&gt;::&lt;unnamed-tag&gt;::data' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>glm::tvec4&lt;float,5&gt;::{ctor}</FUNCTION>
+    <DECORATED>??0?$tvec4@M$04@glm@@QAE@W4ctor@1@@Z</DECORATED>
+    <FUNCLINE>182</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\vendor\json\</FILEPATH>
+      <FILENAME>json.hpp</FILENAME>
+      <LINE>10091</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26439</DEFECTCODE>
+    <DESCRIPTION>This kind of function may not throw. Declare it 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>nlohmann::detail::json_ref&lt;nlohmann::basic_json&lt;std::map,std::vector,std::basic_string&lt;char,std::char_traits&lt;char&gt;,std::allocator&lt;char&gt; &gt;,bool,__int64,unsigned __int64,double,std::allocator,nlohmann::adl_serializer&gt; &gt;::{ctor}</FUNCTION>
+    <DECORATED>??$?0AAY08$$CBD@?$json_ref@V?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@nlohmann@@@nlohmann@@@detail@nlohmann@@QAE@AAY08$$CBD@Z</DECORATED>
+    <FUNCLINE>10091</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\vendor\json\</FILEPATH>
+      <FILENAME>json.hpp</FILENAME>
+      <LINE>10091</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26439</DEFECTCODE>
+    <DESCRIPTION>This kind of function may not throw. Declare it 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>nlohmann::detail::json_ref&lt;nlohmann::basic_json&lt;std::map,std::vector,std::basic_string&lt;char,std::char_traits&lt;char&gt;,std::allocator&lt;char&gt; &gt;,bool,__int64,unsigned __int64,double,std::allocator,nlohmann::adl_serializer&gt; &gt;::{ctor}</FUNCTION>
+    <DECORATED>??$?0$$CBM@?$json_ref@V?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@nlohmann@@@nlohmann@@@detail@nlohmann@@QAE@$$QBM@Z</DECORATED>
+    <FUNCLINE>10091</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\vendor\json\</FILEPATH>
+      <FILENAME>json.hpp</FILENAME>
+      <LINE>10091</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26439</DEFECTCODE>
+    <DESCRIPTION>This kind of function may not throw. Declare it 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>nlohmann::detail::json_ref&lt;nlohmann::basic_json&lt;std::map,std::vector,std::basic_string&lt;char,std::char_traits&lt;char&gt;,std::allocator&lt;char&gt; &gt;,bool,__int64,unsigned __int64,double,std::allocator,nlohmann::adl_serializer&gt; &gt;::{ctor}</FUNCTION>
+    <DECORATED>??$?0AAY05$$CBD@?$json_ref@V?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@nlohmann@@@nlohmann@@@detail@nlohmann@@QAE@AAY05$$CBD@Z</DECORATED>
+    <FUNCLINE>10091</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\vendor\json\</FILEPATH>
+      <FILENAME>json.hpp</FILENAME>
+      <LINE>10091</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26439</DEFECTCODE>
+    <DESCRIPTION>This kind of function may not throw. Declare it 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>nlohmann::detail::json_ref&lt;nlohmann::basic_json&lt;std::map,std::vector,std::basic_string&lt;char,std::char_traits&lt;char&gt;,std::allocator&lt;char&gt; &gt;,bool,__int64,unsigned __int64,double,std::allocator,nlohmann::adl_serializer&gt; &gt;::{ctor}</FUNCTION>
+    <DECORATED>??$?0AAY02$$CBD@?$json_ref@V?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@nlohmann@@@nlohmann@@@detail@nlohmann@@QAE@AAY02$$CBD@Z</DECORATED>
+    <FUNCLINE>10091</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\vendor\json\</FILEPATH>
+      <FILENAME>json.hpp</FILENAME>
+      <LINE>10091</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26439</DEFECTCODE>
+    <DESCRIPTION>This kind of function may not throw. Declare it 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>nlohmann::detail::json_ref&lt;nlohmann::basic_json&lt;std::map,std::vector,std::basic_string&lt;char,std::char_traits&lt;char&gt;,std::allocator&lt;char&gt; &gt;,bool,__int64,unsigned __int64,double,std::allocator,nlohmann::adl_serializer&gt; &gt;::{ctor}</FUNCTION>
+    <DECORATED>??$?0M@?$json_ref@V?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@nlohmann@@@nlohmann@@@detail@nlohmann@@QAE@$$QAM@Z</DECORATED>
+    <FUNCLINE>10091</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\vendor\json\</FILEPATH>
+      <FILENAME>json.hpp</FILENAME>
+      <LINE>10091</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26439</DEFECTCODE>
+    <DESCRIPTION>This kind of function may not throw. Declare it 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>nlohmann::detail::json_ref&lt;nlohmann::basic_json&lt;std::map,std::vector,std::basic_string&lt;char,std::char_traits&lt;char&gt;,std::allocator&lt;char&gt; &gt;,bool,__int64,unsigned __int64,double,std::allocator,nlohmann::adl_serializer&gt; &gt;::{ctor}</FUNCTION>
+    <DECORATED>??$?0_N@?$json_ref@V?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@nlohmann@@@nlohmann@@@detail@nlohmann@@QAE@$$QA_N@Z</DECORATED>
+    <FUNCLINE>10091</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\vendor\json\</FILEPATH>
+      <FILENAME>json.hpp</FILENAME>
+      <LINE>10091</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26439</DEFECTCODE>
+    <DESCRIPTION>This kind of function may not throw. Declare it 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>nlohmann::detail::json_ref&lt;nlohmann::basic_json&lt;std::map,std::vector,std::basic_string&lt;char,std::char_traits&lt;char&gt;,std::allocator&lt;char&gt; &gt;,bool,__int64,unsigned __int64,double,std::allocator,nlohmann::adl_serializer&gt; &gt;::{ctor}</FUNCTION>
+    <DECORATED>??$?0ABH@?$json_ref@V?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@nlohmann@@@nlohmann@@@detail@nlohmann@@QAE@ABH@Z</DECORATED>
+    <FUNCLINE>10091</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\vendor\glm\detail\</FILEPATH>
+      <FILENAME>type_vec4.inl</FILENAME>
+      <LINE>159</LINE>
+      <COLUMN>53</COLUMN>
+    </SFA>
+    <DEFECTCODE>26439</DEFECTCODE>
+    <DESCRIPTION>This kind of function may not throw. Declare it 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>glm::tvec4&lt;float,5&gt;::{ctor}</FUNCTION>
+    <DECORATED>??0?$tvec4@M$04@glm@@QAE@XZ</DECORATED>
+    <FUNCLINE>159</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\vendor\glm\detail\</FILEPATH>
+      <FILENAME>type_vec4.inl</FILENAME>
+      <LINE>159</LINE>
+      <COLUMN>53</COLUMN>
+    </SFA>
+    <DEFECTCODE>26439</DEFECTCODE>
+    <DESCRIPTION>This kind of function may not throw. Declare it 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>glm::tvec4&lt;float,4&gt;::{ctor}</FUNCTION>
+    <DECORATED>??0?$tvec4@M$03@glm@@QAE@XZ</DECORATED>
+    <FUNCLINE>159</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\vendor\glm\detail\</FILEPATH>
+      <FILENAME>type_vec4.inl</FILENAME>
+      <LINE>159</LINE>
+      <COLUMN>53</COLUMN>
+    </SFA>
+    <DEFECTCODE>26439</DEFECTCODE>
+    <DESCRIPTION>This kind of function may not throw. Declare it 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>glm::tvec4&lt;float,3&gt;::{ctor}</FUNCTION>
+    <DECORATED>??0?$tvec4@M$02@glm@@QAE@XZ</DECORATED>
+    <FUNCLINE>159</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\vendor\json\</FILEPATH>
+      <FILENAME>json.hpp</FILENAME>
+      <LINE>12525</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'nlohmann::basic_json&lt;std::map,std::vector,std::basic_string&lt;char,std::char_traits&lt;char&gt;,std::allocator&lt;char&gt; &gt;,bool,__int64,unsigned __int64,double,std::allocator,nlohmann::adl_serializer&gt;::m_value' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>nlohmann::basic_json&lt;std::map,std::vector,std::basic_string&lt;char,std::char_traits&lt;char&gt;,std::allocator&lt;char&gt; &gt;,bool,__int64,unsigned __int64,double,std::allocator,nlohmann::adl_serializer&gt;::{ctor}</FUNCTION>
+    <DECORATED>??0?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@nlohmann@@@nlohmann@@QAE@ABV?$json_ref@V?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@nlohmann@@@nlohmann@@@detail@1@@Z</DECORATED>
+    <FUNCLINE>12525</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\vendor\json\</FILEPATH>
+      <FILENAME>json.hpp</FILENAME>
+      <LINE>12525</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'nlohmann::basic_json&lt;std::map,std::vector,std::basic_string&lt;char,std::char_traits&lt;char&gt;,std::allocator&lt;char&gt; &gt;,bool,__int64,unsigned __int64,double,std::allocator,nlohmann::adl_serializer&gt;::m_type' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>nlohmann::basic_json&lt;std::map,std::vector,std::basic_string&lt;char,std::char_traits&lt;char&gt;,std::allocator&lt;char&gt; &gt;,bool,__int64,unsigned __int64,double,std::allocator,nlohmann::adl_serializer&gt;::{ctor}</FUNCTION>
+    <DECORATED>??0?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@nlohmann@@@nlohmann@@QAE@ABV?$json_ref@V?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@nlohmann@@@nlohmann@@@detail@1@@Z</DECORATED>
+    <FUNCLINE>12525</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

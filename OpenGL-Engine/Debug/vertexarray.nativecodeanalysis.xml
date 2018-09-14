@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\graphics\buffer\</FILEPATH>
+      <FILENAME>vertexbufferlayout.h</FILENAME>
+      <LINE>30</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26439</DEFECTCODE>
+    <DESCRIPTION>This kind of function may not throw. Declare it 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>VertexBufferLayout::{ctor}</FUNCTION>
+    <DECORATED>??0VertexBufferLayout@@QAE@XZ</DECORATED>
+    <FUNCLINE>30</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\dev\engine\hydro-gameengine\opengl-engine\src\graphics\buffer\</FILEPATH>
+      <FILENAME>vertexarray.cpp</FILENAME>
+      <LINE>5</LINE>
+      <COLUMN>13</COLUMN>
+    </SFA>
+    <DEFECTCODE>26439</DEFECTCODE>
+    <DESCRIPTION>This kind of function may not throw. Declare it 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>VertexArray::{ctor}</FUNCTION>
+    <DECORATED>??0VertexArray@@QAE@XZ</DECORATED>
+    <FUNCLINE>5</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

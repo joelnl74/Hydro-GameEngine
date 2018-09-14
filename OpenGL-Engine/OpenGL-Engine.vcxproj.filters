@@ -102,13 +102,13 @@
     <ClCompile Include="src\Animation\Animator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\ECS\Entity.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\ECS\Components\pointlight.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\ECS\Components\Sprite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\GraphicsEngine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -234,6 +234,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\ECS\Components\Transform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graphics\GraphicsEngine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utilities\Input.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
