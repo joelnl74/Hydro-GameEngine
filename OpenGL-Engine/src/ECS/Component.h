@@ -4,6 +4,5 @@ class Component
 {
 	virtual void Update() = 0;
 private:
-	//Entity * entity;
 };
 

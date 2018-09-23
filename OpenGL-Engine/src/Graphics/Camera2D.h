@@ -11,6 +11,7 @@ public:
 	inline const glm::vec2 returnCameraPosition() { return cameraPosition; }
 	inline const glm::vec2 returnCameraWindow() { return glm::vec2(m_width, m_height); }
 	glm::vec2 returnWorldToCameraPosition();
+	void ChangeCameraMode();
 private:
 	glm::mat4 orthographicCamera;
 	glm::vec2 cameraPosition;

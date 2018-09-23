@@ -62,10 +62,11 @@ void Layer::DrawBatch()
 }
 void Layer::DeleteLayer()
 {
-	for (auto x : sprites)
+	for (auto *x : sprites)
 	{
 		delete x;
 	}
+	sprites.clear();
 }
 Sprite* Layer::ReturnSprite(float mouseX, float mouseY)
 {

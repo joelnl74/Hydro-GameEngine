@@ -125,10 +125,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Graphics\GraphicsEngine.cpp" />
+    <ClCompile Include="src\RescourceManagement\OBJLoader.cpp" />
     <ClCompile Include="src\Editor\Editor.cpp" />
     <ClCompile Include="src\Animation\Animator.cpp" />
     <ClCompile Include="src\ECS\Components\pointlight.cpp" />
+    <ClCompile Include="src\Graphics\RenderManager.cpp" />
     <ClCompile Include="src\RescourceManagement\SceneManager\SceneManager.cpp" />
     <ClCompile Include="src\Graphics\layering\LayerManager.cpp" />
     <ClCompile Include="src\RescourceManagement\SceneManager\Scene.cpp" />
@@ -159,8 +160,9 @@
     <ClCompile Include="Win32Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\RescourceManagement\OBJLoader.h" />
     <ClInclude Include="src\Utilities\Input.h" />
-    <ClInclude Include="src\Graphics\GraphicsEngine.h" />
+    <ClInclude Include="src\Graphics\RenderManager.h" />
     <ClInclude Include="src\ECS\Components\Transform.h" />
     <ClInclude Include="src\ECS\Component.h" />
     <ClInclude Include="src\Editor\Editor.h" />

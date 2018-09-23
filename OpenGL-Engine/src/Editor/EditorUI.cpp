@@ -1,13 +1,11 @@
 #include "EditorUI.h"
 #include <stdio.h>
 #include "../RescourceManagement/SceneManager/SceneManager.h"
-EditorUI::EditorUI(GLFWwindow *win, GraphicsEngine* _manager)
+EditorUI::EditorUI(GLFWwindow *win)
 {
 	ImGui::CreateContext();
 	ImGui_ImplGlfwGL3_Init(win, true);
 	ImGui::StyleColorsLight();
-
-	_graphicsEngine = _manager;
 }
 EditorUI::~EditorUI()
 {
@@ -114,12 +112,13 @@ void EditorUI::SpriteEditor()
 			selectedSprite->Scale(scale[0], scale[1]);
 			selectedSprite->setTextureUV(uv[0], uv[1]);
 			selectedSprite->setSolid(&solid);
-			_graphicsEngine->_layerManager->getLayer(layerID)->SubmitLayer();
+
+			RenderManager::Get()._layerManager->getLayer(layerID)->SubmitLayer();
 		}
 		ImGui::SameLine();
 		if (ImGui::Button("Create", ImVec2(50, 50)))
 		{
-			if (_graphicsEngine->_layerManager->getLayer(layerID))
+			if (RenderManager::Get()._layerManager->getLayer(layerID))
 			{
 				CreateSprite();
 			}
@@ -131,8 +130,8 @@ void EditorUI::SpriteEditor()
 		if (ImGui::Button("Layer", ImVec2(50, 50)) && selectedSprite != nullptr)
 		{
 			//TODO get layer from sprite
-			_graphicsEngine->_layerManager->getLayer(0)->RemoveSprite(selectedSprite);
-			_graphicsEngine->_layerManager->getLayer(layerID)->SubmitSprite(*selectedSprite);
+			RenderManager::Get()._layerManager->getLayer(0)->RemoveSprite(selectedSprite);
+			RenderManager::Get()._layerManager->getLayer(layerID)->SubmitSprite(*selectedSprite);
 		}
 		ImGui::End();
 	}
@@ -144,18 +143,19 @@ void EditorUI::MainBar()
 	{
 		if (ImGui::MenuItem("New"))
 		{
+			RenderManager::Get()._layerManager->getLayer(0)->DeleteLayer();
 		}
 		//Save current scene to a json file 
 		if (ImGui::MenuItem("Save"))
 		{
 			SceneManager manager;
-			manager.saveScene("res/scene/Testlevel.json", _graphicsEngine->_layerManager);
+			manager.saveScene("res/scene/Testlevel.json", RenderManager::Get()._layerManager);
 		}
 		//load a scene from a json file
 		if (ImGui::MenuItem("Load"))
 		{
 			SceneManager manager;
-			manager.loadScene("res/scene/Testlevel.json", _graphicsEngine->_layerManager);
+			manager.loadScene("res/scene/Testlevel.json", RenderManager::Get()._layerManager);
 		}
 		if (ImGui::MenuItem("Exit"))
 		{
@@ -171,7 +171,7 @@ void EditorUI::MainBar()
 		}
 		if (ImGui::MenuItem("Add Layer"))
 		{
-			_graphicsEngine->_layerManager->AddLayer();
+			RenderManager::Get()._layerManager->AddLayer();
 		}
 		ImGui::EndMenu();
 	}
@@ -187,7 +187,7 @@ void EditorUI::CreateSprite()
 	//set texture
 	sprite->setTextureUV(uv[0], uv[1]);
 	//add to selected layer
-	_graphicsEngine->_layerManager->getLayer(layerID)->SubmitSprite(*sprite);
+	RenderManager::Get()._layerManager->getLayer(layerID)->SubmitSprite(*sprite);
 	//selectedSprite = new created sprite
 	setSelectedSprite(sprite);
 }

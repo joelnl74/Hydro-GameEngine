@@ -29,3 +29,6 @@ glm::vec2 Camera2D::returnWorldToCameraPosition()
 Camera2D::~Camera2D()
 {
 }
+void Camera2D::ChangeCameraMode()
+{
+}

@@ -1,5 +1,4 @@
 ﻿//#include "../Win32Window.h"
-#include "Graphics/Camera2D.h"
 #include "Physics/Collision_detection.h"
 
 #include "HydroEngine.h"
@@ -32,16 +31,16 @@ Win32Window: Integrate win32 window into project and remove glfw[]
 int main(void)
 {
 	//create a window
-	HydroEngine* m_engine = new HydroEngine();
-	m_engine->_graphicsEngine->shader->SetMatrix4("orthographicModel", m_engine->_camera2d->returnOrthographicCamera());
-	m_engine->_graphicsEngine->shader->setVec3("ambientLight", glm::vec3(0.85f, 0.85f, 0.85f));
+	Engine::HydroEngine* m_engine = new Engine::HydroEngine();
+	RenderManager::Get().shader->SetMatrix4("orthographicModel", m_engine->_camera2d->returnOrthographicCamera());
+	RenderManager::Get().shader->setVec3("ambientLight", glm::vec3(0.85f, 0.85f, 0.85f));
 
 	//create a rederer object from which you can call draw calls
 	//Collision_detection *detection = new Collision_detection();
 
 	//center camera
 	m_engine->_camera2d->centerCamera(64,64);
-	m_engine->_graphicsEngine->shader->SetMatrix4("orthographicModel", m_engine->_camera2d->returnOrthographicCamera());
+	RenderManager::Get().shader->SetMatrix4("orthographicModel", m_engine->_camera2d->returnOrthographicCamera());
 	
 	//Create a audioengine object
 	//Load a audio file

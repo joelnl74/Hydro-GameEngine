@@ -4,7 +4,7 @@
 class Editor
 {
 public:
-	Editor(GLFWwindow *win, GraphicsEngine* _manager, Camera2D *camera);
+	Editor(GLFWwindow *win, Camera2D *camera);
 	~Editor();
 	EditorUI *ui;
 	Camera2D *_camera;
