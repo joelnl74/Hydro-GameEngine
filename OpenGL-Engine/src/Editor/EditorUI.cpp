@@ -113,12 +113,12 @@ void EditorUI::SpriteEditor()
 			selectedSprite->setTextureUV(uv[0], uv[1]);
 			selectedSprite->setSolid(&solid);
 
-			RenderManager::Get()._layerManager->getLayer(layerID)->SubmitLayer();
+			gRenderManager._layerManager->getLayer(layerID)->SubmitLayer();
 		}
 		ImGui::SameLine();
 		if (ImGui::Button("Create", ImVec2(50, 50)))
 		{
-			if (RenderManager::Get()._layerManager->getLayer(layerID))
+			if (gRenderManager._layerManager->getLayer(layerID))
 			{
 				CreateSprite();
 			}
@@ -130,8 +130,8 @@ void EditorUI::SpriteEditor()
 		if (ImGui::Button("Layer", ImVec2(50, 50)) && selectedSprite != nullptr)
 		{
 			//TODO get layer from sprite
-			RenderManager::Get()._layerManager->getLayer(0)->RemoveSprite(selectedSprite);
-			RenderManager::Get()._layerManager->getLayer(layerID)->SubmitSprite(*selectedSprite);
+			gRenderManager._layerManager->getLayer(0)->RemoveSprite(selectedSprite);
+			gRenderManager._layerManager->getLayer(layerID)->SubmitSprite(*selectedSprite);
 		}
 		ImGui::End();
 	}
@@ -143,19 +143,19 @@ void EditorUI::MainBar()
 	{
 		if (ImGui::MenuItem("New"))
 		{
-			RenderManager::Get()._layerManager->getLayer(0)->DeleteLayer();
+			gRenderManager._layerManager->getLayer(0)->DeleteLayer();
 		}
 		//Save current scene to a json file 
 		if (ImGui::MenuItem("Save"))
 		{
 			SceneManager manager;
-			manager.saveScene("res/scene/Testlevel.json", RenderManager::Get()._layerManager);
+			manager.saveScene("res/scene/Testlevel.json", gRenderManager._layerManager);
 		}
 		//load a scene from a json file
 		if (ImGui::MenuItem("Load"))
 		{
 			SceneManager manager;
-			manager.loadScene("res/scene/Testlevel.json", RenderManager::Get()._layerManager);
+			manager.loadScene("res/scene/Testlevel.json", gRenderManager._layerManager);
 		}
 		if (ImGui::MenuItem("Exit"))
 		{
@@ -171,7 +171,7 @@ void EditorUI::MainBar()
 		}
 		if (ImGui::MenuItem("Add Layer"))
 		{
-			RenderManager::Get()._layerManager->AddLayer();
+			gRenderManager._layerManager->AddLayer();
 		}
 		ImGui::EndMenu();
 	}
@@ -187,7 +187,7 @@ void EditorUI::CreateSprite()
 	//set texture
 	sprite->setTextureUV(uv[0], uv[1]);
 	//add to selected layer
-	RenderManager::Get()._layerManager->getLayer(layerID)->SubmitSprite(*sprite);
+	gRenderManager._layerManager->getLayer(layerID)->SubmitSprite(*sprite);
 	//selectedSprite = new created sprite
 	setSelectedSprite(sprite);
 }

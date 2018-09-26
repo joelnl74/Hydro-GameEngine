@@ -1,5 +1,5 @@
 #include "Editor.h"
-Editor::Editor(GLFWwindow *win, Camera2D *camera)
+Editor::Editor(GLFWwindow *win, Camera *camera)
 {
 	ImGui::CreateContext();
 	ImGui_ImplGlfwGL3_Init(win, true);
@@ -22,7 +22,7 @@ void Editor::UpdateInput()
 	{
 		float xPosition = 720.0f / 1024.0f;
 		float yPosition = 480.0f / 768.0f;
-		ui->setSelectedSprite(RenderManager::Get()._layerManager->getLayer(ui->returnSelectedLayer())->ReturnSprite(_camera->returnWorldToCameraPosition().x, _camera->returnWorldToCameraPosition().y));
+		ui->setSelectedSprite(RenderManager::GetInstance()._layerManager->getLayer(ui->returnSelectedLayer())->ReturnSprite(_camera->returnWorldToCameraPosition().x, _camera->returnWorldToCameraPosition().y));
 	}
 	else if (ui->spritePlacementMode == true && io.MouseClicked[0] == true && ImGui::IsAnyItemHovered() == false)
 	{

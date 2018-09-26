@@ -21,6 +21,7 @@ public:
 	bool spritePlacementMode = false;
 private:
 	Sprite *selectedSprite = nullptr;
+	RenderManager &gRenderManager = RenderManager::GetInstance();
 	bool isHovered = false;
 
 	bool play = false;

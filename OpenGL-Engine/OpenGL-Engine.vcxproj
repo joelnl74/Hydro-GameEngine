@@ -138,7 +138,7 @@
     <ClCompile Include="src\Editor\EditorUI.cpp" />
     <ClCompile Include="src\Graphics\layering\Layer.cpp" />
     <ClCompile Include="src\RescourceManagement\FontManager.cpp" />
-    <ClCompile Include="src\Graphics\Camera2D.cpp" />
+    <ClCompile Include="src\Graphics\Camera.cpp" />
     <ClCompile Include="src\ECS\Components\Sprite.cpp" />
     <ClCompile Include="src\Graphics\spriteBatch.cpp" />
     <ClCompile Include="src\Graphics\OpenGLDebugger\OpenglErrorHandler.cpp" />
@@ -179,7 +179,7 @@
     <ClInclude Include="src\Editor\EditorUI.h" />
     <ClInclude Include="src\Graphics\layering\Layer.h" />
     <ClInclude Include="src\RescourceManagement\FontManager.h" />
-    <ClInclude Include="src\Graphics\Camera2D.h" />
+    <ClInclude Include="src\Graphics\Camera.h" />
     <ClInclude Include="src\ECS\Components\Sprite.h" />
     <ClInclude Include="src\Graphics\spriteBatch.h" />
     <ClInclude Include="src\Graphics\OpenGLDebugger\OpenglErrorHandler.h" />

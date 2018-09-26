@@ -4,7 +4,7 @@
 #include "Graphics/Window.h"
 #include "Editor/Editor.h"
 #include "audio/AudioEngine.h"
-#include "Graphics/Camera2D.h"
+#include "Graphics/Camera.h"
 //https://github.com/joelnl74/Hydro-GameEngine 
 
 namespace Engine
@@ -18,10 +18,11 @@ namespace Engine
 		void Draw();
 	//split this up more in a renderer, audio, ai, physics engine and so on
 	//Simple 2dcamera class
-		Camera2D* _camera2d;
+		Camera* _camera;
 		Window* _window;
 		Editor* _editor;
 		AudioEngine* _audioEngine;
+		RenderManager gRenderManager;
 	private:
 		//create all singletons(Managers)
 		//RenderManager &grenderManager = RenderManager::Get();

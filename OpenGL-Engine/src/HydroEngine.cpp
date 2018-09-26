@@ -1,5 +1,12 @@
 #include "HydroEngine.h"
 
+enum  EngineMode
+{
+	EditorMode,
+	Running2DMode,
+	Running3DMode
+};
+
 int WIDTH = 1024;
 int HEIGHT = 768;
 
@@ -9,19 +16,19 @@ using namespace Engine;
 	{
 		//create objects needed for the engine and there references
 		_window = new Window(WIDTH, HEIGHT, "Hydro-Engine");
-		RenderManager::Get().StartUp();
-		_camera2d = new Camera2D(720, 480);
-		_editor = new Editor(_window->getWindow(), _camera2d);
+		gRenderManager.StartUp();
+		_camera = new Camera(720, 480);
+		_editor = new Editor(_window->getWindow(), _camera);
 		_audioEngine = new AudioEngine();
 	}
 	HydroEngine::~HydroEngine()
 	{
-		RenderManager::Get().ShutDown();
+		gRenderManager.ShutDown();
 
 		//clear memory
 		delete _audioEngine;
 		delete _editor;
-		delete _camera2d;
+		delete _camera;
 		delete _window;
 
 		ImGui_ImplGlfwGL3_Shutdown();
@@ -36,7 +43,7 @@ using namespace Engine;
 		//Clear Screen
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		//Draw Graphics
-		RenderManager::Get().Update();
+		gRenderManager.Update();
 		//Draw UI
 		_editor->ui->DrawUI();
 		// Swap front and back buffers 
