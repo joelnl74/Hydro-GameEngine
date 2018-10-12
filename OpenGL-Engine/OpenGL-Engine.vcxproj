@@ -157,6 +157,7 @@
     <ClCompile Include="src\Graphics\Window.cpp" />
     <ClCompile Include="src\Graphics\Text.cpp" />
     <ClCompile Include="src\RescourceManagement\TextureManager.cpp" />
+    <ClCompile Include="Wave.cpp" />
     <ClCompile Include="Win32Window.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -203,6 +204,7 @@
     <ClInclude Include="src\Graphics\Window.h" />
     <ClInclude Include="src\Graphics\Text.h" />
     <ClInclude Include="src\RescourceManagement\TextureManager.h" />
+    <ClInclude Include="Wave.h" />
     <ClInclude Include="Win32Window.h" />
   </ItemGroup>
   <ItemGroup>
@@ -210,6 +212,7 @@
     <None Include="res\scene\Testlevel2.json" />
     <None Include="res\shaders\Basic.shader" />
     <None Include="res\shaders\pointLight.shader" />
+    <None Include="res\shaders\Vincent.shader" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

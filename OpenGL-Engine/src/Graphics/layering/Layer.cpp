@@ -6,6 +6,8 @@ Layer::Layer(bool static_Layer)
 	batch = new spriteBatch();
 	//set static or not
 	staticLayer = static_Layer;
+
+	texture->bind();
 }
 Layer::~Layer()
 {
@@ -50,15 +52,12 @@ void Layer::SubmitLayer()
 }
 void Layer::DrawBatch()
 {
-	//draw the layer onto the screen
-	texture->bind();
+
 	if (!staticLayer)
 	{
 		SubmitLayer();
 	}
 	batch->flush();
-	texture->unBind();
-
 }
 void Layer::DeleteLayer()
 {
