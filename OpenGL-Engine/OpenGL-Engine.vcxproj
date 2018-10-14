@@ -125,7 +125,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\RescourceManagement\OBJLoader.cpp" />
     <ClCompile Include="src\Editor\Editor.cpp" />
     <ClCompile Include="src\Animation\Animator.cpp" />
     <ClCompile Include="src\ECS\Components\pointlight.cpp" />
@@ -157,11 +156,10 @@
     <ClCompile Include="src\Graphics\Window.cpp" />
     <ClCompile Include="src\Graphics\Text.cpp" />
     <ClCompile Include="src\RescourceManagement\TextureManager.cpp" />
-    <ClCompile Include="Wave.cpp" />
+    <ClCompile Include="Cube.cpp" />
     <ClCompile Include="Win32Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\RescourceManagement\OBJLoader.h" />
     <ClInclude Include="src\Utilities\Input.h" />
     <ClInclude Include="src\Graphics\RenderManager.h" />
     <ClInclude Include="src\ECS\Components\Transform.h" />
@@ -204,7 +202,7 @@
     <ClInclude Include="src\Graphics\Window.h" />
     <ClInclude Include="src\Graphics\Text.h" />
     <ClInclude Include="src\RescourceManagement\TextureManager.h" />
-    <ClInclude Include="Wave.h" />
+    <ClInclude Include="Cube.h" />
     <ClInclude Include="Win32Window.h" />
   </ItemGroup>
   <ItemGroup>

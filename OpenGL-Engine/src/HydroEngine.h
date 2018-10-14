@@ -5,6 +5,7 @@
 #include "Editor/Editor.h"
 #include "audio/AudioEngine.h"
 #include "Graphics/Camera.h"
+#include "../Cube.h"
 //https://github.com/joelnl74/Hydro-GameEngine 
 
 namespace Engine
@@ -24,8 +25,9 @@ namespace Engine
 		AudioEngine* _audioEngine;
 		RenderManager gRenderManager;
 	private:
-		//create all singletons(Managers)
-		//RenderManager &grenderManager = RenderManager::Get();
+		//Vincent stuf
+		Shader *_shader;
+		Cube * _cube;
 };
 }
 

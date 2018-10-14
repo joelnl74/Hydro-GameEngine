@@ -12,10 +12,11 @@ public:
 	inline const glm::vec2 returnCameraWindow() { return glm::vec2(m_width, m_height); }
 	glm::vec2 returnWorldToCameraPosition();
 	void ChangeCameraMode();
-private:
+
 	glm::mat4 cameraProjection;
 	glm::mat4 view;
 	glm::vec3 cameraPosition;
+private:
 	float m_width;
 	float m_height;
 };

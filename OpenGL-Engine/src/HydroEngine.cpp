@@ -20,6 +20,19 @@ using namespace Engine;
 		_camera = new Camera(720, 480);
 		_editor = new Editor(_window->getWindow(), _camera);
 		_audioEngine = new AudioEngine();
+
+		//Vincent
+		glm::mat4 view;
+		view = glm::translate(view, glm::vec3(0, 0, -3.0f));
+		_shader = new Shader("res/shaders/Vincent.shader");
+		_cube = new Cube(_shader);
+		_shader->Bind();
+		_shader->SetMatrix4("projectionMatirx", _camera->cameraProjection);
+		_shader->SetMatrix4("view", view);
+		_shader->UnBind();
+
+		glEnable(GL_BLEND);
+		glEnable(GL_DEPTH_TEST);
 	}
 	HydroEngine::~HydroEngine()
 	{
@@ -41,9 +54,14 @@ using namespace Engine;
 	void HydroEngine::Draw()
 	{
 		//Clear Screen
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);;
 		//Draw Graphics
-		gRenderManager.Update();
+		//gRenderManager.Update();
+
+		//Vincent
+		_cube->Draw();
+
 		//Draw UI
 		_editor->ui->DrawUI();
 		// Swap front and back buffers 
