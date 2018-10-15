@@ -14,7 +14,7 @@ uniform mat4 model;
 
 void main()
 {
-	gl_Position = projectionMatirx * view * model * vec4(position.x, position.y + sin(deltaTime * 0.5)* 1, position.z, 1);
+	gl_Position = projectionMatirx * view * model * vec4(position.x + sin(deltaTime * 0.5) * 2, position.y + sin(deltaTime * 1)* 1, position.z, 1);
 	v_TexCoord = texCoord;
 };
 

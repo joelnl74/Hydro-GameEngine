@@ -2,6 +2,7 @@
 #include <exception>
 Layer::Layer(bool static_Layer)
 {
+	sprites.reserve(MAX_SPRITES);
 	//Batch for this layer
 	batch = new spriteBatch();
 	//set static or not

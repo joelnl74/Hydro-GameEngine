@@ -1,6 +1,12 @@
 #pragma once
 #include "../vendor/glm/glm.hpp"
 #include "../vendor/glm/gtc/matrix_transform.hpp"
+
+enum CameraMode
+{
+	orthographic,
+	projection
+};
 class Camera
 {
 public:

@@ -11,7 +11,7 @@ Camera::Camera(float width, float height)
 
 	//code for vincent
 	view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
-	cameraProjection = glm::perspective(glm::radians(45.0f), width / height, 0.1f, 100.0f);
+	cameraProjection = glm::perspective(glm::radians(90.0f), width / height, 0.1f, 100.0f);
 }
 void Camera::centerCamera(float x, float y)
 {

@@ -21,9 +21,16 @@ using namespace Engine;
 		_editor = new Editor(_window->getWindow(), _camera);
 		_audioEngine = new AudioEngine();
 
-		//Vincent
+
+		//gRenderManager.GetInstance().shader->SetMatrix4("orthographicModel", _camera->returnProjection());
+		//gRenderManager.GetInstance().shader->setVec3("ambientLight", glm::vec3(0.85f, 0.85f, 0.85f));
+		////center camera
+		//_camera->centerCamera(64, 64);
+		//gRenderManager.GetInstance().shader->SetMatrix4("orthographicModel", _camera->returnProjection());
+
+		//Vincent code
 		glm::mat4 view;
-		view = glm::translate(view, glm::vec3(0, 0, -3.0f));
+		view = glm::translate(view, glm::vec3(0, 0, -5.0f));
 		_shader = new Shader("res/shaders/Vincent.shader");
 		_cube = new Cube(_shader);
 		_shader->Bind();
@@ -31,8 +38,8 @@ using namespace Engine;
 		_shader->SetMatrix4("view", view);
 		_shader->UnBind();
 
-		glEnable(GL_BLEND);
-		glEnable(GL_DEPTH_TEST);
+		//glEnable(GL_BLEND);
+		//glEnable(GL_DEPTH_TEST);
 	}
 	HydroEngine::~HydroEngine()
 	{

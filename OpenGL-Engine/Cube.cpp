@@ -39,7 +39,6 @@ void Cube::Draw()
 	texture->bind(0);
 	texture2->bind(1);
 	glm::mat4 model;
-	model = glm::rotate(model, (float)glfwGetTime() * glm::radians(50.0f), glm::vec3(0.5f, 1.0f, 0.0f));;
 	_shader.SetMatrix4("model", model);
 	_shader.setUniform1f("deltaTime", glfwGetTime());
 	glDrawArrays(GL_TRIANGLES, 0, 36);
