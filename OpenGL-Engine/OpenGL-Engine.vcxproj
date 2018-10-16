@@ -125,6 +125,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Utilities\Logger.cpp" />
     <ClCompile Include="src\ECS\ComponentManager.cpp" />
     <ClCompile Include="src\ECS\EntityManager.cpp" />
     <ClCompile Include="src\Editor\Editor.cpp" />
@@ -162,6 +163,7 @@
     <ClCompile Include="Win32Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Utilities\Logger.h" />
     <ClInclude Include="src\ECS\ComponentManager.h" />
     <ClInclude Include="src\ECS\EntityManager.h" />
     <ClInclude Include="src\Utilities\Input.h" />

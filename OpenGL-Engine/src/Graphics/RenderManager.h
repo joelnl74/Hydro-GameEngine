@@ -7,7 +7,6 @@ public:
 	LayerManager * _layerManager;
 	Shader *shader;
 
-
 	void CreateObjects()
 	{
 		_layerManager = new LayerManager();
@@ -27,7 +26,6 @@ public:
 		return *s_instance;
 	}
 private:
-	//RenderManager();
 	static RenderManager *s_instance;
 };
 

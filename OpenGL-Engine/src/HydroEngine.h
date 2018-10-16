@@ -2,6 +2,7 @@
 #include <string.h>
 
 #include "Graphics/Window.h"
+#include "Utilities/Logger.h"
 #include "Editor/Editor.h"
 #include "audio/AudioEngine.h"
 #include "Graphics/Camera.h"
@@ -24,6 +25,7 @@ namespace Engine
 		Editor* _editor;
 		AudioEngine* _audioEngine;
 		RenderManager gRenderManager;
+		Logger logger;
 	private:
 		//Vincent stuf
 		Shader *_shader;

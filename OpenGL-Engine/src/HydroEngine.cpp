@@ -14,13 +14,14 @@ using namespace Engine;
 
 	HydroEngine::HydroEngine()
 	{
+		logger.StartUp();
+		logger.GetInstance().Error("Starting Engine");
 		//create objects needed for the engine and there references
 		_window = new Window(WIDTH, HEIGHT, "Hydro-Engine");
 		gRenderManager.StartUp();
 		_camera = new Camera(720, 480);
 		_editor = new Editor(_window->getWindow(), _camera);
 		_audioEngine = new AudioEngine();
-
 
 		//gRenderManager.GetInstance().shader->SetMatrix4("orthographicModel", _camera->returnProjection());
 		//gRenderManager.GetInstance().shader->setVec3("ambientLight", glm::vec3(0.85f, 0.85f, 0.85f));
@@ -38,13 +39,12 @@ using namespace Engine;
 		_shader->SetMatrix4("view", view);
 		_shader->UnBind();
 
-		//glEnable(GL_BLEND);
-		//glEnable(GL_DEPTH_TEST);
+		glEnable(GL_BLEND);
+		glEnable(GL_DEPTH_TEST);
 	}
 	HydroEngine::~HydroEngine()
 	{
 		gRenderManager.ShutDown();
-
 		//clear memory
 		delete _audioEngine;
 		delete _editor;
@@ -53,6 +53,8 @@ using namespace Engine;
 
 		ImGui_ImplGlfwGL3_Shutdown();
 		ImGui::DestroyContext();
+
+		logger.ShutDown();
 	}
 	void HydroEngine::CheckInput()
 	{
