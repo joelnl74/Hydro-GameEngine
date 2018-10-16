@@ -2,10 +2,13 @@
 #include <exception>
 Layer::Layer(bool static_Layer)
 {
+	sprites.reserve(MAX_SPRITES);
 	//Batch for this layer
 	batch = new spriteBatch();
 	//set static or not
 	staticLayer = static_Layer;
+
+	texture->bind();
 }
 Layer::~Layer()
 {
@@ -41,31 +44,29 @@ void Layer::RemoveSprite(Sprite* sprite)
 }
 void Layer::SubmitLayer()
 {
-	batch->begin();
+	batch->Begin();
 	for (auto x : sprites)
 	{
-		batch->submit(x);
+		batch->Submit(x);
 	}
-	batch->end();
+	batch->End();
 }
 void Layer::DrawBatch()
 {
-	//draw the layer onto the screen
-	texture->bind();
+
 	if (!staticLayer)
 	{
 		SubmitLayer();
 	}
-	batch->flush();
-	texture->unBind();
-
+	batch->Flush();
 }
 void Layer::DeleteLayer()
 {
-	for (auto x : sprites)
+	for (auto *x : sprites)
 	{
 		delete x;
 	}
+	sprites.clear();
 }
 Sprite* Layer::ReturnSprite(float mouseX, float mouseY)
 {

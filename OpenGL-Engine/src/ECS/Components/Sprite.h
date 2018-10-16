@@ -1,6 +1,6 @@
 #pragma once
-#include "../ECS/Component.h"
-#include "../vendor/glm/common.hpp"
+#include "../Component.h"
+#include "../../vendor/glm/common.hpp"
 
 struct VertexData
 {

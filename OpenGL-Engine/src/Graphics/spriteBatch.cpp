@@ -2,7 +2,7 @@
 
 spriteBatch::spriteBatch()
 {
-	init();
+	Init();
 }
 spriteBatch::~spriteBatch()
 {
@@ -11,7 +11,7 @@ spriteBatch::~spriteBatch()
 	delete buffer;
 }
 //Create Buffers
-void spriteBatch::init()
+void spriteBatch::Init()
 {
 	glGenVertexArrays(1, &vao);
 	glGenBuffers(1, &vbo);
@@ -50,8 +50,8 @@ void spriteBatch::init()
 
 	glBindVertexArray(0);
 }
-//Creating a mapbuffer to store all vbo data
-void spriteBatch::begin()
+//Creating a mapbuffer to store all the vbo data
+void spriteBatch::Begin()
 {
 	indexcount = 0;
 
@@ -59,13 +59,13 @@ void spriteBatch::begin()
 	buffer = (VertexData*)glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
 }
 //unmap the buffer
-void spriteBatch::end()
+void spriteBatch::End()
 {
 	glUnmapBuffer(GL_ARRAY_BUFFER);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 }
 //Settingup sprite data for the buffers
-void spriteBatch::submit(Sprite *sprite)
+void spriteBatch::Submit(Sprite *sprite)
 {
 	//TODO set uv offset based on image width height
 	glm::vec2 spritePosition =  sprite->getPosition();
@@ -92,7 +92,7 @@ void spriteBatch::submit(Sprite *sprite)
 	indexcount += 6;
 }
 //bind draw unbind
-void spriteBatch::flush()
+void spriteBatch::Flush()
 {
 	//only flush if something has changed in the buffer
 	glBindVertexArray(vao);

@@ -125,10 +125,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Utilities\Logger.cpp" />
+    <ClCompile Include="src\ECS\ComponentManager.cpp" />
+    <ClCompile Include="src\ECS\EntityManager.cpp" />
     <ClCompile Include="src\Editor\Editor.cpp" />
     <ClCompile Include="src\Animation\Animator.cpp" />
-    <ClCompile Include="src\Components\pointlight.cpp" />
-    <ClCompile Include="src\ECS\Entity.cpp" />
+    <ClCompile Include="src\ECS\Components\pointlight.cpp" />
+    <ClCompile Include="src\Graphics\RenderManager.cpp" />
     <ClCompile Include="src\RescourceManagement\SceneManager\SceneManager.cpp" />
     <ClCompile Include="src\Graphics\layering\LayerManager.cpp" />
     <ClCompile Include="src\RescourceManagement\SceneManager\Scene.cpp" />
@@ -137,8 +140,8 @@
     <ClCompile Include="src\Editor\EditorUI.cpp" />
     <ClCompile Include="src\Graphics\layering\Layer.cpp" />
     <ClCompile Include="src\RescourceManagement\FontManager.cpp" />
-    <ClCompile Include="src\Graphics\Camera2D.cpp" />
-    <ClCompile Include="src\Components\Sprite.cpp" />
+    <ClCompile Include="src\Graphics\Camera.cpp" />
+    <ClCompile Include="src\ECS\Components\Sprite.cpp" />
     <ClCompile Include="src\Graphics\spriteBatch.cpp" />
     <ClCompile Include="src\Graphics\OpenGLDebugger\OpenglErrorHandler.cpp" />
     <ClCompile Include="src\audio\AudioEngine.cpp" />
@@ -156,17 +159,23 @@
     <ClCompile Include="src\Graphics\Window.cpp" />
     <ClCompile Include="src\Graphics\Text.cpp" />
     <ClCompile Include="src\RescourceManagement\TextureManager.cpp" />
+    <ClCompile Include="Cube.cpp" />
     <ClCompile Include="Win32Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Components\Transform.h" />
+    <ClInclude Include="src\Utilities\Logger.h" />
+    <ClInclude Include="src\ECS\ComponentManager.h" />
+    <ClInclude Include="src\ECS\EntityManager.h" />
+    <ClInclude Include="src\Utilities\Input.h" />
+    <ClInclude Include="src\Graphics\RenderManager.h" />
+    <ClInclude Include="src\ECS\Components\Transform.h" />
     <ClInclude Include="src\ECS\Component.h" />
     <ClInclude Include="src\Editor\Editor.h" />
     <ClInclude Include="src\Animation\Animator.h" />
     <ClInclude Include="src\Animation\AnimationClip.h" />
-    <ClInclude Include="src\Components\pointLight.h" />
+    <ClInclude Include="src\ECS\Components\pointLight.h" />
     <ClInclude Include="src\ECS\Entity.h" />
-    <ClInclude Include="src\Components\Collision.h" />
+    <ClInclude Include="src\ECS\Components\Collision.h" />
     <ClInclude Include="src\RescourceManagement\SceneManager\SceneManager.h" />
     <ClInclude Include="src\Graphics\layering\LayerManager.h" />
     <ClInclude Include="src\RescourceManagement\SceneManager\Scene.h" />
@@ -175,8 +184,8 @@
     <ClInclude Include="src\Editor\EditorUI.h" />
     <ClInclude Include="src\Graphics\layering\Layer.h" />
     <ClInclude Include="src\RescourceManagement\FontManager.h" />
-    <ClInclude Include="src\Graphics\Camera2D.h" />
-    <ClInclude Include="src\Components\Sprite.h" />
+    <ClInclude Include="src\Graphics\Camera.h" />
+    <ClInclude Include="src\ECS\Components\Sprite.h" />
     <ClInclude Include="src\Graphics\spriteBatch.h" />
     <ClInclude Include="src\Graphics\OpenGLDebugger\OpenglErrorHandler.h" />
     <ClInclude Include="src\audio\AudioEngine.h" />
@@ -199,6 +208,7 @@
     <ClInclude Include="src\Graphics\Window.h" />
     <ClInclude Include="src\Graphics\Text.h" />
     <ClInclude Include="src\RescourceManagement\TextureManager.h" />
+    <ClInclude Include="Cube.h" />
     <ClInclude Include="Win32Window.h" />
   </ItemGroup>
   <ItemGroup>
@@ -206,6 +216,7 @@
     <None Include="res\scene\Testlevel2.json" />
     <None Include="res\shaders\Basic.shader" />
     <None Include="res\shaders\pointLight.shader" />
+    <None Include="res\shaders\Vincent.shader" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

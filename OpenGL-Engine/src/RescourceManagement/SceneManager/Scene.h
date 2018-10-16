@@ -2,7 +2,7 @@
 #include <vector>
 
 #include "../../ECS/Entity.h"
-#include "../../Graphics/Camera2D.h"
+#include "../../Graphics/Camera.h"
 class Scene
 {
 public:
@@ -11,6 +11,6 @@ public:
 	std::vector<Entity> gameObjects;
 private:
 	//MainCamera, accesible from anywhere probally somesort of static variable which can be used by any class
-	Camera2D * mainCamera = new Camera2D(720, 480);
+	Camera * mainCamera = new Camera(720, 480);
 };
 

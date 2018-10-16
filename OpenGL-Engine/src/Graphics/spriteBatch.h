@@ -1,5 +1,5 @@
 #pragma once
-#include "../Components/Sprite.h"
+#include "../ECS/Components/Sprite.h"
 #include "buffer/VertexBuffer.h"
 #include "./buffer/VertexBufferLayout.h"
 #include "./buffer/IndexBuffer.h"
@@ -20,13 +20,13 @@ public:
 	spriteBatch();
 	~spriteBatch();
 
-	void init();
+	void Init();
 
-	void begin();
-	void end();
+	void Begin();
+	void End();
 
-	void submit(Sprite *sprite);
-	void flush();
+	void Submit(Sprite *sprite);
+	void Flush();
 
 private:
 	unsigned int vbo;

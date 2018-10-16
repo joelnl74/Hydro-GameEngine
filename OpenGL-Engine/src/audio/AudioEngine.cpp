@@ -7,13 +7,16 @@ AudioEngine::AudioEngine()
 }
 AudioEngine::~AudioEngine()
 {
-	for (auto x : audioClips)
+	if (audioClips.size() > 0)
 	{
-		delete x.second;
+		for (auto x : audioClips)
+		{
+			delete x.second;
+		}
+		audioClips.clear();
 	}
-	audioClips.clear();
-	delete system;
 	delete channel;
+	system->close();
 }
 bool AudioEngine::LoadAudioFileFromSystem(const std::string filepath,std::string name, bool looped)
 {

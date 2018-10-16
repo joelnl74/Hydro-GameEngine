@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 
-#include "../Components/Collision.h"
+#include "../ECS/Components/Collision.h"
 
 
 

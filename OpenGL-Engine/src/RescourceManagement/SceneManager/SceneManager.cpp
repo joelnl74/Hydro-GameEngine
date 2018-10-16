@@ -7,14 +7,7 @@
 #include "../../vendor/json/json.hpp"
 
 using json = nlohmann::json;
-SceneManager::SceneManager()
-{
-}
 
-SceneManager::~SceneManager()
-{
-	
-}
 //Loading a level from a json file into the engine/game
 bool SceneManager::loadScene(const std::string& inputFileName, LayerManager* l_manager)
 {

@@ -1,6 +1,6 @@
 #pragma once
-#include "../ECS/Component.h"
-#include "../vendor/glm/vec2.hpp"
+#include "../Component.h"
+#include "../../vendor/glm/vec2.hpp"
 enum collisionType
 {
 	normal,
