@@ -8,7 +8,7 @@ public:
 	Shader *shader;
 
 
-	void createObjects()
+	void CreateObjects()
 	{
 		_layerManager = new LayerManager();
 		shader = new Shader("res/shaders/Basic.shader");

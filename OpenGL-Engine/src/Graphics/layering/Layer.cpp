@@ -44,12 +44,12 @@ void Layer::RemoveSprite(Sprite* sprite)
 }
 void Layer::SubmitLayer()
 {
-	batch->begin();
+	batch->Begin();
 	for (auto x : sprites)
 	{
-		batch->submit(x);
+		batch->Submit(x);
 	}
-	batch->end();
+	batch->End();
 }
 void Layer::DrawBatch()
 {
@@ -58,7 +58,7 @@ void Layer::DrawBatch()
 	{
 		SubmitLayer();
 	}
-	batch->flush();
+	batch->Flush();
 }
 void Layer::DeleteLayer()
 {

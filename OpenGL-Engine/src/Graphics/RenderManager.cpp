@@ -6,7 +6,7 @@ void RenderManager::StartUp()
 	if (s_instance == 0)
 	{
 		s_instance = new RenderManager();
-		s_instance->createObjects();
+		s_instance->CreateObjects();
 		s_instance->shader->Bind();
 	}
 }
