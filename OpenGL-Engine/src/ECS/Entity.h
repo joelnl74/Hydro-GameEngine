@@ -7,20 +7,15 @@ class Entity
 {
 public:
 	unsigned int entityID;
+	//Transform of a Entity
 	Transform *transform = new Transform();
 
-	void AddComponent()
-	{
+	//Compare entities functies
+	inline bool operator == (const Entity& rhs) const { return this->entityID == rhs.entityID; }
+	inline bool operator != (const Entity& rhs) const { return this->entityID != rhs.entityID; }
+	inline bool operator==(const Entity* rhs) const { return this->entityID == rhs->entityID; }
+	inline bool operator!=(const Entity* rhs) const { return this->entityID != rhs->entityID; }
 
-	}
-	void RemoveComponent()
-	{
-
-	}
-	void GetComponent()
-	{
-
-	}
 private:
 };
 

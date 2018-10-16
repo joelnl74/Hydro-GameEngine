@@ -125,6 +125,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\ECS\ComponentManager.cpp" />
+    <ClCompile Include="src\ECS\EntityManager.cpp" />
     <ClCompile Include="src\Editor\Editor.cpp" />
     <ClCompile Include="src\Animation\Animator.cpp" />
     <ClCompile Include="src\ECS\Components\pointlight.cpp" />
@@ -160,6 +162,8 @@
     <ClCompile Include="Win32Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\ECS\ComponentManager.h" />
+    <ClInclude Include="src\ECS\EntityManager.h" />
     <ClInclude Include="src\Utilities\Input.h" />
     <ClInclude Include="src\Graphics\RenderManager.h" />
     <ClInclude Include="src\ECS\Components\Transform.h" />
