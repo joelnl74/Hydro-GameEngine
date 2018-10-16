@@ -14,8 +14,10 @@ using namespace Engine;
 
 	HydroEngine::HydroEngine()
 	{
+		//Logger
 		logger.StartUp();
-		logger.GetInstance().Error("Starting Engine");
+		logger.GetInstance().Info("Starting Engine");
+
 		//create objects needed for the engine and there references
 		_window = new Window(WIDTH, HEIGHT, "Hydro-Engine");
 		gRenderManager.StartUp();

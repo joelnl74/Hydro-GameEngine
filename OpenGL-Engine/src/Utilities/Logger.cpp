@@ -3,7 +3,6 @@
 #include "Logger.h"
 
 #include <iostream>
-#include <cstdlib>
 #include <ctime>
 #include <chrono>
 
@@ -24,7 +23,7 @@ void Logger::ShutDown()
 }
 void Logger::LogOnConsole(std::string &message)
 {
-	if (_logType == LOG_TYPE::CONSOLE)
+	if (_logType >= LOG_TYPE::CONSOLE)
 	{
 		std::cout << getCurrentTime() << "  " << message << std::endl;
 	}
