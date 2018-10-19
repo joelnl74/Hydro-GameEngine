@@ -9,6 +9,13 @@
 #include "../Cube.h"
 //https://github.com/joelnl74/Hydro-GameEngine 
 
+enum  EngineMode
+{
+	EditorMode,
+	Running2DMode,
+	Running3DMode
+};
+
 namespace Engine
 {
 	class HydroEngine
@@ -28,6 +35,7 @@ namespace Engine
 		Logger logger;
 	private:
 		//Vincent stuf
+		EngineMode _engineMode;
 		Shader *_shader;
 		Cube * _cube;
 };

@@ -37,15 +37,11 @@ public:
 
 	void StartUp();
 	void ShutDown();
-	inline static Logger &GetInstance()
-	{
-		return *m_Instance;
-	}
+	static Logger *m_Instance;
 private:
 	void LogOnConsole(std::string &message);
 	void LogToFile(std::string &message);
 	std::string getCurrentTime();
-	static Logger *m_Instance;
 
 	LogType _logType;
 	LogLevel _logLevel;

@@ -33,7 +33,6 @@ int main(void)
 	//create a window
 	Engine::HydroEngine* m_engine = new Engine::HydroEngine();
 
-
 	//create a rederer object from which you can call draw calls
 	//Collision_detection *detection = new Collision_detection();
 	

@@ -2,16 +2,22 @@
 #include "../vendor/imgui/imgui.h"
 
 
-Camera::Camera(float width, float height)
+Camera::Camera(float width, float height, CameraMode _mode)
 {
 	m_width = width;
 	m_height = height;
+	_cameraMode = _mode;
 
-	//cameraProjection = glm::ortho(0.0f, width, 0.0f, height, 0.0f, 100.0f);
 
-	//code for vincent
-	view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
-	cameraProjection = glm::perspective(glm::radians(90.0f), width / height, 0.1f, 100.0f);
+	//TEST 2D RENDERING
+	if(_cameraMode ==  CameraMode::orthographic)
+	cameraProjection = glm::ortho(0.0f, width, 0.0f, height, 0.0f, 100.0f);
+	//TEST 3D RENDERING
+	if (_cameraMode == CameraMode::projection)
+	{
+		view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
+		cameraProjection = glm::perspective(glm::radians(90.0f), width / height, 0.1f, 100.0f);
+	}
 }
 void Camera::centerCamera(float x, float y)
 {
