@@ -32,7 +32,7 @@ namespace Engine
 		Editor* _editor;
 		AudioEngine* _audioEngine;
 		RenderManager gRenderManager;
-		Logger logger;
+		Logger gLogger;
 	private:
 		//Vincent stuf
 		EngineMode _engineMode;

@@ -4,8 +4,8 @@
 
 Cube::Cube(Shader *shader) : _shader(*shader)
 {
-	texture = new Texture("res/textures/seamless_brick-512x512.png");
-	texture2 = new Texture("res/textures/Hydro_Engine.png");
+	texture = new Texture("Resources/textures/seamless_brick-512x512.png");
+	texture2 = new Texture("Resources/textures/Hydro_Engine.png");
 	
 	shader->Bind();
 	shader->setUniform1i("u_Texture", 0);

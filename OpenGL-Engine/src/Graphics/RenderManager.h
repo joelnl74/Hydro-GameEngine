@@ -10,7 +10,7 @@ public:
 	void CreateObjects()
 	{
 		_layerManager = new LayerManager();
-		shader = new Shader("res/shaders/Basic.shader");
+		shader = new Shader("Resources/shaders/Basic.shader");
 	}
 	//startup this subsystem of the engine
 	void StartUp();

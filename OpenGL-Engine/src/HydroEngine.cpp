@@ -1,9 +1,7 @@
 #include "HydroEngine.h"
 
-
-
-int WIDTH = 1024;
-int HEIGHT = 768;
+static const int WIDTH = 1024;
+static const int HEIGHT = 768;
 
 using namespace Engine;
 
@@ -14,9 +12,8 @@ using namespace Engine;
 		_engineMode = EngineMode::Running3DMode;
 
 		//Logger
-		logger.StartUp();
-		logger.m_Instance->Info("Starting Engine");
-
+		gLogger.StartUp();
+		gLogger.m_Instance->Info("Getting things ready!");
 		//create objects needed for the engine and there references
 		_window = new Window(WIDTH, HEIGHT, "Hydro-Engine");
 		gRenderManager.StartUp();
@@ -38,7 +35,7 @@ using namespace Engine;
 		{
 			glm::mat4 view;
 			view = glm::translate(view, glm::vec3(0, 0, -5.0f));
-			_shader = new Shader("res/shaders/Vincent.shader");
+			_shader = new Shader("Resources/shaders/Vincent.shader");
 			_cube = new Cube(_shader);
 			_shader->Bind();
 			_shader->SetMatrix4("projectionMatirx", _camera->cameraProjection);
@@ -61,7 +58,7 @@ using namespace Engine;
 		ImGui_ImplGlfwGL3_Shutdown();
 		ImGui::DestroyContext();
 
-		logger.ShutDown();
+		gLogger.ShutDown();
 	}
 	void HydroEngine::CheckInput()
 	{

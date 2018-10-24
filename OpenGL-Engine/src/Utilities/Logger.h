@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <fstream>
 
 #define LOG_ERROR(x)    Logger::GetInstance()->Error(x)
 #define LOG_WARNING(x)  Logger::GetInstance()->Warning(x)
@@ -38,6 +39,7 @@ public:
 	void StartUp();
 	void ShutDown();
 	static Logger *m_Instance;
+	std::fstream _loggerFile;
 private:
 	void LogOnConsole(std::string &message);
 	void LogToFile(std::string &message);

@@ -11,7 +11,7 @@
 class Window
 {
 public:
-	Window(int &WINDOW_WIDTH, int &WINDOW_HEIGHT, const char *WINDOW_NAME);
+	Window(const int &WINDOW_WIDTH, const int &WINDOW_HEIGHT, const char *WINDOW_NAME);
 	~Window();
 	void update();
 	void clear() const;
