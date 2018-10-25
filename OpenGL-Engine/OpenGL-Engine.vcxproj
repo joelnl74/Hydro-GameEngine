@@ -130,7 +130,6 @@
     <ClCompile Include="src\ECS\ComponentManager.cpp" />
     <ClCompile Include="src\ECS\EntityManager.cpp" />
     <ClCompile Include="src\Editor\Editor.cpp" />
-    <ClCompile Include="src\Animation\Animator.cpp" />
     <ClCompile Include="src\ECS\Components\pointlight.cpp" />
     <ClCompile Include="src\Graphics\RenderManager.cpp" />
     <ClCompile Include="src\Graphics\layering\LayerManager.cpp" />
@@ -171,8 +170,6 @@
     <ClInclude Include="src\ECS\Components\Transform.h" />
     <ClInclude Include="src\ECS\Component.h" />
     <ClInclude Include="src\Editor\Editor.h" />
-    <ClInclude Include="src\Animation\Animator.h" />
-    <ClInclude Include="src\Animation\AnimationClip.h" />
     <ClInclude Include="src\ECS\Components\pointLight.h" />
     <ClInclude Include="src\ECS\Entity.h" />
     <ClInclude Include="src\ECS\Components\Collision.h" />
