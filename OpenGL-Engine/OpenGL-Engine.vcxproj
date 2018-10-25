@@ -160,6 +160,7 @@
     <ClCompile Include="Win32Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\System\Allocator.h" />
     <ClInclude Include="src\Hydro.h" />
     <ClInclude Include="src\RescourceManagement\SceneManager\SceneManager.h" />
     <ClInclude Include="src\Utilities\Logger.h" />
