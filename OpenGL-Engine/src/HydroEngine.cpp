@@ -11,9 +11,8 @@ using namespace Engine;
 		//Running3DMode you will see a moving cube
 		_engineMode = EngineMode::Running2DMode;
 
-		//Logger
 		gLogger.StartUp();
-		//create objects needed for the engine and there references
+		gTime.StartUp();
 		_window = new Window(WIDTH, HEIGHT, "Hydro-Engine");
 		gRenderManager.StartUp();
 		_camera = new Camera(720, 480, CameraMode::projection);
@@ -57,7 +56,9 @@ using namespace Engine;
 		ImGui_ImplGlfwGL3_Shutdown();
 		ImGui::DestroyContext();
 
+		gTime.ShutDown();
 		gLogger.ShutDown();
+		
 	}
 	void HydroEngine::CheckInput()
 	{

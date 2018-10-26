@@ -6,6 +6,7 @@
 #include "Editor/Editor.h"
 #include "audio/AudioEngine.h"
 #include "Graphics/Camera.h"
+#include "Utilities/Time.h"
 #include "../Cube.h"
 //https://github.com/joelnl74/Hydro-GameEngine 
 
@@ -33,6 +34,7 @@ namespace Engine
 		AudioEngine* _audioEngine;
 		RenderManager gRenderManager;
 		Logger gLogger;
+		Time gTime;
 	private:
 		//Vincent stuf
 		EngineMode _engineMode;

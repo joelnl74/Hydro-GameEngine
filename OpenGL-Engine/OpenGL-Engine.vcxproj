@@ -145,6 +145,7 @@
     <ClCompile Include="src\Graphics\Shader.cpp" />
     <ClCompile Include="src\Graphics\buffer\IndexBuffer.cpp" />
     <ClCompile Include="src\Application.cpp" />
+    <ClCompile Include="src\Utilities\Time.cpp" />
     <ClCompile Include="src\vendor\imgui\imgui.cpp" />
     <ClCompile Include="src\vendor\imgui\imgui_demo.cpp" />
     <ClCompile Include="src\vendor\imgui\imgui_draw.cpp" />
@@ -185,6 +186,7 @@
     <ClInclude Include="src\audio\AudioEngine.h" />
     <ClInclude Include="src\Graphics\Shader.h" />
     <ClInclude Include="src\Graphics\buffer\IndexBuffer.h" />
+    <ClInclude Include="src\Utilities\Time.h" />
     <ClInclude Include="src\Utilities\Timer.h" />
     <ClInclude Include="src\vendor\imgui\imconfig.h" />
     <ClInclude Include="src\vendor\imgui\imgui.h" />

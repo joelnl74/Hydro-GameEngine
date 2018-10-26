@@ -49,10 +49,13 @@ int main(void)
 
 	//Gameloop 
 	while (!m_engine->_window->closed())
-	{		//create own Interaction class for UI and Gameplay
+	{		
+		m_engine->gTime.m_Instance->BeginFrame();
+		//create own Interaction class for UI and Gameplay
 		m_engine->CheckInput();
 		// Render here 
 		m_engine->Draw();
+		m_engine->gTime.m_Instance->EndFrame();
     }
 	//delete detection;
 	delete m_engine;
