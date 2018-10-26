@@ -1,4 +1,5 @@
 #pragma once
+#include "../../Hydro.h"
 #include <string>
 #include "../../Graphics/layering/LayerManager.h"
 class SceneManager

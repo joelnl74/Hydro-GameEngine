@@ -1,18 +1,19 @@
 #include "RenderManager.h"
-RenderManager *RenderManager::s_instance = 0;
+RenderManager *RenderManager::m_instance = 0;
 
 void RenderManager::StartUp()
 {
-	if (s_instance == 0)
+	if (m_instance == 0)
 	{
-		s_instance = new RenderManager();
-		s_instance->CreateObjects();
-		s_instance->shader->Bind();
+		m_instance = new RenderManager();
+		m_instance->_layerManager = new LayerManager();
+		m_instance->shader = new Shader("Resources/shaders/Basic.shader");
+		m_instance->shader->Bind();
 	}
 }
 void RenderManager::ShutDown()
 {
-	delete s_instance->_layerManager;
-	delete s_instance->shader;
-	delete s_instance;
+	delete m_instance->_layerManager;
+	delete m_instance->shader;
+	delete m_instance;
 }

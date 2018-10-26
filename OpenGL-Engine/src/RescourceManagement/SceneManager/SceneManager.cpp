@@ -15,7 +15,7 @@ bool SceneManager::loadScene(const std::string& inputFileName, LayerManager* l_m
 	std::ifstream ifs(inputFileName);
 	if (!ifs)
 	{
-		printf("ERROR OPENING FILE FROM DRIVE! FILE: %s", inputFileName);
+		Logger::m_Instance->Error("ERROR OPENING FILE FROM DRIVE!, FILE NOT FOUND");
 		return false;
 	}
 	json doc = doc.parse(ifs);
@@ -57,7 +57,7 @@ bool SceneManager::saveScene(const std::string& inputFileName, LayerManager* l_m
 	ofs.open(inputFileName);
 	if (!ofs)
 	{
-		printf("ERROR OPENING FILE FROM DRIVE! FILE: %s", inputFileName);
+		Logger::m_Instance->Error("ERROR OPENING FILE FROM DRIVE!, FILE NOT FOUND");
 		return false;
 	}
 	ofs.clear();

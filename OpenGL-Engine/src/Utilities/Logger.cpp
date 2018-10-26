@@ -44,6 +44,7 @@ void Logger::LogToFile(std::string &message)
 }
 void Logger::Error(const char* text)
 {
+	_ASSERT(m_Instance);
 	std::string data;
 	data.append("[Error]: ");
 	data.append(text);
@@ -53,6 +54,7 @@ void Logger::Error(const char* text)
 }
 void Logger::Warning(const char* text)
 {
+	_ASSERT(m_Instance);
 	std::string data;
 	data.append("[Warning]: ");
 	data.append(text);
@@ -62,7 +64,7 @@ void Logger::Warning(const char* text)
 }
 void Logger::Critical(const char* text)
 {
-	//Crash on the right line in code
+	_ASSERT(m_Instance);
 	std::string data;
 	data.append("[Critical]: ");
 	data.append(text);
@@ -72,6 +74,7 @@ void Logger::Critical(const char* text)
 }
 void Logger::Info(const char* text)
 {
+	_ASSERT(m_Instance);
 	std::string data;
 	data.append("[Info]: ");
 	data.append(text);
@@ -81,6 +84,7 @@ void Logger::Info(const char* text)
 }
 void Logger::Debug(const char* text)
 {
+	_ASSERT(m_Instance);
 	std::string data;
 	data.append("[Debug]: ");
 	data.append(text);

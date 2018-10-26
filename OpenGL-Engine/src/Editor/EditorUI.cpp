@@ -149,13 +149,13 @@ void EditorUI::MainBar()
 		if (ImGui::MenuItem("Save"))
 		{
 			SceneManager manager;
-			manager.saveScene("res/scene/Testlevel.json", gRenderManager._layerManager);
+			//manager.saveScene("Resources/scene/Testlevel.json", gRenderManager._layerManager);
 		}
 		//load a scene from a json file
 		if (ImGui::MenuItem("Load"))
 		{
 			SceneManager manager;
-			manager.loadScene("res/scene/Testlevel.json", gRenderManager._layerManager);
+			manager.loadScene("Resources/scene/Testlevel.json", gRenderManager._layerManager);
 		}
 		if (ImGui::MenuItem("Exit"))
 		{

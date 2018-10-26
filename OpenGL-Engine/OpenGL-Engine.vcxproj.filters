@@ -236,13 +236,13 @@
     <ClInclude Include="src\Utilities\Logger.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Hydro.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\RescourceManagement\SceneManager\SceneManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\System\Allocator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hydro.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

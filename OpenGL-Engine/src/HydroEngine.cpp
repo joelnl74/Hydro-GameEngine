@@ -9,11 +9,10 @@ using namespace Engine;
 	{
 		//Running2DMode you can go to file load and it will load up a 2d scene
 		//Running3DMode you will see a moving cube
-		_engineMode = EngineMode::Running3DMode;
+		_engineMode = EngineMode::Running2DMode;
 
 		//Logger
 		gLogger.StartUp();
-		gLogger.m_Instance->Info("Getting things ready!");
 		//create objects needed for the engine and there references
 		_window = new Window(WIDTH, HEIGHT, "Hydro-Engine");
 		gRenderManager.StartUp();
