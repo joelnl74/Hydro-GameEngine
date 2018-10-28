@@ -32,7 +32,6 @@ namespace Engine
 		Window* _window;
 		Editor* _editor;
 		AudioEngine* _audioEngine;
-		//MemoryManager gMemorymanager;
 		RenderManager gRenderManager;
 		Logger gLogger;
 		Time gTime;

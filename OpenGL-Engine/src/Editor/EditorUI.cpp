@@ -181,7 +181,7 @@ void EditorUI::MainBar()
 void EditorUI::CreateSprite()
 {
 	//create sprite object with filled in variabels, probally dont wanna do this because calling new is expensive, need to make a custom memory manager, which creates a block of memory which i can ask for and set a pointer to a piece of memory
-	Sprite * sprite = new Sprite(scale[0], scale[1], position[0], position[1], &solid);
+	Sprite * sprite = hnew Sprite(scale[0], scale[1], position[0], position[1], &solid);
 	//set uv
 	sprite->setIndex(4, 4);
 	//set texture

@@ -9,16 +9,16 @@ using namespace Engine;
 	{
 		//Running2DMode you can go to file load and it will load up a 2d scene
 		//Running3DMode you will see a moving cube
-		_engineMode = EngineMode::Running3DMode;
+		_engineMode = EngineMode::Running2DMode;
 
 		gLogger.StartUp();
 		gTime.StartUp();
 
-		_window = new Window(WIDTH, HEIGHT, "Hydro-Engine");
+		_window = hnew Window(WIDTH, HEIGHT, "Hydro-Engine");
 		gRenderManager.StartUp();
-		_camera = new Camera(720, 480, CameraMode::projection);
-		_editor = new Editor(_window->getWindow(), _camera);
-		_audioEngine = new AudioEngine();
+		_camera = hnew Camera(720, 480, CameraMode::projection);
+		_editor = hnew Editor(_window->getWindow(), _camera);
+		//_audioEngine = new AudioEngine();
 
 		//TODO: REMOVE DEBUG CODE ENGINEMODE TESTING
 		if (_engineMode == EngineMode::Running2DMode)
@@ -34,8 +34,8 @@ using namespace Engine;
 		{
 			glm::mat4 view;
 			view = glm::translate(view, glm::vec3(0, 0, -5.0f));
-			_shader = new Shader("Resources/shaders/Vincent.shader");
-			_cube = new Cube(_shader);
+			_shader = hnew Shader("Resources/shaders/Vincent.shader");
+			_cube = hnew Cube(_shader);
 			_shader->Bind();
 			_shader->SetMatrix4("projectionMatirx", _camera->cameraProjection);
 			_shader->SetMatrix4("view", view);
@@ -49,17 +49,16 @@ using namespace Engine;
 	{
 		gRenderManager.ShutDown();
 		//clear memory
-		delete _audioEngine;
-		delete _editor;
-		delete _camera;
-		delete _window;
+		hdel _editor;
+		hdel _camera;
+		hdel _window;
+		//delete _audioEngine;
 
 		ImGui_ImplGlfwGL3_Shutdown();
 		ImGui::DestroyContext();
 
 		gTime.ShutDown();
 		gLogger.ShutDown();
-		
 	}
 	void HydroEngine::CheckInput()
 	{

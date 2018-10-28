@@ -1,6 +1,4 @@
 ﻿//#include "../Win32Window.h"
-#include "Physics/Collision_detection.h"
-
 #include "HydroEngine.h"
 /*
 All the code in Application is dummy code just to test some parts of the engine
@@ -31,7 +29,7 @@ Win32Window: Integrate win32 window into project and remove glfw[]
 int main(void)
 {
 	//create a window
-	Engine::HydroEngine* m_engine = new Engine::HydroEngine();
+	Engine::HydroEngine* m_engine = hnew Engine::HydroEngine();
 
 	//create a rederer object from which you can call draw calls
 	//Collision_detection *detection = new Collision_detection();
@@ -58,7 +56,7 @@ int main(void)
 		m_engine->gTime.m_Instance->EndFrame();
     }
 	//delete detection;
-	delete m_engine;
+	hdel m_engine;
 		return 0;
 }
 

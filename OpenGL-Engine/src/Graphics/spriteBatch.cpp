@@ -7,8 +7,8 @@ spriteBatch::spriteBatch()
 spriteBatch::~spriteBatch()
 {
 	glDeleteBuffers(1, &vbo);
-	delete indexbuffer;
-	delete buffer;
+	hdel indexbuffer;
+	hdel buffer;
 }
 //Create Buffers
 void spriteBatch::Init()
@@ -46,7 +46,7 @@ void spriteBatch::Init()
 		offset += 4;
 
 	}
-	indexbuffer = new IndexBuffer(indices, INDEX_BUFFER_SIZE);
+	indexbuffer = hnew IndexBuffer(indices, INDEX_BUFFER_SIZE);
 
 	glBindVertexArray(0);
 }

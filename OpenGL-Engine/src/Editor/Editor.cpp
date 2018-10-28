@@ -4,7 +4,7 @@ Editor::Editor(GLFWwindow *win, Camera *camera)
 	ImGui::CreateContext();
 	ImGui_ImplGlfwGL3_Init(win, true);
 	ImGui::StyleColorsLight();
-	ui = new EditorUI(win);
+	ui = hnew EditorUI(win);
 	_camera = camera;
 }
 

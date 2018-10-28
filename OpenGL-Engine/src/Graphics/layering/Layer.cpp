@@ -4,7 +4,7 @@ Layer::Layer(bool static_Layer)
 {
 	sprites.reserve(MAX_SPRITES);
 	//Batch for this layer
-	batch = new spriteBatch();
+	batch = hnew spriteBatch();
 	//set static or not
 	staticLayer = static_Layer;
 
@@ -15,7 +15,7 @@ Layer::~Layer()
 	//clearing the memory
 	for (std::vector<Sprite*>::iterator it = sprites.begin(); it != sprites.end(); ++it)
 	{
-		delete *it;
+		hdel *it;
 	}
 	//clear the list
 	sprites.clear();

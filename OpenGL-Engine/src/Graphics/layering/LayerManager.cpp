@@ -20,7 +20,7 @@ LayerManager::~LayerManager()
 }
 void LayerManager::AddLayer(bool static_layer)
 {
-	Layer* _layer = new Layer(static_layer);
+	Layer* _layer = hnew Layer(static_layer);
 
 	if(m_layerManager.begin() != m_layerManager.end())
 	m_layerManager.emplace(m_layerManager.size() , _layer);
