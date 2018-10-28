@@ -1,13 +1,13 @@
 #pragma once
 #include <string.h>
 
+#include "Hydro.h"
 #include "Graphics/Window.h"
-#include "Utilities/Logger.h"
 #include "Editor/Editor.h"
 #include "audio/AudioEngine.h"
 #include "Graphics/Camera.h"
-#include "Utilities/Time.h"
-#include "../Cube.h"
+//Test includes
+#include "Graphics/Shapes/Cube.h"
 //https://github.com/joelnl74/Hydro-GameEngine 
 
 enum  EngineMode
@@ -32,6 +32,7 @@ namespace Engine
 		Window* _window;
 		Editor* _editor;
 		AudioEngine* _audioEngine;
+		//MemoryManager gMemorymanager;
 		RenderManager gRenderManager;
 		Logger gLogger;
 		Time gTime;

@@ -1,6 +1,6 @@
 #include "EditorUI.h"
 #include <stdio.h>
-#include "../RescourceManagement/SceneManager/SceneManager.h"
+#include "../RescourceManagement/SceneManager/LevelLoader2D.h"
 EditorUI::EditorUI(GLFWwindow *win)
 {
 	ImGui::CreateContext();
@@ -148,14 +148,14 @@ void EditorUI::MainBar()
 		//Save current scene to a json file 
 		if (ImGui::MenuItem("Save"))
 		{
-			SceneManager manager;
-			//manager.saveScene("Resources/scene/Testlevel.json", gRenderManager._layerManager);
+			LevelLoader2D loader;
+			loader.saveScene("Resources/scene/Testlevel.json", gRenderManager._layerManager);
 		}
 		//load a scene from a json file
 		if (ImGui::MenuItem("Load"))
 		{
-			SceneManager manager;
-			manager.loadScene("Resources/scene/Testlevel.json", gRenderManager._layerManager);
+			LevelLoader2D loader;
+			loader.loadScene("Resources/scene/Testlevel.json", gRenderManager._layerManager);
 		}
 		if (ImGui::MenuItem("Exit"))
 		{

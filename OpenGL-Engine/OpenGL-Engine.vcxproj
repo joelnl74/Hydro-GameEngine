@@ -125,7 +125,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\RescourceManagement\SceneManager\SceneManager.cpp" />
+    <ClCompile Include="src\System\Allocator.cpp" />
+    <ClCompile Include="src\System\MemoryManager.cpp" />
+    <ClCompile Include="src\System\Memory.cpp" />
+    <ClCompile Include="src\RescourceManagement\SceneManager\LevelLoader2D.cpp" />
     <ClCompile Include="src\Utilities\Logger.cpp" />
     <ClCompile Include="src\ECS\ComponentManager.cpp" />
     <ClCompile Include="src\ECS\EntityManager.cpp" />
@@ -156,13 +159,16 @@
     <ClCompile Include="src\Graphics\Texture.cpp" />
     <ClCompile Include="src\Graphics\Window.cpp" />
     <ClCompile Include="src\Graphics\Text.cpp" />
-    <ClCompile Include="Cube.cpp" />
+    <ClCompile Include="src\Graphics\Shapes\Cube.cpp" />
     <ClCompile Include="Win32Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\System\Allocator.h" />
+    <ClInclude Include="src\System\MemoryManager.h" />
+    <ClInclude Include="src\System\Memory.h" />
+    <ClInclude Include="src\Graphics\Shapes\Shape.h" />
     <ClInclude Include="src\Hydro.h" />
-    <ClInclude Include="src\RescourceManagement\SceneManager\SceneManager.h" />
+    <ClInclude Include="src\RescourceManagement\SceneManager\LevelLoader2D.h" />
     <ClInclude Include="src\Utilities\Logger.h" />
     <ClInclude Include="src\ECS\ComponentManager.h" />
     <ClInclude Include="src\ECS\EntityManager.h" />
@@ -203,7 +209,7 @@
     <ClInclude Include="src\Graphics\Texture.h" />
     <ClInclude Include="src\Graphics\Window.h" />
     <ClInclude Include="src\Graphics\Text.h" />
-    <ClInclude Include="Cube.h" />
+    <ClInclude Include="src\Graphics\Shapes\Cube.h" />
     <ClInclude Include="Win32Window.h" />
   </ItemGroup>
   <ItemGroup>

@@ -2,11 +2,11 @@
 #include <string>
 #include <fstream>
 
-#define LOG_ERROR(x)    Logger::GetInstance()->Error(x)
-#define LOG_WARNING(x)  Logger::GetInstance()->Warning(x)
-#define LOG_CRITICAL(x)	Logger::GetInstance()->Critical(x)
-#define LOG_INFO(x)     Logger::GetInstance()->Info(x)
-#define LOG_DEBUG(x)    Logger::GetInstance()->Debug(x)
+#define LOG_ERROR(x)     Logger::m_Instance->Error(x)
+#define LOG_WARNING(x)   Logger::m_Instance->Warning(x)
+#define LOG_CRITICAL(x)	 Logger::m_Instance->Critical(x)
+#define LOG_INFO(x)      Logger::m_Instance->Info(x)
+#define LOG_DEBUG(x)     Logger::m_Instance->Debug(x)
 
 typedef enum LOG_LEVEL
 {

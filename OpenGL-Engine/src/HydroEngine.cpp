@@ -9,10 +9,11 @@ using namespace Engine;
 	{
 		//Running2DMode you can go to file load and it will load up a 2d scene
 		//Running3DMode you will see a moving cube
-		_engineMode = EngineMode::Running2DMode;
+		_engineMode = EngineMode::Running3DMode;
 
 		gLogger.StartUp();
 		gTime.StartUp();
+
 		_window = new Window(WIDTH, HEIGHT, "Hydro-Engine");
 		gRenderManager.StartUp();
 		_camera = new Camera(720, 480, CameraMode::projection);
@@ -71,7 +72,7 @@ using namespace Engine;
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);;
 		
 		//Draw Graphics
-		
+
 		//2D SpriteBatch TEST
 		if(_engineMode == EngineMode::Running2DMode)
 		gRenderManager.Update();

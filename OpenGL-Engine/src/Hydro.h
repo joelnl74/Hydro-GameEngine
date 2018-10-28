@@ -1,9 +1,12 @@
 #pragma once
 #ifndef Hydro_H
 #define Hydro_H
-//Logging Memory Time
+//Memory
+#include "System/MemoryManager.h"
+#include "System/Memory.h"
+//Utilities  
 #include "Utilities/Logger.h"
-//#include "Utilities/Timer.h"
+#include "Utilities/Time.h"
 
 //Math
 #include "vendor/glm/glm.hpp"
