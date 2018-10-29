@@ -30,14 +30,25 @@ std::string MemoryManager::BytesToString(int64_t bytes)
 	static const float kb = 1024;
 
 	std::string result;
-	//if (bytes > gb)
-	//	result = float(bytes / gb) + " GB";
-	//else if (bytes > mb)
-	//	result = float(bytes / mb) + " MB";
-	//else if (bytes > kb)
-	//	result = float(bytes / kb) + " KB";
-	//else
-	//	result = float((float)bytes) + " bytes";
-
+	if (bytes > gb)
+	{
+		result += float((float)bytes / gb);
+		result += " GB";
+	}
+	else if (bytes > mb)
+	{
+		result += float((float)bytes / mb);;
+		result += " MB";
+	}
+	else if (bytes > kb)
+	{
+		result += std::to_string(float((float)bytes / kb));
+		result += " KB";
+	}
+	else
+	{
+		result += float((float)bytes);
+		result += " Bytes";
+	}
 	return result;
 }

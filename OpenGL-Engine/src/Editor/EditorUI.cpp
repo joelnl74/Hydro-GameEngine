@@ -6,6 +6,7 @@ EditorUI::EditorUI(GLFWwindow *win)
 	ImGui::CreateContext();
 	ImGui_ImplGlfwGL3_Init(win, true);
 	ImGui::StyleColorsLight();
+	layerID = 0;
 }
 EditorUI::~EditorUI()
 {
@@ -202,5 +203,6 @@ void EditorUI::Inspector()
 
 	ImGui::Text("Scale");
 	ImGui::InputInt2(" ", scale);
+	//ImGui::Text(MemoryManager::Get()->BytesToString(MemoryManager::Get()->GetMemoryStats().currentUsed).data());
 	ImGui::End();
 }
