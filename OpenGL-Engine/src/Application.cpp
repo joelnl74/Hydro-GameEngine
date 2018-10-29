@@ -54,6 +54,8 @@ int main(void)
 		// Render here 
 		m_engine->Draw();
 		m_engine->gTime.m_Instance->EndFrame();
+
+		MemoryManager::Get()->GetMemoryStats();
     }
 	//delete detection;
 	hdel m_engine;

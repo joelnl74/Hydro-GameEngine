@@ -5,7 +5,7 @@ class FileSystem
 public:
 	FileSystem();
 	~FileSystem();
-	void WriteFile(std::string &data);
-	void ReadFile(std::string &data);
+	bool WriteFile(std::string &data);
+	bool ReadFile(std::string &data);
 };
 

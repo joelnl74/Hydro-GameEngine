@@ -19,7 +19,7 @@ Layer::~Layer()
 	}
 	//clear the list
 	sprites.clear();
-	delete texture;
+	hdel texture;
 }
 void Layer::SubmitSprite(Sprite &sprite)
 {

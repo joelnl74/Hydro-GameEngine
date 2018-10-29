@@ -51,7 +51,7 @@ using namespace Engine;
 		//clear memory
 		hdel _editor;
 		hdel _camera;
-		hdel _window;
+
 		//delete _audioEngine;
 
 		ImGui_ImplGlfwGL3_Shutdown();
@@ -59,6 +59,7 @@ using namespace Engine;
 
 		gTime.ShutDown();
 		gLogger.ShutDown();
+		hdel _window;
 	}
 	void HydroEngine::CheckInput()
 	{
