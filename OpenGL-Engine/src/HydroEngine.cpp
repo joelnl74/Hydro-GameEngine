@@ -9,7 +9,7 @@ using namespace Engine;
 	{
 		//Running2DMode you can go to file load and it will load up a 2d scene
 		//Running3DMode you will see a moving cube
-		_engineMode = EngineMode::Running2DMode;
+		_engineMode = EngineMode::Running3DMode;
 
 		gLogger.StartUp();
 		gTime.StartUp();

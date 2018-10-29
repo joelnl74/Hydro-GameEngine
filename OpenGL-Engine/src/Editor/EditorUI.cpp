@@ -203,6 +203,6 @@ void EditorUI::Inspector()
 
 	ImGui::Text("Scale");
 	ImGui::InputInt2(" ", scale);
-	//ImGui::Text(MemoryManager::Get()->BytesToString(MemoryManager::Get()->GetMemoryStats().currentUsed).data());
+	ImGui::Text(MemoryManager::Get()->BytesToString(MemoryManager::Get()->GetMemoryStats().currentUsed).data());
 	ImGui::End();
 }
