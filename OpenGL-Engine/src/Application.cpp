@@ -31,20 +31,6 @@ int main(void)
 	//create a window
 	Engine::HydroEngine* m_engine = hnew Engine::HydroEngine();
 
-	//create a rederer object from which you can call draw calls
-	//Collision_detection *detection = new Collision_detection();
-	
-	//Create a audioengine object
-	//Load a audio file
-	//m_engine->_audioEngine->LoadAudioFileFromSystem("res/sounds/sound1.wav","2", false);
-	//m_engine->_audioEngine->LoadAudioFileFromSystem("res/sounds/349179__sirkoto51__rpg-town-loop-2 (1).wav", "RPG", true);
-	//TEST BLOCK
-	//play the loaded audio file
-	// m_engine->_audioEngine->PlaySound("RPG");
-	//Texture *pointlightTexture = new Texture("res/lighting/pointlight.png");
-	//Sprite *pointlight = new Sprite(512, 512, 0, 0, false);
-	//END
-
 	//Gameloop 
 	while (!m_engine->_window->closed())
 	{		

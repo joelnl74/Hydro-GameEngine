@@ -5,6 +5,7 @@ static const int HEIGHT = 768;
 
 using namespace Engine;
 
+//Only Start major parts of the engine later on here so change Camera editor Window all to the graphics part of the engine
 	HydroEngine::HydroEngine()
 	{
 		//Running2DMode you can go to file load and it will load up a 2d scene

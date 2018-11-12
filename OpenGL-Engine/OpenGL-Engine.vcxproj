@@ -164,6 +164,7 @@
     <ClCompile Include="Win32Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\RescourceManagement\ResourceManager.h" />
     <ClInclude Include="src\System\FileSystem.h" />
     <ClInclude Include="src\System\Allocator.h" />
     <ClInclude Include="src\System\MemoryManager.h" />
