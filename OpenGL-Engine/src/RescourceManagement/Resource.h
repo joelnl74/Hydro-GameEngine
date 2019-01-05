@@ -5,8 +5,8 @@
 class Resource
 {
 public:
-	Resource();
-	virtual ~Resource();
+	Resource() { }
+	virtual ~Resource()= 0;
 
 	virtual void loadResource() = 0;
 	virtual void unloadResource() = 0;
@@ -14,7 +14,7 @@ public:
 	void setResourceId(unsigned id) { mResourceId = id; };
 	unsigned getResourceId() const { return mResourceId; };
 
-	void setResourcePath(const std::string& path);
+	void setResourcePath(const std::string& path) { }
 	std::string getResourcePath() const { return mResourcePath; };
 
 protected:

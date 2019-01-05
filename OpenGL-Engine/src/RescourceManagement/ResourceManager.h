@@ -15,5 +15,6 @@ public:
 		return dynamic_cast<T*>(mResources.find(name)->second);
 	}
 private:
-	std::unordered_map<std::string&, Resource*> mResources;
+	//Resources managed for this scene
+	std::unordered_map<std::string*, Resource*> mResources;
 };

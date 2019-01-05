@@ -16,13 +16,13 @@ void ResourceManager::AddReource(std::string &filePath, Resource *resource)
 	}
 	else
 	{
-		mResources.emplace(filePath, resource);
+		mResources.emplace(&filePath, resource);
 	}
 }
 bool ResourceManager::RemoveResource(std::string &filepath)
 {
-	delete mResources.find(filepath)._Ptr;
-	mResources.erase(filepath);
+	delete mResources.find(&filepath)._Ptr;
+	mResources.erase(&filepath);
 	LOG_WARNING("File not found or already deleted");
 	return false;
 }
