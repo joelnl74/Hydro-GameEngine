@@ -16,6 +16,8 @@ public:
 	inline bool operator==(const Entity* rhs) const { return this->entityID == rhs->entityID; }
 	inline bool operator!=(const Entity* rhs) const { return this->entityID != rhs->entityID; }
 
+	std::vector<Component*> components;
+
 private:
 };
 

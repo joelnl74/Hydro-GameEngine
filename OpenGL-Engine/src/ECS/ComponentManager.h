@@ -9,6 +9,8 @@ class ComponentManager
 public:
 	ComponentManager();
 	~ComponentManager();
+	std::vector<Component*> components;
+	void UpdateComponents();
 	//EntityID-> is the reference which this component belongs to
 	//void CreateComponent(ComponentType, const int EntityID);
 private:
