@@ -1,15 +1,15 @@
 #pragma once
 #include "../ECS/Components/Sprite.h"
 #include "buffer/VertexBuffer.h"
-#include "./buffer/VertexBufferLayout.h"
-#include "./buffer/IndexBuffer.h"
-#include "./buffer/VertexArray.h"
+#include "buffer/VertexBufferLayout.h"
+#include "buffer/IndexBuffer.h"
+#include "buffer/VertexArray.h"
 #include "Shader.h"
 #include "Texture.h"
 
 #include "../Hydro.h"
 
-#define MAX_SPRITES			 20100
+#define MAX_SPRITES			 21000
 #define VERTEX_SIZE			 sizeof(VertexData)
 #define SPRITE_SIZE			 VERTEX_SIZE * 4
 #define BUFFER_SIZE			 SPRITE_SIZE * MAX_SPRITES

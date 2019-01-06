@@ -7,7 +7,7 @@
 //Utilities  
 #include "Utilities/Logger.h"
 #include "Utilities/Time.h"
-
+#include "Utilities/Types.h"
 //Math
 #include "vendor/glm/glm.hpp"
 #endif Hydro_H

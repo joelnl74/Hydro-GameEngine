@@ -17,7 +17,7 @@ using namespace Engine;
 
 		_window = hnew Window(WIDTH, HEIGHT, "Hydro-Engine");
 		gRenderManager.StartUp();
-		_camera = hnew Camera(720, 480, CameraMode::projection);
+		_camera = hnew Camera(800, 600, CameraMode::projection);
 		_editor = hnew Editor(_window->getWindow(), _camera);
 		//_audioEngine = new AudioEngine();
 
@@ -27,23 +27,8 @@ using namespace Engine;
 			gRenderManager.GetInstance().shader->SetMatrix4("orthographicModel", _camera->returnProjection());
 			gRenderManager.GetInstance().shader->setVec3("ambientLight", glm::vec3(0.85f, 0.85f, 0.85f));
 			//center camera
-			_camera->centerCamera(64, 64);
+			_camera->centerCamera(0, 0);
 			gRenderManager.GetInstance().shader->SetMatrix4("orthographicModel", _camera->returnProjection());
-		}
-		//TODO: REMOVE DEBUG CODE ENGINEMODE TESTING
-		if (_engineMode == EngineMode::Running3DMode)
-		{
-			glm::mat4 view;
-			view = glm::translate(view, glm::vec3(0, 0, -5.0f));
-			_shader = hnew Shader("Resources/shaders/Vincent.shader");
-			_cube = hnew Cube(_shader);
-			_shader->Bind();
-			_shader->SetMatrix4("projectionMatirx", _camera->cameraProjection);
-			_shader->SetMatrix4("view", view);
-			_shader->UnBind();
-
-			glEnable(GL_BLEND);
-			glEnable(GL_DEPTH_TEST);
 		}
 	}
 	HydroEngine::~HydroEngine()
@@ -53,7 +38,7 @@ using namespace Engine;
 		hdel _editor;
 		hdel _camera;
 
-		//delete _audioEngine;
+		//hdel _audioEngine;
 
 		ImGui_ImplGlfwGL3_Shutdown();
 		ImGui::DestroyContext();
@@ -77,10 +62,6 @@ using namespace Engine;
 		//2D SpriteBatch TEST
 		if(_engineMode == EngineMode::Running2DMode)
 		gRenderManager.Update();
-
-		//3D test TEST
-		if(_engineMode == EngineMode::Running3DMode)
-		_cube->Draw();
 
 		//Draw UI
 		_editor->ui->DrawUI();

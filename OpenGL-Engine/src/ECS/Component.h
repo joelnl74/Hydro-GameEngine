@@ -1,5 +1,5 @@
 #pragma once
-class Component
+class Component 
 {
 public:
 	virtual void Update() = 0;

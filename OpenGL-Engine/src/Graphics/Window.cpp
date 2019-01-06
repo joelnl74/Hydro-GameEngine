@@ -31,10 +31,11 @@ bool Window::Init()
 	if (!glfwInit())
 		std::cout << "FAILED TO CREATE WINDOW" << std::endl;
 
-	// Create a windowed mode window and its OpenGL context 
+	//TODO:Change to assert
 	m_Window = glfwCreateWindow(m_Width, m_Height, m_Title, NULL, NULL);
 	if (!m_Window)
 	{
+		//TODO: Change to assert
 		std::cout << "NO WINDOW WAS CREATED" << std::endl;
 		return false;
 	}
@@ -46,6 +47,7 @@ bool Window::Init()
 	glfwSwapInterval(1);
 	if (glewInit() != GLEW_OK)
 	{
+		//TODO Change to Assert
 		std::cout << "ERROR INIT GLEW" << std::endl;
 	}
 	std::cout << glGetString(GL_VERSION) << std::endl;

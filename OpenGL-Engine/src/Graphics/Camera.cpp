@@ -11,7 +11,7 @@ Camera::Camera(float width, float height, CameraMode _mode)
 
 	//TEST 2D RENDERING
 	if(_cameraMode ==  CameraMode::orthographic)
-	cameraProjection = glm::ortho(0.0f, width, 0.0f, height, 0.0f, 100.0f);
+	cameraProjection = glm::ortho(0.0f, width, height, 0.0f, -1.0f, 1.0f);
 	//TEST 3D RENDERING
 	if (_cameraMode == CameraMode::projection)
 	{

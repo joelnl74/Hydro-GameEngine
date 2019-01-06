@@ -16,3 +16,11 @@ void Scene::RemoveEntity(Entity *Entity)
 {
 
 }
+void Scene::OnSceneLoad()
+{
+
+}
+void Scene::OnSceneExit()
+{
+
+}

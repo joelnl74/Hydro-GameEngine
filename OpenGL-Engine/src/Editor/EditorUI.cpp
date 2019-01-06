@@ -29,44 +29,44 @@ void EditorUI::setSelectedSprite(Sprite *sprite)
 }
 bool EditorUI::PaintSprite(float x, float y)
 {
-	x = x - scale[0];
-	y = y - scale[1];
+	//x = x - scale[0];
+	//y = y - scale[1];
 
-	position[0] = x;
-	position[1] = y;
+	//position[0] = x;
+	//position[1] = y;
 
-	if (offset[0] != 0 && offset[1] != 0)
-	{
-		if (position[0] % offset[0] == 0 && position[1] % offset[1] == 0)
-		{
-			CreateSprite();
-		}
-		else
-		{
-			float i = position[0] % offset[0];
-			float j = position[1] % offset[1];
+	//if (offset[0] != 0 && offset[1] != 0)
+	//{
+	//	if (position[0] % offset[0] == 0 && position[1] % offset[1] == 0)
+	//	{
+	//		CreateSprite();
+	//	}
+	//	else
+	//	{
+	//		float i = position[0] % offset[0];
+	//		float j = position[1] % offset[1];
 
-			if (position[0] > 0)
-			{
-				position[0] = position[0] - i;
-			}
-			else
-			{
-				position[0] = position[0] + -i;
-			}
-			if (position[1] > 0)
-			{
-				position[1] = position[1] - j;
-			}
-			else
-			{
-				position[1] = position[1] + -j;
-			}
-			CreateSprite();
-			return true;
-		}
-	}
-	CreateSprite();
+	//		if (position[0] > 0)
+	//		{
+	//			position[0] = position[0] - i;
+	//		}
+	//		else
+	//		{
+	//			position[0] = position[0] + -i;
+	//		}
+	//		if (position[1] > 0)
+	//		{
+	//			position[1] = position[1] - j;
+	//		}
+	//		else
+	//		{
+	//			position[1] = position[1] + -j;
+	//		}
+	//		CreateSprite();
+	//		return true;
+	//	}
+	//}
+	//CreateSprite();
 	return true;
 }
 void EditorUI::DrawUI()
@@ -84,13 +84,13 @@ void EditorUI::SpriteEditor()
 	{
 		ImGui::Begin("SpriteEditor");
 		ImGui::Text("SpritePosition");
-		ImGui::InputInt2("", position);
+		ImGui::InputFloat2("", position);
 
 		ImGui::Text("SpriteSize");
-		ImGui::InputInt2(" ", scale);
+		ImGui::InputFloat2(" ", scale);
 
 		ImGui::Text("UV");
-		ImGui::InputInt2("  ", uv);
+		ImGui::InputFloat2("  ", uv);
 
 		ImGui::Text("Solid");
 		ImGui::SameLine();
@@ -102,7 +102,7 @@ void EditorUI::SpriteEditor()
 
 		ImGui::Text("Offset");
 		ImGui::SameLine();
-		ImGui::InputInt2("      ", offset);
+		ImGui::InputFloat2("      ", offset);
 
 		ImGui::Text("Layer");
 		ImGui::InputInt("    ", &layerID);
@@ -199,10 +199,10 @@ void EditorUI::Inspector()
 	ImGui::SetNextWindowSize(ImVec2(200, 780));
 	ImGui::Begin("Inspector");
 	ImGui::Text("Position");
-	ImGui::InputInt2("", position);
+	ImGui::InputFloat2("", position);
 
 	ImGui::Text("Scale");
-	ImGui::InputInt2(" ", scale);
+	ImGui::InputFloat2(" ", scale);
 	ImGui::Text(MemoryManager::Get()->BytesToString(MemoryManager::Get()->GetMemoryStats().currentUsed).data());
 	ImGui::End();
 }

@@ -1,4 +1,5 @@
 #include "Sprite.h"
+#include "../../Graphics/RenderManager.h"
 #include "../../vendor/glm/glm.hpp"
 #include "../../vendor/glm/gtc/matrix_transform.hpp"
 
@@ -11,6 +12,9 @@ Sprite::Sprite(float sizeX, float sizeY, float posX, float posY, bool solidSprit
 
 	scale.x = sizeX;
 	scale.y = sizeY;
+
+	//Add sprite to Renderer
+	RenderManager::GetInstance()._layerManager->getLayer(0)->SubmitSprite(*this);
 }
 void Sprite::Update()
 {
@@ -29,15 +33,18 @@ void Sprite::TransLate(float x, float y)
 Sprite::~Sprite()
 {
 }
+//Set index of the texture atlass
 void Sprite::setIndex(float x, float y)
 {
 	offsetX = 1 / x;
 	offsetY = 1 / y;
 }
+//Set object to solid
 void Sprite::setSolid(bool x)
 {
 	solid = x;
 }
+//Set the texture uv
 void Sprite::setTextureUV(float PosX, float PosY)
 {
 	indexX = 0;

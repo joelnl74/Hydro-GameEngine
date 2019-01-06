@@ -44,6 +44,7 @@ bool LevelLoader2D::loadScene(const std::string& inputFileName, LayerManager* l_
 		}
 
 	}
+	LOG_INFO("Loaded in sprite information!");
 	return true;
 }
 //Save a level to a json file
@@ -98,5 +99,6 @@ bool LevelLoader2D::saveScene(const std::string& inputFileName, LayerManager* l_
 	ofs << "]";
 	//close the stream
 	ofs.close();
+	LOG_INFO("Saved sprite information!");
 	return true;
 }

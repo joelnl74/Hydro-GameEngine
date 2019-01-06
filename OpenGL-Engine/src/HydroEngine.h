@@ -6,8 +6,7 @@
 #include "Editor/Editor.h"
 #include "audio/AudioEngine.h"
 #include "Graphics/Camera.h"
-//Test includes
-#include "Graphics/Shapes/Cube.h"
+#include "RescourceManagement/SceneManager/Scene.h"
 //https://github.com/joelnl74/Hydro-GameEngine 
 
 enum  EngineMode
@@ -26,7 +25,6 @@ namespace Engine
 		~HydroEngine();
 		void CheckInput();
 		void Draw();
-	//split this up more in a renderer, audio, ai, physics engine and so on
 	//Simple 2dcamera class
 		Camera* _camera;
 		Window* _window;
@@ -36,10 +34,9 @@ namespace Engine
 		Logger gLogger;
 		Time gTime;
 	private:
-		//Vincent stuf
 		EngineMode _engineMode;
-		Shader *_shader;
-		Cube * _cube;
+		Scene *_scene;
+
 };
 }
 

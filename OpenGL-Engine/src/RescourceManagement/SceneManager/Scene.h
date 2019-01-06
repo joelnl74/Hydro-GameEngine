@@ -10,6 +10,9 @@ public:
 	Scene();
 	~Scene();
 
+	void OnSceneLoad();
+	void OnSceneExit();
+
 	void AddEntity(Entity* entiy);
 	void RemoveEntity(Entity* entity);
 
