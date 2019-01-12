@@ -19,6 +19,7 @@ AudioEngine::~AudioEngine()
 	hdel channel;
 	system->close();
 }
+//Load Audio file from drive into engine
 bool AudioEngine::LoadAudioFileFromSystem(const std::string filepath,std::string name, bool looped)
 {
 	FMOD::Sound *audioClip;
@@ -30,6 +31,9 @@ bool AudioEngine::LoadAudioFileFromSystem(const std::string filepath,std::string
 	audioClips.emplace(name, audioClip);
 	return true;
 }
+/*
+Play audio clip and update the audiosyste,
+*/
 bool AudioEngine::PlaySound(std::string name)
 {
 	for (auto x : audioClips)
