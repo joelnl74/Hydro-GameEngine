@@ -19,7 +19,12 @@ Shader::~Shader()
 {
 	GLCall(glDeleteProgram(m_rendererID));
 }
-//parse the shader 
+/*
+parse the shader into:
+NONE -1
+VERTEX 0
+FRAGMENT 1
+*/
 ShaderProgramSource Shader::ParseShader(const std::string& filePath)
 {
 	std::ifstream stream(filePath);
@@ -54,6 +59,9 @@ ShaderProgramSource Shader::ParseShader(const std::string& filePath)
 	}
 	return{ shaderstream[0].str(),shaderstream[1].str() };
 }
+/*
+Compile the shader program
+*/
 unsigned int Shader::CompileShader(unsigned int type, const std::string &source)
 {
 	unsigned int id = glCreateShader(type);
@@ -106,30 +114,37 @@ void Shader::UnBind() const
 {
 	GLCall(glUseProgram(0));
 }
+//Set a float uniform variable in a shader
 void Shader::setUniform1f(const std::string& name, float value)
 {
 	GLCall(glUniform1f(GetUniforLocation(name), value));
 }
+//Set a int uniform variable in a shader
 void Shader::setUniform1i(const std::string& name, int value)
 {
 	GLCall(glUniform1i(GetUniforLocation(name), value));
 }
+//Set 4 float variables in an uniform variable in a shader
 void Shader::setUniform4f(const std::string& name, float f0, float f1, float f2, float f3)
 {
 	GLCall(glUniform4f(GetUniforLocation(name), f0, f1, f2, f3));
 }
+//Set 4x4 float matrix in an uniform variable in a shader
 void Shader::SetMatrix4(const std::string& name, glm::mat4 &matrix)
 {
 	GLCall(glUniformMatrix4fv(GetUniforLocation(name), 1, GL_FALSE, glm::value_ptr(matrix)));
 }
+//Set 4x4 float matrix in an uniform variable in a shader
 void Shader::UniformMatrix4fv(const std::string& name, glm::mat4 &matrix)
 {
 	GLCall(glUniformMatrix4fv(GetUniforLocation(name), 1, GL_FALSE, glm::value_ptr(matrix)));
 }
+//Set vector2 of floats in an uniform variable in a shader
 void Shader::setVec2(const std::string& name, glm::fvec2 vector2)
 {
 	GLCall(glUniform2f(GetUniforLocation(name),vector2.x, vector2.y));
 }
+//Set vector3 of floats in an uniform variable in a shader
 void Shader::setVec3(const std::string& name, glm::fvec3 vector3)
 {
 	GLCall(glUniform3f(GetUniforLocation(name), vector3.x, vector3.y, vector3.z));

@@ -12,11 +12,19 @@ public:
 	{
 
 	}
-	Entity(int x, int y, int z)
+	/*
+	Create an empty entity
+	PositionX, PositionY, PositionZ, ScaleX, ScaleY, ScaleZ
+	*/
+	Entity(float posX, float posY, float posZ, float scaleX, float scaleY, float scaleZ)
 	{
-		transform->position.x = x;
-		transform->position.y = y;
-		transform->position.z = z;
+		transform->position.x = posX;
+		transform->position.y = posY;
+		transform->position.z = posZ;
+
+		transform->scale.x = scaleX;
+		transform->scale.y = scaleY;
+		transform->scale.z = scaleZ;
 	}
 
 	//Compare entities functies
