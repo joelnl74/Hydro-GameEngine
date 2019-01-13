@@ -16,7 +16,7 @@ enum  EngineMode
 	Running3DMode
 };
 
-namespace Engine
+namespace HY_Engine
 {
 	class HydroEngine
 	{

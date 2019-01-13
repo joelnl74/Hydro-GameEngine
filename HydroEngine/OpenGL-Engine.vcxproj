@@ -125,6 +125,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\Editor\SpriteEditor.cpp" />
+    <ClCompile Include="src\Engine.cpp" />
     <ClCompile Include="src\RescourceManagement\SceneManager\Scene.cpp" />
     <ClCompile Include="src\RescourceManagement\ResourceManager.cpp" />
     <ClCompile Include="src\System\FileSystem.cpp" />
@@ -150,7 +153,6 @@
     <ClCompile Include="src\audio\AudioEngine.cpp" />
     <ClCompile Include="src\Graphics\Shader.cpp" />
     <ClCompile Include="src\Graphics\buffer\IndexBuffer.cpp" />
-    <ClCompile Include="src\Application.cpp" />
     <ClCompile Include="src\Utilities\Time.cpp" />
     <ClCompile Include="src\vendor\imgui\imgui.cpp" />
     <ClCompile Include="src\vendor\imgui\imgui_demo.cpp" />
@@ -165,6 +167,8 @@
     <ClCompile Include="src\Graphics\Shapes\Cube.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Editor\SpriteEditor.h" />
+    <ClInclude Include="src\Engine.h" />
     <ClInclude Include="src\RescourceManagement\SceneManager\Scene.h" />
     <ClInclude Include="src\RescourceManagement\Resource.h" />
     <ClInclude Include="src\RescourceManagement\ResourceManager.h" />

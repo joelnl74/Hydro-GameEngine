@@ -9,5 +9,6 @@ public:
 	EditorUI *ui;
 	Camera *_camera;
 	void UpdateInput();
+
 };
 

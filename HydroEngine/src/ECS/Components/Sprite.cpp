@@ -13,12 +13,13 @@ Sprite::Sprite(float sizeX, float sizeY, float posX, float posY, bool solidSprit
 	scale.x = sizeX;
 	scale.y = sizeY;
 
-	//Add sprite to Renderer
+	//TODO MAKES THIS INTO A SYSTEM NOW IT ADD ITSELF TO THE RENDERMANAGER YOU DONT WANT THIS :P
 	RenderManager::GetInstance()._layerManager->getLayer(0)->SubmitSprite(*this);
 }
 void Sprite::Update()
 {
 }
+//TODO CHANGE TRANSLATION SCALING AND OTHER MOVEMENT STUFF TO THE TRANSFORM COMPONENT
 void Sprite::Scale(float x, float y)
 {
 	scale.x = x;

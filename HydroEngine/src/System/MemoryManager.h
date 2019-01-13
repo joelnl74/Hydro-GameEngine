@@ -18,7 +18,7 @@ public:
 	void StartUp();
 	void ShutDown();
 
-	MemoryManager::MemoryManager();
+	MemoryManager();
 
 	inline MemoryStats GetMemoryStats() const { return memoryStats; }
 
