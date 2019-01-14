@@ -8,23 +8,9 @@ public:
 	//Transform of a Entity
 	Transform *transform = new Transform();
 
-	Entity(Transform _transform)
+	Entity()
 	{
-		transform = &_transform;
-	}
-	/*
-	Create an empty entity
-	PositionX, PositionY, PositionZ, ScaleX, ScaleY, ScaleZ
-	*/
-	Entity(float posX, float posY, float posZ, float scaleX, float scaleY, float scaleZ)
-	{
-		transform->position.x = posX;
-		transform->position.y = posY;
-		transform->position.z = posZ;
 
-		transform->scale.x = scaleX;
-		transform->scale.y = scaleY;
-		transform->scale.z = scaleZ;
 	}
 	//Compare entities functies
 	inline bool operator == (const Entity& rhs) const { return this->entityID == rhs.entityID; }
