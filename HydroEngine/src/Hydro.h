@@ -11,5 +11,7 @@
 //Math
 #include "vendor/glm/glm.hpp"
 //Entity component system
-//Reource Manager
+
+//Resource Manager
+
 #endif Hydro_H

@@ -1,7 +1,5 @@
 #include "EntityManager.h"
 
-
-
 EntityManager::EntityManager()
 {
 }
@@ -24,6 +22,11 @@ Entity& EntityManager::CreateEntity()
 
 	return *entity;
 }
+//Return entity by id
+Entity& EntityManager::GetEntity(Entity e)
+{
+	return *_entities.at(e.entityID);
+}
 //Check if entity is alive if not destory its components
 bool EntityManager::Alive(Entity e)
 {
@@ -34,8 +37,8 @@ bool EntityManager::Alive(Entity e)
 }
 //TODO make this more safe
 //Destory an entity and remove it from the heap!
-void EntityManager::Destroy(int id)
+void EntityManager::Destroy(Entity e)
 {
-	delete _entities.at(id);
-	_entities.erase(_entities.find(id));
+	delete _entities.at(e.entityID);
+	_entities.erase(_entities.find(e.entityID));
 }
