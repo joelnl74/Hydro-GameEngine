@@ -28,11 +28,6 @@ public:
 	{
 
 	}
-	//Get component if exsist for this specific entity
-	Component* GetComponent()
-	{
-
-	}
 private:
 };
 
