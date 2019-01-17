@@ -7,6 +7,7 @@ public:
 	~pointLight();
 	float intensity;
 	float raidius;
+private:
 	glm::vec4 colors;
 };
 
