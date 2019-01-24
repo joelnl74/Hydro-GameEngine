@@ -22,5 +22,7 @@ public:
 private:
 	//Collection of all the created entities
 	std::unordered_map<unsigned int , Entity*> _entities;
+	//Entity manager
+	friend class EntityManager;
 };
 

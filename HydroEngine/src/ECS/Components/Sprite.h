@@ -8,7 +8,7 @@ struct VertexData
 	glm::vec2 uv;
 };
 
-class Sprite : Component
+class Sprite : public Component
 {
 public:
 	Sprite(float sizeX, float sizeY, float posX, float posY, bool solidSprite = false);

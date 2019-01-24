@@ -11,7 +11,8 @@
 //Math
 #include "vendor/glm/glm.hpp"
 //Entity component system
-
+#include "ECS/Entity.h"
+#include "ECS/Components/Sprite.h"
 //Resource Manager
 
 #endif Hydro_H

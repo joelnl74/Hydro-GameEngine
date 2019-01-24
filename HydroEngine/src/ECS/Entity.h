@@ -1,6 +1,7 @@
 #pragma once
 #include "Components/Transform.h"
 #include "Component.h"
+#include <unordered_set>
 class Entity
 {
 public:
@@ -18,16 +19,12 @@ public:
 	inline bool operator==(const Entity* rhs) const { return this->entityID == rhs->entityID; }
 	inline bool operator!=(const Entity* rhs) const { return this->entityID != rhs->entityID; }
 
-	//Add component to this specific entity
-	void AddComponent(Component *component)
-	{
-		
-	}
-	//Remove component from this specific entity
-	void RemoveComponent(Component* component)
-	{
 
+	void AddComponent(Component *c)
+	{
+		components.emplace(c);
 	}
 private:
+	std::unordered_set<Component*> components;
 };
 

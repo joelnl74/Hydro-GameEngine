@@ -136,7 +136,6 @@
     <ClCompile Include="src\System\Memory.cpp" />
     <ClCompile Include="src\RescourceManagement\SceneManager\LevelLoader2D.cpp" />
     <ClCompile Include="src\Utilities\Logger.cpp" />
-    <ClCompile Include="src\ECS\ComponentManager.cpp" />
     <ClCompile Include="src\ECS\EntityManager.cpp" />
     <ClCompile Include="src\Editor\Editor.cpp" />
     <ClCompile Include="src\ECS\Components\pointlight.cpp" />
@@ -180,7 +179,6 @@
     <ClInclude Include="src\Hydro.h" />
     <ClInclude Include="src\RescourceManagement\SceneManager\LevelLoader2D.h" />
     <ClInclude Include="src\Utilities\Logger.h" />
-    <ClInclude Include="src\ECS\ComponentManager.h" />
     <ClInclude Include="src\ECS\EntityManager.h" />
     <ClInclude Include="src\Utilities\Input.h" />
     <ClInclude Include="src\Graphics\RenderManager.h" />
