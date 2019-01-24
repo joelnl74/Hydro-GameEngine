@@ -1,11 +1,11 @@
 #pragma once
 #include "Components/Transform.h"
 #include "Component.h"
-#include <unordered_set>
+#include <vector>
 class Entity
 {
 public:
-	unsigned int entityID;
+	int entityID;
 	//Transform of a Entity
 	Transform *transform = new Transform();
 
@@ -19,12 +19,22 @@ public:
 	inline bool operator==(const Entity* rhs) const { return this->entityID == rhs->entityID; }
 	inline bool operator!=(const Entity* rhs) const { return this->entityID != rhs->entityID; }
 
-
+	template<typename Component>
+	Component* GetComponent() {
+		Component* cmp = nullptr;
+		
+		for(int i = 0; i < components.size(); i++)
+			if (Component* cmp = dynamic_cast<Component*>(components[i])) {
+				return cmp;
+			}
+		return cmp;
+	}
 	void AddComponent(Component *c)
 	{
-		components.emplace(c);
+		c->entity_ID = entityID;
+		components.push_back(c);
 	}
 private:
-	std::unordered_set<Component*> components;
+	std::vector<Component*> components;
 };
 

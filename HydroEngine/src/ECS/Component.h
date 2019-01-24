@@ -1,10 +1,9 @@
 #pragma once
 class Component 
 {
-protected:
-	int entity_ID;
-	int component_ID;
 public:
+	int entity_ID;
+	bool active = true;
 	virtual void Update() = 0;
 private:
 };

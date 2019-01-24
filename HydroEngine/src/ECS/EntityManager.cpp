@@ -17,6 +17,7 @@ EntityManager::~EntityManager()
 Entity& EntityManager::CreateEntity()
 {
 	Entity *entity = new Entity();
+	entity->entityID = _entities.size() + 1;
 	//TODO KEEP TRACK OF EMPTY ID's and reuse them
 	_entities.emplace(_entities.size() + 1, entity);
 
