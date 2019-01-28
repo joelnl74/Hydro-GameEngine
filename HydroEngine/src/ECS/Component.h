@@ -1,10 +1,14 @@
 #pragma once
-class Component 
+#include <bitset>
+class Component
 {
 public:
-	int entity_ID;
-	bool active = true;
-	virtual void Update() = 0;
-private:
-};
+	virtual ~Component() = default;
 
+	//is the component active?
+	bool active = true;	
+	//Entity this component belongs to
+	int entity_ID;
+	//The type of component this class is
+	unsigned int ComponentType_ID;
+};

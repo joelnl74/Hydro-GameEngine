@@ -125,12 +125,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\ECS\ComponentMapper.cpp" />
+    <ClCompile Include="src\ECS\ECS_Engine.cpp" />
+    <ClCompile Include="src\ECS\ComponentManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src\Editor\SpriteEditor.cpp" />
     <ClCompile Include="src\Engine.cpp" />
     <ClCompile Include="src\RescourceManagement\SceneManager\Scene.cpp" />
     <ClCompile Include="src\RescourceManagement\ResourceManager.cpp" />
-    <ClCompile Include="src\System\FileSystem.cpp" />
+    <ClCompile Include="src\System\FileSystem\FileSystem.cpp" />
     <ClCompile Include="src\System\Allocator.cpp" />
     <ClCompile Include="src\System\MemoryManager.cpp" />
     <ClCompile Include="src\System\Memory.cpp" />
@@ -138,7 +141,6 @@
     <ClCompile Include="src\Utilities\Logger.cpp" />
     <ClCompile Include="src\ECS\EntityManager.cpp" />
     <ClCompile Include="src\Editor\Editor.cpp" />
-    <ClCompile Include="src\ECS\Components\pointlight.cpp" />
     <ClCompile Include="src\Graphics\RenderManager.cpp" />
     <ClCompile Include="src\Graphics\layering\LayerManager.cpp" />
     <ClCompile Include="src\Physics\Collision_detection.cpp" />
@@ -162,16 +164,20 @@
     <ClCompile Include="src\Graphics\buffer\VertexBuffer.cpp" />
     <ClCompile Include="src\Graphics\Texture.cpp" />
     <ClCompile Include="src\Graphics\Window.cpp" />
-    <ClCompile Include="src\Graphics\Text.cpp" />
     <ClCompile Include="src\Graphics\Shapes\Cube.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\ECS\ComponentMapper.h" />
+    <ClInclude Include="src\ECS\ECS_Engine.h" />
+    <ClInclude Include="src\ECS\IComponent.h" />
+    <ClInclude Include="src\ECS\ComponentManager.h" />
+    <ClInclude Include="src\ECS\System.h" />
     <ClInclude Include="src\Editor\SpriteEditor.h" />
     <ClInclude Include="src\Engine.h" />
     <ClInclude Include="src\RescourceManagement\SceneManager\Scene.h" />
     <ClInclude Include="src\RescourceManagement\Resource.h" />
     <ClInclude Include="src\RescourceManagement\ResourceManager.h" />
-    <ClInclude Include="src\System\FileSystem.h" />
+    <ClInclude Include="src\System\FileSystem\FileSystem.h" />
     <ClInclude Include="src\System\Allocator.h" />
     <ClInclude Include="src\System\MemoryManager.h" />
     <ClInclude Include="src\System\Memory.h" />
@@ -185,7 +191,6 @@
     <ClInclude Include="src\ECS\Components\Transform.h" />
     <ClInclude Include="src\ECS\Component.h" />
     <ClInclude Include="src\Editor\Editor.h" />
-    <ClInclude Include="src\ECS\Components\pointLight.h" />
     <ClInclude Include="src\ECS\Entity.h" />
     <ClInclude Include="src\ECS\Components\Collision.h" />
     <ClInclude Include="src\Graphics\layering\LayerManager.h" />
@@ -217,7 +222,6 @@
     <ClInclude Include="src\Graphics\buffer\VertexBufferLayout.h" />
     <ClInclude Include="src\Graphics\Texture.h" />
     <ClInclude Include="src\Graphics\Window.h" />
-    <ClInclude Include="src\Graphics\Text.h" />
     <ClInclude Include="src\Graphics\Shapes\Cube.h" />
   </ItemGroup>
   <ItemGroup>

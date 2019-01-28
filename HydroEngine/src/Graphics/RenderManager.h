@@ -7,7 +7,6 @@ public:
 	LayerManager * _layerManager;
 	Shader *shader;
 
-
 	//startup this subsystem of the engine
 	void StartUp();
 	//close this subsystem of the engine

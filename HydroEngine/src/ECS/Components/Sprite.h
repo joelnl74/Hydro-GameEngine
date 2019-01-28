@@ -12,7 +12,6 @@ class Sprite : public Component
 {
 public:
 	Sprite(float sizeX, float sizeY, float posX, float posY, bool solidSprite = false);
-	virtual void Update();
 	~Sprite();
 public:
 	void Scale(float x, float y);

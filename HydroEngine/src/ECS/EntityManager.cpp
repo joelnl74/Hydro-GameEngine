@@ -1,10 +1,17 @@
 #include "EntityManager.h"
 
-EntityManager::EntityManager()
+EntityManager *EntityManager::m_instance = 0;
+
+void EntityManager::StartUp()
 {
+	//EntityManager
+	if (m_instance == 0)
+	{
+		m_instance = hnew EntityManager();
+	}
 }
 
-EntityManager::~EntityManager()
+void EntityManager::ShutDown()
 {
 	//Clean up memory
 	for (std::pair<unsigned int, Entity*> entity : _entities)
@@ -12,7 +19,11 @@ EntityManager::~EntityManager()
 		delete entity.second;
 	}
 	_entities.clear();
+
+	//Delete instance
+	hdel m_instance;
 }
+
 //Create an entity and return it
 Entity& EntityManager::CreateEntity()
 {
@@ -23,11 +34,13 @@ Entity& EntityManager::CreateEntity()
 
 	return *entity;
 }
+
 //Return entity by id
 Entity& EntityManager::GetEntity(Entity e)
 {
 	return *_entities.at(e.entityID);
 }
+
 //Check if entity is alive if not destory its components
 bool EntityManager::Alive(Entity e)
 {
@@ -36,6 +49,7 @@ bool EntityManager::Alive(Entity e)
 
 	return false;
 }
+
 //TODO make this more safe
 //Destory an entity and remove it from the heap!
 void EntityManager::Destroy(Entity e)
