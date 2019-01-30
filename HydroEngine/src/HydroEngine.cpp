@@ -18,7 +18,7 @@ using namespace HY_Engine;
 		_window = hnew Window(WIDTH, HEIGHT, "Hydro-Engine");
 		ECS_Engine::GetInstance().StartUp();
 		RenderManager::GetInstance().StartUp();
-		_camera = hnew Camera(800, 600, CameraMode::projection);
+		_camera = hnew Camera(800, 600, CameraMode::orthographic);
 		_audioEngine = hnew AudioEngine();
 
 		//TODO: REMOVE DEBUG CODE ENGINEMODE TESTING

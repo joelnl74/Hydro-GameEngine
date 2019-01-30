@@ -166,6 +166,7 @@
     <ClCompile Include="src\ECS\SystemManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\ECS\ComponentContainer.h" />
     <ClInclude Include="src\ECS\Components\RenderAble.h" />
     <ClInclude Include="src\ECS\Systems\RenderSystem.h" />
     <ClInclude Include="src\ECS\ECS_Engine.h" />
