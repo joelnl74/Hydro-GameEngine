@@ -11,25 +11,35 @@ RenderSystem::RenderSystem()
 
 RenderSystem::~RenderSystem()
 {
-	hdel layer;
+	hdel batch;
 }
 
 bool RenderSystem::Init()
 {
-	layer = hnew Layer(false);
+	batch = hnew spriteBatch();
 	return true;
 }
 
 void RenderSystem::Update()
 {
-	std::vector<Component*> &sprites = ECS_Engine::GetInstance().m_ComponentManager->GetComponentsOfType<Sprite>();
-
-	for (Component *component : sprites)
+	if (update == true)
 	{
-		Sprite &sprite = *dynamic_cast<Sprite*>(component);
-		layer->SubmitSprite(sprite);
+		std::vector<Component*> &sprites = ECS_Engine::GetInstance().m_ComponentManager->GetComponentsOfType<Sprite>();
 
-		layer->DrawBatch();
+			for (Component *component : sprites)
+			{
+				Sprite *sprite = dynamic_cast<Sprite*>(component);
+				m_sprites.push_back(sprite);
+			}
+		update = false;
 	}
+	batch->Begin();
+	for (Sprite* sprite : m_sprites)
+	{
+		batch->Submit(sprite);
+	}
+	batch->End();
+	batch->Flush();
+
 
 }

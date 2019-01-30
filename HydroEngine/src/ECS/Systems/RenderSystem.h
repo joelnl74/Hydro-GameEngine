@@ -1,7 +1,7 @@
 #pragma once
 #include "../System.h"
 
-#include "../../Graphics/layering/Layer.h"
+#include "../../Graphics/spriteBatch.h"
 class RenderSystem : public System
 {
 public:
@@ -10,7 +10,10 @@ public:
 
 	bool Init();
 	void Update();
+
+	bool update = true;
 private:
-	Layer *layer;
+	spriteBatch *batch;
+	std::vector<Sprite*> m_sprites;
 };
 

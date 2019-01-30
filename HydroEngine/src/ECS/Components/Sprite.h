@@ -46,7 +46,6 @@ public:
 		indexY = w;
 	}
 
-	inline const void setPosition(float x, float y) { transform.position.x = x, transform.position.y = y; }
 	inline const glm::vec2 getPosition() { return transform.position; }
 	inline const glm::vec2 getScale() { return  transform.scale; }
 	inline const glm::vec2 getUV() { return  glm::vec2(indexX, indexY); }
