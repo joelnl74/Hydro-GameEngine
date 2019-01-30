@@ -1,15 +1,6 @@
 #include "SystemManager.h"
 
 
-
-SystemManager::SystemManager()
-{
-}
-
-
-SystemManager::~SystemManager()
-{
-}
 //TODO m_System.size() not a good value
 void SystemManager::AttachSystem(System * system)
 {

@@ -146,7 +146,6 @@
     <ClCompile Include="src\Editor\EditorUI.cpp" />
     <ClCompile Include="src\Graphics\layering\Layer.cpp" />
     <ClCompile Include="src\Graphics\Camera.cpp" />
-    <ClCompile Include="src\ECS\Components\Sprite.cpp" />
     <ClCompile Include="src\Graphics\spriteBatch.cpp" />
     <ClCompile Include="src\Graphics\OpenGLDebugger\OpenglErrorHandler.cpp" />
     <ClCompile Include="src\audio\AudioEngine.cpp" />

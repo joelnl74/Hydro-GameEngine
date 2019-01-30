@@ -3,6 +3,7 @@
 class System
 {
 public:
+	virtual ~System() {}
 	//Startup this system pure virtual every system must one way or another initilize itselfs
 	virtual bool Init() = 0;
 	//Update this system pure virtual every system must have a update statement
@@ -12,5 +13,7 @@ public:
 	virtual void PreUpdate() {}
 	//Happens after update
 	virtual void PostUpdate() {}
+
+	bool active = true;
 };
 

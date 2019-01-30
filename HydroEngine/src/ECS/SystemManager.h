@@ -1,12 +1,12 @@
 #pragma once
 #include <unordered_map>
 
-#include "System.h"
+#include "../ECS/System.h"
 class SystemManager
 {
 public:
-	SystemManager();
-	~SystemManager();
+	SystemManager() {}
+	~SystemManager() {}
 
 	void AttachSystem(System *system);
 	

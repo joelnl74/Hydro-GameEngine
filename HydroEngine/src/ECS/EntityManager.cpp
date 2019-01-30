@@ -30,6 +30,10 @@ Entity& EntityManager::GetEntity(Entity e)
 {
 	return *_entities.at(e.entityID);
 }
+Entity& EntityManager::GetEntityByID(int entity_ID)
+{
+	return *_entities.at(entity_ID);
+}
 
 //Check if entity is alive if not destory its components
 bool EntityManager::Alive(Entity e)

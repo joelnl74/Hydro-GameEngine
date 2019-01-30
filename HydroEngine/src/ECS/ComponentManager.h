@@ -1,8 +1,9 @@
 #pragma once
-#include <vector>
 #include <typeinfo>
 #include <unordered_map>
+
 #include "Entity.h"
+#include "ComponentContainer.h"
 class ComponentManager
 {
 public:
@@ -12,21 +13,22 @@ public:
 	//Add component to entity
 	void AddComponent(Entity e, Component *component)
 	{
-		if (m_components.count(&typeid(*component)) > 0)
+		component->entity_ID = e.entityID;
+		//Check if certain component entry exsist
+		if(m_components.count(&typeid(*component)) > 0)
 		{
-			component->entity_ID = e.entityID;
 			m_components.at(&typeid(*component)).push_back(component);
 		}
+		//Create new component entry
 		else
 		{
-			component->entity_ID = e.entityID;
 			std::vector<Component*> newComponentList;
 			m_components.emplace(&typeid(*component), newComponentList);
 			m_components.at(&typeid(*component)).push_back(component);
 		}
 	}
 	//Get Component from a certain entity
-	template<typename T>
+	template<class T>
 	T &GetComponent(Entity e)
 	{
 		if (m_components.count(&typeid(T)) != 0)
@@ -41,14 +43,14 @@ public:
 		}
 	}
 	//Remove a component from an entity
-	template<typename Component>
+	template<class T>
 	void RemoveComponent(Entity e)
 	{
 
 	}
 	//TODO see if we can return a vector of the derived class instead of the base class component
 	//Return a vector of all the components of a certain type
-	template<typename T>
+	template<class T>
 	std::vector<Component*> &GetComponentsOfType()
 	{
 		if (m_components.count(&typeid(T)) != 0)

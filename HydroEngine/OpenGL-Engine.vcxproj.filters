@@ -72,9 +72,6 @@
     <ClCompile Include="src\Editor\EditorUI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\ECS\Components\Sprite.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\Graphics\RenderManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

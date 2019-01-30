@@ -1,7 +1,7 @@
 #include "src/Engine.h"
 #include "src/Hydro.h"
 
-
+#include "src/ECS/Systems/RenderSystem.h"
 #include "src/ECS/ECS_Engine.h"
 int main()
 {
@@ -10,12 +10,20 @@ int main()
 	Entity entity = ECS_Engine::GetInstance().m_EntityManager->CreateEntity();
 	Entity entity1 = ECS_Engine::GetInstance().m_EntityManager->CreateEntity();
 
-	ECS_Engine::GetInstance().m_ComponentManager->AddComponent(entity, hnew Sprite(32, 32, 0, 0));
-	ECS_Engine::GetInstance().m_ComponentManager->AddComponent(entity1, hnew Sprite(32, 32, 32, 0));
+	entity.transform->scale.x = 32;
+	entity.transform->scale.y = 32;
+	
+	entity1.transform->scale.x = 32;
+	entity1.transform->scale.y = 32;
 
-	Sprite sprite = ECS_Engine::GetInstance().m_ComponentManager->GetComponent<Sprite>(entity1);
-	sprite.setPosition(64, 64);
-	std::vector<Component*> sprites = ECS_Engine::GetInstance().m_ComponentManager->GetComponentsOfType<Sprite>();
+	entity1.transform->position.x = 32;
+	entity1.transform->position.y = 32;
+
+	RenderSystem *rendersystem = new RenderSystem();
+	ECS_Engine::GetInstance().m_SystemManager->AttachSystem(rendersystem);
+
+	ECS_Engine::GetInstance().m_ComponentManager->AddComponent(entity, hnew Sprite(entity));
+	ECS_Engine::GetInstance().m_ComponentManager->AddComponent(entity1, hnew Sprite(entity1));
 
 	engine->Run();
 

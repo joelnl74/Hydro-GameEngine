@@ -16,6 +16,8 @@ public:
 	Entity& CreateEntity();
 	//return entity
 	Entity& GetEntity(Entity e);
+	//get entity by id
+	Entity& GetEntityByID(int Entity_Id);
 	//Check if entity is alive
 	bool Alive(Entity e);
 	//Destory a entity
