@@ -1,5 +1,5 @@
 #pragma once
-#include "../Component.h"
+#include "RenderAble.h"
 #include "../../vendor/glm/common.hpp"
 
 struct VertexData
@@ -8,7 +8,7 @@ struct VertexData
 	glm::vec2 uv;
 };
 
-class Sprite : public Component
+class Sprite : public RenderAble
 {
 public:
 	Sprite(float sizeX, float sizeY, float posX, float posY, bool solidSprite = false);

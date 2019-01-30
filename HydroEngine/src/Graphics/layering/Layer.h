@@ -14,7 +14,7 @@ public:
 	void RemoveSprite(Sprite *sprite);
 	void DeleteLayer();
 private:
-	//create a texture tempfix need to create a rescourcemanager for this
+	//TODO Change this to the resource manager and hold a reference to the texture instead
 	Texture * texture = hnew Texture("Resources/textures/Tiles.png");
 	spriteBatch* batch;
 	std::vector<Sprite*> sprites;

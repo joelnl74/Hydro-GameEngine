@@ -72,9 +72,6 @@
     <ClCompile Include="src\Editor\EditorUI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Editor\Editor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\ECS\Components\Sprite.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -120,9 +117,6 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Editor\SpriteEditor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\System\FileSystem\FileSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -132,7 +126,10 @@
     <ClCompile Include="src\ECS\ECS_Engine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\ECS\ComponentMapper.cpp">
+    <ClCompile Include="src\ECS\Systems\RenderSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ECS\SystemManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -209,9 +206,6 @@
     <ClInclude Include="src\vendor\json\json.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Editor\Editor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\Utilities\Timer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -284,9 +278,6 @@
     <ClInclude Include="src\Engine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Editor\SpriteEditor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\System\FileSystem\FileSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -296,13 +287,16 @@
     <ClInclude Include="src\ECS\System.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\ECS\IComponent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\ECS\ECS_Engine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\ECS\ComponentMapper.h">
+    <ClInclude Include="src\ECS\Systems\RenderSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ECS\SystemManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ECS\Components\RenderAble.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

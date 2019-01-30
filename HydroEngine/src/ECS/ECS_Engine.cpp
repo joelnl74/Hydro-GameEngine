@@ -1,14 +1,25 @@
 #include "ECS_Engine.h"
 #include "ComponentManager.h"
 
+ECS_Engine *ECS_Engine::m_instance = 0;
 
-ECS_Engine::ECS_Engine()
+//StartUp the ECS Engine
+void ECS_Engine::StartUp()
 {
-	m_ComponentManager = new ComponentManager();
+	if (m_instance == nullptr)
+	{
+		m_instance = hnew ECS_Engine();
+		m_instance->m_SystemManager = hnew SystemManager();
+		m_instance->m_EntityManager = hnew EntityManager();
+		m_instance->m_ComponentManager = hnew ComponentManager();
+	}
 }
-
-
-ECS_Engine::~ECS_Engine()
+//ShutDown the ECS Engine
+void ECS_Engine::ShutDown()
 {
-	delete m_ComponentManager;
+	hdel m_instance->m_ComponentManager;
+	hdel m_instance->m_EntityManager;
+	hdel m_instance->m_SystemManager;
+
+	hdel m_instance;
 }

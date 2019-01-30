@@ -1,17 +1,10 @@
 #include "EntityManager.h"
 
-EntityManager *EntityManager::m_instance = 0;
-
-void EntityManager::StartUp()
+EntityManager::EntityManager()
 {
-	//EntityManager
-	if (m_instance == 0)
-	{
-		m_instance = hnew EntityManager();
-	}
 }
 
-void EntityManager::ShutDown()
+EntityManager::~EntityManager()
 {
 	//Clean up memory
 	for (std::pair<unsigned int, Entity*> entity : _entities)
@@ -19,9 +12,6 @@ void EntityManager::ShutDown()
 		delete entity.second;
 	}
 	_entities.clear();
-
-	//Delete instance
-	hdel m_instance;
 }
 
 //Create an entity and return it

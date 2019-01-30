@@ -1,17 +1,19 @@
 #include "ComponentManager.h"
 
+//Constructor
 ComponentManager::ComponentManager()
 {
 }
+//Clear memory
 ComponentManager::~ComponentManager()
 {
-	//for (auto x : m_components)
-	//{
-	//	for (int i = 0; i < x.second->size(); i++)
-	//	{
-	//		delete x.second[i];
-	//	}
-	//}
-	//m_components.clear();
+	for (auto x : m_components)
+	{
+		for (Component * component : x.second)
+		{
+			hdel component;
+		}
+	}
+	m_components.clear();
 }
 

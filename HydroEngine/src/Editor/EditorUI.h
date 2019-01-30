@@ -1,5 +1,4 @@
 #pragma once
-#include "SpriteEditor.h"
 #include "../vendor/imgui/imgui.h"
 #include "../vendor/imgui/imgui_impl_glfw_gl3.h"
 #include "../Graphics/RenderManager.h"
@@ -15,7 +14,6 @@ public:
 	int returnSelectedLayer() {return layerID; }
 	bool returnPlay() { return play; }
 
-	SpriteEditor* _spriteEditor;
 	bool spritePlacementMode = false;
 private:
 	bool play = false;

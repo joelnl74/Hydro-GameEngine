@@ -1,5 +1,5 @@
 #include "HydroEngine.h"
-
+#include "Editor/EditorUI.h"
 static const int WIDTH = 1024;
 static const int HEIGHT = 768;
 
@@ -12,44 +12,43 @@ using namespace HY_Engine;
 		//Running3DMode you will see a moving cube
 		_engineMode = EngineMode::Running2DMode;
 
-		gLogger.StartUp();
+		Logger::m_Instance->StartUp();
 		gTime.StartUp();
 
 		_window = hnew Window(WIDTH, HEIGHT, "Hydro-Engine");
-		gRenderManager.StartUp();
+		ECS_Engine::GetInstance().StartUp();
+		RenderManager::GetInstance().StartUp();
 		_camera = hnew Camera(800, 600, CameraMode::projection);
-		_editor = hnew Editor(_window->getWindow(), _camera);
 		_audioEngine = hnew AudioEngine();
 
 		//TODO: REMOVE DEBUG CODE ENGINEMODE TESTING
 		if (_engineMode == EngineMode::Running2DMode)
 		{
-			gRenderManager.GetInstance().shader->SetMatrix4("orthographicModel", _camera->returnProjection());
-			gRenderManager.GetInstance().shader->setVec3("ambientLight", glm::vec3(0.85f, 0.85f, 0.85f));
+			RenderManager::GetInstance().shader->SetMatrix4("orthographicModel", _camera->returnProjection());
+			RenderManager::GetInstance().shader->setVec3("ambientLight", glm::vec3(0.85f, 0.85f, 0.85f));
 			//center camera
 			_camera->centerCamera(0, 0);
-			gRenderManager.GetInstance().shader->SetMatrix4("orthographicModel", _camera->returnProjection());
+			RenderManager::GetInstance().shader->SetMatrix4("orthographicModel", _camera->returnProjection());
 		}
 	}
 	HydroEngine::~HydroEngine()
 	{
-		gRenderManager.ShutDown();
+		RenderManager::GetInstance().ShutDown();
+		ECS_Engine::GetInstance().ShutDown();
 		//clear memory
 		hdel _audioEngine;
-		hdel _editor;
 		hdel _camera;
 
 		ImGui_ImplGlfwGL3_Shutdown();
 		ImGui::DestroyContext();
 
 		gTime.ShutDown();
-		gLogger.ShutDown();
+		Logger::m_Instance->ShutDown();
 		hdel _window;
 
 	}
 	void HydroEngine::CheckInput()
 	{
-		_editor->UpdateInput();
 	}
 	void HydroEngine::Draw()
 	{
@@ -60,11 +59,9 @@ using namespace HY_Engine;
 		//Draw Graphics
 
 		//2D SpriteBatch TEST
-		if(_engineMode == EngineMode::Running2DMode)
-		gRenderManager.Update();
+		ECS_Engine::GetInstance().m_SystemManager->UpdateSystems();
 
 		//Draw UI
-		_editor->ui->DrawUI();
 		// Swap front and back buffers 
 		_window->update();
 	};

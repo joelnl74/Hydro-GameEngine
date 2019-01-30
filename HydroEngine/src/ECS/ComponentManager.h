@@ -1,37 +1,44 @@
 #pragma once
 #include <vector>
 #include <typeinfo>
-#include "EntityManager.h"
-
+#include <unordered_map>
+#include "Entity.h"
 class ComponentManager
 {
 public:
 	ComponentManager();
 	~ComponentManager();
 
-	template<class T>
+	//Add component to entity
 	void AddComponent(Entity e, Component *component)
 	{
-		//TODO check if this step is needed
-		Entity entity = EntityManager::GetInstance().GetEntity(e);
 		if (m_components.count(&typeid(*component)) > 0)
 		{
-		    //type = m_components.count(m_Mapper.GetComponentID<T>());
+			component->entity_ID = e.entityID;
 			m_components.at(&typeid(*component)).push_back(component);
 		}
 		else
 		{
-		    //type = m_components.count(m_Mapper.GetComponentID<T>());
+			component->entity_ID = e.entityID;
 			std::vector<Component*> newComponentList;
 			m_components.emplace(&typeid(*component), newComponentList);
 			m_components.at(&typeid(*component)).push_back(component);
 		}
 	}
 	//Get Component from a certain entity
-	template<typename Component>
-	void GetComponent(Entity e)
+	template<typename T>
+	T &GetComponent(Entity e)
 	{
-
+		if (m_components.count(&typeid(T)) != 0)
+		{
+			for(Component * component : m_components.at(&typeid(T)))
+			{
+				if (component->entity_ID == e.entityID)
+				{
+					return  *dynamic_cast<T*>(component);
+				}
+			}
+		}
 	}
 	//Remove a component from an entity
 	template<typename Component>
@@ -39,23 +46,18 @@ public:
 	{
 
 	}
+	//TODO see if we can return a vector of the derived class instead of the base class component
 	//Return a vector of all the components of a certain type
-	template<typename Component>
-	std::vector<Component*> &GetComponentsOfType(int ComponentTypeID)
+	template<typename T>
+	std::vector<Component*> &GetComponentsOfType()
 	{
-		if (m_components.count(m_Mapper.GetComponentID<T>()) > 0)
+		if (m_components.count(&typeid(T)) != 0)
 		{
-			int type = m_components.count(m_Mapper.GetComponentID<T>());
-			return m_components.at(type);
-		}
-		else
-		{
-			return nullptr;
+			return  m_components.at(&typeid(T));
 		}
 	}
 	
 private:
-	//TODO make the lookup generic
+	//TODO Check if we need to change the vector to a template type T
 	std::unordered_map<const type_info*, std::vector<Component*>> m_components;
-	//ComponentMapper m_Mapper;
 };

@@ -1,4 +1,5 @@
 #pragma once
+#include "../Hydro.h"
 class System
 {
 public:
@@ -10,6 +11,6 @@ public:
 	//Happens before update
 	virtual void PreUpdate() {}
 	//Happens after update
-	virtual void LateUpdate() {}
+	virtual void PostUpdate() {}
 };
 
