@@ -46,9 +46,9 @@ public:
 		indexY = w;
 	}
 
-	inline const glm::vec2 getPosition() { return transform.position; }
-	inline const glm::vec2 getScale() { return  transform.scale; }
-	inline const glm::vec2 getUV() { return  glm::vec2(indexX, indexY); }
+	inline const glm::vec2 getPosition() const { return transform.position; }
+	inline const glm::vec2 getScale()	 const { return transform.scale; }
+	inline const glm::vec2 getUV()		 const { return glm::vec2(indexX, indexY); }
 
 	//TODO change this and setTextureuv and setIndex partially to the texture class so we dont save it every sprite
 	float offsetX;

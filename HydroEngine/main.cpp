@@ -12,7 +12,7 @@ int main()
 	ECS_Engine::GetInstance().m_SystemManager->AttachSystem(rendersystem);
 
 	
-	for (int x = 0; x < 10000; x++)
+	for (int x = 0; x < 20000; x++)
 	{
 		Entity entity1 = ECS_Engine::GetInstance().m_EntityManager->CreateEntity();
 	
