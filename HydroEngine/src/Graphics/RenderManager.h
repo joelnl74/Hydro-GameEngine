@@ -11,11 +11,7 @@ public:
 	void StartUp();
 	//close this subsystem of the engine
 	void ShutDown();
-	//Draw every layer
-	void Update()
-	{
-		m_instance->_layerManager->DrawLayers();
-	}
+
 	inline static RenderManager &GetInstance()
 	{
 		return *m_instance;

@@ -32,13 +32,13 @@ void RenderSystem::Update()
 				m_sprites.push_back(sprite);
 			}
 		update = false;
+		batch->Begin();
+		for (Sprite* sprite : m_sprites)
+		{
+			batch->Submit(sprite);
+		}
+		batch->End();
 	}
-	batch->Begin();
-	for (Sprite* sprite : m_sprites)
-	{
-		batch->Submit(sprite);
-	}
-	batch->End();
 	batch->Flush();
 
 
