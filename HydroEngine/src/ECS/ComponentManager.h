@@ -3,14 +3,20 @@
 #include <unordered_map>
 
 #include "Entity.h"
-#include "ComponentContainer.h"
+#include "ComponentHandle.h"
+
+//Amout of components the vector should start with
+#define COMPONENT_COUNT = 1024; 
+
 class ComponentManager
 {
 public:
 	ComponentManager();
 	~ComponentManager();
 
+	//TODO create new handle class[]
 	//Add component to entity
+	//template<class T>
 	void AddComponent(Entity e, Component *component)
 	{
 		component->entity_ID = e.entityID;
@@ -22,6 +28,7 @@ public:
 		//Create new component entry
 		else
 		{
+			//TODO Create new handle with this component type
 			std::vector<Component*> newComponentList;
 			m_components.emplace(&typeid(*component), newComponentList);
 			m_components.at(&typeid(*component)).push_back(component);
@@ -55,11 +62,10 @@ public:
 	{
 		if (m_components.count(&typeid(T)) != 0)
 		{
-			return  m_components.at(&typeid(T));
+			return m_components.at(&typeid(T));
 		}
 	}
-	
 private:
-	//TODO Check if we need to change the vector to a template type T
+	//TODO Change from std::vector<Component*> to Handler which hold a refenrence to a vector containing a specific type of component!
 	std::unordered_map<const type_info*, std::vector<Component*>> m_components;
 };

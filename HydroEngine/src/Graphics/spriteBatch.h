@@ -31,7 +31,7 @@ public:
 	void End();
 
 	//Submit a sprite to the batch to render this frame
-	void Submit(Sprite *sprite);
+	void Submit(const Sprite *sprite);
 	//Draw the current frame
 	void Flush();
 

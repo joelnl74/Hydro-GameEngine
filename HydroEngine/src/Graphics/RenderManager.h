@@ -1,6 +1,8 @@
 #pragma once
 #include "Shader.h"
 #include "layering/LayerManager.h"
+
+//TODO REMOVE THIS CLASS
 class RenderManager
 {
 public:

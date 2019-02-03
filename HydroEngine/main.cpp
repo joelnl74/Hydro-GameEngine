@@ -1,35 +1,20 @@
 #include "src/Engine.h"
 #include "src/Hydro.h"
+#include "src/ECS/World.h"
 
-#include "src/ECS/Systems/RenderSystem.h"
-#include "src/ECS/ECS_Engine.h"
 int main()
 {
+	//Game engine object
 	Engine *engine = new Engine();
 	
-	RenderSystem *rendersystem = new RenderSystem();
+	//Game world we are currently using can also be seen as a scene
+	World  *world = new World();
 
-	ECS_Engine::GetInstance().m_SystemManager->AttachSystem(rendersystem);
-
-	
-	for (int x = 0; x < 20000; x++)
-	{
-		Entity entity1 = ECS_Engine::GetInstance().m_EntityManager->CreateEntity();
-	
-		entity1.transform->scale.x = 32;
-		entity1.transform->scale.y = 32;
-
-		entity1.transform->position.x = 0;
-		entity1.transform->position.y = 0;
-
-		ECS_Engine::GetInstance().m_ComponentManager->AddComponent(entity1, hnew Sprite(entity1));
-	}
-
-	rendersystem->update = true;
-
+	//Run gameloop
 	engine->Run();
 
-
-
+	//Clean up engine
+	delete world;
 	delete engine;
+
 }

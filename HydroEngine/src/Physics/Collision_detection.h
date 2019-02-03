@@ -15,9 +15,9 @@ class Collision_detection
 public:
 	Collision_detection();
 	~Collision_detection();
-	void addCollision(Collision col);
+	void addCollision(/*Collision col*/);
 	bool checkCollision(glm::vec2 position, glm::vec2 scale);
 private: 
-	std::vector<Collision> collisionContainer;
+	//std::vector<Collision> collisionContainer;
 };
 

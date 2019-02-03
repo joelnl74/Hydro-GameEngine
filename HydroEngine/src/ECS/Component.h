@@ -1,9 +1,10 @@
 #pragma once
+
 class Component
 {
 public:
 	//Need for storing type_id in ComponentManager, parent class needs a virtual method for this to work
-	virtual ~Component() = default;
+	virtual ~Component() {}
 
 	//is the component active?
 	bool active = true;	

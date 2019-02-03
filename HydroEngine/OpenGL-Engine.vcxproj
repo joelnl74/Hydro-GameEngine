@@ -163,10 +163,11 @@
     <ClCompile Include="src\Graphics\Window.cpp" />
     <ClCompile Include="src\Graphics\Shapes\Cube.cpp" />
     <ClCompile Include="src\ECS\SystemManager.cpp" />
+    <ClCompile Include="src\ECS\World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ECS\ComponentContainer.h" />
-    <ClInclude Include="src\ECS\Components\RenderAble.h" />
+    <ClInclude Include="src\ECS\ComponentHandle.h" />
     <ClInclude Include="src\ECS\Systems\RenderSystem.h" />
     <ClInclude Include="src\ECS\ECS_Engine.h" />
     <ClInclude Include="src\ECS\ComponentManager.h" />
@@ -221,6 +222,7 @@
     <ClInclude Include="src\Graphics\Window.h" />
     <ClInclude Include="src\Graphics\Shapes\Cube.h" />
     <ClInclude Include="src\ECS\SystemManager.h" />
+    <ClInclude Include="src\ECS\World.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="res\scene\Testlevel.json" />

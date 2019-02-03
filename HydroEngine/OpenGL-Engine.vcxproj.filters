@@ -129,6 +129,9 @@
     <ClCompile Include="src\ECS\SystemManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\ECS\World.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\vendor\stbImage\stb_image.h">
@@ -293,10 +296,13 @@
     <ClInclude Include="src\ECS\SystemManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\ECS\Components\RenderAble.h">
+    <ClInclude Include="src\ECS\ComponentContainer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\ECS\ComponentContainer.h">
+    <ClInclude Include="src\ECS\ComponentHandle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ECS\World.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

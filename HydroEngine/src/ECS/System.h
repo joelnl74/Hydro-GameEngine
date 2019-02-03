@@ -15,5 +15,8 @@ public:
 	virtual void PostUpdate() {}
 
 	bool active = true;
+	bool update = true;
+	bool postUpdate = false;
+	bool preUpdate = false;
 };
 

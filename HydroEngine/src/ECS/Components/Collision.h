@@ -7,7 +7,7 @@ enum collisionType
 	trigger,
 	event
 };
-class Collision : Component {
+class Collision : public Component {
 public:
 	glm::vec2 position;
 	glm::vec2 scale;

@@ -25,7 +25,6 @@ void RenderSystem::Update()
 	if (update == true)
 	{
 		std::vector<Component*> &sprites = ECS_Engine::GetInstance().m_ComponentManager->GetComponentsOfType<Sprite>();
-
 			for (Component *component : sprites)
 			{
 				Sprite *sprite = dynamic_cast<Sprite*>(component);

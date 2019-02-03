@@ -1,6 +1,7 @@
 #pragma once
 #include "../System.h"
 
+#include "../ComponentContainer.h"
 #include "../../Graphics/spriteBatch.h"
 class RenderSystem : public System
 {
@@ -13,6 +14,7 @@ public:
 
 	bool update = true;
 private:
+	ComponentContainer<Sprite> spriteContainer;
 	spriteBatch *batch;
 	std::vector<Sprite*> m_sprites;
 };

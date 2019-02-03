@@ -66,12 +66,12 @@ void spriteBatch::End()
 }
 //TODO Get sprite by reference instead of pointer
 //Settingup sprite data for the buffers
-void spriteBatch::Submit(Sprite *sprite)
+void spriteBatch::Submit(const Sprite *sprite)
 {
 	//TODO set uv offset based on image width height
 	const glm::vec2 &spritePosition =  sprite->getPosition();
 	const glm::vec2 &spriteScale =     sprite->getScale();
-	const glm::vec2 &uv =				sprite->getUV();
+	const glm::vec2 &uv =			   sprite->getUV();
 
 	//TODO set texture offset based on object object size
 	buffer->position = spritePosition;

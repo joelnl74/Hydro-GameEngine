@@ -1,5 +1,5 @@
 #pragma once
-#include "RenderAble.h"
+#include "../Component.h"
 #include "../../vendor/glm/common.hpp"
 #include "../ECS_Engine.h"
 struct VertexData
@@ -8,7 +8,7 @@ struct VertexData
 	glm::vec2 uv;
 };
 
-class Sprite : public RenderAble
+class Sprite : public Component
 {
 public:
 	Sprite(Entity e)
@@ -21,11 +21,6 @@ public:
 	}
 	~Sprite()
 	{
-	}
-	void Scale(float x, float y)
-	{
-		transform.scale.x = x;
-		transform.scale.y = y;
 	}
 	//Set index of the texture atlass
 	void Sprite::setIndex(float x, float y)
