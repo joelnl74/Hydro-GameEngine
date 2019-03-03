@@ -129,9 +129,6 @@
     <ClCompile Include="src\ECS\SystemManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\ECS\World.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\vendor\stbImage\stb_image.h">
@@ -302,7 +299,13 @@
     <ClInclude Include="src\ECS\ComponentHandle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\ECS\World.h">
+    <ClInclude Include="src\Utilities\KeyCodes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utilities\MouseButtonCodes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utilities\Platform\WindowsInput.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

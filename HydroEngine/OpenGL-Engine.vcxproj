@@ -163,7 +163,6 @@
     <ClCompile Include="src\Graphics\Window.cpp" />
     <ClCompile Include="src\Graphics\Shapes\Cube.cpp" />
     <ClCompile Include="src\ECS\SystemManager.cpp" />
-    <ClCompile Include="src\ECS\World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ECS\ComponentContainer.h" />
@@ -183,6 +182,7 @@
     <ClInclude Include="src\Graphics\Shapes\Shape.h" />
     <ClInclude Include="src\Hydro.h" />
     <ClInclude Include="src\RescourceManagement\SceneManager\LevelLoader2D.h" />
+    <ClInclude Include="src\Utilities\KeyCodes.h" />
     <ClInclude Include="src\Utilities\Logger.h" />
     <ClInclude Include="src\ECS\EntityManager.h" />
     <ClInclude Include="src\Utilities\Input.h" />
@@ -203,6 +203,8 @@
     <ClInclude Include="src\audio\AudioEngine.h" />
     <ClInclude Include="src\Graphics\Shader.h" />
     <ClInclude Include="src\Graphics\buffer\IndexBuffer.h" />
+    <ClInclude Include="src\Utilities\MouseButtonCodes.h" />
+    <ClInclude Include="src\Utilities\Platform\WindowsInput.h" />
     <ClInclude Include="src\Utilities\Time.h" />
     <ClInclude Include="src\Utilities\Timer.h" />
     <ClInclude Include="src\Utilities\Types.h" />
@@ -222,7 +224,6 @@
     <ClInclude Include="src\Graphics\Window.h" />
     <ClInclude Include="src\Graphics\Shapes\Cube.h" />
     <ClInclude Include="src\ECS\SystemManager.h" />
-    <ClInclude Include="src\ECS\World.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="res\scene\Testlevel.json" />
