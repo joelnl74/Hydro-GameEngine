@@ -151,6 +151,7 @@
     <ClCompile Include="src\audio\AudioEngine.cpp" />
     <ClCompile Include="src\Graphics\Shader.cpp" />
     <ClCompile Include="src\Graphics\buffer\IndexBuffer.cpp" />
+    <ClCompile Include="src\Utilities\Platform\WindowsInput.cpp" />
     <ClCompile Include="src\Utilities\Time.cpp" />
     <ClCompile Include="src\vendor\imgui\imgui.cpp" />
     <ClCompile Include="src\vendor\imgui\imgui_demo.cpp" />
