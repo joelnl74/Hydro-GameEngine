@@ -1,24 +1,31 @@
 #include "WindowsInput.h"
-#include <GLFW/glfw3.h>
-Input* Input::s_Instance = new WindowsInput();
+#include "../../Hydro.h"
+
+Input *Input::s_Instance = 0;
 
 bool WindowsInput::IsKeyPressedImpl(int keycode)
 {
+	auto state = glfwGetKey(window, keycode);
+
 	//get window, get button state return state
-	return false;
+	return state == GLFW_PRESS || state == GLFW_REPEAT;
 }
 
 bool WindowsInput::IsMouseButtonPressedImpl(int button)
 {
-	//get window, get button state return state
+	auto state = glfwGetMouseButton(window, button);
 
-	return false;
+	//get window, get button state return state
+	return state == GLFW_PRESS;
 }
 
 std::pair<float, float> WindowsInput::GetMousePositionImpl()
 {
+	double x, y;
+
+	glfwGetCursorPos(window, &x, &y);
 	//get window, get button state return state
-	return std::pair<float, float>();
+	return { (float)x, (float)y };
 }
 
 float WindowsInput::GetMouseXImpl()
@@ -31,4 +38,15 @@ float WindowsInput::GetMouseYImpl()
 {
 	//get window, get button state return state
 	return 0.0f;
+}
+
+void WindowsInput::StartUp(GLFWwindow * _window)
+{
+	s_Instance = hnew WindowsInput();
+	s_Instance->window = _window;
+}
+
+void WindowsInput::ShutDown()
+{
+	delete window;
 }

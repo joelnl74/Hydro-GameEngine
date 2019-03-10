@@ -1,6 +1,5 @@
 #include "Window.h"
 
-//TODO CHANGE WINDOW TO WINDOWS API WINDOW!
 Window::Window(const int &WINDOW_WIDTH, const int &WINDOW_HEIGHT, const char *WINDOW_TITLE)
 {
 	m_Title = WINDOW_TITLE;
@@ -9,8 +8,6 @@ Window::Window(const int &WINDOW_WIDTH, const int &WINDOW_HEIGHT, const char *WI
 	if (!Init())
 		glfwTerminate();
 	glViewport(0, 0, m_Width, m_Height);
-
-
 }
 Window::~Window()
 {
@@ -21,7 +18,6 @@ bool Window::Init()
 	if (!glfwInit())
 		std::cout << "FAILED TO CREATE WINDOW" << std::endl;
 
-	//TODO:Change to assert
 	m_Window = glfwCreateWindow(m_Width, m_Height, m_Title, NULL, NULL);
 	if (!m_Window)
 	{
@@ -36,7 +32,6 @@ bool Window::Init()
 	glfwSwapInterval(1);
 	if (glewInit() != GLEW_OK)
 	{
-		//TODO Change to Assert
 		std::cout << "ERROR INIT GLEW" << std::endl;
 	}
 	std::cout << glGetString(GL_VERSION) << std::endl;

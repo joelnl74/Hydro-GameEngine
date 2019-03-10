@@ -4,6 +4,7 @@
 #include "Hydro.h"
 #include "Graphics/Window.h"
 #include "Graphics/RenderManager.h"
+#include "Utilities/Platform/WindowsInput.h"
 #include "audio/AudioEngine.h"
 #include "Graphics/Camera.h"
 #include "ECS/ECS_Engine.h"
@@ -24,11 +25,11 @@ namespace HY_Engine
 	public:
 		HydroEngine();
 		~HydroEngine();
-		void CheckInput();
 		void Draw();
 	//Simple 2dcamera class
 		Camera* _camera;
 		Window* _window;
+		WindowsInput *_input;
 		AudioEngine* _audioEngine;
 		Time gTime;
 	private:
