@@ -27,7 +27,6 @@ void EditorUI::MainBar()
 	{
 		if (ImGui::MenuItem("New"))
 		{
-			gRenderManager._layerManager->getLayer(0)->DeleteLayer();
 		}
 		//Save current scene to a json file 
 		if (ImGui::MenuItem("Save"))

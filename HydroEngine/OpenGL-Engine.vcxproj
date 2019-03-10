@@ -140,11 +140,9 @@
     <ClCompile Include="src\Utilities\Logger.cpp" />
     <ClCompile Include="src\ECS\EntityManager.cpp" />
     <ClCompile Include="src\Graphics\RenderManager.cpp" />
-    <ClCompile Include="src\Graphics\layering\LayerManager.cpp" />
     <ClCompile Include="src\Physics\Collision_detection.cpp" />
     <ClCompile Include="src\HydroEngine.cpp" />
     <ClCompile Include="src\Editor\EditorUI.cpp" />
-    <ClCompile Include="src\Graphics\layering\Layer.cpp" />
     <ClCompile Include="src\Graphics\Camera.cpp" />
     <ClCompile Include="src\Graphics\spriteBatch.cpp" />
     <ClCompile Include="src\Graphics\OpenGLDebugger\OpenglErrorHandler.cpp" />
@@ -192,11 +190,9 @@
     <ClInclude Include="src\ECS\Component.h" />
     <ClInclude Include="src\ECS\Entity.h" />
     <ClInclude Include="src\ECS\Components\Collision.h" />
-    <ClInclude Include="src\Graphics\layering\LayerManager.h" />
     <ClInclude Include="src\Physics\Collision_detection.h" />
     <ClInclude Include="src\HydroEngine.h" />
     <ClInclude Include="src\Editor\EditorUI.h" />
-    <ClInclude Include="src\Graphics\layering\Layer.h" />
     <ClInclude Include="src\Graphics\Camera.h" />
     <ClInclude Include="src\ECS\Components\Sprite.h" />
     <ClInclude Include="src\Graphics\spriteBatch.h" />

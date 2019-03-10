@@ -22,7 +22,7 @@ private:
 
 	bool inspector = true;
 
-	Sprite *selectedSprite = nullptr;
+	//Sprite *selectedSprite = nullptr;
 	RenderManager &gRenderManager = RenderManager::GetInstance();
 	int layerID;
 };

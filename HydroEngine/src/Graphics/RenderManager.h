@@ -1,13 +1,11 @@
 #pragma once
 #include "Shader.h"
 #include "Camera.h"
-#include "layering/LayerManager.h"
 
 //TODO REMOVE THIS CLASS
 class RenderManager
 {
 public:
-	LayerManager * _layerManager;
 	Shader *shader;
 	Camera *_camera;
 

@@ -9,7 +9,7 @@
 using json = nlohmann::json;
 
 //Loading a level from a json file into the engine/game
-bool LevelLoader2D::loadScene(const std::string& inputFileName, LayerManager* l_manager)
+bool LevelLoader2D::loadScene(const std::string& inputFileName)
 {
 //	//open a file from hard drive
 //	std::ifstream ifs(inputFileName);
@@ -101,4 +101,9 @@ bool LevelLoader2D::loadScene(const std::string& inputFileName, LayerManager* l_
 //	ofs.close();
 //	LOG_INFO("Saved sprite information!");
 	return true;
+}
+
+bool LevelLoader2D::saveScene(const std::string & inputFileName)
+{
+	return false;
 }
