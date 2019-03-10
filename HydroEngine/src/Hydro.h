@@ -8,8 +8,12 @@
 #include "Utilities/Logger.h"
 #include "Utilities/Time.h"
 #include "Utilities/Types.h"
+//Input
+#include "Utilities/KeyCodes.h"
+#include "Utilities/MouseButtonCodes.h"
 //Math
 #include "vendor/glm/glm.hpp"
 //Entity component system
-//Reource Manager
+//Resource Manager
+
 #endif Hydro_H

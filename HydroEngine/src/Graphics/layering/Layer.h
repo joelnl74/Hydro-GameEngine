@@ -13,9 +13,8 @@ public:
 	inline const std::vector<Sprite*> &ReturnSprites() { return sprites; }
 	void RemoveSprite(Sprite *sprite);
 	void DeleteLayer();
-	Sprite *ReturnSprite(float mouseX, float mouseY);
 private:
-	//create a texture tempfix need to create a rescourcemanager for this
+	//TODO Change this to the resource manager and hold a reference to the texture instead
 	Texture * texture = hnew Texture("Resources/textures/Tiles.png");
 	spriteBatch* batch;
 	std::vector<Sprite*> sprites;

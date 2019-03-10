@@ -1,51 +1,32 @@
 #pragma once
-#include "../vendor/imgui/imgui.h"
+#include <unordered_map>
+#include <GLFW/glfw3.h>
+
 class Input
 {
-private:
-	/* Here will be the instance stored. */
-	static Input* instance;
-	ImGuiIO &io = ImGui::GetIO();
-	/* Private constructor to prevent instancing. */
-	Input();
-
 public:
-	bool Input::IsKeyDown(ImGuiKey key)
-	{
-		if (ImGui::IsKeyDown(key))
-		{
-			return true;
-		}
-		return false;
-	}
-	bool Input::MouseClicked(int MouseClick)
-	{
-		if (io.MouseClicked[MouseClick] == true)
-		{
-			return true;
-		}
-		return false;
-	}
-	/* Static access method. */
-	static Input* getInstance();
+	inline static bool IsKeyPressed(int keycode) { return s_Instance->IsKeyPressedImpl(keycode); }
+
+	inline static bool IsMouseButtonPressed(int button) { return s_Instance->IsMouseButtonPressedImpl(button); }
+	inline static std::pair<float, float> GetMousePosition() { return s_Instance->GetMousePositionImpl(); }
+	inline static float GetMouseX() { return s_Instance->GetMouseXImpl(); }
+	inline static float GetMouseY() { return s_Instance->GetMouseYImpl(); }
+
+	virtual void StartUp(GLFWwindow * window) = 0;
+	virtual void ShutDown() = 0;
+protected:
+	virtual bool IsKeyPressedImpl(int keycode) = 0;
+
+	virtual bool IsMouseButtonPressedImpl(int button) = 0;
+	virtual std::pair<float, float> GetMousePositionImpl() = 0;
+	virtual float GetMouseXImpl() = 0;
+	virtual float GetMouseYImpl() = 0;
+public:
+	GLFWwindow * window;
+	static Input* s_Instance;
+private:
+
 
 };
-
-/* Null, because instance will be initialized on demand. */
-Input* Input::instance = 0;
-
-Input* Input::getInstance()
-{
-	if (instance == 0)
-	{
-		instance = new Input();
-	}
-
-	return instance;
-}
-
-Input::Input()
-{
-}
 
 

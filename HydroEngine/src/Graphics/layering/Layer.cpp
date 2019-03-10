@@ -68,19 +68,4 @@ void Layer::DeleteLayer()
 	}
 	sprites.clear();
 }
-Sprite* Layer::ReturnSprite(float mouseX, float mouseY)
-{
-	//return a sprite based on position of the mouse
-	for (auto x : sprites)
-	{
-		if (mouseX < x->getPosition().x + x->getScale().x && mouseX >= x->getPosition().x
-			&& mouseY < x->getPosition().y + x->getScale().y && mouseY >= x->getPosition().y)
-		{
-			return x;
-			break;
-		}
-	}
-	printf("no sprite found\n");
-	return nullptr;
-}
 

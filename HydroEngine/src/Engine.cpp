@@ -16,8 +16,6 @@ void Engine::Run()
 	{
 		//Begin of frame
 		m_engine->gTime.m_Instance->BeginFrame();
-		//create own Interaction class for UI and Gameplay
-		m_engine->CheckInput();
 		//Render here 
 		m_engine->Draw();
 		//end of frame

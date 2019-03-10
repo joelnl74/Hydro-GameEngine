@@ -3,9 +3,11 @@
 
 #include "Hydro.h"
 #include "Graphics/Window.h"
-#include "Editor/Editor.h"
+#include "Graphics/RenderManager.h"
+#include "Utilities/Platform/WindowsInput.h"
 #include "audio/AudioEngine.h"
 #include "Graphics/Camera.h"
+#include "ECS/ECS_Engine.h"
 #include "RescourceManagement/SceneManager/Scene.h"
 //https://github.com/joelnl74/Hydro-GameEngine 
 
@@ -23,15 +25,12 @@ namespace HY_Engine
 	public:
 		HydroEngine();
 		~HydroEngine();
-		void CheckInput();
 		void Draw();
 	//Simple 2dcamera class
 		Camera* _camera;
 		Window* _window;
-		Editor* _editor;
+		WindowsInput *_input;
 		AudioEngine* _audioEngine;
-		RenderManager gRenderManager;
-		Logger gLogger;
 		Time gTime;
 	private:
 		EngineMode _engineMode;

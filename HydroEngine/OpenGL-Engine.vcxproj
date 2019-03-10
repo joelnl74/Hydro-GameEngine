@@ -125,21 +125,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\ECS\Systems\RenderSystem.cpp" />
+    <ClCompile Include="src\ECS\ECS_Engine.cpp" />
+    <ClCompile Include="src\ECS\ComponentManager.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="src\Editor\SpriteEditor.cpp" />
     <ClCompile Include="src\Engine.cpp" />
     <ClCompile Include="src\RescourceManagement\SceneManager\Scene.cpp" />
     <ClCompile Include="src\RescourceManagement\ResourceManager.cpp" />
-    <ClCompile Include="src\System\FileSystem.cpp" />
+    <ClCompile Include="src\System\FileSystem\FileSystem.cpp" />
     <ClCompile Include="src\System\Allocator.cpp" />
     <ClCompile Include="src\System\MemoryManager.cpp" />
     <ClCompile Include="src\System\Memory.cpp" />
     <ClCompile Include="src\RescourceManagement\SceneManager\LevelLoader2D.cpp" />
     <ClCompile Include="src\Utilities\Logger.cpp" />
-    <ClCompile Include="src\ECS\ComponentManager.cpp" />
     <ClCompile Include="src\ECS\EntityManager.cpp" />
-    <ClCompile Include="src\Editor\Editor.cpp" />
-    <ClCompile Include="src\ECS\Components\pointlight.cpp" />
     <ClCompile Include="src\Graphics\RenderManager.cpp" />
     <ClCompile Include="src\Graphics\layering\LayerManager.cpp" />
     <ClCompile Include="src\Physics\Collision_detection.cpp" />
@@ -147,12 +146,12 @@
     <ClCompile Include="src\Editor\EditorUI.cpp" />
     <ClCompile Include="src\Graphics\layering\Layer.cpp" />
     <ClCompile Include="src\Graphics\Camera.cpp" />
-    <ClCompile Include="src\ECS\Components\Sprite.cpp" />
     <ClCompile Include="src\Graphics\spriteBatch.cpp" />
     <ClCompile Include="src\Graphics\OpenGLDebugger\OpenglErrorHandler.cpp" />
     <ClCompile Include="src\audio\AudioEngine.cpp" />
     <ClCompile Include="src\Graphics\Shader.cpp" />
     <ClCompile Include="src\Graphics\buffer\IndexBuffer.cpp" />
+    <ClCompile Include="src\Utilities\Platform\WindowsInput.cpp" />
     <ClCompile Include="src\Utilities\Time.cpp" />
     <ClCompile Include="src\vendor\imgui\imgui.cpp" />
     <ClCompile Include="src\vendor\imgui\imgui_demo.cpp" />
@@ -163,31 +162,34 @@
     <ClCompile Include="src\Graphics\buffer\VertexBuffer.cpp" />
     <ClCompile Include="src\Graphics\Texture.cpp" />
     <ClCompile Include="src\Graphics\Window.cpp" />
-    <ClCompile Include="src\Graphics\Text.cpp" />
     <ClCompile Include="src\Graphics\Shapes\Cube.cpp" />
+    <ClCompile Include="src\ECS\SystemManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Editor\SpriteEditor.h" />
+    <ClInclude Include="src\ECS\ComponentContainer.h" />
+    <ClInclude Include="src\ECS\ComponentHandle.h" />
+    <ClInclude Include="src\ECS\Systems\RenderSystem.h" />
+    <ClInclude Include="src\ECS\ECS_Engine.h" />
+    <ClInclude Include="src\ECS\ComponentManager.h" />
+    <ClInclude Include="src\ECS\System.h" />
     <ClInclude Include="src\Engine.h" />
     <ClInclude Include="src\RescourceManagement\SceneManager\Scene.h" />
     <ClInclude Include="src\RescourceManagement\Resource.h" />
     <ClInclude Include="src\RescourceManagement\ResourceManager.h" />
-    <ClInclude Include="src\System\FileSystem.h" />
+    <ClInclude Include="src\System\FileSystem\FileSystem.h" />
     <ClInclude Include="src\System\Allocator.h" />
     <ClInclude Include="src\System\MemoryManager.h" />
     <ClInclude Include="src\System\Memory.h" />
     <ClInclude Include="src\Graphics\Shapes\Shape.h" />
     <ClInclude Include="src\Hydro.h" />
     <ClInclude Include="src\RescourceManagement\SceneManager\LevelLoader2D.h" />
+    <ClInclude Include="src\Utilities\KeyCodes.h" />
     <ClInclude Include="src\Utilities\Logger.h" />
-    <ClInclude Include="src\ECS\ComponentManager.h" />
     <ClInclude Include="src\ECS\EntityManager.h" />
     <ClInclude Include="src\Utilities\Input.h" />
     <ClInclude Include="src\Graphics\RenderManager.h" />
     <ClInclude Include="src\ECS\Components\Transform.h" />
     <ClInclude Include="src\ECS\Component.h" />
-    <ClInclude Include="src\Editor\Editor.h" />
-    <ClInclude Include="src\ECS\Components\pointLight.h" />
     <ClInclude Include="src\ECS\Entity.h" />
     <ClInclude Include="src\ECS\Components\Collision.h" />
     <ClInclude Include="src\Graphics\layering\LayerManager.h" />
@@ -202,6 +204,8 @@
     <ClInclude Include="src\audio\AudioEngine.h" />
     <ClInclude Include="src\Graphics\Shader.h" />
     <ClInclude Include="src\Graphics\buffer\IndexBuffer.h" />
+    <ClInclude Include="src\Utilities\MouseButtonCodes.h" />
+    <ClInclude Include="src\Utilities\Platform\WindowsInput.h" />
     <ClInclude Include="src\Utilities\Time.h" />
     <ClInclude Include="src\Utilities\Timer.h" />
     <ClInclude Include="src\Utilities\Types.h" />
@@ -219,8 +223,8 @@
     <ClInclude Include="src\Graphics\buffer\VertexBufferLayout.h" />
     <ClInclude Include="src\Graphics\Texture.h" />
     <ClInclude Include="src\Graphics\Window.h" />
-    <ClInclude Include="src\Graphics\Text.h" />
     <ClInclude Include="src\Graphics\Shapes\Cube.h" />
+    <ClInclude Include="src\ECS\SystemManager.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="res\scene\Testlevel.json" />

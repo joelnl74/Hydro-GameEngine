@@ -22,12 +22,17 @@ public:
 	spriteBatch();
 	~spriteBatch();
 
+	//Setup this spritebatch
 	void Init();
 
+	//Setup all the buffers
 	void Begin();
+	//Clear all the buffers
 	void End();
 
-	void Submit(Sprite *sprite);
+	//Submit a sprite to the batch to render this frame
+	void Submit(const Sprite *sprite);
+	//Draw the current frame
 	void Flush();
 
 private:

@@ -20,7 +20,7 @@ void Time::BeginFrame()
 
 	int counterElpased = EndCounter.QuadPart - LastCounter.QuadPart;
 	INT32 msPerFrame = (1000 * counterElpased) / freq;
-	//printf("miliseconds %i \n", msPerFrame);
+	printf("miliseconds %i \n", msPerFrame);
 }
 void Time::EndFrame()
 {

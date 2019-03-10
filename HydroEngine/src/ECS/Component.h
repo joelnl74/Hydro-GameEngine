@@ -1,8 +1,13 @@
 #pragma once
-class Component 
+
+class Component
 {
 public:
-	virtual void Update() = 0;
-private:
-};
+	//Need for storing type_id in ComponentManager, parent class needs a virtual method for this to work
+	virtual ~Component() {}
 
+	//is the component active?
+	bool active = true;	
+	//Entity this component belongs to
+	int entity_ID;
+};

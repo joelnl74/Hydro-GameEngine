@@ -1,45 +1,60 @@
 #pragma once
 #include "../Component.h"
 #include "../../vendor/glm/common.hpp"
-
+#include "../ECS_Engine.h"
 struct VertexData
 {
 	glm::vec2 position;
 	glm::vec2 uv;
 };
 
-class Sprite : Component
+class Sprite : public Component
 {
 public:
-	Sprite(float sizeX, float sizeY, float posX, float posY, bool solidSprite = false);
-	virtual void Update();
-	~Sprite();
-public:
-	void Scale(float x, float y);
-	void TransLate(float x, float y);
-	void setTextureUV(float PosX, float PosY);
-	void setIndex(float x, float y);
-	void setSolid(bool x);
+	Sprite(Entity e)
+	{
+		entity_ID = e.entityID;
+		transform = *ECS_Engine::GetInstance().m_EntityManager->GetEntityByID(entity_ID).transform;
 
-	inline const void setPosition(float x, float y) { position.x = x, position.y = y; }
-	inline const glm::vec2 getPosition() { return  position; }
-	inline const glm::vec2 getScale() { return  scale; }
-	inline const glm::vec2 getUV() { return  glm::vec2(indexX, indexY); }
+		setIndex(4, 4);
+		setTextureUV(0, 0);
+	}
+	~Sprite()
+	{
+	}
+	//Set index of the texture atlass
+	void Sprite::setIndex(float x, float y)
+	{
+		offsetX = 1 / x;
+		offsetY = 1 / y;
+	}
+	//Set the texture uv
+	void Sprite::setTextureUV(float PosX, float PosY)
+	{
+		indexX = 0;
+		indexY = 0;
+
+		float z = offsetX * PosX;
+		float w = offsetY * PosY;
+
+		indexX = z;
+		indexY = w;
+	}
+
+	inline const glm::vec2 getPosition() const { return transform.position; }
+	inline const glm::vec2 getScale()	 const { return transform.scale; }
+	inline const glm::vec2 getUV()		 const { return glm::vec2(indexX, indexY); }
 
 	//TODO change this and setTextureuv and setIndex partially to the texture class so we dont save it every sprite
 	float offsetX;
 	float offsetY;
 
-	int textureId = 0;
-
 private:
+	Transform transform;
 
-	glm::vec2 position;
-	glm::vec2 scale;
+	int textureID = 0;
 
 	float indexX;
 	float indexY;
-
-	bool solid;
 };
 
