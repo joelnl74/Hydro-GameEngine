@@ -17,6 +17,14 @@ RenderSystem::~RenderSystem()
 bool RenderSystem::Init()
 {
 	batch = hnew spriteBatch();
+
+	std::vector<Component*> &sprites = ECS_Engine::GetInstance().m_ComponentManager->GetComponentsOfType<Sprite>();
+	for (Component *component : sprites)
+	{
+		Sprite *sprite = dynamic_cast<Sprite*>(component);
+		m_sprites.push_back(sprite);
+	}
+
 	return true;
 }
 
@@ -24,12 +32,6 @@ void RenderSystem::Update()
 {
 	if (update == true)
 	{
-		std::vector<Component*> &sprites = ECS_Engine::GetInstance().m_ComponentManager->GetComponentsOfType<Sprite>();
-			for (Component *component : sprites)
-			{
-				Sprite *sprite = dynamic_cast<Sprite*>(component);
-				m_sprites.push_back(sprite);
-			}
 		update = false;
 		batch->Begin();
 		for (Sprite* sprite : m_sprites)

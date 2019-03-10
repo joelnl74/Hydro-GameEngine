@@ -4,6 +4,9 @@
 //TODO m_System.size() not a good value
 void SystemManager::AttachSystem(System * system)
 {
+	//gets called before first frame
+	system->Init();
+
 	m_Systems.emplace(m_Systems.size(), system);
 }
 //TODO Detach a system from updating
