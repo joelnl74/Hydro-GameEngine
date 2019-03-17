@@ -25,11 +25,12 @@ Entity& EntityManager::CreateEntity()
 	return *entity;
 }
 
-//Return entity by id
+//Return entity 
 Entity& EntityManager::GetEntity(Entity e)
 {
 	return *_entities.at(e.entityID);
 }
+//Return entity by id
 Entity& EntityManager::GetEntityByID(int entity_ID)
 {
 	return *_entities.at(entity_ID);
@@ -44,7 +45,7 @@ bool EntityManager::Alive(Entity e)
 	return false;
 }
 
-//TODO make this more safe
+//TODO Make sure to destory the components they will now be garbadge memory
 //Destory an entity and remove it from the heap!
 void EntityManager::Destroy(Entity e)
 {

@@ -22,10 +22,10 @@ void CollisionSystem::Update()
 }
 void CollisionSystem::AABBCollision(Collision & coll1, Collision & coll2)
 {
-	if (coll1.getPosition().x < coll2.getPosition().x + coll2.getScale().x &&
-		coll1.getPosition().x + coll1.getScale().x > coll2.getPosition().x &&
-		coll1.getPosition().y < coll2.getPosition().y + coll2.getScale().y &&
-		coll1.getPosition().y + coll1.getPosition().y > coll2.getPosition().y)
+	if (coll1.getPosition().x + coll2.getScale().x >= coll2.getPosition().x &&
+		coll2.getPosition().x + coll2.getScale().x >= coll1.getPosition().x &&
+		coll1.getPosition().y + coll2.getScale().y >= coll2.getPosition().y &&
+		coll2.getPosition().y + coll2.getScale().y >= coll1.getPosition().y)
 	{
 		LOG_INFO("Collision Detected");
 	}
