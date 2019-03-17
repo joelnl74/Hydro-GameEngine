@@ -12,5 +12,5 @@ class CollisionSystem : public System
 	void AABBCollision(Collision& coll1, Collision& coll2);
 
 private:
-	std::unordered_map<int, Collision*> collisions;
+	std::vector<Collision*> collisions;
 };

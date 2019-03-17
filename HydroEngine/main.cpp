@@ -29,7 +29,7 @@ int main()
 				wall.transform->scale.x = 40;
 				wall.transform->scale.y = 40;
 
-				Sprite* sprite1 = new Sprite(wall);
+				Sprite* sprite1 = new Sprite();
 				Collision *coll1 = new Collision();
 
 				sprite1->setTextureUV(1, 0);
@@ -49,7 +49,7 @@ int main()
 	player.transform->scale.x = 32;
 	player.transform->scale.y = 32;
 
-	Sprite* sprite2 = new Sprite(player);
+	Sprite* sprite2 = new Sprite();
 	Collision *coll2 = new Collision();
 
 	sprite2->setTextureUV(1, 1);
