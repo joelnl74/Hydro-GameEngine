@@ -125,6 +125,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\ECS\Systems\CollisionSystem.cpp" />
     <ClCompile Include="src\ECS\Systems\RenderSystem.cpp" />
     <ClCompile Include="src\ECS\ECS_Engine.cpp" />
     <ClCompile Include="src\ECS\ComponentManager.cpp" />
@@ -166,6 +167,7 @@
   <ItemGroup>
     <ClInclude Include="src\ECS\ComponentContainer.h" />
     <ClInclude Include="src\ECS\ComponentHandle.h" />
+    <ClInclude Include="src\ECS\Systems\CollisionSystem.h" />
     <ClInclude Include="src\ECS\Systems\RenderSystem.h" />
     <ClInclude Include="src\ECS\ECS_Engine.h" />
     <ClInclude Include="src\ECS\ComponentManager.h" />

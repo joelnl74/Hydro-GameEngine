@@ -11,11 +11,8 @@ struct VertexData
 class Sprite : public Component
 {
 public:
-	Sprite(Entity e)
+	Sprite()
 	{
-		entity_ID = e.entityID;
-		transform = *ECS_Engine::GetInstance().m_EntityManager->GetEntityByID(entity_ID).transform;
-
 		setIndex(4, 4);
 		setTextureUV(0, 0);
 	}
@@ -41,8 +38,8 @@ public:
 		indexY = w;
 	}
 
-	inline const glm::vec2 getPosition() const { return transform.position; }
-	inline const glm::vec2 getScale()	 const { return transform.scale; }
+	inline const glm::vec2 getPosition() const { return ECS_Engine::GetInstance().m_EntityManager->GetEntityByID(entity_ID).transform->position; }
+	inline const glm::vec2 getScale()	 const { return ECS_Engine::GetInstance().m_EntityManager->GetEntityByID(entity_ID).transform->scale; }
 	inline const glm::vec2 getUV()		 const { return glm::vec2(indexX, indexY); }
 
 	//TODO change this and setTextureuv and setIndex partially to the texture class so we dont save it every sprite
@@ -50,8 +47,6 @@ public:
 	float offsetY;
 
 private:
-	Transform transform;
-
 	int textureID = 0;
 
 	float indexX;
