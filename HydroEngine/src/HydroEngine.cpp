@@ -14,8 +14,8 @@ using namespace HY_Engine;
 		WindowsInput::GetInstance().StartUp(_window->getWindow());
 		ECS_Engine::GetInstance().StartUp();
 		RenderManager::GetInstance().StartUp();
-
-		//_audioEngine = hnew AudioEngine();
+		_openal = new OpenAl();
+		_openal->Init();
 	}
 	HydroEngine::~HydroEngine()
 	{

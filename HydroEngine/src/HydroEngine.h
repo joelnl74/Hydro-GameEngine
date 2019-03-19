@@ -5,7 +5,7 @@
 #include "Graphics/Window.h"
 #include "Graphics/RenderManager.h"
 #include "Utilities/Platform/WindowsInput.h"
-//#include "audio/AudioEngine.h"
+#include "Audio/OpenAl.h"
 #include "Graphics/Camera.h"
 #include "ECS/ECS_Engine.h"
 #include "RescourceManagement/SceneManager/Scene.h"
@@ -30,6 +30,7 @@ namespace HY_Engine
 		Camera* _camera;
 		Window* _window;
 		WindowsInput *_input;
+		OpenAl *_openal;
 		//AudioEngine* _audioEngine;
 		Time gTime;
 	private:
