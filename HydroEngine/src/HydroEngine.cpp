@@ -15,14 +15,14 @@ using namespace HY_Engine;
 		ECS_Engine::GetInstance().StartUp();
 		RenderManager::GetInstance().StartUp();
 
-		_audioEngine = hnew AudioEngine();
+		//_audioEngine = hnew AudioEngine();
 	}
 	HydroEngine::~HydroEngine()
 	{
 		RenderManager::GetInstance().ShutDown();
 		ECS_Engine::GetInstance().ShutDown();
 		//clear memory
-		hdel _audioEngine;
+		//hdel _audioEngine;
 		hdel _camera;
 
 		ImGui_ImplGlfwGL3_Shutdown();
