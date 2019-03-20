@@ -13,7 +13,5 @@ public:
 private:
 	ALCdevice *m_device;
 	ALCcontext  *m_context;
-	unsigned int source;
-	unsigned int buffer;
     int state;
 };
