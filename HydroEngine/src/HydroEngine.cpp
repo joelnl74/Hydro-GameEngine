@@ -22,7 +22,7 @@ using namespace HY_Engine;
 
 	    buffer = _audio->LoadAudioSound("Resources/sounds/348275__bigmanjoe__fantasy-orchestra.wav");
 		source = new AudioSource();
-		source->Init(0, 0, 0, 1, 1, _audio->buffers.front());
+		source->Init(0, 0, 0, 1, 1, buffer);
 	}
 	HydroEngine::~HydroEngine()
 	{
