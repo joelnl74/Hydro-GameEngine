@@ -1,11 +1,12 @@
 #pragma once
+#include <vector>
 class AudioSource
 {
 public:
-	void playSource();
-	void playLoopedSource();
-	void UpdateSource();
+	void Init(float x, float y, float z, float gain, float pitch, int  &buffer);
+	void playSource(int *buffer);
 private:
-	int sourceId;
-	int state;
+	unsigned int sourceId;
+	int source_State;
+	std::vector<AudioSource> sources;
 };

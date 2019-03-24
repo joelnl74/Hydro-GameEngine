@@ -36,6 +36,10 @@ namespace HY_Engine
 	private:
 		EditorUI *_editUI;
 		EngineMode _engineMode;
+
+		//test
+		AudioSource *source;
+		int buffer;
 		//Scene *_scene;
 
 };

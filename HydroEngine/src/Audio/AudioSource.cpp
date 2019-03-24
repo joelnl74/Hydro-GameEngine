@@ -1,13 +1,23 @@
 #include "AudioSource.h"
-
-void AudioSource::playSource()
+#include "AL/al.h"
+void AudioSource::Init(float x, float y, float z, float gain, float pitch, int &buffer)
 {
+	alGenSources(1, &sourceId);
+	alSourcef(sourceId, AL_GAIN, gain);
+	alSourcef(sourceId, AL_PITCH, pitch);
+	alSource3f(sourceId, AL_POSITION, x, y, z);
+
+	alSourcei(sourceId, AL_BUFFER, buffer);
+	alSourcePlay(sourceId);
+	alGetSourcei(sourceId, AL_SOURCE_STATE, &source_State);
 }
 
-void AudioSource::playLoopedSource()
+void AudioSource::playSource(int *buffer)
 {
-}
+	alGetSourcei(sourceId, AL_SOURCE_STATE, &source_State);
 
-void AudioSource::UpdateSource()
-{
+	if (source_State == AL_PLAYING)
+	{
+		alGetSourcei(sourceId, AL_SOURCE_STATE, &source_State);
+	}
 }

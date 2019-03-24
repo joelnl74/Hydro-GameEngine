@@ -15,14 +15,21 @@ using namespace HY_Engine;
 		WindowsInput::GetInstance().StartUp(_window->getWindow());
 		ECS_Engine::GetInstance().StartUp();
 		RenderManager::GetInstance().StartUp();
+
 		_audio = hnew AudioManager();
 		_audio->Init();
+		_audio->SetListener();
+
+	    buffer = _audio->LoadAudioSound("Resources/sounds/348275__bigmanjoe__fantasy-orchestra.wav");
+		source = new AudioSource();
+		source->Init(0, 0, 0, 1, 1, _audio->buffers.front());
 	}
 	HydroEngine::~HydroEngine()
 	{
 		RenderManager::GetInstance().ShutDown();
 		ECS_Engine::GetInstance().ShutDown();
 		//clear memory
+		_audio->CleanUp();
 		hdel _audio;
 		hdel _camera;
 
@@ -37,6 +44,8 @@ using namespace HY_Engine;
 		//Clear Screen
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);;
+
+		source->playSource(&buffer);
 
 		//update systems
 		ECS_Engine::GetInstance().m_SystemManager->UpdateSystems();

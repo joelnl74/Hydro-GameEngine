@@ -1,5 +1,6 @@
 #include "AudioManager.h"
 #include "../Hydro.h"
+#include "WavFile.h"
 
 void AudioManager::Init()
 {
@@ -14,50 +15,64 @@ void AudioManager::Init()
 
 	if ((error = alGetError()) != AL_NO_ERROR)
 	{
-		//TODO log
-		//DisplayALError("alGenBuffers :", error);
 		return;
 	}
-	int channel, sampleRate, bps, size;
-	//char* data = loadWAV("Resources/sounds/348275__bigmanjoe__fantasy-orchestra.wav", channel, sampleRate, bps, size);
-
-	unsigned int bufferid, format;
-	alGenBuffers(1, &bufferid);
-
-	//if (channel == 1)
-	//{
-	//	if (bps == 8)
-	//	{
-	//		format = AL_FORMAT_MONO8;
-	//	}
-	//	else {
-	//		format = AL_FORMAT_MONO16;
-	//	}
-	//}
-	//else {
-	//	if (bps == 8)
-	//	{
-	//		format = AL_FORMAT_STEREO8;
-	//	}
-	//	else {
-	//		format = AL_FORMAT_STEREO16;
-	//	}
-	//}
-
-	//alBufferData(bufferid, format, data, size, sampleRate);
-	unsigned int sourceid;
-	alGenSources(1, &sourceid);
-	alSourcei(sourceid, AL_BUFFER, bufferid);
-	alSourcePlay(sourceid);
-
-	// Check foreach audio file in buffer if state is playing and play the audio file in the main loop!
-	do {
-		alGetSourcei(sourceid, AL_SOURCE_STATE, &state);
-	} while (state == AL_PLAYING);
-
+}
+void AudioManager::CleanUp()
+{
+	for (unsigned int buffer = 0; buffer < buffers.size(); buffer++)
+	{
+		alDeleteBuffers(1, &buffer);
+	}
 }
 void AudioManager::Update()
 {
 
 
+}
+
+void AudioManager::SetListener()
+{
+	alListener3f(AL_POSITION, 0, 0, 1);
+	alListener3f(AL_VELOCITY, 0, 0,	0);
+}
+
+int AudioManager::LoadAudioSound(const std::string &file)
+{
+	unsigned int buffer = 0;
+	unsigned int format = 0;
+
+	alGenBuffers(1, &buffer);
+	WavFile wavFile;
+
+	char *data = wavFile.LoadWave(file);
+
+	if (wavFile.m_audioBuffer.channel == 1)
+	{
+		if (wavFile.m_audioBuffer.bps == 8)
+		{
+			format = AL_FORMAT_MONO8;
+		}
+		else
+		{
+			format = AL_FORMAT_MONO16;
+		}
+	}
+	else 
+	{
+		if (wavFile.m_audioBuffer.bps == 8)
+		{
+			format = AL_FORMAT_STEREO8;
+		}
+		else 
+		{
+		format = AL_FORMAT_STEREO16;
+		}
+	}
+
+	alBufferData(buffer, format, data, wavFile.m_audioBuffer.size, wavFile.m_audioBuffer.samplerate);
+
+	buffers.push_back(buffer);
+
+	return buffer;
 }

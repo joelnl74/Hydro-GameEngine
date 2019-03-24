@@ -132,7 +132,7 @@
     <ClCompile Include="src\Audio\AudioSource.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Audio\LoadAudioFile.cpp">
+    <ClCompile Include="src\Audio\WavFile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -314,7 +314,7 @@
     <ClInclude Include="src\Audio\AudioSource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Audio\LoadAudioFile.h">
+    <ClInclude Include="src\Audio\WavFile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
