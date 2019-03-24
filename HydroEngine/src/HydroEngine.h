@@ -4,11 +4,12 @@
 #include "Hydro.h"
 #include "Graphics/Window.h"
 #include "Graphics/RenderManager.h"
+#include "Editor//EditorUI.h"
+#include "Audio/AudioManager.h"
 #include "Utilities/Platform/WindowsInput.h"
-#include "Audio/OpenAl.h"
 #include "Graphics/Camera.h"
 #include "ECS/ECS_Engine.h"
-#include "RescourceManagement/SceneManager/Scene.h"
+//#include "RescourceManagement/SceneManager/Scene.h"
 //https://github.com/joelnl74/Hydro-GameEngine 
 
 enum  EngineMode
@@ -30,12 +31,12 @@ namespace HY_Engine
 		Camera* _camera;
 		Window* _window;
 		WindowsInput *_input;
-		OpenAl *_openal;
-		//AudioEngine* _audioEngine;
+		AudioManager *_audio;
 		Time gTime;
 	private:
+		EditorUI *_editUI;
 		EngineMode _engineMode;
-		Scene *_scene;
+		//Scene *_scene;
 
 };
 }

@@ -58,11 +58,17 @@ public:
 	//TODO see if we can return a vector of the derived class instead of the base class component
 	//Return a vector of all the components of a certain type
 	template<class T>
-	std::vector<Component*> &GetComponentsOfType()
+	std::vector<T*> &GetComponentsOfType()
 	{
+		std::vector<T*> *InheritedComponents = new std::vector<T*>();
 		if (m_components.count(&typeid(T)) != 0)
 		{
-			return m_components.at(&typeid(T));
+			for (Component *x : m_components.at(&typeid(T)))
+			{
+				T *derived = dynamic_cast<T*>(x);
+				InheritedComponents->push_back(derived);
+			}
+			return *InheritedComponents;
 		}
 	}
 private:

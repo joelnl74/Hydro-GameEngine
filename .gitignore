@@ -1,5 +1,9 @@
 .vs/
 
+*.slo
+*.lo
+*.o
+
 *.ilk
 *.pdb
 *.log
@@ -10,6 +14,9 @@
 *.tlog
 *.tlog/
 *.lastbuildstate
+
+*.csproj.user
+*.vbproj.user
 
 *.sdf
 *.user

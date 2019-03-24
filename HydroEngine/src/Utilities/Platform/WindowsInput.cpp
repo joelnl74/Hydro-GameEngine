@@ -48,5 +48,4 @@ void WindowsInput::StartUp(GLFWwindow * _window)
 
 void WindowsInput::ShutDown()
 {
-	delete window;
 }

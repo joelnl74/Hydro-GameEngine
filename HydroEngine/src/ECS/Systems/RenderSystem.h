@@ -14,8 +14,6 @@ public:
 
 	bool update = true;
 private:
-	ComponentContainer<Sprite> spriteContainer;
 	spriteBatch *batch;
-	std::vector<Sprite*> m_sprites;
 };
 

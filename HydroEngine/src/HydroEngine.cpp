@@ -11,22 +11,20 @@ using namespace HY_Engine;
 		Logger::m_Instance->StartUp();
 		gTime.StartUp();
 		_window = hnew Window(WIDTH, HEIGHT, "Hydro-Engine");
+		_editUI = hnew EditorUI(_window->getWindow());
 		WindowsInput::GetInstance().StartUp(_window->getWindow());
 		ECS_Engine::GetInstance().StartUp();
 		RenderManager::GetInstance().StartUp();
-		_openal = new OpenAl();
-		_openal->Init();
+		_audio = hnew AudioManager();
+		_audio->Init();
 	}
 	HydroEngine::~HydroEngine()
 	{
 		RenderManager::GetInstance().ShutDown();
 		ECS_Engine::GetInstance().ShutDown();
 		//clear memory
-		//hdel _audioEngine;
+		hdel _audio;
 		hdel _camera;
-
-		ImGui_ImplGlfwGL3_Shutdown();
-		ImGui::DestroyContext();
 
 		gTime.ShutDown();
 		Logger::m_Instance->ShutDown();
@@ -42,8 +40,9 @@ using namespace HY_Engine;
 
 		//update systems
 		ECS_Engine::GetInstance().m_SystemManager->UpdateSystems();
-
+		//_audio->Update();
 		//Draw UI
+		_editUI->DrawUI();
 		// Swap front and back buffers 
 		_window->update();
 	};

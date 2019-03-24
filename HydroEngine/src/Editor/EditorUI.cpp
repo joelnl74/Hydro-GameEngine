@@ -10,12 +10,13 @@ EditorUI::EditorUI(GLFWwindow *win)
 }
 EditorUI::~EditorUI()
 {
+	ImGui_ImplGlfwGL3_Shutdown();
+	ImGui::DestroyContext();
 }
 void EditorUI::DrawUI()
 {
 	ImGui_ImplGlfwGL3_NewFrame();
-	MainBar();
-	Inspector();
+	ImGui::ShowDemoWindow();
 	ImGui::Render();
 	ImGui_ImplGlfwGL3_RenderDrawData(ImGui::GetDrawData());
 }
