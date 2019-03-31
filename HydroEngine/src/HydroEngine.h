@@ -26,7 +26,7 @@ namespace HY_Engine
 	public:
 		HydroEngine();
 		~HydroEngine();
-		void Draw();
+		void MainLoop();
 	//Simple 2dcamera class
 		Camera* _camera;
 		Window* _window;

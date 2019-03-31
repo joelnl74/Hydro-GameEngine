@@ -1,5 +1,5 @@
 #pragma once
-#include <vector>
+
 class AudioSource
 {
 public:
@@ -8,5 +8,4 @@ public:
 private:
 	unsigned int sourceId;
 	int source_State;
-	std::vector<AudioSource> sources;
 };

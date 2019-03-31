@@ -20,7 +20,8 @@ using namespace HY_Engine;
 		_audio->Init();
 		_audio->SetListener();
 
-	    buffer = _audio->LoadAudioSound("Resources/sounds/348275__bigmanjoe__fantasy-orchestra.wav");
+		buffer = _audio->LoadAudioSound("Resources/sounds/Hydro_Engine_Sound1.ogg");
+
 		source = new AudioSource();
 		source->Init(0, 0, 0, 1, 1, buffer);
 	}
@@ -39,7 +40,7 @@ using namespace HY_Engine;
 		hdel _window;
 
 	}
-	void HydroEngine::Draw()
+	void HydroEngine::MainLoop()
 	{
 		//Clear Screen
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
@@ -49,7 +50,7 @@ using namespace HY_Engine;
 
 		//update systems
 		ECS_Engine::GetInstance().m_SystemManager->UpdateSystems();
-		//_audio->Update();
+
 		//Draw UI
 		_editUI->DrawUI();
 		// Swap front and back buffers 

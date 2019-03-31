@@ -132,7 +132,7 @@
     <ClCompile Include="src\Audio\AudioSource.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Audio\WavFile.cpp">
+    <ClCompile Include="src\ECS\Systems\PhysicsSystem2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -290,12 +290,6 @@
     <ClInclude Include="src\ECS\SystemManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\ECS\ComponentContainer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ECS\ComponentHandle.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\Utilities\KeyCodes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -314,7 +308,10 @@
     <ClInclude Include="src\Audio\AudioSource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Audio\WavFile.h">
+    <ClInclude Include="src\ECS\Components\RigidBody2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ECS\Systems\PhysicsSystem2D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

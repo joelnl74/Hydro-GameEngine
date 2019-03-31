@@ -27,6 +27,6 @@ void CollisionSystem::AABBCollision(Collision & coll1, Collision & coll2)
 		coll1.getPosition().y + coll2.getScale().y >= coll2.getPosition().y &&
 		coll2.getPosition().y + coll2.getScale().y >= coll1.getPosition().y)
 	{
-		LOG_INFO("Collision Detected");
+		//LOG_INFO("Collision Detected");
 	}
 }

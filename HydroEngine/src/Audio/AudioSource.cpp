@@ -9,6 +9,7 @@ void AudioSource::Init(float x, float y, float z, float gain, float pitch, int &
 
 	alSourcei(sourceId, AL_BUFFER, buffer);
 	alSourcePlay(sourceId);
+	alSourcei(sourceId, AL_LOOPING, 1);
 	alGetSourcei(sourceId, AL_SOURCE_STATE, &source_State);
 }
 
@@ -21,3 +22,4 @@ void AudioSource::playSource(int *buffer)
 		alGetSourcei(sourceId, AL_SOURCE_STATE, &source_State);
 	}
 }
+

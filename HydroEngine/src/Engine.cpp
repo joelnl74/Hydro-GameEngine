@@ -17,7 +17,7 @@ void Engine::Run()
 		//Begin of frame
 		m_engine->gTime.m_Instance->BeginFrame();
 		//Render here 
-		m_engine->Draw();
+		m_engine->MainLoop();
 		//end of frame
 		m_engine->gTime.m_Instance->EndFrame();
 

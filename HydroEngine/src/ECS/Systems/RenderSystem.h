@@ -1,7 +1,6 @@
 #pragma once
 #include "../System.h"
 
-#include "../ComponentContainer.h"
 #include "../../Graphics/spriteBatch.h"
 class RenderSystem : public System
 {
@@ -9,8 +8,8 @@ public:
 	RenderSystem();
 	~RenderSystem();
 
-	bool Init();
-	void Update();
+	virtual bool Init() override;
+	virtual void Update() override;
 
 	bool update = true;
 private:

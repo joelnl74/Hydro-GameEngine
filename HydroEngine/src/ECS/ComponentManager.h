@@ -3,7 +3,6 @@
 #include <unordered_map>
 
 #include "Entity.h"
-#include "ComponentHandle.h"
 
 //Amout of components the vector should start with
 #define COMPONENT_COUNT = 1024; 
