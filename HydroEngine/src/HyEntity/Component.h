@@ -1,6 +1,5 @@
 #pragma once
-
-class GameObject;
+#include "GameObject.h"
 
 class Component
 {
@@ -10,8 +9,8 @@ public:
 
 	virtual void Start() {};
 	virtual void Update() {};
-
-	GameObject *gameObject = nullptr;
+	
+	GameObject *gameObject;
 
 private:
 	bool active = true;

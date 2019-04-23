@@ -1,6 +1,7 @@
 #include "src/Engine.h"
 #include "src/Hydro.h"
 
+#include "src/HyEntity/GameObject.h"
 #include "src/HyEntity/Components/Sprite.h"
 #include "src/HyEntity/Components/Collision.h"
 #include "src/Graphics/Texture.h"
@@ -9,8 +10,12 @@ int main()
 	//Game engine object
 	Engine *engine = new Engine();
 
-	//Texture *texture = new Texture("Resources/textures/Tiles.png");
-	//texture->bind();
+	Texture *texture = new Texture("Resources/textures/Tiles.png");
+	texture->bind();
+
+	GameObject *gameobject = new GameObject();
+	gameobject->AddComponent(new Sprite());
+	gameobject->AddComponent(new Collision());
 
 	////Run gameloop
 	engine->Run();
