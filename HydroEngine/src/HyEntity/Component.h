@@ -10,7 +10,7 @@ public:
 	virtual void Start() {};
 	virtual void Update() {};
 	
-	GameObject *gameObject;
+	GameObject *gameObject = nullptr;
 
 private:
 	bool active = true;
