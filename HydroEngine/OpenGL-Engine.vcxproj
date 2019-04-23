@@ -74,15 +74,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\ECS\Systems\PhysicsSystem2D.cpp" />
     <ClCompile Include="src\Audio\AudioManager.cpp" />
     <ClCompile Include="src\Audio\AudioSource.cpp" />
-    <ClCompile Include="src\ECS\Systems\CollisionSystem.cpp" />
-    <ClCompile Include="src\ECS\Systems\RenderSystem.cpp" />
-    <ClCompile Include="src\ECS\ECS_Engine.cpp" />
-    <ClCompile Include="src\ECS\ComponentManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src\Engine.cpp" />
+    <ClCompile Include="src\HyEntity\GameObject.cpp" />
     <ClCompile Include="src\RescourceManagement\SceneManager\Scene.cpp" />
     <ClCompile Include="src\RescourceManagement\ResourceManager.cpp" />
     <ClCompile Include="src\System\FileSystem\FileSystem.cpp" />
@@ -91,9 +87,7 @@
     <ClCompile Include="src\System\Memory.cpp" />
     <ClCompile Include="src\RescourceManagement\SceneManager\LevelLoader2D.cpp" />
     <ClCompile Include="src\Utilities\Logger.cpp" />
-    <ClCompile Include="src\ECS\EntityManager.cpp" />
     <ClCompile Include="src\Graphics\RenderManager.cpp" />
-    <ClCompile Include="src\Physics\Collision_detection.cpp" />
     <ClCompile Include="src\HydroEngine.cpp" />
     <ClCompile Include="src\Editor\EditorUI.cpp" />
     <ClCompile Include="src\Graphics\Camera.cpp" />
@@ -113,18 +107,13 @@
     <ClCompile Include="src\Graphics\Texture.cpp" />
     <ClCompile Include="src\Graphics\Window.cpp" />
     <ClCompile Include="src\Graphics\Shapes\Cube.cpp" />
-    <ClCompile Include="src\ECS\SystemManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\ECS\Systems\PhysicsSystem2D.h" />
+    <ClInclude Include="src\HyEntity\Component.h" />
+    <ClInclude Include="src\HyEntity\GameObject.h" />
     <ClInclude Include="src\Audio\AudioManager.h" />
     <ClInclude Include="src\Audio\AudioSource.h" />
-    <ClInclude Include="src\ECS\Components\RigidBody2D.h" />
-    <ClInclude Include="src\ECS\Systems\CollisionSystem.h" />
-    <ClInclude Include="src\ECS\Systems\RenderSystem.h" />
-    <ClInclude Include="src\ECS\ECS_Engine.h" />
-    <ClInclude Include="src\ECS\ComponentManager.h" />
-    <ClInclude Include="src\ECS\System.h" />
+    <ClInclude Include="src\HyEntity\Components\RigidBody2D.h" />
     <ClInclude Include="src\Engine.h" />
     <ClInclude Include="src\RescourceManagement\SceneManager\Scene.h" />
     <ClInclude Include="src\RescourceManagement\Resource.h" />
@@ -138,18 +127,14 @@
     <ClInclude Include="src\RescourceManagement\SceneManager\LevelLoader2D.h" />
     <ClInclude Include="src\Utilities\KeyCodes.h" />
     <ClInclude Include="src\Utilities\Logger.h" />
-    <ClInclude Include="src\ECS\EntityManager.h" />
     <ClInclude Include="src\Utilities\Input.h" />
     <ClInclude Include="src\Graphics\RenderManager.h" />
-    <ClInclude Include="src\ECS\Components\Transform.h" />
-    <ClInclude Include="src\ECS\Component.h" />
-    <ClInclude Include="src\ECS\Entity.h" />
-    <ClInclude Include="src\ECS\Components\Collision.h" />
-    <ClInclude Include="src\Physics\Collision_detection.h" />
+    <ClInclude Include="src\HyEntity\Transform.h" />
+    <ClInclude Include="src\HyEntity\Components\Collision.h" />
     <ClInclude Include="src\HydroEngine.h" />
     <ClInclude Include="src\Editor\EditorUI.h" />
     <ClInclude Include="src\Graphics\Camera.h" />
-    <ClInclude Include="src\ECS\Components\Sprite.h" />
+    <ClInclude Include="src\HyEntity\Components\Sprite.h" />
     <ClInclude Include="src\Graphics\spriteBatch.h" />
     <ClInclude Include="src\Graphics\OpenGLDebugger\OpenglErrorHandler.h" />
     <ClInclude Include="src\Graphics\Shader.h" />
@@ -174,7 +159,6 @@
     <ClInclude Include="src\Graphics\Texture.h" />
     <ClInclude Include="src\Graphics\Window.h" />
     <ClInclude Include="src\Graphics\Shapes\Cube.h" />
-    <ClInclude Include="src\ECS\SystemManager.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="res\scene\Testlevel.json" />

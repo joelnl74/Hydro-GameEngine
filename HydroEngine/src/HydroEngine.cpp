@@ -13,7 +13,6 @@ using namespace HY_Engine;
 		_window = hnew Window(WIDTH, HEIGHT, "Hydro-Engine");
 		_editUI = hnew EditorUI(_window->getWindow());
 		WindowsInput::GetInstance().StartUp(_window->getWindow());
-		ECS_Engine::GetInstance().StartUp();
 		RenderManager::GetInstance().StartUp();
 
 		_audio = hnew AudioManager();
@@ -28,7 +27,6 @@ using namespace HY_Engine;
 	HydroEngine::~HydroEngine()
 	{
 		RenderManager::GetInstance().ShutDown();
-		ECS_Engine::GetInstance().ShutDown();
 		//clear memory
 		_audio->CleanUp();
 		hdel _audio;
@@ -49,7 +47,6 @@ using namespace HY_Engine;
 		source->playSource(&buffer);
 
 		//update systems
-		ECS_Engine::GetInstance().m_SystemManager->UpdateSystems();
 
 		//Draw UI
 		_editUI->DrawUI();

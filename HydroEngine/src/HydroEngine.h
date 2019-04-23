@@ -8,9 +8,6 @@
 #include "Audio/AudioManager.h"
 #include "Utilities/Platform/WindowsInput.h"
 #include "Graphics/Camera.h"
-#include "ECS/ECS_Engine.h"
-//#include "RescourceManagement/SceneManager/Scene.h"
-//https://github.com/joelnl74/Hydro-GameEngine 
 
 enum  EngineMode
 {
@@ -40,7 +37,6 @@ namespace HY_Engine
 		//test
 		AudioSource *source;
 		int buffer;
-		//Scene *_scene;
 
 };
 }
