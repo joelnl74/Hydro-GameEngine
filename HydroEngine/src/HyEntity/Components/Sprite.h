@@ -19,6 +19,16 @@ public:
 	{
 	}
 
+	void Start()
+	{
+
+	}
+
+	void Update()
+	{
+
+	}
+
 	//Set index of the texture atlass
 	void Sprite::setIndex(float x, float y)
 	{
@@ -39,8 +49,8 @@ public:
 		indexY = w;
 	}
 
-	inline const glm::vec2 getPosition() const { return gameObject->transform->position; }
-	inline const glm::vec2 getScale()	 const { return gameObject->transform->scale; }
+	inline const glm::vec2 getPosition() const { return m_gameObject->transform->position; }
+	inline const glm::vec2 getScale()	 const { return m_gameObject->transform->scale; }
 	inline const glm::vec2 getUV()		 const { return glm::vec2(indexX, indexY); }
 
 	//TODO change this and setTextureuv and setIndex partially to the texture class so we dont save it every sprite

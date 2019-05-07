@@ -11,6 +11,7 @@ void RenderManager::StartUp()
 		m_instance = hnew RenderManager();
 		m_instance->shader = hnew Shader("Resources/shaders/Basic.shader");
 	    m_instance->_camera = hnew Camera(800, 600, CameraMode::orthographic);
+		m_instance->_spriteBatch = hnew spriteBatch();
 		//TODO: END
 		m_instance->shader->Bind();
 

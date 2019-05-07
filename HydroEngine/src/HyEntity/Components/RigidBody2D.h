@@ -7,4 +7,14 @@ class RigidBody2D : public Component
 	float velocity;
 
 	bool kinematic;
+
+	void Start()
+	{
+
+	}
+
+	void Update()
+	{
+
+	}
 };

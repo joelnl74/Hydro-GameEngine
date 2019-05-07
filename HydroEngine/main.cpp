@@ -13,9 +13,16 @@ int main()
 	Texture *texture = new Texture("Resources/textures/Tiles.png");
 	texture->bind();
 
+
 	GameObject *gameobject = new GameObject();
+	gameobject->transform->scale.x = 32;
+	gameobject->transform->scale.y = 32;
+
 	gameobject->AddComponent(new Sprite());
+
 	gameobject->AddComponent(new Collision());
+
+	Sprite *sprite = gameobject->GetComponent<Sprite>();
 
 	////Run gameloop
 	engine->Run();

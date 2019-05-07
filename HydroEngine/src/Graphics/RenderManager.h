@@ -1,6 +1,7 @@
 #pragma once
 #include "Shader.h"
 #include "Camera.h"
+#include "spriteBatch.h"
 
 //TODO REMOVE THIS CLASS
 class RenderManager
@@ -8,6 +9,7 @@ class RenderManager
 public:
 	Shader *shader;
 	Camera *_camera;
+	spriteBatch *_spriteBatch;
 
 	//startup this subsystem of the engine
 	void StartUp();

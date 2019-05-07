@@ -4,13 +4,14 @@
 class Component
 {
 public:
+	Component(GameObject *gameObject) { m_gameObject = gameObject; };
 	Component() {};
 	~Component() {};
 
-	virtual void Start() {};
-	virtual void Update() {};
+	virtual void Start() = 0;
+	virtual void Update() = 0;
 	
-	GameObject *gameObject = nullptr;
+	GameObject *m_gameObject = nullptr;
 
 private:
 	bool active = true;
