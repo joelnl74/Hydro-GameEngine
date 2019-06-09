@@ -4,14 +4,6 @@
 
 class WindowsInput : public Input
 {
-public:
-	inline static Input &GetInstance()
-	{
-		if (s_Instance != nullptr)
-			return *s_Instance;
-
-		s_Instance = new WindowsInput();
-	}
 protected:
 	virtual bool IsKeyPressedImpl(int keycode) override;
 

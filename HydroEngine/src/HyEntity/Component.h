@@ -4,7 +4,6 @@
 class Component
 {
 public:
-	Component(GameObject *gameObject) { m_gameObject = gameObject; };
 	Component() {};
 	~Component() {};
 

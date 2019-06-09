@@ -1,7 +1,7 @@
 #include "WindowsInput.h"
 #include "../../Hydro.h"
 
-Input *Input::s_Instance = 0;
+Input *Input::s_Instance = new WindowsInput();
 
 bool WindowsInput::IsKeyPressedImpl(int keycode)
 {
@@ -42,10 +42,10 @@ float WindowsInput::GetMouseYImpl()
 
 void WindowsInput::StartUp(GLFWwindow * _window)
 {
-	s_Instance = hnew WindowsInput();
 	s_Instance->window = _window;
 }
 
 void WindowsInput::ShutDown()
 {
+	delete s_Instance;
 }

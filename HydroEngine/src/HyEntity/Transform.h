@@ -1,4 +1,4 @@
-#pragma onc
+#pragma once
 #include "../vendor/glm/common.hpp"
 class Transform
 {

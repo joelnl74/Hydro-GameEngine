@@ -10,12 +10,12 @@ using namespace HY_Engine;
 	{
 		Logger::m_Instance->StartUp();
 		gTime.StartUp();
-		_window = hnew Window(WIDTH, HEIGHT, "Hydro-Engine");
-		_editUI = hnew EditorUI(_window->getWindow());
-		WindowsInput::GetInstance().StartUp(_window->getWindow());
+		_window = new Window(WIDTH, HEIGHT, "Hydro-Engine");
 		RenderManager::GetInstance().StartUp();
+		WindowsInput::s_Instance->StartUp(_window->getWindow());
+		_editUI = hnew EditorUI(_window->getWindow());
 
-		_audio = hnew AudioManager();
+		_audio = new AudioManager();
 		_audio->Init();
 		_audio->SetListener();
 
@@ -29,13 +29,12 @@ using namespace HY_Engine;
 		RenderManager::GetInstance().ShutDown();
 		//clear memory
 		_audio->CleanUp();
-		hdel _audio;
-		hdel _camera;
+		delete _audio;
+		delete _camera;
 
 		gTime.ShutDown();
 		Logger::m_Instance->ShutDown();
-		WindowsInput::GetInstance().ShutDown();
-		hdel _window;
+		delete _window;
 
 	}
 	void HydroEngine::MainLoop()
@@ -43,6 +42,11 @@ using namespace HY_Engine;
 		//Clear Screen
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);;
+
+		if (WindowsInput::s_Instance->IsKeyPressed(HY_KEY_W))
+		{
+			std::cout << "W pressed" << std::endl;
+		}
 
 		source->playSource(&buffer);
 

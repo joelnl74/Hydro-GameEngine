@@ -8,10 +8,10 @@ void RenderManager::StartUp()
 {
 	if (m_instance == 0)
 	{
-		m_instance = hnew RenderManager();
-		m_instance->shader = hnew Shader("Resources/shaders/Basic.shader");
-	    m_instance->_camera = hnew Camera(800, 600, CameraMode::orthographic);
-		m_instance->_spriteBatch = hnew spriteBatch();
+		m_instance = new RenderManager();
+		m_instance->shader = new Shader("Resources/shaders/Basic.shader");
+	    m_instance->_camera = new Camera(800, 600, CameraMode::orthographic);
+		m_instance->_spriteBatch = new spriteBatch();
 		//TODO: END
 		m_instance->shader->Bind();
 
@@ -27,6 +27,6 @@ void RenderManager::StartUp()
 }
 void RenderManager::ShutDown()
 {
-	hdel m_instance->shader;
-	hdel m_instance;
+	delete m_instance->shader;
+	delete m_instance;
 }

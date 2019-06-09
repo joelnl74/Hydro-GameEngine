@@ -79,7 +79,6 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src\Engine.cpp" />
     <ClCompile Include="src\HyEntity\GameObject.cpp" />
-    <ClCompile Include="src\RescourceManagement\SceneManager\Scene.cpp" />
     <ClCompile Include="src\RescourceManagement\ResourceManager.cpp" />
     <ClCompile Include="src\System\FileSystem\FileSystem.cpp" />
     <ClCompile Include="src\System\Allocator.cpp" />
@@ -115,7 +114,6 @@
     <ClInclude Include="src\Audio\AudioSource.h" />
     <ClInclude Include="src\HyEntity\Components\RigidBody2D.h" />
     <ClInclude Include="src\Engine.h" />
-    <ClInclude Include="src\RescourceManagement\SceneManager\Scene.h" />
     <ClInclude Include="src\RescourceManagement\Resource.h" />
     <ClInclude Include="src\RescourceManagement\ResourceManager.h" />
     <ClInclude Include="src\System\FileSystem\FileSystem.h" />

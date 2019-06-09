@@ -22,7 +22,7 @@ int main()
 
 	gameobject->AddComponent(new Collision());
 
-	Sprite *sprite = gameobject->GetComponent<Sprite>();
+	bool x = gameobject->HasComponent<Collision>();
 
 	////Run gameloop
 	engine->Run();

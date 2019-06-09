@@ -39,24 +39,6 @@ public:
 		return NULL;
 	}
 
-	// Get component
-	template<typename ComponentType>
-	void RemoveComponent() {
-
-		Component *component = nullptr;
-
-		for (unsigned int i = 0; i < components.size(); i++) {
-			if (ComponentType* cmp = dynamic_cast<ComponentType*>(components[i])) {
-				component = cmp;
-			}
-		}
-		if (component != nullptr)
-		{
-			components.erase(component);
-			delete component;
-		}
-	}
-
 	Transform *transform;
 
 private:

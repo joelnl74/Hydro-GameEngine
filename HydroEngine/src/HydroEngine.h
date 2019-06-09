@@ -27,7 +27,6 @@ namespace HY_Engine
 	//Simple 2dcamera class
 		Camera* _camera;
 		Window* _window;
-		WindowsInput *_input;
 		AudioManager *_audio;
 		Time gTime;
 	private:
