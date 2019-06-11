@@ -34,7 +34,8 @@ public:
 	void Submit(const Sprite *sprite);
 	//Draw the current frame
 	void Flush();
-
+public:
+	bool staticBatch = false;
 private:
 	unsigned int vbo;
 	unsigned int vao;

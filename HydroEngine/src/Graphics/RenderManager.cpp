@@ -27,6 +27,30 @@ void RenderManager::StartUp()
 }
 void RenderManager::ShutDown()
 {
+	for (auto batch : m_SpriteBatches)
+	{
+		delete batch;
+	}
+
+	m_SpriteBatches.clear();
+	
 	delete m_instance->shader;
 	delete m_instance;
+}
+void RenderManager::Draw()
+{
+	// Draw all 3D meshes.
+
+	// Draw particles???
+	
+	// Draw all sprite batches.
+	for (int i = 0; i < m_SpriteBatches.size(); i++)
+	{
+		if (m_SpriteBatches[i]->staticBatch)
+		{
+			m_SpriteBatches[i]->Begin();
+		}
+		m_SpriteBatches[i]->Flush();
+		m_SpriteBatches[i]->End();
+	}
 }

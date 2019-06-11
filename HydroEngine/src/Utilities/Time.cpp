@@ -6,8 +6,8 @@ void Time::StartUp()
 	if (m_Instance == 0)
 	{
 		m_Instance = new Time();
-		QueryPerformanceFrequency(&frequency);
-		m_Instance->freq = frequency.QuadPart;
+	    QueryPerformanceFrequency(&m_Instance->frequency);
+		m_Instance->freq = m_Instance->frequency.QuadPart;
 	}
 }
 void Time::ShutDown()

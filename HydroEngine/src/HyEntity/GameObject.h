@@ -10,13 +10,14 @@ public:
 	GameObject();
 	~GameObject();
 
+	// Add Component
 	void AddComponent(Component *component)
 	{
 		// Push back object
 		components.push_back(component);
 	}
 
-	// Get component
+	// Has component
 	template<typename ComponentType>
 	bool HasComponent() {
 

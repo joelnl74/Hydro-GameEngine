@@ -28,7 +28,6 @@ namespace HY_Engine
 		Camera* _camera;
 		Window* _window;
 		AudioManager *_audio;
-		Time gTime;
 	private:
 		EditorUI *_editUI;
 		EngineMode _engineMode;

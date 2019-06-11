@@ -2,6 +2,7 @@
 #include "Shader.h"
 #include "Camera.h"
 #include "spriteBatch.h"
+#include <vector>
 
 //TODO REMOVE THIS CLASS
 class RenderManager
@@ -11,10 +12,12 @@ public:
 	Camera *_camera;
 	spriteBatch *_spriteBatch;
 
-	//startup this subsystem of the engine
+	// Startup this subsystem of the engine.
 	void StartUp();
-	//close this subsystem of the engine
+	// Close this subsystem of the engine.
 	void ShutDown();
+	// Draw primitives;
+	void Draw();
 
 	inline static RenderManager &GetInstance()
 	{
@@ -22,6 +25,7 @@ public:
 	}
 private:
 	static RenderManager *m_instance;
+	std::vector<spriteBatch*> m_SpriteBatches;
 };
 
 

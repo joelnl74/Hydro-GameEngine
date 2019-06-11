@@ -15,11 +15,11 @@ void Engine::Run()
 	while (!m_engine->_window->closed())
 	{
 		//Begin of frame
-		m_engine->gTime.m_Instance->BeginFrame();
+		Time::m_Instance->BeginFrame();
 		//Render here 
 		m_engine->MainLoop();
 		//end of frame
-		m_engine->gTime.m_Instance->EndFrame();
+		Time::m_Instance->EndFrame();
 
 		MemoryManager::Get()->GetMemoryStats();
 	}
