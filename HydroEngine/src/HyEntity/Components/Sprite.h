@@ -13,48 +13,21 @@ namespace Hydro
 	class Sprite : public Component
 	{
 	public:
-		Sprite()
-		{
-			setIndex(4, 4);
-			setTextureUV(0, 0);
-		}
-		~Sprite()
-		{
-		}
+		Sprite();
+		~Sprite();
 
-		void Start()
-		{
-
-		}
-
-		void Update()
-		{
-
-		}
+		void Start();
+		void Update();
 
 		//Set index of the texture atlass
-		void Sprite::setIndex(float x, float y)
-		{
-			offsetX = 1 / x;
-			offsetY = 1 / y;
-		}
+		void Sprite::setIndex(float x, float y);
 
 		//Set the texture uv
-		void Sprite::setTextureUV(float PosX, float PosY)
-		{
-			indexX = 0;
-			indexY = 0;
+		void Sprite::setTextureUV(float PosX, float PosY);
 
-			float z = offsetX * PosX;
-			float w = offsetY * PosY;
-
-			indexX = z;
-			indexY = w;
-		}
-
-		inline const glm::vec2 getPosition() const { return m_gameObject->transform->position; }
-		inline const glm::vec2 getScale()	 const { return m_gameObject->transform->scale; }
-		inline const glm::vec2 getUV()		 const { return glm::vec2(indexX, indexY); }
+		inline const glm::vec2 getPosition() const { return transform->position; }
+		inline const glm::vec2 getScale()	 const { return transform->scale; }
+		inline const glm::vec2 getUV()		 const { return  glm::vec2(indexX, indexY); }
 
 		//TODO change this and setTextureuv and setIndex partially to the texture class so we dont save it every sprite
 		float offsetX;

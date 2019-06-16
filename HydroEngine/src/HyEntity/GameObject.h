@@ -1,11 +1,11 @@
 #pragma once
 #include <vector>
 
+#include "Component.h"
 #include "Transform.h"
 
 namespace Hydro
 {
-	class Component;
 	class GameObject
 	{
 	public:
@@ -16,6 +16,8 @@ namespace Hydro
 		void AddComponent(Component *component)
 		{
 			// Push back object
+			component->GameObjectId = Id;
+			component->transform = transform;
 			components.push_back(component);
 		}
 
@@ -42,6 +44,15 @@ namespace Hydro
 			return NULL;
 		}
 
+		void Update()
+		{
+			for (auto x : components)
+			{
+				x->Update();
+			}
+		}
+	public:
+		unsigned int Id;
 		Transform *transform;
 
 	private:

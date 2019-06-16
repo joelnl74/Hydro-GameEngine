@@ -13,6 +13,7 @@ namespace Hydro
 		_window = hnew Window(WIDTH, HEIGHT, "Hydro Engine");
 		RenderManager::GetInstance().StartUp();
 		WindowsInput::s_Instance->StartUp(_window->getWindow());
+		World::GetInstance().StartUp();
 		_editUI = hnew EditorUI(_window->getWindow());
 
 		_audio = hnew AudioManager();
@@ -26,6 +27,7 @@ namespace Hydro
 	}
 	HydroEngine::~HydroEngine()
 	{
+		World::GetInstance().ShutDown();
 		RenderManager::GetInstance().ShutDown();
 		//clear memory
 		_audio->CleanUp();
@@ -46,6 +48,10 @@ namespace Hydro
 		source->playSource(&buffer);
 
 		//update systems
+		RenderManager::GetInstance().m_spriteBatch->Begin();
+		World::GetInstance().Update();
+		RenderManager::GetInstance().m_spriteBatch->End();
+		RenderManager::GetInstance().m_spriteBatch->Flush();
 
 		//Draw UI
 		_editUI->DrawUI();

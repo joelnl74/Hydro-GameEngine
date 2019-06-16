@@ -11,32 +11,27 @@ namespace Hydro
 		if (m_instance == 0)
 		{
 			m_instance = new RenderManager();
-			m_instance->shader = new Shader("Resources/shaders/Basic.shader");
-			m_instance->_camera = new Camera(800, 600, CameraMode::orthographic);
-			m_instance->_spriteBatch = new spriteBatch();
+			m_instance->m_shader = new Shader("Resources/shaders/Basic.shader");
+			m_instance->m_camera = new Camera(800, 600, CameraMode::orthographic);
+			m_instance->m_spriteBatch = new spriteBatch();
+			m_instance->m_spriteBatch->Init();
 			//TODO: END
-			m_instance->shader->Bind();
+			m_instance->m_shader->Bind();
 
 			//TODO: Remove
 			GLCall(glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA));
 			GLCall(glEnable(GL_BLEND));
 
-			m_instance->shader->SetMatrix4("orthographicModel", m_instance->_camera->returnProjection());
-			m_instance->shader->setVec3("ambientLight", glm::vec3(0.85f, 0.85f, 0.85f));
-			m_instance->_camera->centerCamera(0, 0);
-			m_instance->shader->SetMatrix4("orthographicModel", m_instance->_camera->returnProjection());
+			m_instance->m_shader->SetMatrix4("orthographicModel", m_instance->m_camera->returnProjection());
+			m_instance->m_shader->setVec3("ambientLight", glm::vec3(0.85f, 0.85f, 0.85f));
+			m_instance->m_camera->centerCamera(0, 0);
+			m_instance->m_shader->SetMatrix4("orthographicModel", m_instance->m_camera->returnProjection());
 		}
 	}
 	void RenderManager::ShutDown()
 	{
-		for (auto batch : m_SpriteBatches)
-		{
-			delete batch;
-		}
-
-		m_SpriteBatches.clear();
-
-		delete m_instance->shader;
+		delete m_instance->m_shader;
+		delete m_instance->m_camera;
 		delete m_instance;
 	}
 	void RenderManager::Draw()
@@ -46,15 +41,5 @@ namespace Hydro
 		// Draw particles???
 
 		// Draw all sprite batches.
-		for (int i = 0; i < m_SpriteBatches.size(); i++)
-		{
-			if (m_SpriteBatches[i]->staticBatch)
-			{
-				m_SpriteBatches[i]->Begin();
-			}
-			m_SpriteBatches[i]->Flush();
-			m_SpriteBatches[i]->End();
-		}
 	}
-
 }

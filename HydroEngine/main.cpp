@@ -1,7 +1,6 @@
 #include "src/Engine.h"
 #include "src/Hydro.h"
 
-#include "src/HyEntity/GameObject.h"
 #include "src/HyEntity/Components/Sprite.h"
 #include "src/HyEntity/Components/Collision.h"
 #include "src/Graphics/Texture.h"
@@ -12,25 +11,30 @@ using namespace Hydro;
 int main()
 {
 	//Game engine object
-	Engine *engine = new Engine();
-
+	Engine *engine = hnew Engine();
+	
 	Texture *texture = new Texture("Resources/textures/Tiles.png");
 	texture->bind();
 
+	GameObject &gameobject = World::GetInstance().CreateGameObject();
+	gameobject.transform->scale.x = 32;
+	gameobject.transform->scale.y = 32;
 
-	GameObject *gameobject = new GameObject();
-	gameobject->transform->scale.x = 32;
-	gameobject->transform->scale.y = 32;
+	gameobject.transform->position.x = 300;
+	gameobject.transform->position.y = 400;
 
-	gameobject->AddComponent(new Sprite());
+	gameobject.AddComponent(hnew Sprite());
+	gameobject.AddComponent(hnew Collision());
 
-	gameobject->AddComponent(new Collision());
+	GameObject &gameobject2 = World::GetInstance().CreateGameObject();
+	gameobject2.transform->scale.x = 32;
+	gameobject2.transform->scale.y = 32;
 
-	bool x = gameobject->HasComponent<Collision>();
+	gameobject2.AddComponent(hnew Sprite());
+	gameobject2.AddComponent(hnew Collision());
 
 	////Run gameloop
 	engine->Run();
 
-	delete engine;
-
+	hdel engine;
 }

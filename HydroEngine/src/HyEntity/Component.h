@@ -1,5 +1,5 @@
 #pragma once
-#include "GameObject.h"
+#include "Transform.h"
 
 namespace Hydro
 {
@@ -12,7 +12,8 @@ namespace Hydro
 		virtual void Start() = 0;
 		virtual void Update() = 0;
 
-		GameObject *m_gameObject = nullptr;
+		unsigned int GameObjectId;
+		Transform *transform;
 
 	private:
 		bool active = true;
