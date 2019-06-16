@@ -110,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\HyEntity\Component.h" />
+    <ClInclude Include="src\HyEntity\Components\PlayerTest.h" />
     <ClInclude Include="src\HyEntity\GameObject.h" />
     <ClInclude Include="src\Audio\AudioManager.h" />
     <ClInclude Include="src\Audio\AudioSource.h" />
