@@ -3,9 +3,9 @@
 static const int WIDTH = 1024;
 static const int HEIGHT = 768;
 
-using namespace HY_Engine;
-
-//Only Start major parts of the engine later on here so change Camera editor Window all to the graphics part of the engine
+namespace Hydro
+{
+	//Only Start major parts of the engine later on here so change Camera editor Window all to the graphics part of the engine
 	HydroEngine::HydroEngine()
 	{
 		Logger::m_Instance->StartUp();
@@ -52,3 +52,5 @@ using namespace HY_Engine;
 		// Swap front and back buffers 
 		_window->update();
 	};
+}
+

@@ -11,20 +11,23 @@
 #include <vector>
 #include "AudioSource.h"
 
-class AudioManager
+namespace Hydro
 {
-public:
-	void Init();
-	void CleanUp();
-	void Update();
-	void SetListener();
-	int LoadAudioSound(char *fileName);
-	void GetALCErrorString(int error);
-	void LoadOGG(char *fileName, std::vector<char> &buffer, ALenum &format, ALsizei &freq);
+	class AudioManager
+	{
+	public:
+		void Init();
+		void CleanUp();
+		void Update();
+		void SetListener();
+		int LoadAudioSound(char *fileName);
+		void GetALCErrorString(int error);
+		void LoadOGG(char *fileName, std::vector<char> &buffer, ALenum &format, ALsizei &freq);
 
-	std::vector<int> buffers;
-private:
-	int result;
-	ALCdevice *m_device;
-	ALCcontext  *m_context;
-};
+		std::vector<int> buffers;
+	private:
+		int result;
+		ALCdevice *m_device;
+		ALCcontext  *m_context;
+	};
+}

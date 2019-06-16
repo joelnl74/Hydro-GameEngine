@@ -2,7 +2,7 @@
 
 Engine::Engine()
 {
-	m_engine = hnew HY_Engine::HydroEngine();
+	m_engine = hnew Hydro::HydroEngine();
 }
 Engine::~Engine()
 {

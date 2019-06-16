@@ -1,11 +1,15 @@
 #include "GameObject.h"
 
-GameObject::GameObject()
+namespace Hydro
 {
-	transform = new Transform();
+	GameObject::GameObject()
+	{
+		transform = new Transform();
+	}
+
+	GameObject::~GameObject()
+	{
+		delete transform;
+	}
 }
 
-GameObject::~GameObject()
-{
-	delete transform;
-}

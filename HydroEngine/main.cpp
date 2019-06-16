@@ -5,6 +5,10 @@
 #include "src/HyEntity/Components/Sprite.h"
 #include "src/HyEntity/Components/Collision.h"
 #include "src/Graphics/Texture.h"
+
+// normally dont do this but for now its okay
+using namespace Hydro;
+
 int main()
 {
 	//Game engine object

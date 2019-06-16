@@ -1,21 +1,25 @@
 #pragma once
 #include "VertexBuffer.h"
 
-class  VertexBufferLayout;
 
-
-class VertexArray
+namespace Hydro
 {
-private:
-	unsigned int m_RendererID;
-public:
-	VertexArray();
-	~VertexArray();
+	class  VertexBufferLayout;
 
-	void AddBuffer(const VertexBuffer& vb, const VertexBufferLayout& layout);
+	class VertexArray
+	{
+	private:
+		unsigned int m_RendererID;
+	public:
+		VertexArray();
+		~VertexArray();
 
-	void Bind() const;
+		void AddBuffer(const VertexBuffer& vb, const VertexBufferLayout& layout);
 
-	void UnBind() const;
-};
+		void Bind() const;
+
+		void UnBind() const;
+	};
+}
+
 

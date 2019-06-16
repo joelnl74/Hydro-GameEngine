@@ -4,29 +4,33 @@
 #include "spriteBatch.h"
 #include <vector>
 
-//TODO REMOVE THIS CLASS
-class RenderManager
+namespace Hydro
 {
-public:
-	Shader *shader;
-	Camera *_camera;
-	spriteBatch *_spriteBatch;
-
-	// Startup this subsystem of the engine.
-	void StartUp();
-	// Close this subsystem of the engine.
-	void ShutDown();
-	// Draw primitives;
-	void Draw();
-
-	inline static RenderManager &GetInstance()
+	//TODO REMOVE THIS CLASS
+	class RenderManager
 	{
-		return *m_instance;
-	}
-private:
-	static RenderManager *m_instance;
-	std::vector<spriteBatch*> m_SpriteBatches;
-};
+	public:
+		Shader *shader;
+		Camera *_camera;
+		spriteBatch *_spriteBatch;
+
+		// Startup this subsystem of the engine.
+		void StartUp();
+		// Close this subsystem of the engine.
+		void ShutDown();
+		// Draw primitives;
+		void Draw();
+
+		inline static RenderManager &GetInstance()
+		{
+			return *m_instance;
+		}
+	private:
+		static RenderManager *m_instance;
+		std::vector<spriteBatch*> m_SpriteBatches;
+	};
+}
+
 
 
 

@@ -2,18 +2,22 @@
 #include "../Component.h"
 #include "../../vendor/glm/common.hpp"
 
-class Collision : public Component {
-public:
+namespace Hydro
+{
+	class Collision : public Component {
+	public:
 
-	bool trigger = false;
+		bool trigger = false;
 
-	void Start()
-	{
+		void Start()
+		{
 
-	}
+		}
 
-	void Update()
-	{
+		void Update()
+		{
 
-	}
-};
+		}
+	};
+}
+

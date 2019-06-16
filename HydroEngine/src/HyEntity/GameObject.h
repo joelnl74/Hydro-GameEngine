@@ -3,46 +3,51 @@
 
 #include "Transform.h"
 
-class Component;
-class GameObject
+namespace Hydro
 {
-public:
-	GameObject();
-	~GameObject();
-
-	// Add Component
-	void AddComponent(Component *component)
+	class Component;
+	class GameObject
 	{
-		// Push back object
-		components.push_back(component);
-	}
+	public:
+		GameObject();
+		~GameObject();
 
-	// Has component
-	template<typename ComponentType>
-	bool HasComponent() {
-
-		for (unsigned int i = 0; i < components.size(); i++) {
-			if (ComponentType* cmp = dynamic_cast<ComponentType*>(components[i])) {
-				return true;
-			}
+		// Add Component
+		void AddComponent(Component *component)
+		{
+			// Push back object
+			components.push_back(component);
 		}
-		return false;
-	}
 
-	// Get component
-	template<typename ComponentType>
-	ComponentType* GetComponent() {
-		for (unsigned int i = 0; i < components.size(); i++) {
-			if (ComponentType* cmp = dynamic_cast<ComponentType*>(components[i])) {
-				return cmp;
+		// Has component
+		template<typename ComponentType>
+		bool HasComponent() {
+
+			for (unsigned int i = 0; i < components.size(); i++) {
+				if (ComponentType* cmp = dynamic_cast<ComponentType*>(components[i])) {
+					return true;
+				}
 			}
+			return false;
 		}
-		return NULL;
-	}
 
-	Transform *transform;
+		// Get component
+		template<typename ComponentType>
+		ComponentType* GetComponent() {
+			for (unsigned int i = 0; i < components.size(); i++) {
+				if (ComponentType* cmp = dynamic_cast<ComponentType*>(components[i])) {
+					return cmp;
+				}
+			}
+			return NULL;
+		}
 
-private:
-	std::vector<Component*> components;
-};
+		Transform *transform;
+
+	private:
+		std::vector<Component*> components;
+	};
+}
+
+
 

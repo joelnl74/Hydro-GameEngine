@@ -15,32 +15,33 @@
 #define BUFFER_SIZE			 SPRITE_SIZE * MAX_SPRITES
 #define INDEX_BUFFER_SIZE	 MAX_SPRITES * 6
 
-
-class spriteBatch
+namespace Hydro
 {
-public:
-	spriteBatch();
-	~spriteBatch();
+	class spriteBatch
+	{
+	public:
+		spriteBatch();
+		~spriteBatch();
 
-	//Setup this spritebatch
-	void Init();
+		//Setup this spritebatch
+		void Init();
 
-	//Setup all the buffers
-	void Begin();
-	//Clear all the buffers
-	void End();
+		//Setup all the buffers
+		void Begin();
+		//Clear all the buffers
+		void End();
 
-	//Submit a sprite to the batch to render this frame
-	void Submit(const Sprite *sprite);
-	//Draw the current frame
-	void Flush();
-public:
-	bool staticBatch = false;
-private:
-	unsigned int vbo;
-	unsigned int vao;
-	VertexData *buffer;
-	IndexBuffer *indexbuffer;
-	unsigned int indexcount;
-};
-
+		//Submit a sprite to the batch to render this frame
+		void Submit(const Sprite *sprite);
+		//Draw the current frame
+		void Flush();
+	public:
+		bool staticBatch = false;
+	private:
+		unsigned int vbo;
+		unsigned int vao;
+		VertexData *buffer;
+		IndexBuffer *indexbuffer;
+		unsigned int indexcount;
+	};
+}

@@ -105,7 +105,6 @@
     <ClCompile Include="src\Graphics\buffer\VertexBuffer.cpp" />
     <ClCompile Include="src\Graphics\Texture.cpp" />
     <ClCompile Include="src\Graphics\Window.cpp" />
-    <ClCompile Include="src\Graphics\Shapes\Cube.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\HyEntity\Component.h" />
@@ -120,7 +119,6 @@
     <ClInclude Include="src\System\Allocator.h" />
     <ClInclude Include="src\System\MemoryManager.h" />
     <ClInclude Include="src\System\Memory.h" />
-    <ClInclude Include="src\Graphics\Shapes\Shape.h" />
     <ClInclude Include="src\Hydro.h" />
     <ClInclude Include="src\RescourceManagement\SceneManager\LevelLoader2D.h" />
     <ClInclude Include="src\Utilities\KeyCodes.h" />
@@ -156,7 +154,6 @@
     <ClInclude Include="src\Graphics\buffer\VertexBufferLayout.h" />
     <ClInclude Include="src\Graphics\Texture.h" />
     <ClInclude Include="src\Graphics\Window.h" />
-    <ClInclude Include="src\Graphics\Shapes\Cube.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="res\scene\Testlevel.json" />

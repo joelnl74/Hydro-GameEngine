@@ -1,17 +1,20 @@
 #pragma once
 #include "GameObject.h"
 
-class Component
+namespace Hydro
 {
-public:
-	Component() {};
-	~Component() {};
+	class Component
+	{
+	public:
+		Component() {};
+		~Component() {};
 
-	virtual void Start() = 0;
-	virtual void Update() = 0;
-	
-	GameObject *m_gameObject = nullptr;
+		virtual void Start() = 0;
+		virtual void Update() = 0;
 
-private:
-	bool active = true;
-};
+		GameObject *m_gameObject = nullptr;
+
+	private:
+		bool active = true;
+	};
+}

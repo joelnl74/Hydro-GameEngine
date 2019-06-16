@@ -8,6 +8,6 @@
 	private:
 		//create an instance of the game engine
 		
-		HY_Engine::HydroEngine* m_engine;
+		Hydro::HydroEngine* m_engine;
 	};
 

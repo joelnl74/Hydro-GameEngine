@@ -1,20 +1,23 @@
 #pragma once
 #include "../Component.h"
 
-class RigidBody2D : public Component
+namespace Hydro
 {
-	float gravity;
-	float velocity;
-
-	bool kinematic;
-
-	void Start()
+	class RigidBody2D : public Component
 	{
+		float gravity;
+		float velocity;
 
-	}
+		bool kinematic;
 
-	void Update()
-	{
+		void Start()
+		{
 
-	}
-};
+		}
+
+		void Update()
+		{
+
+		}
+	};
+}
