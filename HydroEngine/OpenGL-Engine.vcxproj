@@ -82,7 +82,6 @@
     <ClCompile Include="src\HyEntity\GameObject.cpp" />
     <ClCompile Include="src\HyEntity\Components\Sprite.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLShader.cpp" />
-    <ClCompile Include="src\RescourceManagement\ResourceManager.cpp" />
     <ClCompile Include="src\System\Allocator.cpp" />
     <ClCompile Include="src\System\MemoryManager.cpp" />
     <ClCompile Include="src\System\Memory.cpp" />
@@ -118,8 +117,6 @@
     <ClInclude Include="src\Engine.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLShader.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLVertexBuffer.h" />
-    <ClInclude Include="src\RescourceManagement\Resource.h" />
-    <ClInclude Include="src\RescourceManagement\ResourceManager.h" />
     <ClInclude Include="src\System\Allocator.h" />
     <ClInclude Include="src\System\MemoryManager.h" />
     <ClInclude Include="src\System\Memory.h" />
