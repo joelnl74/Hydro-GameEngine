@@ -1,6 +1,9 @@
 .vs/
-/bin/
-bin-int/
+
+*.bin/Debug
+*.bin/Release
+*.obj/Debug
+*.obj/Release
 
 *.slo
 *.lo
