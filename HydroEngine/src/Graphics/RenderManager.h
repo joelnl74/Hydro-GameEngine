@@ -9,7 +9,7 @@ namespace Hydro
 	class RenderManager
 	{
 	public:
-		Shader *m_shader;
+		OpenGLShader *m_shader;
 		Camera *m_camera;
 		spriteBatch *m_spriteBatch;
 

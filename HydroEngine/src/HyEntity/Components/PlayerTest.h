@@ -28,6 +28,8 @@ namespace Hydro
 			{
 				transform->position.x += 1;
 			}
+
+			//LOG_INFO("Position x: " + (char)transform->position.x + " Position y: " + (char*)transform->position.y);
 		}
 	};
 }

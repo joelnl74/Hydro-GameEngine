@@ -80,6 +80,7 @@
     <ClCompile Include="src\Engine.cpp" />
     <ClCompile Include="src\HyEntity\GameObject.cpp" />
     <ClCompile Include="src\HyEntity\Components\Sprite.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLShader.cpp" />
     <ClCompile Include="src\RescourceManagement\ResourceManager.cpp" />
     <ClCompile Include="src\System\FileSystem\FileSystem.cpp" />
     <ClCompile Include="src\System\Allocator.cpp" />
@@ -93,7 +94,6 @@
     <ClCompile Include="src\Graphics\Camera.cpp" />
     <ClCompile Include="src\Graphics\spriteBatch.cpp" />
     <ClCompile Include="src\Graphics\OpenGLDebugger\OpenglErrorHandler.cpp" />
-    <ClCompile Include="src\Graphics\Shader.cpp" />
     <ClCompile Include="src\Graphics\buffer\IndexBuffer.cpp" />
     <ClCompile Include="src\Utilities\Platform\WindowsInput.cpp" />
     <ClCompile Include="src\Utilities\Time.cpp" />
@@ -116,6 +116,8 @@
     <ClInclude Include="src\Audio\AudioSource.h" />
     <ClInclude Include="src\HyEntity\Components\RigidBody2D.h" />
     <ClInclude Include="src\Engine.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLShader.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLVertexBuffer.h" />
     <ClInclude Include="src\RescourceManagement\Resource.h" />
     <ClInclude Include="src\RescourceManagement\ResourceManager.h" />
     <ClInclude Include="src\System\FileSystem\FileSystem.h" />

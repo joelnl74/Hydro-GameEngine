@@ -11,7 +11,7 @@ namespace Hydro
 		if (m_instance == 0)
 		{
 			m_instance = new RenderManager();
-			m_instance->m_shader = new Shader("Resources/shaders/Basic.shader");
+			m_instance->m_shader = new OpenGLShader("Resources/shaders/Basic.shader");
 			m_instance->m_camera = new Camera(800, 600, CameraMode::orthographic);
 			m_instance->m_spriteBatch = new spriteBatch();
 			m_instance->m_spriteBatch->Init();

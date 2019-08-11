@@ -4,7 +4,7 @@
 #include "buffer/VertexBufferLayout.h"
 #include "buffer/IndexBuffer.h"
 #include "buffer/VertexArray.h"
-#include "Shader.h"
+#include "../Platform/OpenGL/OpenGLShader.h"
 #include "Texture.h"
 
 #include "../Hydro.h"
