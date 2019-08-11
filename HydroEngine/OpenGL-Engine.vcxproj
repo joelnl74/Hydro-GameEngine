@@ -78,6 +78,7 @@
     <ClCompile Include="src\Audio\AudioSource.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src\Engine.cpp" />
+    <ClCompile Include="src\Graphics\RendererAPI.cpp" />
     <ClCompile Include="src\HyEntity\GameObject.cpp" />
     <ClCompile Include="src\HyEntity\Components\Sprite.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLShader.cpp" />
@@ -109,6 +110,7 @@
     <ClCompile Include="src\HyEntity\World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Graphics\RendererAPI.h" />
     <ClInclude Include="src\HyEntity\Component.h" />
     <ClInclude Include="src\HyEntity\Components\PlayerTest.h" />
     <ClInclude Include="src\HyEntity\GameObject.h" />

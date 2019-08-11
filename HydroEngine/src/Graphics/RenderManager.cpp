@@ -10,10 +10,10 @@ namespace Hydro
 	{
 		if (m_instance == 0)
 		{
-			m_instance = new RenderManager();
-			m_instance->m_shader = new OpenGLShader("Resources/shaders/Basic.shader");
-			m_instance->m_camera = new Camera(800, 600, CameraMode::orthographic);
-			m_instance->m_spriteBatch = new spriteBatch();
+			m_instance = hnew RenderManager();
+			m_instance->m_shader = hnew OpenGLShader("Resources/shaders/Basic.shader");
+			m_instance->m_camera = hnew Camera(800, 600, CameraMode::orthographic);
+			m_instance->m_spriteBatch = hnew spriteBatch();
 			m_instance->m_spriteBatch->Init();
 			//TODO: END
 			m_instance->m_shader->Bind();
@@ -30,9 +30,9 @@ namespace Hydro
 	}
 	void RenderManager::ShutDown()
 	{
-		delete m_instance->m_shader;
-		delete m_instance->m_camera;
-		delete m_instance;
+		hdel m_instance->m_shader;
+		hdel m_instance->m_camera;
+		hdel m_instance;
 	}
 	void RenderManager::Draw()
 	{
