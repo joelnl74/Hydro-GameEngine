@@ -69,9 +69,6 @@
     <ClCompile Include="src\Utilities\Time.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\RescourceManagement\SceneManager\LevelLoader2D.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\System\Memory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -88,12 +85,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\System\FileSystem\FileSystem.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Utilities\Platform\WindowsInput.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Audio\AudioManager.cpp">
@@ -115,6 +106,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Graphics\RendererAPI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -200,9 +194,6 @@
     <ClInclude Include="src\Utilities\Time.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\RescourceManagement\SceneManager\LevelLoader2D.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\System\Memory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -224,16 +215,10 @@
     <ClInclude Include="src\Engine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\System\FileSystem\FileSystem.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\Utilities\KeyCodes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Utilities\MouseButtonCodes.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Utilities\Platform\WindowsInput.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Audio\AudioManager.h">
@@ -273,6 +258,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Graphics\RendererAPI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

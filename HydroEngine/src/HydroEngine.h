@@ -6,7 +6,7 @@
 #include "Graphics/RenderManager.h"
 #include "Editor//EditorUI.h"
 #include "Audio/AudioManager.h"
-#include "Utilities/Platform/WindowsInput.h"
+#include "Platform/Windows/WindowsInput.h"
 #include "HyEntity/World.h"
 
 enum  EngineMode

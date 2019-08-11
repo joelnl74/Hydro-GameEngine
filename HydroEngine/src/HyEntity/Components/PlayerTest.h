@@ -1,7 +1,8 @@
 #pragma once
 #include "../Component.h"
 #include "../../Hydro.h"
-#include "../../Utilities/Platform/WindowsInput.h"
+#include "../../Platform/Windows/WindowsInput.h"
+
 namespace Hydro
 {
 	class PlayerTest : public Component
