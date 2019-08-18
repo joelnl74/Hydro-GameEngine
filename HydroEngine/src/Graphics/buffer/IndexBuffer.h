@@ -4,16 +4,12 @@ namespace Hydro
 {
 	class IndexBuffer
 	{
-	private:
-		unsigned int m_RendererID;
-		unsigned int m_Count;
 	public:
-		IndexBuffer(const unsigned int* data, unsigned int count);
-		~IndexBuffer();
+		~IndexBuffer() = default;
 
-		void Bind() const;
-		void Unbind() const;
+		virtual void Bind() const = 0;
+		virtual void UnBind() const = 0;
 
-		inline unsigned int GetCount() const { return m_Count; }
+		virtual inline unsigned int GetCount() const = 0;
 	};
 }

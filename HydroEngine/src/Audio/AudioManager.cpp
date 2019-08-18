@@ -113,7 +113,7 @@ namespace Hydro
 		ALuint sourceID;                        // The OpenAL sound source
 		ALenum format;                          // The sound data format
 		ALsizei freq;                           // The frequency of the sound data
-		std::vector<char> bufferData;                // The sound buffer data from file
+		std::vector<char> bufferData;           // The sound buffer data from file
 
 		// Make sure there is a file name
 

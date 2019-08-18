@@ -13,7 +13,6 @@ namespace Hydro
 		void DrawUI();
 		void MainBar();
 		void Inspector();
-		int returnSelectedLayer() { return layerID; }
 		bool returnPlay() { return play; }
 
 		bool spritePlacementMode = false;
@@ -23,8 +22,6 @@ namespace Hydro
 		bool isHovered = false;
 
 		bool inspector = true;
-
-		int layerID;
 	};
 }
 

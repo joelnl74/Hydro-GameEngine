@@ -1,7 +1,7 @@
 #pragma once
 #include "Shader.h"
 #include "Camera.h"
-#include "spriteBatch.h"
+#include "../Platform/OpenGL/spriteBatch.h"
 
 namespace Hydro
 {
@@ -9,7 +9,7 @@ namespace Hydro
 	class RenderManager
 	{
 	public:
-		Shader *m_shader;
+		OpenGLShader *m_shader;
 		Camera *m_camera;
 		spriteBatch *m_spriteBatch;
 

@@ -40,7 +40,6 @@ namespace Hydro
 	}
 	GameObject* World::FindGameObject(unsigned int id)
 	{
-		//TODO check if value exsist
 		if (m_GameObjects.count(id) == 1)
 		{
 			return m_GameObjects.at(id);

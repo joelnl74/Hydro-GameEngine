@@ -6,7 +6,6 @@
 #include <ctime>
 #include <chrono>
 
-
 const std::string FileLocation = "Logging/LogFile.txt";
 Logger *Logger::m_Instance = 0;
 
@@ -32,7 +31,7 @@ void Logger::LogOnConsole(std::string &message)
 {
 	if (_logType >= LOG_TYPE::CONSOLE)
 	{
-		std::cout << getCurrentTime() << "  " << message << std::endl;
+		std::cout << getCurrentTime() << " " << message << std::endl;
 	}
 }
 void Logger::LogToFile(std::string &message)

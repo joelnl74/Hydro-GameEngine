@@ -4,9 +4,10 @@
 #include "Hydro.h"
 #include "Graphics/Window.h"
 #include "Graphics/RenderManager.h"
+#include "Graphics/FBX/FBX.h"
 #include "Editor//EditorUI.h"
 #include "Audio/AudioManager.h"
-#include "Utilities/Platform/WindowsInput.h"
+#include "Platform/Windows/WindowsInput.h"
 #include "HyEntity/World.h"
 
 enum  EngineMode
