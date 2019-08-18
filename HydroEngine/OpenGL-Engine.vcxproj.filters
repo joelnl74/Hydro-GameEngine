@@ -108,6 +108,9 @@
     <ClCompile Include="src\Platform\OpenGL\spriteBatch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsFileExplorer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\vendor\stbImage\stb_image.h">
@@ -261,6 +264,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\spriteBatch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsFileExplorer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Windows\vendor\dirent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

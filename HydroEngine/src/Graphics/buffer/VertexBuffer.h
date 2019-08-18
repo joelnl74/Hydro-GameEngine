@@ -4,8 +4,6 @@ namespace Hydro
 {
 	class VertexBuffer
 	{
-	private:
-		unsigned int m_RendererID;
 	public:
 		virtual ~VertexBuffer() = default;
 

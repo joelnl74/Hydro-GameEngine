@@ -86,6 +86,7 @@
     <ClCompile Include="src\Platform\OpenGL\OpenGLTexture.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLVertexBuffer.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsFileExplorer.cpp" />
     <ClCompile Include="src\System\Allocator.cpp" />
     <ClCompile Include="src\System\MemoryManager.cpp" />
     <ClCompile Include="src\System\Memory.cpp" />
@@ -121,6 +122,8 @@
     <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLVertexBuffer.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLVertexBufferLayout.h" />
+    <ClInclude Include="src\Platform\Windows\vendor\dirent.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsFileExplorer.h" />
     <ClInclude Include="src\System\Allocator.h" />
     <ClInclude Include="src\System\MemoryManager.h" />
     <ClInclude Include="src\System\Memory.h" />
