@@ -4,6 +4,7 @@
 #include "Hydro.h"
 #include "Graphics/Window.h"
 #include "Graphics/RenderManager.h"
+#include "Graphics/FBX/FBX.h"
 #include "Editor//EditorUI.h"
 #include "Audio/AudioManager.h"
 #include "Platform/Windows/WindowsInput.h"

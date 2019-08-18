@@ -5,7 +5,7 @@
 #include "src/HyEntity/Components/Collision.h"
 #include "src/HyEntity/Components/PlayerTest.h"
 #include "src/Platform/OpenGL/OpenGLTexture.h"
-#include "src/Platform/Windows/WindowsFileExplorer.h"
+#include "src/Platform/Windows/FileSystemWindows.h"
 
 // normally dont do this but for now its okay
 using namespace Hydro;
@@ -14,7 +14,7 @@ int main()
 {
 	//Game engine object
 	Engine *engine = hnew Engine();
-	WindowsFileExplorer *fileExplorer = hnew WindowsFileExplorer();
+	FileSystemWindows *fileExplorer = hnew FileSystemWindows();
 	
 	Texture *texture = new OpenGLTexture("Resources/textures/Tiles.png");
 	texture->Bind();
@@ -30,8 +30,7 @@ int main()
 	gameobject.AddComponent(hnew Sprite());
 	gameobject.AddComponent(hnew Collision());
 
-	fileExplorer->GetFilesInDirectory("E:\\Dev\\Engine\\Hydro-GameEngine\\HydroEngine\\Resources");
-	fileExplorer->GetNextDirectory();
+	fileExplorer->ReadAllFilesDirectories("E:\\Dev\\Engine\\Hydro-GameEngine\\HydroEngine\\Resources");
 
 	////Run gameloop
 	engine->Run();

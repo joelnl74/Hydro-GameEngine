@@ -24,6 +24,9 @@ namespace Hydro
 
 		source = hnew AudioSource();
 		source->Init(0, 0, 0, 1, 1, buffer);
+
+		FBX *fbx = hnew FBX();
+		bool setup = fbx->Setup();
 	}
 	HydroEngine::~HydroEngine()
 	{
@@ -54,7 +57,7 @@ namespace Hydro
 		RenderManager::GetInstance().m_spriteBatch->Flush();
 
 		//Draw UI
-		_editUI->DrawUI();
+		//_editUI->DrawUI();
 		// Swap front and back buffers 
 		_window->update();
 	};
