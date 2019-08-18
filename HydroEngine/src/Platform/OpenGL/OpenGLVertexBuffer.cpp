@@ -1,29 +1,29 @@
-#include "VertexBuffer.h"
-
-
-#include "../OpenGLDebugger\OpenglErrorHandler.h"
+#include "OpenGLVertexBuffer.h"
+#include "OpenGLDebugger/OpenglErrorHandler.h"
 
 namespace Hydro
 {
-	VertexBuffer::VertexBuffer(const void * data, unsigned int size)
+	OpenGLVertexBuffer::OpenGLVertexBuffer(const void * data, unsigned int size)
 	{
 		GLCall(glGenBuffers(1, &m_RendererID));
 		GLCall(glBindBuffer(GL_ARRAY_BUFFER, m_RendererID));
 		GLCall(glBufferData(GL_ARRAY_BUFFER, size, data, GL_STATIC_DRAW));
 	}
 
-	VertexBuffer::~VertexBuffer()
+	OpenGLVertexBuffer::~OpenGLVertexBuffer()
 	{
 		GLCall(glDeleteBuffers(1, &m_RendererID));
 	}
 
-	void VertexBuffer::Bind() const
+	void OpenGLVertexBuffer::Bind() const
 	{
 		GLCall(glBindBuffer(GL_ARRAY_BUFFER, m_RendererID));
 	}
 
-	void VertexBuffer::Unbind() const
+	void OpenGLVertexBuffer::UnBind() const
 	{
 		GLCall(glBindBuffer(GL_ARRAY_BUFFER, 0));
 	}
 }
+
+

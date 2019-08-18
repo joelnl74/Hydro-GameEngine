@@ -1,11 +1,10 @@
-#include "OpenGLDebugger\OpenglErrorHandler.h"
-#include "Texture.h"
-
-#include "..\vendor\stbImage\stb_image.h"
+#include "OpenGLTexture.h"
+#include "OpenGLDebugger/OpenglErrorHandler.h"
+#include "../../vendor/stbImage/stb_image.h"
 
 namespace Hydro
 {
-	Texture::Texture(const std::string& path)
+	OpenGLTexture::OpenGLTexture(const std::string& path)
 		: m_rendererID(0), m_FilePath(path), m_LocalBuffer(nullptr), m_Width(0), m_Height(0), m_BPP(0)
 	{
 		//stbi_set_flip_vertically_on_load(1);
@@ -28,19 +27,21 @@ namespace Hydro
 			stbi_image_free(m_LocalBuffer);
 		}
 	}
-	Texture::~Texture()
+	OpenGLTexture::~OpenGLTexture()
 	{
 		glDeleteTextures(1, &m_rendererID);
 	}
-	void Texture::bind(unsigned int slot) const
+
+	void OpenGLTexture::Bind(unsigned int slot) const
 	{
 		GLCall(glActiveTexture(GL_TEXTURE0 + slot));
 		GLCall(glBindTexture(GL_TEXTURE_2D, m_rendererID));
-
 	}
-	void Texture::unBind() const
+
+	void OpenGLTexture::UnBind() const
 	{
 		GLCall(glBindTexture(GL_TEXTURE_2D, 0));
 	}
 }
+
 

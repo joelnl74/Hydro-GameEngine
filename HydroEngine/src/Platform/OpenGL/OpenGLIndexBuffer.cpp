@@ -1,11 +1,10 @@
-#include "IndexBuffer.h"
-
-#include "../OpenGLDebugger\OpenglErrorHandler.h"
+#include "OpenGLIndexBuffer.h"
+#include "OpenGLDebugger/OpenglErrorHandler.h"
 
 namespace Hydro
 {
-	IndexBuffer::IndexBuffer(const unsigned int* data, unsigned int count)
-		:m_Count(count)
+	OpenGLIndexBuffer::OpenGLIndexBuffer(const unsigned int * data, unsigned int count) :
+		m_Count(count)
 	{
 		ASSERT(sizeof(unsigned int) == sizeof(GLuint));
 
@@ -14,18 +13,19 @@ namespace Hydro
 		GLCall(glBufferData(GL_ELEMENT_ARRAY_BUFFER, count * sizeof(unsigned int), data, GL_STATIC_DRAW));
 	}
 
-	IndexBuffer::~IndexBuffer()
+	OpenGLIndexBuffer::~OpenGLIndexBuffer()
 	{
 		GLCall(glDeleteBuffers(1, &m_RendererID));
 	}
 
-	void IndexBuffer::Bind() const
+	void OpenGLIndexBuffer::Bind() const
 	{
 		GLCall(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_RendererID));
 	}
 
-	void IndexBuffer::Unbind() const
+	void OpenGLIndexBuffer::UnBind() const
 	{
 		GLCall(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0));
 	}
 }
+

@@ -4,7 +4,7 @@
 #include "src/HyEntity/Components/Sprite.h"
 #include "src/HyEntity/Components/Collision.h"
 #include "src/HyEntity/Components/PlayerTest.h"
-#include "src/Graphics/Texture.h"
+#include "src/Platform/OpenGL/OpenGLTexture.h"
 
 // normally dont do this but for now its okay
 using namespace Hydro;
@@ -14,8 +14,8 @@ int main()
 	//Game engine object
 	Engine *engine = hnew Engine();
 	
-	Texture *texture = new Texture("Resources/textures/Tiles.png");
-	texture->bind();
+	Texture *texture = new OpenGLTexture("Resources/textures/Tiles.png");
+	texture->Bind();
 
 	GameObject &gameobject = World::GetInstance().CreateGameObject();
 	gameobject.transform->scale.x = 32;

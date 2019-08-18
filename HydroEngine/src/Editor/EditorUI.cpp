@@ -8,7 +8,6 @@ namespace Hydro
 		ImGui::CreateContext();
 		ImGui_ImplGlfwGL3_Init(win, true);
 		ImGui::StyleColorsLight();
-		layerID = 0;
 	}
 	EditorUI::~EditorUI()
 	{

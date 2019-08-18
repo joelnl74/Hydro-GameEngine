@@ -81,7 +81,11 @@
     <ClCompile Include="src\Graphics\RendererAPI.cpp" />
     <ClCompile Include="src\HyEntity\GameObject.cpp" />
     <ClCompile Include="src\HyEntity\Components\Sprite.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLIndexBuffer.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLShader.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLTexture.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLVertexBuffer.cpp" />
     <ClCompile Include="src\System\Allocator.cpp" />
     <ClCompile Include="src\System\MemoryManager.cpp" />
     <ClCompile Include="src\System\Memory.cpp" />
@@ -90,9 +94,8 @@
     <ClCompile Include="src\HydroEngine.cpp" />
     <ClCompile Include="src\Editor\EditorUI.cpp" />
     <ClCompile Include="src\Graphics\Camera.cpp" />
-    <ClCompile Include="src\Graphics\spriteBatch.cpp" />
-    <ClCompile Include="src\Graphics\OpenGLDebugger\OpenglErrorHandler.cpp" />
-    <ClCompile Include="src\Graphics\buffer\IndexBuffer.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\spriteBatch.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLDebugger\OpenglErrorHandler.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Utilities\Time.cpp" />
     <ClCompile Include="src\vendor\imgui\imgui.cpp" />
@@ -100,9 +103,6 @@
     <ClCompile Include="src\vendor\imgui\imgui_draw.cpp" />
     <ClCompile Include="src\vendor\imgui\imgui_impl_glfw_gl3.cpp" />
     <ClCompile Include="src\vendor\stbImage\stb_image.cpp" />
-    <ClCompile Include="src\Graphics\buffer\VertexArray.cpp" />
-    <ClCompile Include="src\Graphics\buffer\VertexBuffer.cpp" />
-    <ClCompile Include="src\Graphics\Texture.cpp" />
     <ClCompile Include="src\Graphics\Window.cpp" />
     <ClCompile Include="src\HyEntity\World.cpp" />
   </ItemGroup>
@@ -115,8 +115,12 @@
     <ClInclude Include="src\Audio\AudioSource.h" />
     <ClInclude Include="src\HyEntity\Components\RigidBody2D.h" />
     <ClInclude Include="src\Engine.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLIndexBuffer.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLShader.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLTexture.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLVertexBuffer.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLVertexBufferLayout.h" />
     <ClInclude Include="src\System\Allocator.h" />
     <ClInclude Include="src\System\MemoryManager.h" />
     <ClInclude Include="src\System\Memory.h" />
@@ -131,8 +135,8 @@
     <ClInclude Include="src\Editor\EditorUI.h" />
     <ClInclude Include="src\Graphics\Camera.h" />
     <ClInclude Include="src\HyEntity\Components\Sprite.h" />
-    <ClInclude Include="src\Graphics\spriteBatch.h" />
-    <ClInclude Include="src\Graphics\OpenGLDebugger\OpenglErrorHandler.h" />
+    <ClInclude Include="src\Platform\OpenGL\spriteBatch.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLDebugger\OpenglErrorHandler.h" />
     <ClInclude Include="src\Graphics\Shader.h" />
     <ClInclude Include="src\Graphics\buffer\IndexBuffer.h" />
     <ClInclude Include="src\Utilities\MouseButtonCodes.h" />
@@ -151,7 +155,6 @@
     <ClInclude Include="src\vendor\stbImage\stb_image.h" />
     <ClInclude Include="src\Graphics\buffer\VertexArray.h" />
     <ClInclude Include="src\Graphics\buffer\VertexBuffer.h" />
-    <ClInclude Include="src\Graphics\buffer\VertexBufferLayout.h" />
     <ClInclude Include="src\Graphics\Texture.h" />
     <ClInclude Include="src\Graphics\Window.h" />
     <ClInclude Include="src\HyEntity\World.h" />

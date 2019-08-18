@@ -1,7 +1,7 @@
 #pragma once
 #include "Shader.h"
 #include "Camera.h"
-#include "spriteBatch.h"
+#include "../Platform/OpenGL/spriteBatch.h"
 
 namespace Hydro
 {

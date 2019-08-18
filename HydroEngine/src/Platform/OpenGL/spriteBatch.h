@@ -1,13 +1,13 @@
 #pragma once
-#include "../HyEntity/Components/Sprite.h"
-#include "buffer/VertexBuffer.h"
-#include "buffer/VertexBufferLayout.h"
-#include "buffer/IndexBuffer.h"
-#include "buffer/VertexArray.h"
-#include "../Platform/OpenGL/OpenGLShader.h"
-#include "Texture.h"
+#include "../../HyEntity/Components/Sprite.h"
+#include "OpenGLVertexBuffer.h"
+#include "OpenGLVertexBufferLayout.h"
+#include "OpenGLIndexBuffer.h"
+#include "OpenGLVertexArray.h"
+#include "OpenGLShader.h"
+#include "OpenGLTexture.h"
 
-#include "../Hydro.h"
+#include "../../Hydro.h"
 
 #define MAX_SPRITES			 21000
 #define VERTEX_SIZE			 sizeof(VertexData)

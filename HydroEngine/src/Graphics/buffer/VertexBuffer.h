@@ -7,10 +7,9 @@ namespace Hydro
 	private:
 		unsigned int m_RendererID;
 	public:
-		VertexBuffer(const void* data, unsigned int size);
-		~VertexBuffer();
+		virtual ~VertexBuffer() = default;
 
-		void Bind() const;
-		void Unbind() const;
+		virtual void Bind() const = 0;
+		virtual void UnBind() const = 0;
 	};
 }

@@ -48,7 +48,7 @@ namespace Hydro
 			offset += 4;
 
 		}
-		indexbuffer = hnew IndexBuffer(indices, INDEX_BUFFER_SIZE);
+		indexbuffer = hnew OpenGLIndexBuffer(indices, INDEX_BUFFER_SIZE);
 
 		glBindVertexArray(0);
 	}
@@ -104,6 +104,6 @@ namespace Hydro
 		glDrawElements(GL_TRIANGLES, indexcount, GL_UNSIGNED_INT, NULL);
 
 		glBindVertexArray(0);
-		indexbuffer->Unbind();
+		indexbuffer->UnBind();
 	}
 }

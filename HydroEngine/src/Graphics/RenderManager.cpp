@@ -1,6 +1,5 @@
 #include "RenderManager.h"
 #include "../Hydro.h"
-#include "OpenGLDebugger/OpenglErrorHandler.h"
 
 namespace Hydro
 {
@@ -23,7 +22,7 @@ namespace Hydro
 			GLCall(glEnable(GL_BLEND));
 
 			m_instance->m_shader->SetMatrix4("orthographicModel", m_instance->m_camera->returnProjection());
-			m_instance->m_shader->setVec3("ambientLight", glm::vec3(0.85f, 0.85f, 0.85f));
+			m_instance->m_shader->SetVec3("ambientLight", glm::vec3(0.85f, 0.85f, 0.85f));
 			m_instance->m_camera->centerCamera(0, 0);
 			m_instance->m_shader->SetMatrix4("orthographicModel", m_instance->m_camera->returnProjection());
 		}
