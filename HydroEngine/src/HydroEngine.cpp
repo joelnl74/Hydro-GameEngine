@@ -1,7 +1,8 @@
 #include "HydroEngine.h"
 #include "Editor/EditorUI.h"
-static const int WIDTH = 1024;
-static const int HEIGHT = 768;
+
+static const int WIDTH = 800;
+static const int HEIGHT = 600;
 
 namespace Hydro
 {
@@ -25,8 +26,8 @@ namespace Hydro
 		source = hnew AudioSource();
 		source->Init(0, 0, 0, 1, 1, buffer);
 
-		FBX *fbx = hnew FBX();
-		bool setup = fbx->Setup();
+		model = new Model("Resource/fbx/box.obj");
+		shader = new OpenGLShader("Resources/shaders/Test.shader");
 	}
 	HydroEngine::~HydroEngine()
 	{
@@ -50,11 +51,15 @@ namespace Hydro
 
 		source->playSource(&buffer);
 
-		//update systems
-		RenderManager::GetInstance().m_spriteBatch->Begin();
-		World::GetInstance().Update();
-		RenderManager::GetInstance().m_spriteBatch->End();
-		RenderManager::GetInstance().m_spriteBatch->Flush();
+		// Update world.
+		//World::GetInstance().Update();
+
+		model->Draw(*shader);
+
+		// Update renderer.
+		//RenderManager::GetInstance().m_spriteBatch->Begin();
+		//RenderManager::GetInstance().m_spriteBatch->End();
+		//RenderManager::GetInstance().m_spriteBatch->Flush();
 
 		//Draw UI
 		//_editUI->DrawUI();

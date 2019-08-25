@@ -19,9 +19,9 @@ namespace Hydro
 	void Camera::centerCamera(float x, float y)
 	{
 		//center the camera on a position
-		m_position.x = x;
-		m_position.y = y;
-		m_Projection = glm::ortho(x - (m_width / 2), x + (m_width / 2), y - (m_height / 2), y + (m_height / 2), 0.0f, 100.0f);
+		//m_position.x = x;
+		//m_position.y = y;
+		//m_Projection = glm::ortho(x - (m_width / 2), x + (m_width / 2), y - (m_height / 2), y + (m_height / 2), 0.0f, 100.0f);
 	}
 
 	void Camera::SetCameraMode(CameraMode mode)
@@ -34,8 +34,11 @@ namespace Hydro
 		//TEST 3D RENDERING
 		if (mode == CameraMode::projection)
 		{
+			m_View = glm::mat4(1);
+			m_Projection = glm::mat4(1);
+
 			m_View = glm::translate(m_View, glm::vec3(0.0f, 0.0f, -3.0f));
-			m_Projection = glm::perspective(glm::radians(90.0f), m_width / m_height, 0.1f, 100.0f);
+			m_Projection = glm::perspective(glm::radians(45.0f), m_width / m_height, 0.1f, 100.0f);
 		}
 	}
 

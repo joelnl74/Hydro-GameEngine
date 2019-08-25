@@ -22,6 +22,7 @@ namespace Hydro
 		glm::vec2 returnWorldToCameraPosition();
 
 		inline glm::mat4 returnProjection() { return m_Projection; }
+		inline glm::mat4 returnView() { return m_View; }
 		inline const glm::vec2 returnCameraPosition() { return m_position; }
 		inline const glm::vec2 returnCameraWindow() { return glm::vec2(m_width, m_height); }
 
