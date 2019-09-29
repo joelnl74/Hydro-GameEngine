@@ -10,7 +10,7 @@ namespace Hydro
 	class Window
 	{
 	public:
-		Window(const int &WINDOW_WIDTH, const int &WINDOW_HEIGHT, const char *WINDOW_NAME);
+		Window(const int &width, const int &height, const char *name);
 		~Window();
 		void update();
 		void clear() const;
