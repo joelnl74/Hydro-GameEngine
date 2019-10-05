@@ -48,7 +48,7 @@ namespace Hydro
 			offset += 4;
 
 		}
-		indexbuffer = hnew OpenGLIndexBuffer(indices, INDEX_BUFFER_SIZE);
+		indexbuffer = new OpenGLIndexBuffer(indices, INDEX_BUFFER_SIZE);
 
 		glBindVertexArray(0);
 	}

@@ -1,4 +1,4 @@
-#include "src/Engine.h"
+#include "src/HydroEngine.h"
 #include "src/Hydro.h"
 
 #include "src/HyEntity/Components/Sprite.h"
@@ -13,8 +13,8 @@ using namespace Hydro;
 int main()
 {
 	//Game engine object
-	Engine *engine = hnew Engine();
-	FileSystemWindows *fileExplorer = hnew FileSystemWindows();
+	HydroEngine *engine = new HydroEngine();
+	FileSystem *fileExplorer = new FileSystemWindows();
 	
 	Texture *texture = new OpenGLTexture("Resources/textures/Tiles.png");
 	texture->Bind();
@@ -26,14 +26,14 @@ int main()
 	gameobject.transform->position.x = 0;
 	gameobject.transform->position.y = 0;
 
-	gameobject.AddComponent(hnew PlayerTest());
-	gameobject.AddComponent(hnew Sprite());
-	gameobject.AddComponent(hnew Collision());
+	gameobject.AddComponent(new PlayerTest());
+	gameobject.AddComponent(new Sprite());
+	gameobject.AddComponent(new Collision());
 
 	fileExplorer->ReadAllFilesDirectories("E:\\Dev\\Engine\\Hydro-GameEngine\\HydroEngine\\Resources");
 
 	////Run gameloop
 	engine->Run();
 
-	hdel engine;
+	delete engine;
 }

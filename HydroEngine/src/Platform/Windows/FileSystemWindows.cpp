@@ -48,7 +48,7 @@ namespace Hydro
 				char last_letter = ent->d_name[strlen(ent->d_name) - 1];
 				if (last_letter != '.')
 				{
-					FileNode *node = hnew FileNode();
+					FileNode *node = new FileNode();
 					node->path = std::string(filePath) + std::string("\\") + std::string(ent->d_name);
 					node->id = ent->d_ino;
 

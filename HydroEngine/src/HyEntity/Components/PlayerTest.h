@@ -1,7 +1,7 @@
 #pragma once
 #include "../Component.h"
 #include "../../Hydro.h"
-#include "../../Utilities/Input.h"
+#include "../../Core/Input.h"
 
 namespace Hydro
 {

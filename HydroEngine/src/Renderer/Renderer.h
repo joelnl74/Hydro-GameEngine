@@ -3,13 +3,16 @@
 #include "RenderCommand.h"
 #include "Shader.h"
 #include "SpriteBatch.h"
+
 namespace Hydro
 {
 	class Renderer
 	{
 	public:
-		void BeginScene(Camera &camera);
-		void EndScene();
+		static void Init();
+
+		static void BeginScene(Camera& camera);
+		static void EndScene();
 
 		inline static RendererAPI::API GetAPI() { return RendererAPI::GetAPI(); }
 		static void Submit3D(const Shader &shader, const glm::mat4& transform = glm::mat4(1.0f));

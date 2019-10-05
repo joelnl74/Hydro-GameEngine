@@ -2,15 +2,14 @@
 #ifndef Hydro_H
 #define Hydro_H
 //Memory
-#include "System/MemoryManager.h"
-#include "System/Memory.h"
+#include "Core/MemoryManager.h"
+#include "Core/Memory.h"
 //Utilities  
-#include "Utilities/Logger.h"
-#include "Utilities/Time.h"
-#include "Utilities/Types.h"
+#include "Core/Logger.h"
+#include "Core/Time.h"
 //Input
-#include "Utilities/KeyCodes.h"
-#include "Utilities/MouseButtonCodes.h"
+#include "Core/KeyCodes.h"
+#include "Core/MouseButtonCodes.h"
 //Math
 #include "vendor/glm/glm.hpp"
 //Entity component system

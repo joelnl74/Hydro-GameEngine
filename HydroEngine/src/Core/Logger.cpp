@@ -16,6 +16,7 @@ void Logger::StartUp()
 		m_Instance = new Logger();
 		m_Instance->_logType = LOG_TYPE::FILE_LOG;
 		m_Instance->_loggerFile.open(FileLocation);
+
 		if (m_Instance->_loggerFile.is_open() == false)
 		{
 			m_Instance->Critical("Could not open loggerFile!");

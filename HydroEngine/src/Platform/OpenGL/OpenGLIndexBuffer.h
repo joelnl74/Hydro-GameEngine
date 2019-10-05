@@ -1,5 +1,5 @@
 #pragma once#
-#include "../../Graphics/buffer/IndexBuffer.h"
+#include "../../Renderer/buffer/IndexBuffer.h"
 
 namespace Hydro
 {

@@ -1,14 +1,13 @@
 #pragma once
 #include <string.h>
-
+#include "Renderer/Camera.h"
 #include "Hydro.h"
-#include "Graphics/Window.h"
-#include "Graphics/RenderManager.h"
+#include "Renderer/Window.h"
 #include "Editor//EditorUI.h"
 #include "Audio/AudioManager.h"
 #include "Platform/Windows/WindowsInput.h"
 #include "HyEntity/World.h"
-#include "Graphics/Model.h"
+#include "Renderer/Model.h"
 
 enum  EngineMode
 {
@@ -24,7 +23,8 @@ namespace Hydro
 	public:
 		HydroEngine();
 		~HydroEngine();
-		void MainLoop();
+
+		void Run();
 	//Simple 2dcamera class
 		Camera* _camera;
 		Window* _window;

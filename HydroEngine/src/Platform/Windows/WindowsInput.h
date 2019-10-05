@@ -1,5 +1,5 @@
 #pragma once
-#include "../../Utilities/Input.h"
+#include "../../Core/Input.h"
 
 
 class WindowsInput : public Input

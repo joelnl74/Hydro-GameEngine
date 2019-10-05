@@ -1,5 +1,5 @@
 #pragma once
-#include "../../Graphics/buffer/VertexBuffer.h"
+#include "../../Renderer/buffer/VertexBuffer.h"
 namespace Hydro
 {
 	class OpenGLVertexBuffer : public VertexBuffer

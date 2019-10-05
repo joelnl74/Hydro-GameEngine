@@ -4,7 +4,7 @@ namespace Hydro
 {
 	GameObject::GameObject()
 	{
-		transform = hnew Transform();
+		transform = new Transform();
 	}
 
 	GameObject::~GameObject()

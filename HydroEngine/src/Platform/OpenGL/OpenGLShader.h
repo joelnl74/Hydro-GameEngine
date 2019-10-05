@@ -1,7 +1,7 @@
 #pragma once
 #include <unordered_map>
 
-#include "../../Graphics/Shader.h"
+#include "../../Renderer/Shader.h"
 #include "../../vendor/glm/glm.hpp"
 #include "../../vendor/glm/gtc/type_ptr.inl"
 #include "OpenGLDebugger/OpenglErrorHandler.h"

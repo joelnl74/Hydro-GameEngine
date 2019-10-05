@@ -17,7 +17,7 @@ namespace Hydro
 	{
 		for (auto x : m_GameObjects)
 		{
-			hdel x.second;
+			delete x.second;
 		}
 
 		m_GameObjects.clear();
@@ -31,7 +31,7 @@ namespace Hydro
 	}
 	GameObject & World::CreateGameObject()
 	{
-		GameObject *gameObject = hnew GameObject();
+		GameObject *gameObject = new GameObject();
 		m_GameObjects.emplace(nextId, gameObject);
 
 		nextId++;
