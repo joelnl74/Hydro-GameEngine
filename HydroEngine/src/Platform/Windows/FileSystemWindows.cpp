@@ -17,7 +17,6 @@ namespace Hydro
 
 	int FileSystemWindows::OpenFile(const char * filePath)
 	{
-
 		return 0;
 	}
 

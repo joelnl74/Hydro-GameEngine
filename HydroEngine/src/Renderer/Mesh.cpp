@@ -12,7 +12,7 @@ namespace Hydro
 		setupMesh();
 	}
 
-	void Mesh::Draw(OpenGLShader &shader)
+	void Mesh::Draw(Shader &shader)
 	{
 		shader.Bind();
 
@@ -26,7 +26,7 @@ namespace Hydro
 		float angle = 45.0f;
 		modelMatrix = glm::rotate(modelMatrix, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
 
-		shader.SetMatrix4("projection",m_Projection);
+		shader.SetMatrix4("projection",m_Projection); 
 		shader.SetMatrix4("view", m_View);
 		shader.SetMatrix4("model", modelMatrix);
 
@@ -35,7 +35,6 @@ namespace Hydro
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 
 		vertexArray->UnBind();
-
 
 		shader.UnBind();
 	}

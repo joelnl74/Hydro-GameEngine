@@ -12,7 +12,7 @@ namespace Hydro
 		Mesh *mesh = new Mesh();
 		meshes.push_back(mesh);
 	}
-	void Model::Draw(OpenGLShader &shader)
+	void Model::Draw(Shader &shader)
 	{
 		for (int i = 0; i < meshes.size(); i++)
 		{

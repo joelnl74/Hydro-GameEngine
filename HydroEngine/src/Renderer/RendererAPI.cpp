@@ -1,6 +1,5 @@
 #include "RendererAPI.h"
 
 namespace Hydro {
-
-	RendererAPI::API RendererAPI::s_API = RendererAPI::API::OpenGL;
+	APIType RendererAPI::s_API = APIType::OpenGL;
 }

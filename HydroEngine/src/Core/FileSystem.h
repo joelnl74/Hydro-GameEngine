@@ -1,4 +1,5 @@
 #pragma once
+#include <unordered_map>
 
 namespace Hydro
 {
@@ -22,6 +23,9 @@ namespace Hydro
 		virtual int ReadFileDirectory(const char* path) = 0;
 		virtual int ReadAllFilesDirectories(const char* path) = 0;
 
-		FileSystem *fileSystem;
+		static const FileSystem *fileSystem;
+		
+	private:
+		std::unordered_map<std::string, FileNode&> m_Files;
 	};
 }

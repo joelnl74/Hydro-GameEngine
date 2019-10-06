@@ -26,7 +26,7 @@ namespace Hydro
 		/*  Mesh Data  */
 		/*  Functions  */
 		Mesh();
-		void Draw(OpenGLShader &shader);
+		void Draw(Shader &shader);
 	private:
 		OpenGLVertexBuffer *vertexBuffer;
 		OpenGLVerterArray *vertexArray;

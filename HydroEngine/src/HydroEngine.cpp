@@ -1,6 +1,8 @@
 #include "HydroEngine.h"
 #include "Editor/EditorUI.h"
 
+#include <GLFW/glfw3.h>
+
 static const int WIDTH = 800;
 static const int HEIGHT = 600;
 
@@ -11,10 +13,10 @@ namespace Hydro
 	{
 		Logger::m_Instance->StartUp();
 		Time::m_Instance->StartUp();
-		_window = new Window(WIDTH, HEIGHT, "Hydro Engine");
-		WindowsInput::s_Instance->StartUp(_window->getWindow());
+		_window = Window::Create();
+		WindowsInput::s_Instance->StartUp((GLFWwindow*)_window->GetNativeWindow());
 		World::GetInstance().StartUp();
-		_editUI = new EditorUI(_window->getWindow());
+		_editUI = new EditorUI((GLFWwindow*)_window->GetNativeWindow());
 
 		_audio = new AudioManager();
 		_audio->Init();
@@ -26,7 +28,7 @@ namespace Hydro
 		source->Init(0, 0, 0, 1, 1, buffer);
 
 		model = new Model("Resource/fbx/box.obj");
-		shader = new OpenGLShader("Resources/shaders/Test.shader");
+		shader = Shader::Create("Resources/shaders/Test.shader");
 	}
 	HydroEngine::~HydroEngine()
 	{
@@ -39,11 +41,10 @@ namespace Hydro
 		Time::m_Instance->ShutDown();
 		Logger::m_Instance->ShutDown();
 		delete _window;
-
 	}
 	void HydroEngine::Run()
 	{
-		while (!_window->closed())
+		while (true)
 		{
 			//Clear Screen
 			glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
@@ -52,19 +53,23 @@ namespace Hydro
 			source->playSource(&buffer);
 
 			// Update world.
-			//World::GetInstance().Update();
+			// pre Update?
+			// World::GetInstance().Update();
+			// post Update?
 
 			model->Draw(*shader);
 
 			// Update renderer.
-			//RenderManager::GetInstance().m_spriteBatch->Begin();
-			//RenderManager::GetInstance().m_spriteBatch->End();
-			//RenderManager::GetInstance().m_spriteBatch->Flush();
+			// RenderManager::GetInstance().m_spriteBatch->Begin();
+			// RenderManager::GetInstance().m_spriteBatch->End();
+			// RenderManager::GetInstance().m_spriteBatch->Flush();
 
 			//Draw UI
-			//_editUI->DrawUI();
+			// editor needs to be its own lib
+			// _editUI->DrawUI();
 			// Swap front and back buffers 
-			_window->update();
+			
+			_window->OnUpdate();
 		};
 	}
 }

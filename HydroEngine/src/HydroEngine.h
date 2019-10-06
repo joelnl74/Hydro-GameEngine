@@ -1,13 +1,15 @@
 #pragma once
-#include <string.h>
-#include "Renderer/Camera.h"
-#include "Hydro.h"
 #include "Renderer/Window.h"
+#include "Renderer/Camera.h"
+#include "Renderer/Model.h"
+
+#include <string.h>
+
+#include "Hydro.h"
 #include "Editor//EditorUI.h"
 #include "Audio/AudioManager.h"
 #include "Platform/Windows/WindowsInput.h"
 #include "HyEntity/World.h"
-#include "Renderer/Model.h"
 
 enum  EngineMode
 {
@@ -35,7 +37,7 @@ namespace Hydro
 
 		//test
 		AudioSource *source;
-		OpenGLShader *shader;
+		Shader *shader;
 		Model* model;
 		int buffer;
 

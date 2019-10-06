@@ -8,7 +8,7 @@ namespace Hydro
 	public:
 		Model(std::string path);
 		void LoadModel(std::string path);
-		void Draw(OpenGLShader &shader);
+		void Draw(Shader &shader);
 	private:
 		std::vector<Mesh*> meshes;
 	};
