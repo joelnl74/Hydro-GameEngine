@@ -1,9 +1,6 @@
 #pragma once
 #ifndef Hydro_H
 #define Hydro_H
-//Memory
-#include "Core/MemoryManager.h"
-#include "Core/Memory.h"
 //Utilities  
 #include "Core/Logger.h"
 #include "Core/Time.h"

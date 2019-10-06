@@ -17,5 +17,4 @@ public:
 	void BeginFrame();
 	void EndFrame();
 	static Time * m_Instance;
-
 };

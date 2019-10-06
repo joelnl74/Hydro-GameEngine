@@ -1,7 +1,7 @@
 #include "WindowsInput.h"
 #include "../../Hydro.h"
 
-Input *Input::s_Instance = hnew WindowsInput();
+Input *Input::s_Instance = new WindowsInput();
 
 bool WindowsInput::IsKeyPressedImpl(int keycode)
 {

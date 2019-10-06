@@ -11,7 +11,7 @@ namespace Hydro
 	//Only Start major parts of the engine later on here so change Camera editor Window all to the graphics part of the engine
 	HydroEngine::HydroEngine()
 	{
-		Logger::m_Instance->StartUp();
+		Logger::Init();
 		Time::m_Instance->StartUp();
 		_window = Window::Create();
 		WindowsInput::s_Instance->StartUp((GLFWwindow*)_window->GetNativeWindow());
@@ -29,10 +29,6 @@ namespace Hydro
 
 		model = new Model("Resource/fbx/box.obj");
 		shader = Shader::Create("Resources/shaders/Test.shader");
-
-		LOG_CRITICAL("Critical");
-		LOG_WARNING("Warning");
-		LOG_INFO("INFO");
 	}
 	HydroEngine::~HydroEngine()
 	{
@@ -43,7 +39,6 @@ namespace Hydro
 		delete _camera;
 
 		Time::m_Instance->ShutDown();
-		Logger::m_Instance->ShutDown();
 		delete _window;
 	}
 	void HydroEngine::Run()
@@ -62,6 +57,9 @@ namespace Hydro
 			// post Update?;
 
 			model->Draw(*shader);
+
+			int a = 5;
+			Logger::GetCoreLogger()->trace(a);
 
 			// Update renderer.
 			// RenderManager::GetInstance().m_spriteBatch->Begin();

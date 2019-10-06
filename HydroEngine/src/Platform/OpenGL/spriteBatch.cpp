@@ -9,8 +9,8 @@ namespace Hydro
 	spriteBatch::~spriteBatch()
 	{
 		glDeleteBuffers(1, &vbo);
-		hdel indexbuffer;
-		hdel buffer;
+		delete indexbuffer;
+		delete buffer;
 	}
 	//Create Buffers
 	void spriteBatch::Init()

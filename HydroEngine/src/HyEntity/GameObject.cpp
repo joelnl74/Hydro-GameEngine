@@ -9,7 +9,7 @@ namespace Hydro
 
 	GameObject::~GameObject()
 	{
-		hdel transform;
+		delete transform;
 	}
 }
 

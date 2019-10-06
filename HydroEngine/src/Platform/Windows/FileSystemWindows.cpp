@@ -9,7 +9,7 @@ namespace Hydro
 	{
 		for (int i = 0; i < filenodes.size(); i++)
 		{
-			hdel filenodes[i];
+			delete filenodes[i];
 		}
 
 		filenodes.clear();
