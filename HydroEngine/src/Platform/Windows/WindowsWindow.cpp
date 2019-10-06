@@ -1,5 +1,5 @@
 #include "WindowsWindow.h"
-
+#include "../../Core/Events/WindowResizeEvent.h"
 namespace Hydro {
 
 	static void GLFWErrorCallback(int error, const char* description)
@@ -47,15 +47,15 @@ namespace Hydro {
 		SetVSync(true);
 
 		// Set GLFW callbacks
-		//glfwSetWindowSizeCallback(m_Window, [](GLFWwindow* window, int width, int height)
-		//{
-		//	auto& data = *((WindowData*)glfwGetWindowUserPointer(window));
+		glfwSetWindowSizeCallback(m_Window, [](GLFWwindow* window, int width, int height)
+		{
+			auto& data = *((WindowData*)glfwGetWindowUserPointer(window));
 
-		//	WindowResizeEvent event((unsigned int)width, (unsigned int)height);
-		//	data.EventCallback(event);
-		//	data.Width = width;
-		//	data.Height = height;
-		//});
+			WindowResizeEvent event((unsigned int)width, (unsigned int)height);
+			data.EventCallback(event);
+			data.Width = width;
+			data.Height = height;
+		});
 
 		//glfwSetWindowCloseCallback(m_Window, [](GLFWwindow* window)
 		//{

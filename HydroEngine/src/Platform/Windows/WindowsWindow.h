@@ -20,7 +20,7 @@ namespace Hydro
 		virtual std::pair<float, float> GetWindowPos() const override;
 
 		// Window attributes
-		// inline void SetEventCallback(const EventCallbackFn& callback) override { m_Data.EventCallback = callback; }
+		inline void SetEventCallback(const EventCallbackFn& callback) override { m_Data.EventCallback = callback; }
 		void SetVSync(bool enabled);
 		bool IsVSync() const;
 
@@ -37,7 +37,7 @@ namespace Hydro
 			unsigned int Width, Height;
 			bool VSync;
 
-			//EventCallbackFn EventCallback;
+			EventCallbackFn EventCallback;
 		};
 
 		WindowData m_Data;

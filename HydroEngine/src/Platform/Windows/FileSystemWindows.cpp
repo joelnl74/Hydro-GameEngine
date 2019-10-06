@@ -58,7 +58,7 @@ namespace Hydro
 
 					filenodes.push_back(node);
 
-					puts(ent->d_name);
+					LOG_INFO(ent->d_name);
 				}
 			}
 			closedir(dir);

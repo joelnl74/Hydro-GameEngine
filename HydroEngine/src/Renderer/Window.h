@@ -1,5 +1,8 @@
 #pragma once
 #include <iostream>
+#include <functional>
+
+#include "../Core/Events/Event.h"
 
 namespace Hydro {
 
@@ -21,6 +24,8 @@ namespace Hydro {
 	class Window
 	{
 	public:
+		using EventCallbackFn = std::function<void(Event&)>;
+
 		virtual ~Window() {}
 
 		virtual void OnUpdate() = 0;
@@ -31,6 +36,7 @@ namespace Hydro {
 
 
 		// Window attributes
+		virtual void SetEventCallback(const EventCallbackFn& callback) = 0;
 		virtual void SetVSync(bool enabled) = 0;
 		virtual bool IsVSync() const = 0;
 

@@ -58,9 +58,6 @@ namespace Hydro
 
 			model->Draw(*shader);
 
-			int a = 5;
-			Logger::GetCoreLogger()->trace(a);
-
 			// Update renderer.
 			// RenderManager::GetInstance().m_spriteBatch->Begin();
 			// RenderManager::GetInstance().m_spriteBatch->End();

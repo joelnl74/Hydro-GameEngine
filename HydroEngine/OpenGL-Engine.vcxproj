@@ -112,6 +112,8 @@
     <ClCompile Include="src\HyEntity\World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Core\Events\Event.h" />
+    <ClInclude Include="src\Core\Events\WindowResizeEvent.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Renderer\Mesh.h" />
     <ClInclude Include="src\Renderer\Model.h" />

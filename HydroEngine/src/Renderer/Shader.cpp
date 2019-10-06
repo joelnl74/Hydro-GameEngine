@@ -18,8 +18,6 @@ namespace Hydro
 	}
 	void ShaderLibarary::Add(const std::string &name, Shader *shader)
 	{
-		// Retrieve name
-
 		// Add to shaders
 		m_Shaders.emplace(name, shader);
 	}
