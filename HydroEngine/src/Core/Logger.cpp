@@ -44,6 +44,8 @@ void Logger::LogToFile(std::string &message)
 }
 void Logger::Error(const char* text)
 {
+	SetConsoleTextAttribute(hConsole, 4);
+
 	_ASSERT(m_Instance);
 	std::string data;
 	data.append("[Error]: ");
@@ -54,6 +56,8 @@ void Logger::Error(const char* text)
 }
 void Logger::Warning(const char* text)
 {
+	SetConsoleTextAttribute(hConsole, 14);
+
 	_ASSERT(m_Instance);
 	std::string data;
 	data.append("[Warning]: ");
@@ -64,6 +68,8 @@ void Logger::Warning(const char* text)
 }
 void Logger::Critical(const char* text)
 {
+	SetConsoleTextAttribute(hConsole, 4);
+
 	_ASSERT(m_Instance);
 	std::string data;
 	data.append("[Critical]: ");
@@ -74,6 +80,8 @@ void Logger::Critical(const char* text)
 }
 void Logger::Info(const char* text)
 {
+	SetConsoleTextAttribute(hConsole, 15);
+
 	_ASSERT(m_Instance);
 	std::string data;
 	data.append("[Info]: ");
@@ -84,6 +92,8 @@ void Logger::Info(const char* text)
 }
 void Logger::Debug(const char* text)
 {
+	SetConsoleTextAttribute(hConsole, 15);
+
 	_ASSERT(m_Instance);
 	std::string data;
 	data.append("[Debug]: ");

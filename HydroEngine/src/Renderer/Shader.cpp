@@ -16,8 +16,29 @@ namespace Hydro
 
 		return result;
 	}
-	void ShaderLibarary::Add(const Shader & shader)
+	void ShaderLibarary::Add(const std::string &name, Shader *shader)
 	{
-		// m_Shaders.emplace("", shader);
+		// Retrieve name
+
+		// Add to shaders
+		m_Shaders.emplace(name, shader);
+	}
+	Shader *ShaderLibarary::Load(const std::string & filePath)
+	{
+		Shader *shader = Shader::Create(filePath);
+		Add(filePath, shader);
+
+		return shader;
+	}
+	Shader *ShaderLibarary::Load(const std::string & name, const std::string & filePath)
+	{
+		Shader *shader = Shader::Create(filePath);
+		Add(name, shader);
+
+		return shader;
+	}
+	Shader *ShaderLibarary::Get(const std::string & name)
+	{
+		return m_Shaders[name];
 	}
 }

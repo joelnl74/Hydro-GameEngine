@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <fstream>
+#include <Windows.h>
 
 #define LOG_ERROR(x)     Logger::m_Instance->Error(x)
 #define LOG_WARNING(x)   Logger::m_Instance->Warning(x)
@@ -47,5 +48,7 @@ private:
 
 	LogType _logType;
 	LogLevel _logLevel;
+
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 };
 

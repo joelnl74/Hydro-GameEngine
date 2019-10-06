@@ -30,13 +30,13 @@ namespace Hydro
 	class ShaderLibarary
 	{
 	public:
-		void Add(const Shader &shader);
+		void Add(const std::string &name, Shader *shader);
 
-		Shader &Load(const std::string &name);
-		Shader &Load(const std::string &name, const std::string &filePath);
-		Shader &Get(const std::string &name);
+		Shader *Load(const std::string &filePath);
+		Shader *Load(const std::string &name, const std::string &filePath);
+		Shader *Get(const std::string &name);
 
 	private:
-		std::unordered_map<std::string, Shader&> m_Shaders;
+		std::unordered_map<std::string, Shader*> m_Shaders;
 	};
 }

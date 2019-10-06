@@ -29,6 +29,10 @@ namespace Hydro
 
 		model = new Model("Resource/fbx/box.obj");
 		shader = Shader::Create("Resources/shaders/Test.shader");
+
+		LOG_CRITICAL("Critical");
+		LOG_WARNING("Warning");
+		LOG_INFO("INFO");
 	}
 	HydroEngine::~HydroEngine()
 	{
@@ -55,7 +59,7 @@ namespace Hydro
 			// Update world.
 			// pre Update?
 			// World::GetInstance().Update();
-			// post Update?
+			// post Update?;
 
 			model->Draw(*shader);
 

@@ -1,458 +1,472 @@
-Sat Oct  5 20:42:12 2019: [Info]: Initializing Audio engine!
-Sat Oct  5 20:42:12 2019: [Info]: Succes initializing Audio engine!
-Sat Oct  5 20:42:12 2019: [Info]: essage
-Sat Oct  5 20:42:12 2019: [Info]: essage
-Sat Oct  5 20:42:12 2019: [Info]: essage
-Sat Oct  5 20:42:12 2019: [Info]: essage
-Sat Oct  5 20:42:12 2019: [Info]: essage
-Sat Oct  5 20:42:12 2019: [Info]: essage
-Sat Oct  5 20:42:12 2019: [Info]: essage
-Sat Oct  5 20:42:12 2019: [Info]: essage
-Sat Oct  5 20:42:12 2019: [Info]: essage
-Sat Oct  5 20:42:12 2019: [Info]: essage
-Sat Oct  5 20:42:12 2019: [Info]: essage
-Sat Oct  5 20:42:12 2019: [Info]: essage
-Sat Oct  5 20:42:12 2019: [Info]: essage
-Sat Oct  5 20:42:12 2019: [Info]: essage
-Sat Oct  5 20:42:12 2019: [Info]: essage
-Sat Oct  5 20:42:12 2019: [Info]: essage
-Sat Oct  5 20:42:12 2019: [Info]: essage
-Sat Oct  5 20:42:12 2019: [Info]: essage
-Sat Oct  5 20:42:12 2019: [Info]: essage
-Sat Oct  5 20:42:12 2019: [Info]: essage
-Sat Oct  5 20:42:12 2019: [Info]: essage
-Sat Oct  5 20:42:12 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:13 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:14 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:15 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:16 2019: [Info]: essage
-Sat Oct  5 20:42:17 2019: [Info]: essage
-Sat Oct  5 20:42:17 2019: [Info]: essage
-Sat Oct  5 20:42:17 2019: [Info]: essage
-Sat Oct  5 20:42:17 2019: [Info]: essage
-Sat Oct  5 20:42:17 2019: [Info]: essage
-Sat Oct  5 20:42:17 2019: [Info]: essage
-Sat Oct  5 20:42:17 2019: [Info]: essage
-Sat Oct  5 20:42:17 2019: [Info]: essage
-Sat Oct  5 20:42:17 2019: [Info]: essage
-Sat Oct  5 20:42:17 2019: [Info]: essage
-Sat Oct  5 20:42:17 2019: [Info]: essage
-Sat Oct  5 20:42:17 2019: [Info]: essage
-Sat Oct  5 20:42:17 2019: [Info]: essage
-Sat Oct  5 20:42:17 2019: [Info]: essage
-Sat Oct  5 20:42:17 2019: [Info]: essage
-Sat Oct  5 20:42:17 2019: [Info]: essage
-Sat Oct  5 20:42:17 2019: [Info]: essage
-Sat Oct  5 20:42:17 2019: [Info]: essage
-Sat Oct  5 20:42:17 2019: [Info]: essage
-Sat Oct  5 20:42:17 2019: [Info]: essage
-Sat Oct  5 20:42:17 2019: [Info]: essage
-Sat Oct  5 20:42:17 2019: [Info]: essage
-Sat Oct  5 20:42:17 2019: [Info]: essage
-Sat Oct  5 20:42:17 2019: [Info]: essage
-Sat Oct  5 20:42:17 2019: [Info]: essage
-Sat Oct  5 20:42:17 2019: [Info]: essage
-Sat Oct  5 20:42:17 2019: [Info]: essage
-Sat Oct  5 20:42:17 2019: [Info]: essage
-Sat Oct  5 20:42:17 2019: [Info]: essage
-Sat Oct  5 20:42:17 2019: [Info]: essage
-Sat Oct  5 20:42:17 2019: [Info]: essage
-Sat Oct  5 20:42:17 2019: [Info]: essage
-Sat Oct  5 20:42:17 2019: [Info]: essage
-Sat Oct  5 20:42:17 2019: [Info]: essage
-Sat Oct  5 20:42:17 2019: [Info]: essage
-Sat Oct  5 20:42:17 201Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
-Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
+Sun Oct  6 15:41:01 2019: [Info]: Initializing Audio engine!
+Sun Oct  6 15:41:01 2019: [Info]: Succes initializing Audio engine!
+Sun Oct  6 15:41:01 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:01 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:01 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:01 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:01 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:01 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:01 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:01 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:01 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:01 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:01 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:01 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:01 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:01 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:01 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:01 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:01 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:01 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:01 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:02 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:03 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:04 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:04 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:04 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:04 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:04 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:04 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:04 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:04 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:04 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:04 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:04 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:04 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:04 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:04 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:04 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:04 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:04 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:04 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:04 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:04 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:04 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:04 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:04 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:04 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:04 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:04 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:04 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:04 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:04 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:04 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:04 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:04 2019: [Info]: Number is:%d
+Sun Oct  6 15:41:04 2019: Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:38 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:39 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:40 2019: [Info]: message{0}
+Sun Oct  6 15:38:41 2019: [Info]: message{0}
+Sun Oct  6 15:38:41 2019: [Info]: message{0}
+Sun Oct  6 15:38:41 2019: [Info]: message{0}
+Sun Oct  6 15:38:41 2019: [Info]: message{0}
+Sun Oct  6 15:38:41 2019: [Info]: message{0}
+Sun Oct  6 15:38:41 2019: [Info]: message{0}
+Sun Oct  6 15:38:41 2019: [Info]: message{0}
+Sun Oct  6 15:38:41 2019: [Info]: message{0}
+Sun Oct  6 15:38:09 2019: [Info]: ge
+Sun Oct  6 15:38:09 2019: [Info]: ge
+Sun Oct  6 15:38:09 2019: [Info]: ge
+Sun Oct  6 15:38:09 2019: [Info]: ge
+Sun Oct  6 15:38:09 2019: [Info]: ge
+Sun Oct  6 15:38:09 2019: [Info]: ge
+Sun Oct  6 15:38:09 2019: [Info]: ge
+Sun Oct  6 15:38:09 2019: [Info]: ge
+Sun Oct  6 15:38:09 2019: [Info]: ge
+Sun Oct  6 15:38:09 2019: [Info]: ge
+Sun Oct  6 15:38:09 2019: [Info]: ge
+Sun Oct  6 15:38:09 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:10 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+Sun Oct  6 15:38:11 2019: [Info]: ge
+S[Info]: Collision Detected
 Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
 Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
 Sun Mar 24 20:00:57 2019: [Info]: Collision Detected
