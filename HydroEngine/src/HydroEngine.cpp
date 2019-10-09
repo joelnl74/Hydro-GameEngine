@@ -85,6 +85,7 @@ namespace Hydro
 	void HydroEngine::OnEvent(Event &event)
 	{
 		WindowResizeEvent *a = dynamic_cast<WindowResizeEvent*>(&event);
+		glViewport(1, 1, a->GetWidth(), a->GetHeight());
 
 		LOG_INFO("{0},{1}", a->GetWidth(), a->GetHeight());
 	}
