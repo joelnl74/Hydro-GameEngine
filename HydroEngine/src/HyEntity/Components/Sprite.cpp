@@ -1,5 +1,4 @@
 #include "Sprite.h"
-#include "../../Graphics/RenderManager.h"
 
 namespace Hydro
 {
@@ -19,7 +18,6 @@ namespace Hydro
 
 	void Sprite::Update()
 	{
-		RenderManager::GetInstance().m_spriteBatch->Submit(this);
 	}
 
 	//Set index of the texture atlass

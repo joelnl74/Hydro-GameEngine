@@ -1,5 +1,5 @@
 #pragma once
-#include "../../Graphics/Texture.h"
+#include "../../Renderer/Texture.h"
 #include <string>
 
 namespace Hydro

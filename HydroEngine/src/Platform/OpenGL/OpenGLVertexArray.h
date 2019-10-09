@@ -1,5 +1,5 @@
 #pragma once
-#include "../../Graphics/buffer/VertexArray.h"
+#include "../../Renderer/buffer/VertexArray.h"
 #include"OpenGLVertexBuffer.h"
 
 namespace Hydro

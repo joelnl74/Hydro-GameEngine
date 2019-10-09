@@ -9,8 +9,8 @@ namespace Hydro
 	spriteBatch::~spriteBatch()
 	{
 		glDeleteBuffers(1, &vbo);
-		hdel indexbuffer;
-		hdel buffer;
+		delete indexbuffer;
+		delete buffer;
 	}
 	//Create Buffers
 	void spriteBatch::Init()
@@ -48,7 +48,7 @@ namespace Hydro
 			offset += 4;
 
 		}
-		indexbuffer = hnew OpenGLIndexBuffer(indices, INDEX_BUFFER_SIZE);
+		indexbuffer = new OpenGLIndexBuffer(indices, INDEX_BUFFER_SIZE);
 
 		glBindVertexArray(0);
 	}

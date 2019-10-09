@@ -9,7 +9,7 @@ namespace Hydro
 	{
 		for (int i = 0; i < filenodes.size(); i++)
 		{
-			hdel filenodes[i];
+			delete filenodes[i];
 		}
 
 		filenodes.clear();
@@ -17,7 +17,6 @@ namespace Hydro
 
 	int FileSystemWindows::OpenFile(const char * filePath)
 	{
-
 		return 0;
 	}
 
@@ -48,7 +47,7 @@ namespace Hydro
 				char last_letter = ent->d_name[strlen(ent->d_name) - 1];
 				if (last_letter != '.')
 				{
-					FileNode *node = hnew FileNode();
+					FileNode *node = new FileNode();
 					node->path = std::string(filePath) + std::string("\\") + std::string(ent->d_name);
 					node->id = ent->d_ino;
 
@@ -59,7 +58,7 @@ namespace Hydro
 
 					filenodes.push_back(node);
 
-					puts(ent->d_name);
+					LOG_INFO(ent->d_name);
 				}
 			}
 			closedir(dir);

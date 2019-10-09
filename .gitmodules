@@ -1,0 +1,3 @@
+[submodule "HydroEngine/src/vendor/spdlog"]
+	path = HydroEngine/src/vendor/spdlog
+	url = https://github.com/gabime/spdlog.git

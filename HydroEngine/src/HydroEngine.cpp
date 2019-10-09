@@ -1,65 +1,92 @@
 #include "HydroEngine.h"
 #include "Editor/EditorUI.h"
-static const int WIDTH = 1024;
-static const int HEIGHT = 768;
+
+#include <GLFW/glfw3.h>
+
+
+//TEST
+#include "Core/Events/WindowResizeEvent.h"
+
+static const int WIDTH = 800;
+static const int HEIGHT = 600;
 
 namespace Hydro
 {
+	#define BIND_EVENT_FN(fn) std::bind(&HydroEngine::##fn, this, std::placeholders::_1)
+
+
 	//Only Start major parts of the engine later on here so change Camera editor Window all to the graphics part of the engine
 	HydroEngine::HydroEngine()
 	{
-		Logger::m_Instance->StartUp();
+		Logger::Init();
 		Time::m_Instance->StartUp();
-		_window = hnew Window(WIDTH, HEIGHT, "Hydro Engine");
-		RenderManager::GetInstance().StartUp();
-		WindowsInput::s_Instance->StartUp(_window->getWindow());
-		World::GetInstance().StartUp();
-		_editUI = hnew EditorUI(_window->getWindow());
+		
+		_window = Window::Create();
+		_window->SetEventCallback(BIND_EVENT_FN(OnEvent));
 
-		_audio = hnew AudioManager();
+		WindowsInput::s_Instance->StartUp((GLFWwindow*)_window->GetNativeWindow());
+		World::GetInstance().StartUp();
+		_editUI = new EditorUI((GLFWwindow*)_window->GetNativeWindow());
+
+		_audio = new AudioManager();
 		_audio->Init();
 		_audio->SetListener();
 
 		buffer = _audio->LoadAudioSound("Resources/sounds/Hydro_Engine_Sound1.ogg");
 
-		source = hnew AudioSource();
+		source = new AudioSource();
 		source->Init(0, 0, 0, 1, 1, buffer);
 
-		FBX *fbx = hnew FBX();
-		bool setup = fbx->Setup();
+		model = new Model("Resource/fbx/box.obj");
+		shader = Shader::Create("Resources/shaders/Test.shader");
 	}
 	HydroEngine::~HydroEngine()
 	{
 		World::GetInstance().ShutDown();
-		RenderManager::GetInstance().ShutDown();
 		//clear memory
 		_audio->CleanUp();
-		hdel _audio;
-		hdel _camera;
+		delete _audio;
+		delete _camera;
 
 		Time::m_Instance->ShutDown();
-		Logger::m_Instance->ShutDown();
-		hdel _window;
-
+		delete _window;
 	}
-	void HydroEngine::MainLoop()
+	void HydroEngine::Run()
 	{
-		//Clear Screen
-		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);;
+		while (true)
+		{
+			//Clear Screen
+			glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);;
 
-		source->playSource(&buffer);
+			source->playSource(&buffer);
 
-		//update systems
-		RenderManager::GetInstance().m_spriteBatch->Begin();
-		World::GetInstance().Update();
-		RenderManager::GetInstance().m_spriteBatch->End();
-		RenderManager::GetInstance().m_spriteBatch->Flush();
+			// Update world.
+			// pre Update?
+			// World::GetInstance().Update();
+			// post Update?;
 
-		//Draw UI
-		//_editUI->DrawUI();
-		// Swap front and back buffers 
-		_window->update();
-	};
+			model->Draw(*shader);
+
+			// Update renderer.
+			// RenderManager::GetInstance().m_spriteBatch->Begin();
+			// RenderManager::GetInstance().m_spriteBatch->End();
+			// RenderManager::GetInstance().m_spriteBatch->Flush();
+
+			//Draw UI
+			// editor needs to be its own lib
+			// _editUI->DrawUI();
+			// Swap front and back buffers 
+			
+			_window->OnUpdate();
+		};
+	}
+
+	void HydroEngine::OnEvent(Event &event)
+	{
+		WindowResizeEvent *a = dynamic_cast<WindowResizeEvent*>(&event);
+
+		LOG_INFO("{0},{1}", a->GetWidth(), a->GetHeight());
+	}
 }
 

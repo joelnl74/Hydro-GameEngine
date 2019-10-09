@@ -60,7 +60,7 @@ namespace Hydro
 		ImGui::SetNextWindowSize(ImVec2(200, 780));
 		ImGui::Begin("Inspector");
 
-		ImGui::Text(MemoryManager::Get()->BytesToString(MemoryManager::Get()->GetMemoryStats().currentUsed).data());
+		//ImGui::Text(MemoryManager::Get()->BytesToString(MemoryManager::Get()->GetMemoryStats().currentUsed).data());
 		ImGui::End();
 	}
 }
