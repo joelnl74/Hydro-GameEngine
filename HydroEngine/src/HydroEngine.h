@@ -27,6 +27,8 @@ namespace Hydro
 		~HydroEngine();
 
 		void Run();
+		void OnEvent(Event& event);
+
 	//Simple 2dcamera class
 		Camera* _camera;
 		Window* _window;

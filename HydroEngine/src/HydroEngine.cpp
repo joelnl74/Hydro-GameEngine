@@ -3,17 +3,27 @@
 
 #include <GLFW/glfw3.h>
 
+
+//TEST
+#include "Core/Events/WindowResizeEvent.h"
+
 static const int WIDTH = 800;
 static const int HEIGHT = 600;
 
 namespace Hydro
 {
+	#define BIND_EVENT_FN(fn) std::bind(&HydroEngine::##fn, this, std::placeholders::_1)
+
+
 	//Only Start major parts of the engine later on here so change Camera editor Window all to the graphics part of the engine
 	HydroEngine::HydroEngine()
 	{
 		Logger::Init();
 		Time::m_Instance->StartUp();
+		
 		_window = Window::Create();
+		_window->SetEventCallback(BIND_EVENT_FN(OnEvent));
+
 		WindowsInput::s_Instance->StartUp((GLFWwindow*)_window->GetNativeWindow());
 		World::GetInstance().StartUp();
 		_editUI = new EditorUI((GLFWwindow*)_window->GetNativeWindow());
@@ -70,6 +80,13 @@ namespace Hydro
 			
 			_window->OnUpdate();
 		};
+	}
+
+	void HydroEngine::OnEvent(Event &event)
+	{
+		WindowResizeEvent *a = dynamic_cast<WindowResizeEvent*>(&event);
+
+		LOG_INFO("{0},{1}", a->GetWidth(), a->GetHeight());
 	}
 }
 
