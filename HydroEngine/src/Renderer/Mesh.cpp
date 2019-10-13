@@ -86,7 +86,8 @@ namespace Hydro
 
 		glm::mat4 modelMatrix = glm::mat4(1.0f);
 		float angle = 90.0;
-		modelMatrix = glm::rotate(modelMatrix, glm::radians(angle), glm::vec3(0.0f, 1.0f, 0.0f));
+		modelMatrix = glm::translate(modelMatrix, glm::vec3(0));
+		modelMatrix = glm::rotate(modelMatrix, glm::radians(angle), glm::vec3(0.0f, 2.0f, 4.0f));
 		modelMatrix = glm::scale(modelMatrix, glm::vec3(0.1F, 0.1F, 0.1F));
 
 		shader.SetMatrix4("projection",m_Projection); 
