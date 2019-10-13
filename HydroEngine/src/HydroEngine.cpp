@@ -37,7 +37,7 @@ namespace Hydro
 		source = new AudioSource();
 		source->Init(0, 0, 0, 1, 1, buffer);
 
-		model = new Model("Resources/fbx/cube.obj");
+		model = new Model("Resources/fbx/cerberus.fbx");
 		shader = Shader::Create("Resources/shaders/Test.shader");
 	}
 	HydroEngine::~HydroEngine()

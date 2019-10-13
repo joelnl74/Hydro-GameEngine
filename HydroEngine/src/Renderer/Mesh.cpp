@@ -58,7 +58,7 @@ namespace Hydro
 			m_Scene = scene;
 
 			layout = new OpenGLVertexbufferLayout();
-			vertexBuffer = new OpenGLVertexBuffer((const void*)m_vertices.data(), m_vertices.size() * sizeof(Vertex));
+			vertexBuffer = new OpenGLVertexBuffer(m_vertices.data(), m_vertices.size() * sizeof(Vertex));
 			indexBuffer = new OpenGLIndexBuffer(m_Indices.data(), m_Indices.size());
 			vertexArray = new OpenGLVerterArray();
 
@@ -81,12 +81,13 @@ namespace Hydro
 		glm::mat4 m_View = glm::mat4(1);
 		glm::mat4 m_Projection = glm::mat4(1);
 
-		m_View = glm::translate(m_View, glm::vec3(0.0f, 0.0f, -3.0f));
-		m_Projection = glm::perspective(glm::radians(45.0f), float(800) / float(600), 0.1f, 100.0f);
+		m_View = glm::translate(m_View, glm::vec3(0.0f, 5.0f, -25.0f));
+		m_Projection = glm::perspective(glm::radians(45.0f), float(1280) / float(720), 0.1f, 100.0f);
 
 		glm::mat4 modelMatrix = glm::mat4(1.0f);
-		float angle = 45.0f;
-		modelMatrix = glm::rotate(modelMatrix, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
+		float angle = 90.0;
+		modelMatrix = glm::rotate(modelMatrix, glm::radians(angle), glm::vec3(0.0f, 1.0f, 0.0f));
+		modelMatrix = glm::scale(modelMatrix, glm::vec3(0.1F, 0.1F, 0.1F));
 
 		shader.SetMatrix4("projection",m_Projection); 
 		shader.SetMatrix4("view", m_View);

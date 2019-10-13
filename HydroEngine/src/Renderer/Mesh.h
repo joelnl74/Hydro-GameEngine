@@ -24,11 +24,6 @@ namespace Hydro
 		glm::vec2 TexCoords;
 	};
 
-	struct Index
-	{
-		unsigned int V1, V2, V3;
-	};
-
 	class Mesh
 	{
 	public:
