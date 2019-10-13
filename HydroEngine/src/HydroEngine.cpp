@@ -37,7 +37,7 @@ namespace Hydro
 		source = new AudioSource();
 		source->Init(0, 0, 0, 1, 1, buffer);
 
-		model = new Model("Resource/fbx/box.obj");
+		model = new Model("Resources/fbx/cube.obj");
 		shader = Shader::Create("Resources/shaders/Test.shader");
 	}
 	HydroEngine::~HydroEngine()
@@ -84,6 +84,7 @@ namespace Hydro
 
 	void HydroEngine::OnEvent(Event &event)
 	{
+		// Create dispatcher so we dont needto dynamically cast this
 		WindowResizeEvent *a = dynamic_cast<WindowResizeEvent*>(&event);
 		glViewport(1, 1, a->GetWidth(), a->GetHeight());
 

@@ -6,6 +6,9 @@ enum EventType
 	None = 0,
 	WindowResize,
 	WindowClosed,
+	WindowFocus, 
+	WindowLostFocus, 
+	WindowMoved
 };
 
 #define EVENT_CLASS_TYPE(type) static EventType GetStaticType() { return EventType::##type; }\

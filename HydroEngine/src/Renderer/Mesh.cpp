@@ -1,15 +1,77 @@
-#include "Mesh.h"
-#include "../Hydro.h"
 #include <iostream>
+
+#include "Mesh.h"
+
+#include "../Hydro.h"
+
+#include "assimp/postprocess.h"
+#include <assimp/scene.h>
+
 #include "../vendor/glm/glm.hpp"
 #include "../vendor/glm/gtc/matrix_transform.hpp"
 
 namespace Hydro
 {
-	Mesh::Mesh()
+	Mesh::Mesh(std::string &filePath)
 	{
+		m_Importer = new Assimp::Importer();
+
+		const aiScene* scene = m_Importer->ReadFile(filePath, aiProcess_Triangulate);
+
+		if (!scene || !scene->HasMeshes())
+		{
+			LOG_WARNING("Mesh could not be loaded: {0}", m_Importer->GetErrorString());
+			return;
+		}
+
+		for (int m = 0; m < scene->mNumMeshes; m++)
+		{
+			aiMesh* mesh = scene->mMeshes[m];
+
+			for (size_t i = 0; i < mesh->mNumVertices; i++)
+			{
+				Vertex vertex;
+
+				vertex.Position = { mesh->mVertices[i].x, mesh->mVertices[i].y, mesh->mVertices[i].z };
+				vertex.Normal = { mesh->mNormals[i].x, mesh->mNormals[i].y, mesh->mNormals[i].z };
+
+				if (mesh->HasTangentsAndBitangents())
+				{
+					vertex.Tangent = { mesh->mTangents[i].x, mesh->mTangents[i].y, mesh->mTangents[i].z };
+					vertex.Binormal = { mesh->mBitangents[i].x, mesh->mBitangents[i].y, mesh->mBitangents[i].z };
+				}
+
+				if (mesh->HasTextureCoords(0))
+					vertex.TexCoords = { mesh->mTextureCoords[0][i].x, mesh->mTextureCoords[0][i].y };
+
+				m_vertices.push_back(vertex);
+			}
+
+			// Indices
+			for (size_t i = 0; i < mesh->mNumFaces; i++)
+			{
+				m_Indices.push_back(mesh->mFaces[i].mIndices[0]);
+				m_Indices.push_back(mesh->mFaces[i].mIndices[1]);
+				m_Indices.push_back(mesh->mFaces[i].mIndices[2]);
+			}
+		}
+			m_Scene = scene;
+
+			layout = new OpenGLVertexbufferLayout();
+			vertexBuffer = new OpenGLVertexBuffer((const void*)m_vertices.data(), m_vertices.size() * sizeof(Vertex));
+			indexBuffer = new OpenGLIndexBuffer(m_Indices.data(), m_Indices.size());
+			vertexArray = new OpenGLVerterArray();
+
+			layout->Push<float>(3);
+			layout->Push<float>(3);
+			layout->Push<float>(3);
+			layout->Push<float>(3);
+			layout->Push<float>(2);
+
+			vertexArray->AddBuffer(*vertexBuffer, *layout);
+
 		// TODO should become reference of some sort to a texture
-		setupMesh();
+		// setupMesh();
 	}
 
 	void Mesh::Draw(Shader &shader)
@@ -31,9 +93,11 @@ namespace Hydro
 		shader.SetMatrix4("model", modelMatrix);
 
 		vertexArray->Bind();
+		indexBuffer->Bind();
 
-		glDrawArrays(GL_TRIANGLES, 0, 36);
+		glDrawElements(GL_TRIANGLES, m_Indices.size(), GL_UNSIGNED_INT, nullptr);
 
+		indexBuffer->UnBind();
 		vertexArray->UnBind();
 
 		shader.UnBind();
@@ -41,11 +105,18 @@ namespace Hydro
 
 	void Mesh::setupMesh()
 	{
-		layout = new OpenGLVertexbufferLayout();
-		vertexBuffer = new OpenGLVertexBuffer(vertices, sizeof(vertices));
-		layout->Push<float>(3);
-		vertexArray = new OpenGLVerterArray();
-		vertexArray->AddBuffer(*vertexBuffer, *layout);
+
+
+	//	layout = new OpenGLVertexbufferLayout();
+	//	vertexBuffer = new OpenGLVertexBuffer(vertices, sizeof(vertices));
+	//	layout->Push<float>(3);
+	//	vertexArray = new OpenGLVerterArray();
+	//	vertexArray->AddBuffer(*vertexBuffer, *layout);
+	}
+	bool Mesh::ProcessScene()
+	{
+
+		return false;
 	}
 }
 
