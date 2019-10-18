@@ -1,6 +1,6 @@
 #pragma once
 #include "Renderer/Window.h"
-#include "Renderer/Camera.h"
+#include "Renderer/Renderer.h"
 #include "Renderer/Model.h"
 
 #include <string.h>
@@ -27,7 +27,7 @@ namespace Hydro
 		~HydroEngine();
 
 		void Run();
-		void OnEvent(Event& event);
+		//void OnEvent(Event& event);
 
 	//Simple 2dcamera class
 		Camera* _camera;

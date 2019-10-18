@@ -42,9 +42,5 @@ namespace Hydro
 
 		std::vector<Vertex> m_vertices;
 		std::vector<unsigned int> m_Indices;
-
-		/*  Functions    */
-		void setupMesh();
-		bool ProcessScene();
 	};
 }

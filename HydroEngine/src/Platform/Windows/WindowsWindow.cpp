@@ -44,6 +44,7 @@ namespace Hydro {
 		SetVSync(true);
 
 		// Set GLFW callbacks
+
 		glfwSetWindowSizeCallback(m_Window, [](GLFWwindow* window, int width, int height)
 		{
 			auto& data = *((WindowData*)glfwGetWindowUserPointer(window));

@@ -16,16 +16,13 @@ namespace Hydro
 		Camera(float width, float height, CameraMode _mode);
 		~Camera();
 
-		void centerCamera(float x, float y);
-		void SetCameraMode(CameraMode _mode);
-
-		glm::vec2 returnWorldToCameraPosition();
-
 		inline glm::mat4 returnProjection() { return m_Projection; }
 		inline glm::mat4 returnView() { return m_View; }
-		inline const glm::vec2 returnCameraPosition() { return m_position; }
-		inline const glm::vec2 returnCameraWindow() { return glm::vec2(m_width, m_height); }
+		inline const glm::vec3 ReturnCameraPosition() { return m_position; }
+		inline const glm::vec3 ReturnCameraRotation() { return m_rotation; }
+		inline const glm::vec2 ReturnCameraWindow() { return glm::vec2(m_width, m_height); }
 
+		void SetCameraMode(CameraMode _mode);
 
 	private:
 		float m_width;
@@ -33,7 +30,8 @@ namespace Hydro
 
 		glm::mat4 m_Projection;
 		glm::mat4 m_View;
-		glm::vec3 m_position;
+		
+		glm::vec3 m_position, m_rotation;
 
 		CameraMode m_cameraMode;
 	};

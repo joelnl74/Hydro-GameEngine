@@ -11,8 +11,6 @@ namespace Hydro
 		std::string FragmentSource;
 	};
 
-
-	//TODO make a abstract way of setting uniforms
 	class Shader
 	{
 	public:
@@ -27,7 +25,7 @@ namespace Hydro
 		static Shader* Create(const std::string &filepath);
 	};
 
-	class ShaderLibarary
+	class ShaderLibrary
 	{
 	public:
 		void Add(const std::string &name, Shader *shader);

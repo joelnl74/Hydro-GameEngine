@@ -69,9 +69,6 @@ namespace Hydro
 			layout->Push<float>(2);
 
 			vertexArray->AddBuffer(*vertexBuffer, *layout);
-
-		// TODO should become reference of some sort to a texture
-		// setupMesh();
 	}
 
 	void Mesh::Draw(Shader &shader)
@@ -86,11 +83,9 @@ namespace Hydro
 
 		glm::mat4 modelMatrix = glm::mat4(1.0f);
 		float angle = 90.0;
-		modelMatrix = glm::translate(modelMatrix, glm::vec3(0));
-		modelMatrix = glm::rotate(modelMatrix, glm::radians(angle), glm::vec3(0.0f, 2.0f, 4.0f));
 		modelMatrix = glm::scale(modelMatrix, glm::vec3(0.1F, 0.1F, 0.1F));
 
-		shader.SetMatrix4("projection",m_Projection); 
+		shader.SetMatrix4("projection", m_Projection); 
 		shader.SetMatrix4("view", m_View);
 		shader.SetMatrix4("model", modelMatrix);
 
@@ -103,22 +98,6 @@ namespace Hydro
 		vertexArray->UnBind();
 
 		shader.UnBind();
-	}
-
-	void Mesh::setupMesh()
-	{
-
-
-	//	layout = new OpenGLVertexbufferLayout();
-	//	vertexBuffer = new OpenGLVertexBuffer(vertices, sizeof(vertices));
-	//	layout->Push<float>(3);
-	//	vertexArray = new OpenGLVerterArray();
-	//	vertexArray->AddBuffer(*vertexBuffer, *layout);
-	}
-	bool Mesh::ProcessScene()
-	{
-
-		return false;
 	}
 }
 
