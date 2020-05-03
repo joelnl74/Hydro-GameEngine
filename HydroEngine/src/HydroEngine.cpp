@@ -10,7 +10,7 @@ namespace Hydro
 		Logger::Init();
 		Time::m_Instance->StartUp();
 		
-		_window = Window::Create();
+		_window = Window::Create(WindowProps("Window", 1024, 768));
 
 		WindowsInput::s_Instance->StartUp((GLFWwindow*)_window->GetNativeWindow());
 		World::GetInstance().StartUp();

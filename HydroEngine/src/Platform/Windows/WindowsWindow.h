@@ -24,6 +24,7 @@ namespace Hydro
 		bool IsVSync() const;
 
 		inline void* GetNativeWindow() const { return m_Window; }
+
 	private:
 		virtual void Init(const WindowProps& props);
 		virtual void Shutdown();

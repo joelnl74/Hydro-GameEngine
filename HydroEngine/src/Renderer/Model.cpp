@@ -9,6 +9,14 @@ namespace Hydro
 		LoadModel(path);
 	}
 
+	Model::~Model()
+	{
+		for (auto mesh : meshes)
+		{
+			delete mesh;
+		}
+	}
+
 	void Model::LoadModel(std::string path)
 	{
 		Mesh *mesh = new Mesh(path);

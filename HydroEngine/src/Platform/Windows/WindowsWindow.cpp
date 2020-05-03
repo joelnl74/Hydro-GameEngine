@@ -1,10 +1,6 @@
 #include "WindowsWindow.h"
 namespace Hydro {
 
-	static void GLFWErrorCallback(int error, const char* description)
-	{
-	}
-
 	static bool s_GLFWInitialized = false;
 
 	Window* Window::Create(const WindowProps& props)
@@ -31,12 +27,16 @@ namespace Hydro {
 		{
 			// TODO: glfwTerminate on system shutdown
 			int success = glfwInit();
-			glfwSetErrorCallback(GLFWErrorCallback);
-
 			s_GLFWInitialized = true;
 		}
 
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
+
+		glfwSetWindowCloseCallback(m_Window, [](GLFWwindow* window)
+		{
+		});
+
+
 		glfwMakeContextCurrent(m_Window);
 		int status = glewInit();
 		glfwSetWindowUserPointer(m_Window, &m_Data);
@@ -45,7 +45,6 @@ namespace Hydro {
 
 	void WindowsWindow::Shutdown()
 	{
-
 	}
 
 	inline std::pair<float, float> WindowsWindow::GetWindowPos() const
