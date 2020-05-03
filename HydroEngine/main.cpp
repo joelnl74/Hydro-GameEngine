@@ -16,7 +16,7 @@ int main()
 	HydroEngine *engine = new HydroEngine();
 	FileSystem *fileExplorer = new FileSystemWindows();
 	
-	Texture *texture = new OpenGLTexture("Resources/textures/Tiles.png");
+	Texture *texture = new OpenGLTexture("Resources/textures/cerberus_A.png");
 	texture->Bind();
 
 	GameObject &gameobject = World::GetInstance().CreateGameObject();

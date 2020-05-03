@@ -1,12 +1,11 @@
 #pragma once
 #include "Renderer/Window.h"
-#include "Renderer/Camera.h"
+#include "Renderer/Renderer.h"
 #include "Renderer/Model.h"
 
 #include <string.h>
 
 #include "Hydro.h"
-#include "Editor//EditorUI.h"
 #include "Audio/AudioManager.h"
 #include "Platform/Windows/WindowsInput.h"
 #include "HyEntity/World.h"
@@ -27,14 +26,13 @@ namespace Hydro
 		~HydroEngine();
 
 		void Run();
-		void OnEvent(Event& event);
+		//void OnEvent(Event& event);
 
 	//Simple 2dcamera class
 		Camera* _camera;
 		Window* _window;
 		AudioManager *_audio;
 	private:
-		EditorUI *_editUI;
 		EngineMode _engineMode;
 
 		//test
@@ -42,7 +40,6 @@ namespace Hydro
 		Shader *shader;
 		Model* model;
 		int buffer;
-
-};
+	};
 }
 

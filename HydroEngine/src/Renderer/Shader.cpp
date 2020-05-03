@@ -8,7 +8,7 @@ namespace Hydro
 	{
 		Shader *result = nullptr;
 
-		switch (RendererAPI::Current())
+		switch (RendererAPI::GetAPI())
 		{
 		case APIType::None: return nullptr;
 		case APIType::OpenGL: result = new OpenGLShader(filepath);
@@ -16,26 +16,26 @@ namespace Hydro
 
 		return result;
 	}
-	void ShaderLibarary::Add(const std::string &name, Shader *shader)
+	void ShaderLibrary::Add(const std::string &name, Shader *shader)
 	{
 		// Add to shaders
 		m_Shaders.emplace(name, shader);
 	}
-	Shader *ShaderLibarary::Load(const std::string & filePath)
+	Shader *ShaderLibrary::Load(const std::string & filePath)
 	{
 		Shader *shader = Shader::Create(filePath);
 		Add(filePath, shader);
 
 		return shader;
 	}
-	Shader *ShaderLibarary::Load(const std::string & name, const std::string & filePath)
+	Shader *ShaderLibrary::Load(const std::string & name, const std::string & filePath)
 	{
 		Shader *shader = Shader::Create(filePath);
 		Add(name, shader);
 
 		return shader;
 	}
-	Shader *ShaderLibarary::Get(const std::string & name)
+	Shader *ShaderLibrary::Get(const std::string & name)
 	{
 		return m_Shaders[name];
 	}

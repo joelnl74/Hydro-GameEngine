@@ -8,6 +8,7 @@
 #include "../Platform/OpenGL/OpenGLVertexArray.h"
 #include "../vendor/glm/glm.hpp"
 
+#include "assimp/Importer.hpp"
 // Mesh class contains data for rendering a mesh onto the screen.
 // Currently only supports OpenGL
 // TODO Makes this more friendly for different API.
@@ -18,65 +19,28 @@ namespace Hydro
 	{
 		glm::vec3 Position;
 		glm::vec3 Normal;
+		glm::vec3 Tangent;
+		glm::vec3 Binormal;
 		glm::vec2 TexCoords;
 	};
+
 	class Mesh
 	{
 	public:
 		/*  Mesh Data  */
 		/*  Functions  */
-		Mesh();
+		Mesh(std::string &filePath);
 		void Draw(Shader &shader);
 	private:
 		OpenGLVertexBuffer *vertexBuffer;
 		OpenGLVerterArray *vertexArray;
 		OpenGLVertexbufferLayout *layout;
+		OpenGLIndexBuffer *indexBuffer;
+		
+		Assimp::Importer* m_Importer;
+		const aiScene* m_Scene;
 
-		float vertices[108] = {
-			-0.5f, -0.5f, -0.5f,
-			 0.5f, -0.5f, -0.5f,
-			 0.5f,  0.5f, -0.5f,
-			 0.5f,  0.5f, -0.5f,
-			-0.5f,  0.5f, -0.5f,
-			-0.5f, -0.5f, -0.5f,
-
-			-0.5f, -0.5f,  0.5f,
-			 0.5f, -0.5f,  0.5f,
-			 0.5f,  0.5f,  0.5f,
-			 0.5f,  0.5f,  0.5f,
-			-0.5f,  0.5f,  0.5f,
-			-0.5f, -0.5f,  0.5f,
-
-			-0.5f,  0.5f,  0.5f,
-			-0.5f,  0.5f, -0.5f,
-			-0.5f, -0.5f, -0.5f,
-			-0.5f, -0.5f, -0.5f,
-			-0.5f, -0.5f,  0.5f,
-			-0.5f,  0.5f,  0.5f,
-
-			 0.5f,  0.5f,  0.5f,
-			 0.5f,  0.5f, -0.5f,
-			 0.5f, -0.5f, -0.5f,
-			 0.5f, -0.5f, -0.5f,
-			 0.5f, -0.5f,  0.5f,
-			 0.5f,  0.5f,  0.5f,
-
-			-0.5f, -0.5f, -0.5f,
-			 0.5f, -0.5f, -0.5f,
-			 0.5f, -0.5f,  0.5f,
-			 0.5f, -0.5f,  0.5f,
-			-0.5f, -0.5f,  0.5f,
-			-0.5f, -0.5f, -0.5f,
-
-			-0.5f,  0.5f, -0.5f,
-			 0.5f,  0.5f, -0.5f,
-			 0.5f,  0.5f,  0.5f,
-			 0.5f,  0.5f,  0.5f,
-			-0.5f,  0.5f,  0.5f,
-			-0.5f,  0.5f, -0.5f
-			};
-
-		/*  Functions    */
-		void setupMesh();
+		std::vector<Vertex> m_vertices;
+		std::vector<unsigned int> m_Indices;
 	};
 }

@@ -1,5 +1,7 @@
 #include "Model.h"
 #include <iostream>
+#include "assimp/Importer.hpp"
+
 namespace Hydro
 {
 	Model::Model(std::string path)
@@ -7,9 +9,17 @@ namespace Hydro
 		LoadModel(path);
 	}
 
+	Model::~Model()
+	{
+		for (auto mesh : meshes)
+		{
+			delete mesh;
+		}
+	}
+
 	void Model::LoadModel(std::string path)
 	{
-		Mesh *mesh = new Mesh();
+		Mesh *mesh = new Mesh(path);
 		meshes.push_back(mesh);
 	}
 	void Model::Draw(Shader &shader)

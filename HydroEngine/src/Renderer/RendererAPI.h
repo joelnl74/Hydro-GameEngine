@@ -18,7 +18,6 @@ namespace Hydro {
 		virtual void DrawLine() = 0;
 		virtual void Clear() = 0;
 
-		static APIType Current() { return s_API; }
 		inline static APIType GetAPI() { return s_API; }
 	private:
 		static APIType s_API;
