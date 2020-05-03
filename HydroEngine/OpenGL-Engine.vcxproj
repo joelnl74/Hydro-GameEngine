@@ -96,7 +96,6 @@
     <ClCompile Include="src\Platform\Windows\FileSystemWindows.cpp" />
     <ClCompile Include="src\Core\Logger.cpp" />
     <ClCompile Include="src\HydroEngine.cpp" />
-    <ClCompile Include="src\Editor\EditorUI.cpp" />
     <ClCompile Include="src\Renderer\Camera.cpp" />
     <ClCompile Include="src\Platform\OpenGL\spriteBatch.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLDebugger\OpenglErrorHandler.cpp" />
@@ -111,8 +110,6 @@
     <ClCompile Include="src\HyEntity\World.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Core\Events\Event.h" />
-    <ClInclude Include="src\Core\Events\WindowResizeEvent.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Renderer\Mesh.h" />
     <ClInclude Include="src\Renderer\Model.h" />
@@ -142,7 +139,6 @@
     <ClInclude Include="src\HyEntity\Transform.h" />
     <ClInclude Include="src\HyEntity\Components\Collision.h" />
     <ClInclude Include="src\HydroEngine.h" />
-    <ClInclude Include="src\Editor\EditorUI.h" />
     <ClInclude Include="src\Renderer\Camera.h" />
     <ClInclude Include="src\HyEntity\Components\Sprite.h" />
     <ClInclude Include="src\Platform\OpenGL\spriteBatch.h" />

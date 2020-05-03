@@ -6,7 +6,6 @@
 #include <string.h>
 
 #include "Hydro.h"
-#include "Editor//EditorUI.h"
 #include "Audio/AudioManager.h"
 #include "Platform/Windows/WindowsInput.h"
 #include "HyEntity/World.h"
@@ -34,7 +33,6 @@ namespace Hydro
 		Window* _window;
 		AudioManager *_audio;
 	private:
-		EditorUI *_editUI;
 		EngineMode _engineMode;
 
 		//test
