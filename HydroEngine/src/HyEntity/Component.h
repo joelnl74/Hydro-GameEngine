@@ -6,7 +6,6 @@ namespace Hydro
 	class Component
 	{
 	public:
-		Component() {};
 		~Component() {};
 
 		virtual void Start() = 0;
