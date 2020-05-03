@@ -42,7 +42,6 @@ namespace Hydro
 		Shader *shader;
 		Model* model;
 		int buffer;
-
-};
+	};
 }
 
