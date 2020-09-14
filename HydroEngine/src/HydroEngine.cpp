@@ -44,17 +44,17 @@ namespace Hydro
 		while (true)
 		{
 			//Clear Screen
-			Renderer::GetAPI().SetClearColor(glm::vec4(1));
-			Renderer::GetAPI().Clear();
+			Renderer::GetRendererAPI().SetClearColor(glm::vec4(1));
+			Renderer::GetRendererAPI().Clear();
 
 			source->playSource(&buffer); 
 			
-			// Update renderer.
+			//Update renderer.
 			model->Draw(*shader);
 
 			//Draw UI
 
-			// Swap front and back buffers 
+			//Swap front and back buffers 
 			
 			_window->OnUpdate();
 		};
