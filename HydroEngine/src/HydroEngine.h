@@ -6,7 +6,7 @@
 #include <string.h>
 
 #include "Hydro.h"
-// #include "Audio/AudioManager.h"
+#include "Audio/AudioManager.h"
 #include "Platform/Windows/WindowsInput.h"
 
 enum  EngineMode
@@ -30,12 +30,12 @@ namespace Hydro
 	//Simple 2dcamera class
 		Camera* _camera;
 		Window* _window;
-		// AudioManager *_audio;
+		AudioManager *_audio;
 	private:
 		EngineMode _engineMode;
 
 		//test
-		// AudioSource *source;
+		AudioSource *source;
 		Shader *shader;
 		Model* model;
 		int buffer;

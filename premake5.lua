@@ -18,12 +18,13 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["ASSIMP"] = "Dependencies/ASSIMP/include"
+IncludeDir["OPENAL"] = "Dependencies/OPENAL/include"
+IncludeDir["LIBVORBIS"] = "Dependencies/LIBVORBIS/include"
 IncludeDir["GLFW"] = "%{wks.location}/HydroEngine/vendor/GLFW/include"
 IncludeDir["Glad"] = "%{wks.location}/HydroEngine/vendor/Glad/include"
 IncludeDir["ImGui"] = "%{wks.location}/HydroEngine/vendor/imgui"
 IncludeDir["glm"] = "%{wks.location}/HydroEngine/vendor/glm"
 IncludeDir["stb_image"] = "%{wks.location}/HydroEngine/vendor/stb_image"
-IncludeDir["entt"] = "%{wks.location}/HydroEngine/vendor/entt/include"
 
 project "HydroEngine"
 	location "HydroEngine"
@@ -65,6 +66,10 @@ project "HydroEngine"
 	links 
 	{ 
 		"assimp.lib",
+		"libvorbisfile_static.lib",
+		"libvorbis_static.lib",
+		"libogg_static.lib",
+		"OpenAL32.lib",
 		"GLFW",
 		"Glad",
 		"ImGui",
