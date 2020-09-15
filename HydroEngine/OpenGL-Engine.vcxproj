@@ -79,7 +79,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
+    <ClCompile Include="src\Renderer\buffer\IndexBuffer.cpp" />
     <ClCompile Include="src\Renderer\buffer\VertexArray.cpp" />
+    <ClCompile Include="src\Renderer\buffer\VertexBuffer.cpp" />
     <ClCompile Include="src\Renderer\Mesh.cpp" />
     <ClCompile Include="src\Renderer\Model.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp" />
@@ -114,6 +116,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
+    <ClInclude Include="src\Renderer\buffer\BufferLayout.h" />
     <ClInclude Include="src\Renderer\Mesh.h" />
     <ClInclude Include="src\Renderer\Model.h" />
     <ClInclude Include="src\Renderer\Renderer.h" />
@@ -131,7 +134,6 @@
     <ClInclude Include="src\Platform\OpenGL\OpenGLTexture.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLVertexBuffer.h" />
-    <ClInclude Include="src\Platform\OpenGL\OpenGLVertexBufferLayout.h" />
     <ClInclude Include="src\Platform\Windows\vendor\dirent.h" />
     <ClInclude Include="src\Platform\Windows\FileSystemWindows.h" />
     <ClInclude Include="src\Core\FileSystem.h" />

@@ -2,10 +2,10 @@
 #include <vector>
 #include "../Platform/OpenGL/OpenGLTexture.h"
 #include "../Platform/OpenGL/OpenGLShader.h"
-#include "../Platform/OpenGL/OpenGLIndexBuffer.h"
-#include "../Platform/OpenGL/OpenGLVertexBuffer.h"
-#include "../Platform/OpenGL/OpenGLVertexBufferLayout.h"
-#include "../Platform/OpenGL/OpenGLVertexArray.h"
+#include "buffer/IndexBuffer.h"
+#include "buffer/VertexBuffer.h"
+#include "buffer/BufferLayout.h"
+#include "buffer/VertexArray.h"
 #include "../vendor/glm/glm.hpp"
 
 #include "assimp/Importer.hpp"
@@ -32,10 +32,10 @@ namespace Hydro
 		Mesh(std::string &filePath);
 		void Draw(Shader &shader);
 	private:
-		OpenGLVertexBuffer *vertexBuffer;
-		OpenGLVerterArray *vertexArray;
-		OpenGLVertexbufferLayout *layout;
-		OpenGLIndexBuffer *indexBuffer;
+		VertexBuffer *vertexBuffer;
+		VertexArray *vertexArray;
+		BufferLayout *layout;
+		IndexBuffer *indexBuffer;
 		
 		Assimp::Importer* m_Importer;
 		const aiScene* m_Scene;

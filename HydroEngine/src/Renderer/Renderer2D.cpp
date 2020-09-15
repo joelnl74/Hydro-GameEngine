@@ -37,7 +37,7 @@ namespace Hydro
 
 	void Renderer2d::StartUp()
 	{
-		s_Data.QuadVertexArray = VertexArray::Create();
+		// s_Data.QuadVertexArray = VertexArray::Create();
 	}
 
 	void  Renderer2d::ShutDown()

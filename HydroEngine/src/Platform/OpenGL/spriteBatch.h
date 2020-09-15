@@ -1,7 +1,7 @@
 #pragma once
 #include "../../HyEntity/Components/Sprite.h"
 #include "OpenGLVertexBuffer.h"
-#include "OpenGLVertexBufferLayout.h"
+#include "../../Renderer/buffer/BufferLayout.h"
 #include "OpenGLIndexBuffer.h"
 #include "OpenGLVertexArray.h"
 #include "OpenGLShader.h"
