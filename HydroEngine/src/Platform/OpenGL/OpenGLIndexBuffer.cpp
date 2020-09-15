@@ -3,7 +3,7 @@
 
 namespace Hydro
 {
-	OpenGLIndexBuffer::OpenGLIndexBuffer(const unsigned int * data, unsigned int count) :
+	OpenGLIndexBuffer::OpenGLIndexBuffer(unsigned int * data, unsigned int count) :
 		m_Count(count)
 	{
 		ASSERT(sizeof(unsigned int) == sizeof(GLuint));

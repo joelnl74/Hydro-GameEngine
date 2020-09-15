@@ -1,5 +1,4 @@
 #include "Camera.h"
-#include "../vendor/imgui/imgui.h"
 
 namespace Hydro
 {

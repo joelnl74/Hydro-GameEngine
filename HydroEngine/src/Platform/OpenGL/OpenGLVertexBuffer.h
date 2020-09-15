@@ -5,7 +5,7 @@ namespace Hydro
 	class OpenGLVertexBuffer : public VertexBuffer
 	{
 	public:
-		OpenGLVertexBuffer(const void* data, unsigned int size);
+		OpenGLVertexBuffer(void* data, unsigned int size);
 		~OpenGLVertexBuffer();
 		
 		virtual void Bind() const override;

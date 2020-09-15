@@ -13,7 +13,6 @@ namespace Hydro
 		_window = Window::Create(WindowProps("Window", 1024, 768));
 
 		WindowsInput::s_Instance->StartUp((GLFWwindow*)_window->GetNativeWindow());
-		World::GetInstance().StartUp();
 		Renderer::GetInstance().StartUp();
 
 		_audio = new AudioManager();
@@ -27,10 +26,11 @@ namespace Hydro
 
 		model = new Model("Resources/fbx/cerberus.fbx");
 		shader = Shader::Create("Resources/shaders/Base3D.shader");
+
+		Renderer::GetRendererAPI().SetClearColor(glm::vec4(1));
 	}
 	HydroEngine::~HydroEngine()
 	{
-		World::GetInstance().ShutDown();
 		//clear memory
 		_audio->CleanUp();
 		delete _audio;
@@ -44,17 +44,16 @@ namespace Hydro
 		while (true)
 		{
 			//Clear Screen
-			Renderer::GetAPI().SetClearColor(glm::vec4(1));
-			Renderer::GetAPI().Clear();
+			Renderer::GetRendererAPI().Clear();
 
-			source->playSource(&buffer); 
+			// source->playSource(&buffer); 
 			
-			// Update renderer.
+			//Update renderer.
 			model->Draw(*shader);
 
 			//Draw UI
 
-			// Swap front and back buffers 
+			//Swap front and back buffers 
 			
 			_window->OnUpdate();
 		};

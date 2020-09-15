@@ -7,8 +7,8 @@
 #include "assimp/postprocess.h"
 #include <assimp/scene.h>
 
-#include "../vendor/glm/glm.hpp"
-#include "../vendor/glm/gtc/matrix_transform.hpp"
+#include "../../vendor/glm/glm.hpp"
+#include "../../vendor/glm/gtc/matrix_transform.hpp"
 
 namespace Hydro
 {
@@ -57,18 +57,17 @@ namespace Hydro
 		}
 			m_Scene = scene;
 
-			layout = new OpenGLVertexbufferLayout();
-			vertexBuffer = new OpenGLVertexBuffer(m_vertices.data(), m_vertices.size() * sizeof(Vertex));
-			indexBuffer = new OpenGLIndexBuffer(m_Indices.data(), m_Indices.size());
-			vertexArray = new OpenGLVerterArray();
+			layout = new BufferLayout({
+			{ ShaderDataType::Float3, "a_Position" },
+			{ ShaderDataType::Float3, "a_Normal" },
+			{ ShaderDataType::Float3, "a_Tangent" },
+			{ ShaderDataType::Float3, "a_Binormal" },
+			{ ShaderDataType::Float2, "a_TexCoord" }
+			});
 
-			layout->Push<float>(3);
-			layout->Push<float>(3);
-			layout->Push<float>(3);
-			layout->Push<float>(3);
-			layout->Push<float>(2);
-
-			vertexArray->AddBuffer(*vertexBuffer, *layout);
+			vertexBuffer = VertexBuffer::Create(m_vertices.data(), m_vertices.size() * sizeof(Vertex));
+			indexBuffer = IndexBuffer::Create(m_Indices.data(), m_Indices.size());
+			vertexArray = VertexArray::Create(vertexBuffer, layout);
 	}
 
 	void Mesh::Draw(Shader &shader)

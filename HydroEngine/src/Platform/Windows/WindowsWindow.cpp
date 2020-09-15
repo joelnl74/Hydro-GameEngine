@@ -38,7 +38,7 @@ namespace Hydro {
 
 
 		glfwMakeContextCurrent(m_Window);
-		int status = glewInit();
+		int status = gladLoadGL();
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 	}

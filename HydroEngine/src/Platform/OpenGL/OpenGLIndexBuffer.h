@@ -6,7 +6,7 @@ namespace Hydro
 	class OpenGLIndexBuffer : public IndexBuffer
 	{
 	public:
-		OpenGLIndexBuffer(const unsigned int* data, unsigned int count);
+		OpenGLIndexBuffer(unsigned int* data, unsigned int count);
 		~OpenGLIndexBuffer();
 
 		void Bind() const override;

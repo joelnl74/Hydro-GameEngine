@@ -1,6 +1,6 @@
 #pragma once
 #include "../../Renderer/buffer/VertexArray.h"
-#include"OpenGLVertexBuffer.h"
+#include "../../Renderer/buffer/VertexBuffer.h"
 
 namespace Hydro
 {
@@ -14,7 +14,7 @@ namespace Hydro
 		virtual void Bind() const override;
 		virtual void UnBind() const override;
 
-		void AddBuffer(const OpenGLVertexBuffer& vb, const OpenGLVertexbufferLayout& layout);
+		void AddBuffer(const VertexBuffer* vb, const BufferLayout* layout);
 	private:
 		unsigned int m_RendererID;
 	};
