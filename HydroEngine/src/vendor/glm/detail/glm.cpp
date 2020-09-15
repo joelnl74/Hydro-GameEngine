@@ -1,6 +1,6 @@
 /// @ref core
 /// @file glm/glm.cpp
-
+#include <glm.hpp>
 #include <glm/glm.hpp>
 #include <glm/gtc/quaternion.hpp>
 #include <glm/gtx/dual_quaternion.hpp>

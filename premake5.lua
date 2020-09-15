@@ -1,5 +1,6 @@
-workspace "Hydro"
+workspace "HydroEngine"
 	architecture "x86_64"
+	startproject "HydroEngine"
 
 	configurations
 	{
@@ -16,17 +17,15 @@ workspace "Hydro"
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
-IncludeDir["GLFW"] = "Dependencies/vendor/GLFW/include"
-IncludeDir["GLEW"] = "Dependencies/vendor/GLEW/include"
-IncludeDir["OPENAL"] = "Dependencies/vendor/OPENAL/include"
-IncludeDir["ASSIMP"] = "Dependencies/vendor/ASSIMP/include"
-IncludeDir["LIBVORBIS"] = "Dependencies/vendor/LIBVORBIS/include"
-IncludeDir["ImGui"] = "Hydro/src/vendor/imgui"
-IncludeDir["glm"] = "Hydro/src/vendor/glm"
-IncludeDir["stb_image"] = "Hydro/src/vendor/stbImage"
+IncludeDir["GLFW"] = "Dependencies/GLFW/include"
+IncludeDir["GLEW"] = "Dependencies/GLEW/include"
+IncludeDir["OPENAL"] = "Dependencies/OPENAL/include"
+IncludeDir["ASSIMP"] = "Dependencies/ASSIMP/include"
+IncludeDir["LIBVORBIS"] = "Dependencies/LIBVORBIS/include"
+IncludeDir["ImGui"] = "HydroEngine/src/vendor/imgui"
 
-project "Hydro"
-	location "Hydro"
+project "HydroEngine"
+	location "HydroEngine"
 	kind "ConsoleApp"
 	language "C++"
 	cppdialect "C++17"
@@ -35,15 +34,15 @@ project "Hydro"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
-		includedirs
+	includedirs
 	{
-		"%{prj.name}/src",
-		"%{prj.name}/src/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.GLEW}",
+		"%{IncludeDir.ASSIMP}",
+		"%{IncludeDir.OPENAL}",
 		"%{IncludeDir.ImGui}",
-		"%{IncludeDir.glm}",
-		"%{IncludeDir.stb_image}",
+		"%{IncludeDir.LIBVORBIS}",
+		"%{prj.name}/src/vendor/spdlog/include",
 	}
 
 	defines
@@ -53,11 +52,11 @@ project "Hydro"
 	}
 	links 
 	{ 
-		"GLFW",
-		"Glad",
+		"glfw3",
+		"glew32s.lib",
 		"ImGui",
 		"Assimp",
-		"OpenAl",
+		"OpenAL32",
 		"opengl32.lib"
 	}
 
@@ -67,8 +66,8 @@ project "Hydro"
 		"%{prj.name}/src/**.cpp",
 		"%{prj.name}/src/vendor/stb_image/**.h",
 		"%{prj.name}/src/vendor/stb_image/**.cpp",
-		"%{prj.name}/src/vendor/glm/glm/**.hpp",
-		"%{prj.name}/src/vendor/glm/glm/**.inl",
+		"%{prj.name}/src/vendor/glm/**.hpp",
+		"%{prj.name}/src/vendor/glm/**.inl",
 	}
 
 		filter "system:windows"
