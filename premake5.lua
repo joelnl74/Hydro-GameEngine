@@ -17,11 +17,13 @@ workspace "HydroEngine"
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
-IncludeDir["GLFW"] = "Dependencies/GLFW/include"
-IncludeDir["GLEW"] = "Dependencies/GLEW/include"
-IncludeDir["OPENAL"] = "Dependencies/OPENAL/include"
 IncludeDir["ASSIMP"] = "Dependencies/ASSIMP/include"
-IncludeDir["LIBVORBIS"] = "Dependencies/LIBVORBIS/include"
+IncludeDir["GLFW"] = "%{wks.location}/HydroEngine/vendor/GLFW/include"
+IncludeDir["Glad"] = "%{wks.location}/HydroEngine/vendor/Glad/include"
+IncludeDir["ImGui"] = "%{wks.location}/HydroEngine/vendor/imgui"
+IncludeDir["glm"] = "%{wks.location}/HydroEngine/vendor/glm"
+IncludeDir["stb_image"] = "%{wks.location}/HydroEngine/vendor/stb_image"
+IncludeDir["entt"] = "%{wks.location}/HydroEngine/vendor/entt/include"
 
 project "HydroEngine"
 	location "HydroEngine"
@@ -35,8 +37,13 @@ project "HydroEngine"
 
 	includedirs
 	{
+		"vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
-		"%{IncludeDir.GLEW}",
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.stb_image}",
+		"%{IncludeDir.entt}",
 		"%{IncludeDir.ASSIMP}",
 		"%{IncludeDir.OPENAL}",
 		"%{IncludeDir.LIBVORBIS}",
@@ -45,8 +52,6 @@ project "HydroEngine"
 	
 	libdirs 
 	{ 
-		"Dependencies/GLFW/lib",
-		"Dependencies/GLEW/lib",
 		"Dependencies/OPENAL/lib",
 		"Dependencies/ASSIMP/lib",
 		"Dependencies/LIBVORBIS/lib",
@@ -59,10 +64,10 @@ project "HydroEngine"
 	}
 	links 
 	{ 
-		"glfw3.lib",
-		"glew32s.lib",
 		"assimp.lib",
-		"OpenAL32.lib",
+		"GLFW",
+		"Glad",
+		"ImGui",
 		"opengl32.lib"
 	}
 
@@ -72,11 +77,15 @@ project "HydroEngine"
 		"%{prj.name}/src/**.cpp",
 		"%{prj.name}/vendor/stb_image/**.h",
 		"%{prj.name}/vendor/stb_image/**.cpp",
-		"%{prj.name}/vendor/glm/**.hpp",
-		"%{prj.name}/vendor/glm/**.inl",
-		"%{prj.name}/vendor/imgui/**.hpp",
-		"%{prj.name}/vendor/imgui/**.cpp",
+		"%{prj.name}/vendor/glm/glm/**.hpp",
+		"%{prj.name}/vendor/glm/glm/**.inl",
 	}
+
+	group "Dependencies"
+	include "HydroEngine/vendor/GLFW"
+	include "HydroEngine/vendor/Glad"
+	include "HydroEngine/vendor/imgui"
+	group ""
 
 		filter "system:windows"
 		systemversion "latest"
