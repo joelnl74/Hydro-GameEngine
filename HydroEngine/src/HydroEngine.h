@@ -8,7 +8,6 @@
 #include "Hydro.h"
 #include "Audio/AudioManager.h"
 #include "Platform/Windows/WindowsInput.h"
-#include "HyEntity/World.h"
 
 enum  EngineMode
 {

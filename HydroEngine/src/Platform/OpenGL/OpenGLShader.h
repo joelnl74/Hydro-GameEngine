@@ -2,8 +2,8 @@
 #include <unordered_map>
 
 #include "../../Renderer/Shader.h"
-#include "../../vendor/glm/glm.hpp"
-#include "../../vendor/glm/gtc/type_ptr.inl"
+#include "../../../vendor/glm/glm.hpp"
+#include "../../../vendor/glm/gtc/type_ptr.inl"
 #include "OpenGLDebugger/OpenglErrorHandler.h"
 
 namespace Hydro

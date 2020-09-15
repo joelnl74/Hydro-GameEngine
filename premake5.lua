@@ -22,7 +22,6 @@ IncludeDir["GLEW"] = "Dependencies/GLEW/include"
 IncludeDir["OPENAL"] = "Dependencies/OPENAL/include"
 IncludeDir["ASSIMP"] = "Dependencies/ASSIMP/include"
 IncludeDir["LIBVORBIS"] = "Dependencies/LIBVORBIS/include"
-IncludeDir["ImGui"] = "HydroEngine/src/vendor/imgui"
 
 project "HydroEngine"
 	location "HydroEngine"
@@ -40,9 +39,17 @@ project "HydroEngine"
 		"%{IncludeDir.GLEW}",
 		"%{IncludeDir.ASSIMP}",
 		"%{IncludeDir.OPENAL}",
-		"%{IncludeDir.ImGui}",
 		"%{IncludeDir.LIBVORBIS}",
-		"%{prj.name}/src/vendor/spdlog/include",
+		"HydroEngine/vendor/spdlog/include",
+	}
+	
+	libdirs 
+	{ 
+		"Dependencies/GLFW/lib",
+		"Dependencies/GLEW/lib",
+		"Dependencies/OPENAL/lib",
+		"Dependencies/ASSIMP/lib",
+		"Dependencies/LIBVORBIS/lib",
 	}
 
 	defines
@@ -52,11 +59,10 @@ project "HydroEngine"
 	}
 	links 
 	{ 
-		"glfw3",
+		"glfw3.lib",
 		"glew32s.lib",
-		"ImGui",
-		"Assimp",
-		"OpenAL32",
+		"assimp.lib",
+		"OpenAL32.lib",
 		"opengl32.lib"
 	}
 
@@ -64,10 +70,12 @@ project "HydroEngine"
 	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
-		"%{prj.name}/src/vendor/stb_image/**.h",
-		"%{prj.name}/src/vendor/stb_image/**.cpp",
-		"%{prj.name}/src/vendor/glm/**.hpp",
-		"%{prj.name}/src/vendor/glm/**.inl",
+		"%{prj.name}/vendor/stb_image/**.h",
+		"%{prj.name}/vendor/stb_image/**.cpp",
+		"%{prj.name}/vendor/glm/**.hpp",
+		"%{prj.name}/vendor/glm/**.inl",
+		"%{prj.name}/vendor/imgui/**.hpp",
+		"%{prj.name}/vendor/imgui/**.cpp",
 	}
 
 		filter "system:windows"

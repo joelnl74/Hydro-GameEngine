@@ -6,7 +6,7 @@
 #include "buffer/VertexBuffer.h"
 #include "buffer/BufferLayout.h"
 #include "buffer/VertexArray.h"
-#include "../vendor/glm/glm.hpp"
+#include "../../vendor/glm/glm.hpp"
 
 #include "assimp/Importer.hpp"
 // Mesh class contains data for rendering a mesh onto the screen.

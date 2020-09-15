@@ -13,7 +13,6 @@ namespace Hydro
 		_window = Window::Create(WindowProps("Window", 1024, 768));
 
 		WindowsInput::s_Instance->StartUp((GLFWwindow*)_window->GetNativeWindow());
-		World::GetInstance().StartUp();
 		Renderer::GetInstance().StartUp();
 
 		_audio = new AudioManager();
@@ -30,7 +29,6 @@ namespace Hydro
 	}
 	HydroEngine::~HydroEngine()
 	{
-		World::GetInstance().ShutDown();
 		//clear memory
 		_audio->CleanUp();
 		delete _audio;

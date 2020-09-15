@@ -1,6 +1,6 @@
 #include "OpenGLTexture.h"
 #include "OpenGLDebugger/OpenglErrorHandler.h"
-#include "../../vendor/stbImage/stb_image.h"
+#include "../../../vendor/stbImage/stb_image.h"
 
 namespace Hydro
 {

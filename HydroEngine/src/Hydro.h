@@ -8,7 +8,7 @@
 #include "Core/KeyCodes.h"
 #include "Core/MouseButtonCodes.h"
 //Math
-#include "vendor/glm/glm.hpp"
+#include "../vendor/glm/glm.hpp"
 //Entity component system
 //Resource Manager
 
