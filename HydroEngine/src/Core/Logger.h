@@ -1,6 +1,6 @@
 #pragma once
-#include "spdlog/spdlog.h"
-#include "spdlog/fmt/ostr.h"
+#include "../../vendor/spdlog/include/spdlog/spdlog.h"
+#include "../../vendor/spdlog/include/spdlog/fmt/ostr.h"
 
 #define LOG_ERROR(...)		 Logger::GetCoreLogger()->error(__VA_ARGS__)
 #define LOG_WARNING(...)     Logger::GetCoreLogger()->warn(__VA_ARGS__)

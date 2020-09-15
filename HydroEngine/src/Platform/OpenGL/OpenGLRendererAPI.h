@@ -2,7 +2,7 @@
 #include "../../Renderer/RendererAPI.h"
 namespace Hydro
 {
-	class OpenGLRendererAPI : RendererAPI
+	class OpenGLRendererAPI : public RendererAPI
 	{
 	public:
 		virtual void SetClearColor(const glm::vec4& color) override;

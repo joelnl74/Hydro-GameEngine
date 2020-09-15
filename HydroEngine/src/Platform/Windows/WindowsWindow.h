@@ -1,7 +1,7 @@
 #pragma once
 #include "../../Renderer/Window.h"
 
-#include "GL\glew.h"
+#include "glad/glad.h"
 #include <GLFW/glfw3.h>
 
 namespace Hydro
@@ -20,11 +20,11 @@ namespace Hydro
 		virtual std::pair<float, float> GetWindowPos() const override;
 
 		// Window attributes
-		inline void SetEventCallback(const EventCallbackFn& callback) override { m_Data.EventCallback = callback; }
 		void SetVSync(bool enabled);
 		bool IsVSync() const;
 
 		inline void* GetNativeWindow() const { return m_Window; }
+
 	private:
 		virtual void Init(const WindowProps& props);
 		virtual void Shutdown();
@@ -36,8 +36,6 @@ namespace Hydro
 			std::string Title;
 			unsigned int Width, Height;
 			bool VSync;
-
-			EventCallbackFn EventCallback;
 		};
 
 		WindowData m_Data;

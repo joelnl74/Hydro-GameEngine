@@ -1,4 +1,4 @@
-#include <GL/glew.h>
+#include <glad/glad.h>
 
 #define ASSERT(x) if((!x))__debugbreak();
 #define GLCall(x) GLClearError();\

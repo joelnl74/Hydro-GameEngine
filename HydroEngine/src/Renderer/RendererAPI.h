@@ -1,9 +1,9 @@
 #pragma once
-#include "../vendor/glm/glm.hpp"
+#include "../../vendor/glm/glm.hpp"
 
 namespace Hydro {
 
-	enum class APIType
+	enum class RendererApiType
 	{
 		None = 0, OpenGL = 1, DirectX11 = 2, Vulkan = 3, DirectX12
 	};
@@ -18,9 +18,8 @@ namespace Hydro {
 		virtual void DrawLine() = 0;
 		virtual void Clear() = 0;
 
-		static APIType Current() { return s_API; }
-		inline static APIType GetAPI() { return s_API; }
+		inline static RendererApiType GetAPI() { return s_API; }
 	private:
-		static APIType s_API;
+		static RendererApiType s_API;
 	};
 }

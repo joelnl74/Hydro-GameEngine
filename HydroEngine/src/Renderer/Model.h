@@ -7,6 +7,8 @@ namespace Hydro
 	{
 	public:
 		Model(std::string path);
+		~Model();
+
 		void LoadModel(std::string path);
 		void Draw(Shader &shader);
 	private:
