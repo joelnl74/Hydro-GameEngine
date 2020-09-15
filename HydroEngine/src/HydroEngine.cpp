@@ -26,6 +26,8 @@ namespace Hydro
 
 		model = new Model("Resources/fbx/cerberus.fbx");
 		shader = Shader::Create("Resources/shaders/Base3D.shader");
+
+		Renderer::GetRendererAPI().SetClearColor(glm::vec4(1));
 	}
 	HydroEngine::~HydroEngine()
 	{
@@ -42,7 +44,6 @@ namespace Hydro
 		while (true)
 		{
 			//Clear Screen
-			Renderer::GetRendererAPI().SetClearColor(glm::vec4(1));
 			Renderer::GetRendererAPI().Clear();
 
 			// source->playSource(&buffer); 

@@ -1,4 +1,6 @@
 #pragma once
+#include <HydroEngine\src\Core\Assert.h>
+
 #include <cstdint>
 #include <vector>
 #include <string>
@@ -26,6 +28,8 @@ namespace Hydro
 		case ShaderDataType::Int4:     return 4 * 4;
 		case ShaderDataType::Bool:     return 1;
 		}
+
+		HY_ASSERT("Unknown shader data type or not supported");
 
 		return 0;
 	}

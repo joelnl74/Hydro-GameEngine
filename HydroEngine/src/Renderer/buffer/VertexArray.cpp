@@ -1,6 +1,9 @@
+#include <HydroEngine\src\Core\Assert.h>
+
 #include "VertexArray.h"
-#include "../../Platform/OpenGL/OpenGLVertexArray.h"
 #include "../Renderer.h"
+
+#include "../../Platform/OpenGL/OpenGLVertexArray.h"
 
 namespace Hydro
 {
@@ -16,6 +19,8 @@ namespace Hydro
 
 			return vertexArray;
 		}
+
+		HY_ASSERT("Unsupported renderer api!");
 
 		return nullptr;
 	}

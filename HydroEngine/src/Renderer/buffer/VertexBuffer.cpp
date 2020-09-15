@@ -1,6 +1,9 @@
+#include <HydroEngine\src\Core\Assert.h>
+
 #include "VertexBuffer.h"
-#include "../../Platform/OpenGL/OpenGLVertexBuffer.h"
 #include "../Renderer.h"
+
+#include "../../Platform/OpenGL/OpenGLVertexBuffer.h"
 
 namespace Hydro
 {
@@ -11,6 +14,8 @@ namespace Hydro
 		case RendererApiType::None:    return nullptr;
 		case RendererApiType::OpenGL:  return new OpenGLVertexBuffer(data, size);
 		}
+
+		HY_ASSERT("Unsupported renderer api!");
 
 		return nullptr;
 	}

@@ -1,6 +1,11 @@
+#include <HydroEngine\src\Core\Assert.h>
+
 #include "OpenGLVertexArray.h"
 #include "OpenGLDebugger/OpenglErrorHandler.h"
+
 #include "../../Renderer/buffer/BufferLayout.h"
+
+
 namespace Hydro
 {
 
@@ -20,6 +25,8 @@ namespace Hydro
 		case Hydro::ShaderDataType::Int4:     return GL_INT;
 		case Hydro::ShaderDataType::Bool:     return GL_BOOL;
 		}
+
+		HY_ASSERT("Unknown shader data type or not supported");
 
 		return 0;
 	}
