@@ -1,21 +1,28 @@
 #pragma once
 #include "../../Renderer/buffer/VertexArray.h"
 #include "../../Renderer/buffer/VertexBuffer.h"
+#include "../../Renderer/buffer/IndexBuffer.h"
 
 namespace Hydro
 {
-	class OpenGLVertexbufferLayout;
-	class OpenGLVerterArray : public VertexArray
+	class OpenGLVertexArray : public VertexArray
 	{
 	public:
-		OpenGLVerterArray();
-		~OpenGLVerterArray();
+		OpenGLVertexArray();
+		virtual ~OpenGLVertexArray();
 
 		virtual void Bind() const override;
 		virtual void UnBind() const override;
 
-		void AddBuffer(const VertexBuffer* vb, const BufferLayout* layout);
+		virtual void AddVertexBuffer(VertexBuffer* vertexBuffer) override;
+		virtual void SetIndexBuffer(IndexBuffer* indexBuffer) override;
+
+		virtual const std::vector<VertexBuffer*>& GetVertexBuffers() const { return m_VertexBuffers; }
+		virtual const IndexBuffer* GetIndexBuffer() const { return m_IndexBuffer; }
 	private:
-		unsigned int m_RendererID;
+		uint32_t m_RendererID;
+		uint32_t m_VertexBufferIndex = 0;
+		std::vector<VertexBuffer*> m_VertexBuffers;
+		IndexBuffer* m_IndexBuffer;
 	};
 }
