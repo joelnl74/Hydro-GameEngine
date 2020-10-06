@@ -9,10 +9,10 @@ namespace Hydro
 {
 	IndexBuffer* IndexBuffer::Create(unsigned int* data, unsigned int count)
 	{
-		switch (Renderer::GetRendererAPI().GetAPI())
+		switch (Renderer::GetAPI())
 		{
-		case RendererApiType::None:    return nullptr;
-		case RendererApiType::OpenGL:  return new OpenGLIndexBuffer(data, count);
+		case RendererAPI::API::None:    return nullptr;
+		case RendererAPI::API::OpenGL:  return new OpenGLIndexBuffer(data, count);
 		}
 
 		HY_ASSERT("Unsupported renderer api!");

@@ -65,9 +65,15 @@ namespace Hydro
 			{ ShaderDataType::Float2, "a_TexCoord" }
 			});
 
-			vertexBuffer = VertexBuffer::Create(m_vertices.data(), m_vertices.size() * sizeof(Vertex));
+			vertexBuffer = VertexBuffer::Create(m_vertices.size() * sizeof(Vertex));
 			indexBuffer = IndexBuffer::Create(m_Indices.data(), m_Indices.size());
-			vertexArray = VertexArray::Create(vertexBuffer, layout);
+			vertexArray = VertexArray::Create();
+
+			vertexBuffer->SetLayout(*layout);
+			vertexBuffer->SetData(m_vertices.data(), m_vertices.size() * sizeof(Vertex));
+
+			vertexArray->AddVertexBuffer(vertexBuffer);
+			vertexArray->SetIndexBuffer(indexBuffer);
 	}
 
 	void Mesh::Draw(Shader &shader)

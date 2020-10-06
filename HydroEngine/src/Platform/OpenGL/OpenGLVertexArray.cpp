@@ -1,72 +1,111 @@
-#include <HydroEngine\src\Core\Assert.h>
-
 #include "OpenGLVertexArray.h"
-#include "OpenGLDebugger/OpenglErrorHandler.h"
 
-#include "../../Renderer/buffer/BufferLayout.h"
+#include <glad/glad.h>
 
-
-namespace Hydro
-{
+namespace Hydro {
 
 	static GLenum ShaderDataTypeToOpenGLBaseType(ShaderDataType type)
 	{
 		switch (type)
 		{
-		case Hydro::ShaderDataType::Float:    return GL_FLOAT;
-		case Hydro::ShaderDataType::Float2:   return GL_FLOAT;
-		case Hydro::ShaderDataType::Float3:   return GL_FLOAT;
-		case Hydro::ShaderDataType::Float4:   return GL_FLOAT;
-		case Hydro::ShaderDataType::Mat3:     return GL_FLOAT;
-		case Hydro::ShaderDataType::Mat4:     return GL_FLOAT;
-		case Hydro::ShaderDataType::Int:      return GL_INT;
-		case Hydro::ShaderDataType::Int2:     return GL_INT;
-		case Hydro::ShaderDataType::Int3:     return GL_INT;
-		case Hydro::ShaderDataType::Int4:     return GL_INT;
-		case Hydro::ShaderDataType::Bool:     return GL_BOOL;
+		case ShaderDataType::Float:    return GL_FLOAT;
+		case ShaderDataType::Float2:   return GL_FLOAT;
+		case ShaderDataType::Float3:   return GL_FLOAT;
+		case ShaderDataType::Float4:   return GL_FLOAT;
+		case ShaderDataType::Mat3:     return GL_FLOAT;
+		case ShaderDataType::Mat4:     return GL_FLOAT;
+		case ShaderDataType::Int:      return GL_INT;
+		case ShaderDataType::Int2:     return GL_INT;
+		case ShaderDataType::Int3:     return GL_INT;
+		case ShaderDataType::Int4:     return GL_INT;
+		case ShaderDataType::Bool:     return GL_BOOL;
 		}
-
-		HY_ASSERT("Unknown shader data type or not supported");
 
 		return 0;
 	}
 
-
-	OpenGLVerterArray::OpenGLVerterArray()
+	OpenGLVertexArray::OpenGLVertexArray()
 	{
-		GLCall(glGenVertexArrays(1, &m_RendererID));
+		glCreateVertexArrays(1, &m_RendererID);
 	}
 
-	OpenGLVerterArray::~OpenGLVerterArray()
+	OpenGLVertexArray::~OpenGLVertexArray()
 	{
-		GLCall(glDeleteVertexArrays(1, &m_RendererID));
+		glDeleteVertexArrays(1, &m_RendererID);
 	}
 
-	void OpenGLVerterArray::Bind() const
+	void OpenGLVertexArray::Bind() const
 	{
-		GLCall(glBindVertexArray(m_RendererID));
+		glBindVertexArray(m_RendererID);
 	}
 
-	void OpenGLVerterArray::UnBind() const
+	void OpenGLVertexArray::UnBind() const
 	{
-		GLCall(glBindVertexArray(0));
+		glBindVertexArray(0);
 	}
 
-	void OpenGLVerterArray::AddBuffer(const VertexBuffer *vb, const BufferLayout *layout)
+	void OpenGLVertexArray::AddVertexBuffer(VertexBuffer* vertexBuffer)
 	{
-		Bind();
-		vb->Bind();
-		const auto& elements = layout->GetElements();
-		unsigned int offset = 0;
-		for (unsigned int i = 0; i < elements.size(); i++)
+		glBindVertexArray(m_RendererID);
+		vertexBuffer->Bind();
+
+		const auto& layout = vertexBuffer->GetLayout();
+		for (int i = 0; i < layout.GetElements().size(); i++)
 		{
-			const auto& element = elements[i];
+			auto element = layout.GetElements()[i];
 
-			auto type = ShaderDataTypeToOpenGLBaseType(element.Type);
-
-			GLCall(glEnableVertexAttribArray(i));
-			GLCall(glVertexAttribPointer(i, element.GetComponentCount(), type, element.Normalized, layout->GetStride(), (const void*)(intptr_t)element.Offset));
+			switch (element.Type)
+			{
+			case ShaderDataType::Float:
+			case ShaderDataType::Float2:
+			case ShaderDataType::Float3:
+			case ShaderDataType::Float4:
+			case ShaderDataType::Int:
+			case ShaderDataType::Int2:
+			case ShaderDataType::Int3:
+			case ShaderDataType::Int4:
+			case ShaderDataType::Bool:
+			{
+				glEnableVertexAttribArray(m_VertexBufferIndex);
+				glVertexAttribPointer(m_VertexBufferIndex,
+					element.GetComponentCount(),
+					ShaderDataTypeToOpenGLBaseType(element.Type),
+					element.Normalized ? GL_TRUE : GL_FALSE,
+					layout.GetStride(),
+					(const void*)element.Offset);
+				m_VertexBufferIndex++;
+				break;
+			}
+			case ShaderDataType::Mat3:
+			case ShaderDataType::Mat4:
+			{
+				uint8_t count = element.GetComponentCount();
+				for (uint8_t i = 0; i < count; i++)
+				{
+					glEnableVertexAttribArray(m_VertexBufferIndex);
+					glVertexAttribPointer(m_VertexBufferIndex,
+						count,
+						ShaderDataTypeToOpenGLBaseType(element.Type),
+						element.Normalized ? GL_TRUE : GL_FALSE,
+						layout.GetStride(),
+						(const void*)(element.Offset + sizeof(float) * count * i));
+					glVertexAttribDivisor(m_VertexBufferIndex, 1);
+					m_VertexBufferIndex++;
+				}
+				break;
+				}
+			}
 		}
-	}
-}
 
+		m_VertexBuffers.push_back(vertexBuffer);
+	}
+
+	void OpenGLVertexArray::SetIndexBuffer(IndexBuffer* indexBuffer)
+	{
+		glBindVertexArray(m_RendererID);
+		indexBuffer->Bind();
+
+		m_IndexBuffer = indexBuffer;
+	}
+
+}

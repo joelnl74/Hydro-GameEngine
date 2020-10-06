@@ -7,17 +7,12 @@
 
 namespace Hydro
 {
-	VertexArray* VertexArray::Create(const VertexBuffer* vertexBuffer, const BufferLayout* bufferLayout)
+	VertexArray* VertexArray::Create()
 	{
-		switch (Renderer::GetRendererAPI().GetAPI())
+		switch (Renderer::GetAPI())
 		{
-		case RendererApiType::None:    
-			return nullptr;
-		case RendererApiType::OpenGL:
-			auto vertexArray = new OpenGLVerterArray();
-			vertexArray->AddBuffer(vertexBuffer, bufferLayout);
-
-			return vertexArray;
+		case RendererAPI::API::None: return nullptr;
+		case RendererAPI::API::OpenGL: return new OpenGLVertexArray();
 		}
 
 		HY_ASSERT("Unsupported renderer api!");

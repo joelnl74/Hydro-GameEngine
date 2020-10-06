@@ -1,5 +1,8 @@
 #pragma once
+#include <vector>
+
 #include "VertexBuffer.h"
+#include "IndexBuffer.h"
 #include "BufferLayout.h"
 
 namespace Hydro
@@ -7,13 +10,17 @@ namespace Hydro
 	class VertexArray
 	{
 	public:
-		~VertexArray() = default;
+		virtual ~VertexArray() {}
 
 		virtual void Bind() const = 0;
 		virtual void UnBind() const = 0;
 
-		static VertexArray* VertexArray::Create(const VertexBuffer* vb, const BufferLayout* layout);
+		virtual void AddVertexBuffer(VertexBuffer* vertexBuffer) = 0;
+		virtual void SetIndexBuffer(IndexBuffer* indexBuffer) = 0;
+
+		virtual const std::vector<VertexBuffer*>& GetVertexBuffers() const = 0;
+		virtual const IndexBuffer* GetIndexBuffer() const = 0;
+
+		static VertexArray* Create();
 	};
 }
-
-

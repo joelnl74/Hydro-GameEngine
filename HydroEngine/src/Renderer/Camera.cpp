@@ -1,4 +1,5 @@
 #include "Camera.h"
+#include "../../vendor/glm/gtc/matrix_transform.hpp"
 
 namespace Hydro
 {
@@ -19,7 +20,15 @@ namespace Hydro
 	{
 		if (mode == CameraMode::orthographic)
 		{
-			m_Projection = glm::ortho(0.0f, m_width, m_height, 0.0f, -1.0f, 1.0f);
+			float min_x = m_width / 2;
+			float min_y = m_height / 2;
+
+			m_Projection = glm::ortho(-min_x, min_x, -min_y, min_y, -1.0f, 1.0f);
+			glm::mat4 transform = glm::translate(glm::mat4(1.0f), m_Position) *
+				glm::rotate(glm::mat4(1.0f), glm::radians(m_Rotation), glm::vec3(0, 0, 1));
+
+			m_View = glm::inverse(transform);
+			m_ViewProjectionMatrix = m_Projection * m_View;
 		}
 		//TEST 3D RENDERING
 		if (mode == CameraMode::projection)

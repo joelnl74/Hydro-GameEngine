@@ -14,15 +14,11 @@ namespace Hydro
 		static void StartUp();
 		static void ShutDown();
 
-		static const ShaderLibrary& GetShaderLibrary() { return *GetInstance().m_ShaderLibrary; }
+		// static const ShaderLibrary* GetShaderLibrary() { return m_ShaderLibrary; }
 		
-		inline static Renderer& GetInstance() { return *s_Instance; }
-		inline static RendererAPI& GetRendererAPI() {return *GetInstance().s_RenderAPI;}
+		static RendererAPI::API GetAPI() { return RendererAPI::GetAPI(); }
 
 	private:
-		static Renderer* s_Instance;
-		static RendererAPI *s_RenderAPI;
-
-		ShaderLibrary *m_ShaderLibrary;
+		// static ShaderLibrary *m_ShaderLibrary;
 	};
 }
