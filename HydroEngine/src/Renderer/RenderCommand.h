@@ -35,5 +35,4 @@ namespace Hydro {
 	private:
 		static std::unique_ptr<RendererAPI> s_RendererAPI;
 	};
-
 }
