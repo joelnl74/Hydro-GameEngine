@@ -9,10 +9,10 @@ namespace Hydro
 {
 	VertexBuffer* VertexBuffer::Create(uint32_t size)
 	{
-		switch (Renderer::GetRendererAPI().GetAPI())
+		switch (Renderer::GetAPI())
 		{
-		case RendererApiType::None:    return nullptr;
-		case RendererApiType::OpenGL:  return new OpenGLVertexBuffer(size);
+		case RendererAPI::API::None:    return nullptr;
+		case RendererAPI::API::OpenGL:  return new OpenGLVertexBuffer(size);
 		}
 
 		HY_ASSERT("Unsupported renderer api!");
@@ -22,10 +22,10 @@ namespace Hydro
 
 	VertexBuffer* VertexBuffer::Create(float* vertices, uint32_t size)
 	{
-		switch (Renderer::GetRendererAPI().GetAPI())
+		switch (Renderer::GetAPI())
 		{
-		case RendererApiType::None:    return nullptr;
-		case RendererApiType::OpenGL:  return new OpenGLVertexBuffer(vertices, size);
+		case RendererAPI::API::None:    return nullptr;
+		case RendererAPI::API::OpenGL:  return new OpenGLVertexBuffer(vertices, size);
 		}
 
 		HY_ASSERT("Unsupported renderer api!");

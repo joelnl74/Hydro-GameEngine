@@ -10,8 +10,8 @@ namespace Hydro
 
 		switch (RendererAPI::GetAPI())
 		{
-		case RendererApiType::None: return nullptr;
-		case RendererApiType::OpenGL: result = new OpenGLShader(filepath);
+		case RendererAPI::API::None: return nullptr;
+		case RendererAPI::API::OpenGL: result = new OpenGLShader(filepath);
 		}
 
 		return result;

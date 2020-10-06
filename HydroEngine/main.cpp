@@ -13,8 +13,8 @@ int main()
 	HydroEngine *engine = new HydroEngine();
 	FileSystem *fileExplorer = new FileSystemWindows();
 	
-	Texture *texture = new OpenGLTexture("Resources/textures/cerberus_A.png");
-	texture->Bind();
+	// Texture *texture = new OpenGLTexture("Resources/textures/cerberus_A.png");
+	// texture->Bind();
 
 	fileExplorer->ReadAllFilesDirectories("E:\\Dev\\Engine\\Hydro-GameEngine\\HydroEngine\\Resources");
 

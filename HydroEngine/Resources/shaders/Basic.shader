@@ -1,36 +1,29 @@
 #shader vertex
 #version 330 core
 
-layout(location = 0) in vec4 position;
-layout(location = 1) in vec2 texCoord;
+// Flat Color Shader
+layout(location = 0) in vec3 a_Position;
+layout(location = 1) in vec4 a_Color;
 
-out vec2 v_TexCoord;
+uniform mat4 u_ViewProjection;
 
-uniform float numberOfRows;
-uniform vec2 offset;
-
-uniform mat4 orthographicModel;
+out vec4 v_Color;
 
 void main()
 {
-	gl_Position = orthographicModel * vec4(position.x, position.y, position.z, 1);
-	v_TexCoord = texCoord;
-};
+	v_Color = a_Color;
+
+	gl_Position = u_ViewProjection * vec4(a_Position, 1.0);
+}
 
 #shader fragment
 #version 330 core
 
-uniform vec3 ambientLight;
+in vec4 v_Color;
 
-layout(location = 0) out vec4 color;
-
-in vec2 v_TexCoord;
-
-uniform vec4 u_Color;
-uniform sampler2D u_Texture;
+out vec4 FragColor;
 
 void main()
 {
-	vec4 texColor = texture(u_Texture, v_TexCoord) * new vec4(ambientLight, 1);
-	color = texColor;
-};
+	FragColor = v_Color;
+}
