@@ -107,5 +107,4 @@ namespace Hydro {
 
 		m_IndexBuffer = indexBuffer;
 	}
-
 }

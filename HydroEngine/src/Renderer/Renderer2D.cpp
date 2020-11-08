@@ -38,10 +38,10 @@ namespace Hydro
 
 	static Renderer2DData s_Data;
 
-
 	void Renderer2D::StartUp()
 	{
 		s_Data.TextureShader = Shader::Create("Resources/shaders/Basic.shader");
+		s_Data.TextureShader->Bind();
 
 		BufferLayout* layout = new BufferLayout({
 			{ ShaderDataType::Float3, "a_Position" },
@@ -77,10 +77,12 @@ namespace Hydro
 		s_Data.QuadVertexArray->SetIndexBuffer(quadIB);
 		delete[] quadIndices;
 
-		s_Data.QuadVertexPositions[0] = { -0.5f, -0.5f, 0.0f, 0.0f };
-		s_Data.QuadVertexPositions[1] = { 0.5f, -0.5f, 0.0f, 0.0f };
-		s_Data.QuadVertexPositions[2] = { 0.5f,  0.5f, 0.0f, 0.0f };
-		s_Data.QuadVertexPositions[3] = { -0.5f,  0.5f, 0.0f, 0.0f };
+		s_Data.QuadVertexPositions[0] = { -0.5f, -0.5f, 0.0f, 1.0f };
+		s_Data.QuadVertexPositions[1] = { 0.5f, -0.5f, 0.0f, 1.0f };
+		s_Data.QuadVertexPositions[2] = { 0.5f,  0.5f, 0.0f, 1.0f };
+		s_Data.QuadVertexPositions[3] = { -0.5f,  0.5f, 0.0f, 1.0f };
+
+		s_Data.TextureShader->UnBind();
 	}
 
 	void  Renderer2D::ShutDown()
@@ -101,14 +103,14 @@ namespace Hydro
 
 	void Renderer2D::EndScene()
 	{
-		uint32_t dataSize = (uint32_t)((uint8_t*)s_Data.QuadVertexBufferPtr - (uint8_t*)s_Data.QuadVertexBufferBase);
-		s_Data.QuadVertexBuffer->SetData(s_Data.QuadVertexBufferBase, dataSize);
-
 		Flush();
 	}
 
 	void Renderer2D::Flush()
 	{
+		uint32_t dataSize = (uint32_t)((uint8_t*)s_Data.QuadVertexBufferPtr - (uint8_t*)s_Data.QuadVertexBufferBase);
+		s_Data.QuadVertexBuffer->SetData(s_Data.QuadVertexBufferBase, dataSize);
+
 		if (s_Data.QuadIndexCount == 0)
 			return;
 

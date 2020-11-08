@@ -1,4 +1,4 @@
-#pragma once#
+#pragma once
 #include "../../Renderer/buffer/IndexBuffer.h"
 
 namespace Hydro

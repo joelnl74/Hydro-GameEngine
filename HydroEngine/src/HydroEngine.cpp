@@ -50,7 +50,14 @@ namespace Hydro
 			//Update renderer.
 			//model->Draw(*shader);
 			Renderer2D::BeginScene(_camera->ReturnViewProjection());
-			Renderer2D::DrawQuad({ 0, 0, 0.5f }, { 250,  250}, { 0.8f, 0.2f, 0.3f, 1.0f });
+			for (float y = -5.0f; y < 5.0f; y += 0.5f)
+			{
+				for (float x = -5.0f; x < 5.0f; x += 0.5f)
+				{
+					glm::vec4 color = { (x + 5.0f) / 10.0f, 0.4f, (y + 5.0f) / 10.0f, 0.7f };
+					Renderer2D::DrawQuad({ x * 50, y * 50, 0 }, { 50, 50 }, color);
+				}
+			}
 			Renderer2D::EndScene();
 			//Draw UI
 
