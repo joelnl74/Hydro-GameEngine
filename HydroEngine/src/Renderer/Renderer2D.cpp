@@ -117,6 +117,20 @@ namespace Hydro
 		RenderCommand::DrawIndexed(s_Data.QuadVertexArray, s_Data.QuadIndexCount);
 	}
 
+	void Renderer2D::StartBatch()
+	{
+		s_Data.QuadIndexCount = 0;
+		s_Data.QuadVertexBufferPtr = s_Data.QuadVertexBufferBase;
+
+		s_Data.TextureSlotIndex = 1;
+	}
+
+	void Renderer2D::StartNextBatch()
+	{
+		Flush();
+		StartBatch();
+	}
+
 	void Renderer2D::DrawQuad(const glm::vec3& position, const glm::vec2& size, const glm::vec4& color)
 	{
 		glm::mat4 transform = glm::translate(glm::mat4(1.0f), position)
@@ -134,7 +148,7 @@ namespace Hydro
 
 		if (s_Data.QuadIndexCount >= Renderer2DData::MaxIndices)
 		{
-
+			StartNextBatch();
 		}
 
 		for (size_t i = 0; i < quadVertexCount; i++)
