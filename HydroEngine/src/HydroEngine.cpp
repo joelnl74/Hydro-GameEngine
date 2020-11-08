@@ -58,6 +58,9 @@ namespace Hydro
 					Renderer2D::DrawQuad({ x * 50, y * 50, 0 }, { 50, 50 }, color);
 				}
 			}
+
+			Renderer2D::DrawRotatedQuad({ 0, 0, 0 }, { 100, 100 }, 45, { 1, 0, 0, 1 });
+
 			Renderer2D::EndScene();
 			//Draw UI
 
