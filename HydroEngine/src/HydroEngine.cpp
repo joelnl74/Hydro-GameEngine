@@ -53,8 +53,9 @@ namespace Hydro
 			//model->Draw(*shader);
 			Renderer2D::BeginScene(_camera->ReturnViewProjection());
 
-			Renderer2D::DrawQuad({ 0, 0, 0 }, { 512, 512 }, {1,1,1,1}, *texture);
-			Renderer2D::DrawQuad({ 0, 0, 0 }, { 64, 64 }, {1,1,1,1 });
+			Renderer2D::DrawQuad({ 0, 0, 0 }, { 512, 512 }, *texture);
+			Renderer2D::DrawQuad({ 0, 0, 0 }, { 64, 64 }, {1,0,1,1});
+			Renderer2D::DrawRotatedQuad({ 0, 0, 0 }, { 32, 32 }, *texture, 45);
 
 			Renderer2D::EndScene();
 			//Draw UI
