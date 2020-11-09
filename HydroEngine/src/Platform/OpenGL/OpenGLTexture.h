@@ -1,32 +1,34 @@
 #pragma once
 #include "../../Renderer/Texture.h"
-#include <string>
+#include <stdint.h>
 
 namespace Hydro
 {
 	class OpenGLTexture : public Texture {
 
 	public:
+		OpenGLTexture(uint32_t width, uint32_t height);
 		OpenGLTexture(const std::string& path);
 		~OpenGLTexture();
 
-		virtual void Bind(unsigned int slot = 0) const override;
+		virtual void Bind(uint32_t slot = 0) const override;
 		virtual void UnBind() const override;
+		virtual void SetData(void* data, uint32_t size) override;
 
-		inline int  GetWidth() const override { return m_Width; }
-		inline int	GetHeight() const override { return m_Height; }
-		inline int	GetBytePerPixel() const override { return m_BPP; }
+		inline uint32_t GetWidth() const override { return m_Width; }
+		inline uint32_t GetHeight() const override { return m_Height; }
+		inline uint32_t GetBytePerPixel() const override { return m_BPP; }
+
+		virtual bool operator==(const Texture& other) const override
+		{
+			return m_RendererID == ((OpenGLTexture&)other).m_RendererID;
+		}
 
 	private:
-		unsigned int m_rendererID;
-
-		int id;
-		int m_Width;
-		int m_Height;
-		int m_BPP;
-
-		float offsetX;
-		float offsetY;
+		uint32_t m_RendererID;
+		uint32_t m_Width;
+		uint32_t m_Height;
+		uint32_t m_BPP;
 
 		std::string m_FilePath;
 		unsigned char* m_LocalBuffer;
