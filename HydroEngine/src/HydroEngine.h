@@ -35,6 +35,7 @@ namespace Hydro
 		EngineMode _engineMode;
 
 		//test
+		Texture *texture;
 		AudioSource *source;
 		Shader *shader;
 		Model* model;

@@ -3,6 +3,7 @@
 #include <sstream>
 
 #include "OpenGLShader.h"
+#include "../../vendor/glm/gtc/type_ptr.hpp"
 
 namespace Hydro
 {
@@ -103,46 +104,49 @@ namespace Hydro
 	{
 		GLCall(glUseProgram(m_RendererID));
 	}
+	
 	//unbind the shader program
 	void OpenGLShader::UnBind() const
 	{
 		GLCall(glUseProgram(0));
 	}
-	//Set a float uniform variable in a shader
-	void OpenGLShader::SetUniform1f(const std::string& name, float value)
+
+	void OpenGLShader::SetInt(const std::string& name, int value)
 	{
-		GLCall(glUniform1f(GetUniforLocation(name), value));
+		GLint location = GetUniforLocation(name);
+		glUniform1i(location, value);
 	}
-	//Set a int uniform variable in a shader
-	void OpenGLShader::SetUniform1i(const std::string& name, int value)
+
+	void OpenGLShader::SetIntArray(const std::string& name, int* values, uint32_t count)
 	{
-		GLCall(glUniform1i(GetUniforLocation(name), value));
+		GLint location = GetUniforLocation(name);
+		glUniform1iv(location, count, values);
 	}
-	//Set 4 float variables in an uniform variable in a shader
-	void OpenGLShader::SetUniform4f(const std::string& name, float f0, float f1, float f2, float f3)
+
+	void OpenGLShader::SetFloat(const std::string& name, float value)
 	{
-		GLCall(glUniform4f(GetUniforLocation(name), f0, f1, f2, f3));
+		GLint location = GetUniforLocation(name);
+		glUniform1f(location, value);
 	}
-	//Set 4x4 float matrix in an uniform variable in a shader
-	void OpenGLShader::SetMatrix4(const std::string& name, glm::mat4 &matrix)
+
+	void OpenGLShader::SetFloat3(const std::string& name, const glm::vec3& value)
 	{
-		GLCall(glUniformMatrix4fv(GetUniforLocation(name), 1, GL_FALSE, glm::value_ptr(matrix)));
+		GLint location = GetUniforLocation(name);
+		glUniform3f(location, value.x, value.y, value.z);
 	}
-	//Set 4x4 float matrix in an uniform variable in a shader
-	void OpenGLShader::UniformMatrix4fv(const std::string& name, glm::mat4 &matrix)
+
+	void OpenGLShader::SetFloat4(const std::string& name, const glm::vec4& value)
 	{
-		GLCall(glUniformMatrix4fv(GetUniforLocation(name), 1, GL_FALSE, glm::value_ptr(matrix)));
+		GLint location = GetUniforLocation(name);
+		glUniform4f(location, value.x, value.y, value.z, value.w);
 	}
-	//Set vector2 of floats in an uniform variable in a shader
-	void OpenGLShader::SetVec2(const std::string& name, glm::fvec2 vector2)
+
+	void OpenGLShader::SetMatrix4(const std::string& name, const glm::mat4& value)
 	{
-		GLCall(glUniform2f(GetUniforLocation(name), vector2.x, vector2.y));
+		GLint location = GetUniforLocation(name);
+		glUniformMatrix4fv(location, 1, GL_FALSE, glm::value_ptr(value));
 	}
-	//Set vector3 of floats in an uniform variable in a shader
-	void OpenGLShader::SetVec3(const std::string& name, glm::fvec3 vector3)
-	{
-		GLCall(glUniform3f(GetUniforLocation(name), vector3.x, vector3.y, vector3.z));
-	}
+
 	int OpenGLShader::GetUniforLocation(const std::string & name)
 	{
 		if (m_UniformLocationCache.find(name) != m_UniformLocationCache.end())

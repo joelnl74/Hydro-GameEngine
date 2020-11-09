@@ -3,7 +3,6 @@
 
 #include "../../Renderer/Shader.h"
 #include "../../../vendor/glm/glm.hpp"
-#include "../../../vendor/glm/gtc/type_ptr.inl"
 #include "OpenGLDebugger/OpenglErrorHandler.h"
 
 namespace Hydro
@@ -18,14 +17,14 @@ namespace Hydro
 		virtual void UnBind() const override;
 
 		// Set uniforms.
-		void SetUniform4f(const std::string& name, float f0, float f1, float f2, float f3); //vec4 float
-		void SetUniform1f(const std::string& name, float value);                            //set  float
-		void SetUniform1i(const std::string& name, int value);                              //set  int
-		void SetMatrix4(const std::string& name, glm::mat4 &matrix);                        //set  mat4
-		void UniformMatrix4fv(const std::string& name, glm::mat4 &matrix);                  //set  mat4 
-		void SetVec2(const std::string& name, glm::fvec2 vector2);                          //set  vec2 of floats
-		void SetVec3(const std::string& name, glm::fvec3 vector3);                          //set  vec3 of floats
-		int  GetUniforLocation(const std::string& name);                                     //Gets the location of the uniform
+		virtual void SetInt(const std::string& name, int value) override;
+		virtual void SetIntArray(const std::string& name, int* values, uint32_t count) override;
+		virtual void SetFloat(const std::string& name, float value) override;
+		virtual void SetFloat3(const std::string& name, const glm::vec3& value) override;
+		virtual void SetFloat4(const std::string& name, const glm::vec4& value) override;
+		virtual void SetMatrix4(const std::string& name, const glm::mat4& value) override;
+
+		int  GetUniforLocation(const std::string& name);
 
 	private:
 		uint32_t m_RendererID;

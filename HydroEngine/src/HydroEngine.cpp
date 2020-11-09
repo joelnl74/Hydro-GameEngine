@@ -26,6 +26,8 @@ namespace Hydro
 		source = new AudioSource();
 		source->Init(0, 0, 0, 1, 1, buffer);
 
+		texture = Texture::Create("Resources/textures/Brick.png");
+
 		RenderCommand::SetClearColor(glm::vec4(0, 0, 0, 1));
 	}
 	HydroEngine::~HydroEngine()
@@ -50,16 +52,10 @@ namespace Hydro
 			//Update renderer.
 			//model->Draw(*shader);
 			Renderer2D::BeginScene(_camera->ReturnViewProjection());
-			for (float y = -5.0f; y < 5.0f; y += 0.5f)
-			{
-				for (float x = -5.0f; x < 5.0f; x += 0.5f)
-				{
-					glm::vec4 color = { (x + 5.0f) / 10.0f, 0.4f, (y + 5.0f) / 10.0f, 0.7f };
-					Renderer2D::DrawQuad({ x * 50, y * 50, 0 }, { 50, 50 }, color);
-				}
-			}
 
-			Renderer2D::DrawRotatedQuad({ 0, 0, 0 }, { 100, 100 }, 45, { 1, 0, 0, 1 });
+			Renderer2D::DrawQuad({ 0, 0, 0 }, { 512, 512 }, *texture);
+			Renderer2D::DrawQuad({ 0, 0, 0 }, { 64, 64 }, {1,0,1,1});
+			Renderer2D::DrawRotatedQuad({ 0, 0, 0 }, { 32, 32 }, *texture, 45);
 
 			Renderer2D::EndScene();
 			//Draw UI

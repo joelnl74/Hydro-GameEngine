@@ -9,8 +9,8 @@ namespace Hydro {
 	{
 		switch (s_API)
 		{
-		case RendererAPI::API::None:    HY_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
-		case RendererAPI::API::OpenGL:  return std::make_unique<OpenGLRendererAPI>();
+			case RendererAPI::API::None:    HY_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
+			case RendererAPI::API::OpenGL:  return std::make_unique<OpenGLRendererAPI>();
 		}
 
 		return nullptr;
