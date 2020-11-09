@@ -83,8 +83,7 @@ namespace Hydro
 		s_Data.QuadVertexArray->SetIndexBuffer(quadIB);
 		delete[] quadIndices;
 
-		s_Data.TextureShader = Shader::Create("resources/shaders/Basic.shader");
-		s_Data.TextureShader->Bind();
+
 
 		s_Data.WhiteTexture = Texture::Create(1, 1);
 		uint32_t whiteTextureData = 0xffffffff;
@@ -97,6 +96,8 @@ namespace Hydro
 			samplers[i] = i;
 		}
 
+		s_Data.TextureShader = Shader::Create("resources/shaders/Basic.shader");
+		s_Data.TextureShader->Bind();
 		s_Data.TextureShader->SetIntArray("u_Textures", samplers, s_Data.MaxTextureSlots);
 
 		// Set first texture slot to 0

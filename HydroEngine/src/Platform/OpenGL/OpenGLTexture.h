@@ -1,6 +1,8 @@
 #pragma once
-#include "../../Renderer/Texture.h"
 #include <stdint.h>
+
+#include "../../Renderer/Texture.h"
+#include "OpenGLDebugger/OpenglErrorHandler.h"
 
 namespace Hydro
 {
@@ -17,7 +19,6 @@ namespace Hydro
 
 		inline uint32_t GetWidth() const override { return m_Width; }
 		inline uint32_t GetHeight() const override { return m_Height; }
-		inline uint32_t GetBytePerPixel() const override { return m_BPP; }
 
 		virtual bool operator==(const Texture& other) const override
 		{
@@ -25,12 +26,9 @@ namespace Hydro
 		}
 
 	private:
+		std::string m_Path;
+		uint32_t m_Width, m_Height;
 		uint32_t m_RendererID;
-		uint32_t m_Width;
-		uint32_t m_Height;
-		uint32_t m_BPP;
-
-		std::string m_FilePath;
-		unsigned char* m_LocalBuffer;
+		GLenum m_InternalFormat, m_DataFormat;
 	};
 }
