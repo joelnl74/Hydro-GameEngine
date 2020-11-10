@@ -20,7 +20,7 @@ namespace Hydro
 
 	void Scene::DestroyEntity(Entity entity)
 	{
-		m_Registry.destroy(entity);
+		// m_Registry.destroy(entity);
 	}
 
 	void Scene::OnUpdate()
