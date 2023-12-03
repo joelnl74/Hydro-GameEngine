@@ -5,6 +5,7 @@ You can use the [editor on GitHub](https://github.com/joelnl74/Hydro-GameEngine/
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
 # Information
+Currently relocated to: https://github.com/joelnl74/Hydro using Vulkan API and using separate projects for the engine and the application.
 
 Link to download a copy of the master branch of this project:
 
